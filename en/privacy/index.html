@@ -1,0 +1,167 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — Pisar</title><style>:root{--bg:#fff;--fg:#1b1b1b;--muted:#666;--line:#e3e3e3}
+@media (prefers-color-scheme:dark){:root{--bg:#141414;--fg:#e8e8e8;--muted:#9a9a9a;--line:#333}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,system-ui,"Segoe UI",Roboto,sans-serif;margin:0}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.6em;line-height:1.25}h2{font-size:1.25em;margin-top:2em}h3{font-size:1.05em}
+a{color:inherit}nav{font-size:.9em;color:var(--muted)}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:.92em}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}code{font-size:.92em}</style></head><body><main><nav><a href="../../privacy/">Русский</a></nav><h1>Pisar for Android — Privacy Policy</h1>
+<p>Effective November 9, 2026. Applies to Pisar for Android version 0.51 and later.</p>
+<p>Pisar is a dictation and transcription app: you speak, your phone types. It is developed by Pozdnekov Labs ("we").</p>
+<h2>In short</h2>
+<ul>
+<li>Speech is recognized <strong>on your phone only</strong>. Audio is never sent to us, to Google or to anyone else. Recognition works in airplane mode too.</li>
+<li>Your dictations, transcriptions, clips, dictionary and settings are stored <strong>on your phone only</strong>. We have no server, no accounts and no ads.</li>
+<li>Pisar goes online to download recognition models and dictionaries, to fetch links you give it, and — unless you turn it off — to send anonymous usage statistics and crash data to Yandex AppMetrica (no text, no audio).</li>
+<li>News and offers are sent only if you agree.</li>
+<li>To delete everything, uninstall the app.</li>
+</ul>
+<h2>1. What Pisar does with your data</h2>
+<h3>1.1. Voice and speech recognition</h3>
+<p>The microphone is on only while you dictate. Audio is recognized by a model downloaded to your phone ("All languages" or "Russian only"), right on the device. Google speech recognition and other cloud services are not used. Audio is not saved: only the text remains.</p>
+<h3>1.2. Accessibility service</h3>
+<p>Pisar uses the Android Accessibility service for two things:</p>
+<ol>
+<li>to show the dictation button when the cursor is in a text field;</li>
+<li>to insert the dictated text into that field.</li>
+</ol>
+<p>To do this, the service sees which field is focused and its type, the text around the cursor (to insert at the right place), and which app is on screen (its name is saved next to the dictation in History and is used for per-app settings). The service never reads password fields and never types into them.</p>
+<p>If you turn on "Settings → Clips → Saves automatically" yourself (off by default), the service also notices when you tap "Copy" / "Cut" and saves the copied text to the Clips tab. Passwords, codes, text an app marks as sensitive, and anything from password managers are never saved; you can exclude any app in "Don't save from apps".</p>
+<p>Everything the service sees stays on your phone and is never sent anywhere. You can turn the service off in Android settings at any time — the dictation button next to text fields will then disappear.</p>
+<h3>1.3. Permissions</h3>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Why</th>
+<th>When asked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microphone</td>
+<td>dictation</td>
+<td>at your first dictation</td>
+</tr>
+<tr>
+<td>Notifications</td>
+<td>file transcription progress, tips, news (if you agreed)</td>
+<td>when a notification is first needed</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>to scan the QR code on your Mac's screen and link the phone to Pisar on the computer. Images are not saved or sent</td>
+<td>only in "Settings → Computer"</td>
+</tr>
+<tr>
+<td>Photos and media (images)</td>
+<td>to send new screenshots to your Mac, if the computer link and "Screenshots" are on</td>
+<td>only in "Settings → Computer"</td>
+</tr>
+<tr>
+<td>Internet and network state</td>
+<td>to download models and dictionaries; to ask before downloading over mobile data</td>
+<td>not asked (normal permission)</td>
+</tr>
+<tr>
+<td>Background work</td>
+<td>to transcribe a long file while Pisar is closed</td>
+<td>not asked</td>
+</tr>
+</tbody>
+</table>
+<p>Files you give Pisar via "Share" or "Open file" are only read: the file itself is not copied or kept; History keeps the text and the file name.</p>
+<h3>1.4. What is stored on the phone and for how long</h3>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Default period</th>
+<th>Where to change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dictations (text, time, app, model)</td>
+<td>1 day</td>
+<td>"Settings → Storage"</td>
+</tr>
+<tr>
+<td>Transcriptions of files, links and images (text, file name)</td>
+<td>same as dictations</td>
+<td>"Settings → Storage"</td>
+</tr>
+<tr>
+<td>Clips (copied text)</td>
+<td>7 days, up to 200 items</td>
+<td>"Settings → Storage", "Settings → Clips"</td>
+</tr>
+<tr>
+<td>Pinned items</td>
+<td>until you unpin or delete them</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Dictionary, replacements, settings, models</td>
+<td>while the app is installed</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>You can choose "Don't keep" — the text then goes straight to the clipboard and is not added to History. "Clear" in the History, Transcription and Clips tabs deletes items immediately (pinned items stay; delete them separately). Data is kept in Pisar's private folder and is excluded from Android backups. The computer link is stored encrypted with an Android Keystore key.</p>
+<p>Your text leaves the phone only if you tap "Share" or "Copy" or export History to a file yourself.</p>
+<h2>2. What leaves the phone</h2>
+<h3>2.1. Downloading models and dictionaries</h3>
+<ul>
+<li><strong>Speech recognition models</strong> are downloaded from Hugging Face, from the public <code>pisar</code> organization (huggingface.co/pisar).</li>
+<li><strong>Dictionaries for text in images</strong> (Tesseract) are downloaded from GitHub (github.com/tesseract-ocr) the first time you recognize an image in that language.</li>
+<li><strong>Translation languages</strong> (only if you turn on "Translate while dictating", off by default) are downloaded by Google ML Kit from Google's servers. Translation then runs on the phone; your text is not sent to Google. The ML Kit library may send Google technical information about its operation (versions, phone model, download errors) — never your text.</li>
+</ul>
+<p>As with any website, these services see the phone's IP address and technical request details when downloading. We do not receive this data.</p>
+<h3>2.2. Links you provide</h3>
+<p>When you paste a link to audio or video (a podcast, Google Drive, Dropbox, Yandex Disk), Pisar downloads the file from that site and transcribes it on the phone. The site sees a normal request from the phone's IP address. Pisar does not download from video hosting sites.</p>
+<h3>2.3. Statistics and crashes — Yandex AppMetrica</h3>
+<p>To find bugs and understand which features are used, Pisar sends anonymous information to <strong>AppMetrica</strong> (Yandex LLC, Russia). <strong>On by default</strong>; turn it off in "Settings → About → Send usage stats and crashes" — after that nothing is sent or recorded.</p>
+<p>What is sent:</p>
+<ul>
+<li><strong>crashes</strong>: where in the code the error happened (classes, methods, lines of code) — without error message text;</li>
+<li><strong>technical data</strong> (collected by AppMetrica): phone model and manufacturer, Android version, system language and region, carrier and network type, screen size, Pisar version, installs, launches and session length, AppMetrica's internal device ID (not an advertising ID), IP address at the time of sending;</li>
+<li><strong>which features are used</strong>: dictation (length and language), file transcription (audio or video, length), link transcription (length), text from an image, translation (language pair), computer link, turning on "Remove profanity", hiding the button (for how many minutes).</li>
+</ul>
+<p><strong>Never</strong> sent: text (dictations, transcriptions, clips, dictionary), audio, file names, links, names of the apps you dictate into, location, advertising IDs (GAID, OAID), screenshots.</p>
+<p>This data is kept in AppMetrica while it is needed to find bugs and analyze usage, and no longer than AppMetrica's rules allow.</p>
+<p>How Yandex processes this data: https://yandex.com/legal/appmetrica_termsofuse/ and https://yandex.com/legal/confidential/.</p>
+<h3>2.4. Crash report and "Report a problem"</h3>
+<p>If Pisar closed with an error, next time it will offer a report: phone model, Android and Pisar versions, time and place of the error — no text, no audio. The report is sent <strong>only if you tap "Send"</strong>, and only to where you choose in "Share". "Don't send" deletes it. To stop the offer: "Settings → About → Offer a report after a crash".</p>
+<p>"Report a problem" collects the app log for the last few minutes (dictation text is hidden) and is also sent only via "Share", to where you choose. Whatever you send us is used only to solve the problem and is deleted once it is solved.</p>
+<h3>2.5. News and offers — RuStore push notifications</h3>
+<p>"New features" and "Pro discounts and offers" are sent <strong>only with your consent</strong>: Pisar asks once, and both are off by default. Delivery is handled by RuStore (VK LLC, Russia), which receives a technical app identifier on the phone (push token) and the subscribed topic. No text or audio is sent; the subscription is kept by RuStore until you unsubscribe. To turn off: "Settings → Notifications" — when both topics are off, Pisar unsubscribes and does not start the push service. "Tips" in the same section are local notifications from the phone itself, without internet.</p>
+<h3>2.6. Computer link</h3>
+<p>If you link your phone to Pisar on your Mac ("Settings → Computer", via QR code), the phone and the Mac talk directly over your home network — no internet and no servers of ours — over an encrypted connection (HTTPS; only your Mac's certificate from the QR code is accepted). What is sent: new screenshots (if "Screenshots" is on) and connection checks. "Disconnect computer" removes the link.</p>
+<h2>3. What we don't do</h2>
+<ul>
+<li>We don't sell data or share it for advertising. Pisar has no ads.</li>
+<li>We don't use your text or voice to train models.</li>
+<li>We don't require an account, phone number or email.</li>
+<li>We don't collect location, contacts or call history.</li>
+</ul>
+<h2>4. How to delete your data</h2>
+<ul>
+<li>Single items — ⋮ → "Delete"; everything at once — "Clear" in the tab.</li>
+<li>Turn off statistics — "Settings → About".</li>
+<li>Delete everything from the phone — uninstall the app: Android erases Pisar's folder with history, models and settings.</li>
+<li>Delete statistics already sent to AppMetrica — write to us (section 10).</li>
+</ul>
+<h2>5. Children</h2>
+<p>Pisar is not intended for children under 13 (in the EU, under 16 unless your country sets a different age) and does not knowingly collect data about them. If you believe a child has sent us their data, write to us and we will delete it.</p>
+<h2>6. Russia (Federal Law 152-FZ)</h2>
+<p>Operator: Pozdnekov Labs. Data that may be considered personal (the device ID and IP address in AppMetrica, the RuStore push token) is processed to improve the app and deliver notifications, and is stored by Yandex and VK in Russia. Legal basis: your consent — by using Pisar with statistics on, you agree; to withdraw consent, turn off "Send usage stats and crashes" and notifications or write to us. You may ask what data about you is processed, request correction or deletion, and appeal to Roskomnadzor.</p>
+<h2>7. European Union and United Kingdom (GDPR)</h2>
+<p>Legal bases: legitimate interest — statistics and crashes, so the app works without errors (you can object by turning them off in one step); consent — news and offers. AppMetrica and RuStore data is processed in Russia, which has no EU adequacy decision; the data is anonymous and kept to a minimum. Your rights: access, rectification, erasure, restriction, portability, objection, withdrawal of consent, and a complaint to your local supervisory authority.</p>
+<h2>8. United States, California (CCPA/CPRA)</h2>
+<p>We do not sell or "share" personal information as defined by the CCPA and do not use it for advertising. Categories: device identifiers and app usage information (section 2.3). You may ask what data was collected and request its deletion; you will not be discriminated against for doing so.</p>
+<h2>9. Changes</h2>
+<p>If this policy changes, the new version will appear on this page and in the app ("About → Legal"), with a new date; we will mention significant changes in the store update notes.</p>
+<h2>10. Contact</h2>
+<p>poal0208@gmail.com</p></main></body></html>
