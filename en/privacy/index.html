@@ -116,7 +116,7 @@ th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-alig
 <ul>
 <li><strong>Speech recognition models</strong> are downloaded from Hugging Face, from the public <code>pisar</code> organization (huggingface.co/pisar).</li>
 <li><strong>Dictionaries for text in images</strong> (Tesseract) are downloaded from GitHub (github.com/tesseract-ocr) the first time you recognize an image in that language.</li>
-<li><strong>Translation languages</strong> (only if you turn on "Translate while dictating", off by default) are downloaded by Google ML Kit from Google's servers. Translation then runs on the phone; your text is not sent to Google. The ML Kit library may send Google technical information about its operation (versions, phone model, download errors), never your text.</li>
+<li><strong>Translation languages</strong> (only if you turn on "Translate while dictating", off by default) are downloaded from Hugging Face, from the same pisar organization (Firefox Translations models by Mozilla). Translation runs on the phone; your text is not sent anywhere.</li>
 </ul>
 <p>As with any website, these services see the phone's IP address and technical request details when downloading. We do not receive this data.</p>
 <h3>2.2. Links</h3>
@@ -127,16 +127,17 @@ th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-alig
 <ul>
 <li><strong>crashes</strong>: where in the code the error happened (classes, methods, lines of code), without error message text;</li>
 <li><strong>technical data</strong> (collected by AppMetrica): phone model and manufacturer, Android version, system language and region, carrier and network type, screen size, Pisar version, installs, launches and session length, AppMetrica's internal device ID (not an advertising ID), IP address at the time of sending;</li>
-<li><strong>which features are used</strong>: dictation (length and language), file transcription (audio or video, length), link transcription (length), text from an image, translation (language pair), computer link, turning on "Remove profanity", hiding the button (for how many minutes).</li>
+<li><strong>which features are used</strong>: dictation (length and language), file transcription (audio or video, length), link transcription (length), text from an image, translation (language pair), computer link, turning on "Remove profanity", hiding the button (for how many minutes), time saved (how many hours), showing the rating window, offering to share (where it was shown), sharing Pisar (from where and to which app).</li>
 </ul>
 <p><strong>Never</strong> sent: text (dictations, transcriptions, clips, dictionary), audio, file names, links, names of the apps you dictate into, location, advertising IDs (GAID, OAID), screenshots.</p>
 <p>This data is kept in AppMetrica while it is needed to find bugs and analyze usage, and no longer than AppMetrica's rules allow.</p>
 <p>How Yandex processes this data: https://yandex.com/legal/appmetrica_termsofuse/ and https://yandex.com/legal/confidential/.</p>
 <h3>2.4. Error reports</h3>
 <p>If Pisar closed with an error, next time it will offer a report: phone model, Android and Pisar versions, time and place of the error, with no text, no audio. The report is sent <strong>only if you tap "Send"</strong>, and only to where you choose in "Share". "Don't send" deletes it. To stop the offer: "Settings → About → Offer a report after a crash".</p>
-<p>"Report a problem" collects the app log for the last few minutes (dictation text is hidden) and is also sent only via "Share", to where you choose. Whatever you send us is used only to solve the problem and is deleted once it is solved.</p>
+<p>"Report a problem" collects the app log for the last few minutes (dictation text is hidden) and is also sent only via "Share", to where you choose. "Settings → Help &amp; contact → Contact us" and "Suggest an idea" open your email app with our address, the Pisar version and phone model; you send the email yourself. Whatever you send us is used only to solve the problem and is deleted once it is solved.</p>
 <h3>2.5. Notifications</h3>
 <p>"New features" and "Pro discounts and offers" are sent <strong>only with your consent</strong>: Pisar asks once, and both are off by default. Delivery is handled by RuStore (VK LLC, Russia), which receives a technical app identifier on the phone (push token) and the subscribed topic. No text or audio is sent; the subscription is kept by RuStore until you unsubscribe. To turn off: "Settings → Notifications". When both topics are off, Pisar unsubscribes and does not start the push service. "Tips" in the same section are local notifications from the phone itself, without internet.</p>
+<p>After several dictations, Pisar may show the RuStore rating window once. If you leave a rating or review, RuStore receives it under its own rules; Pisar does not see it.</p>
 <h3>2.6. Computer link</h3>
 <p>If you link your phone to Pisar on your Mac ("Settings → Computer", via QR code), the phone and the Mac talk directly over your home network, with no internet and no servers of ours, over an encrypted connection (HTTPS; only your Mac's certificate from the QR code is accepted). What is sent: new screenshots (if "Screenshots" is on) and connection checks. "Disconnect computer" removes the link.</p>
 <h2>3. What we don't do</h2>
