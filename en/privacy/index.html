@@ -115,7 +115,7 @@ th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-alig
 <h3>2.1. Model downloads</h3>
 <ul>
 <li><strong>Speech recognition models</strong> are downloaded from Hugging Face, from the public <code>pisar</code> organization (huggingface.co/pisar).</li>
-<li><strong>Dictionaries for text in images</strong> (Tesseract) are built into the app for all 25 languages and nothing is downloaded; only if a dictionary file is missing is it downloaded from Hugging Face from the pisar organization.</li>
+<li><strong>Dictionaries for text in images</strong> (Tesseract) are downloaded from Hugging Face, from the same pisar organization, the first time you recognize an image in that language.</li>
 <li><strong>Translation languages</strong> (only if you turn on "Translate while dictating", off by default) are downloaded from Hugging Face, from the same pisar organization (Firefox Translations models by Mozilla). Translation runs on the phone; your text is not sent anywhere.</li>
 </ul>
 <p>As with any website, these services see the phone's IP address and technical request details when downloading. We do not receive this data.</p>
