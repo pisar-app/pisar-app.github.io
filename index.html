@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://pisar-app.ru/">
 <meta property="og:image" content="https://pisar-app.ru/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Писарь", "operatingSystem": "Android 10+", "applicationCategory": "UtilitiesApplication", "description": "Писарь: диктовка в любом поле Android. Распознаёт речь прямо на телефоне, без интернета. Бесплатно, без рекламы и аккаунта.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Это клавиатура?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Ваша клавиатура остаётся прежней, Писарь добавляет кнопку P у поля ввода."}}, {"@type": "Question", "name": "Какие языки?", "acceptedAnswer": {"@type": "Answer", "text": "25 европейских языков, включая русский и английский. Для одного русского есть отдельная модель, она быстрее и точнее."}}, {"@type": "Question", "name": "Что будет после 7 дней Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Диктовка, словарь и правила текста остаются бесплатными. Расшифровка и Буфер останавливаются, готовые тексты остаются у вас."}}, {"@type": "Question", "name": "Зачем «Специальные возможности»?", "acceptedAnswer": {"@type": "Answer", "text": "Через эту службу Android Писарь видит поле ввода, показывает кнопку и вставляет текст. Поля паролей не читает."}}, {"@type": "Question", "name": "Какой нужен телефон?", "acceptedAnswer": {"@type": "Answer", "text": "Android 10 и новее, 64-битный процессор."}}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Писарь", "operatingSystem": "Android 10+", "applicationCategory": "UtilitiesApplication", "description": "Писарь: диктовка в любом поле Android. Распознаёт речь прямо на телефоне, без интернета. Бесплатно, без рекламы и аккаунта.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Это клавиатура?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Ваша клавиатура остаётся прежней, Писарь добавляет кнопку P у поля ввода."}}, {"@type": "Question", "name": "Какие языки?", "acceptedAnswer": {"@type": "Answer", "text": "25 европейских языков, включая русский и английский. Если пишете только по-русски, выберите «Только русский»: так ещё быстрее и точнее."}}, {"@type": "Question", "name": "Что будет после 7 дней Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Диктовка, словарь и правила текста остаются бесплатными. Расшифровка и Буфер останавливаются, готовые тексты остаются у вас."}}, {"@type": "Question", "name": "Зачем «Специальные возможности»?", "acceptedAnswer": {"@type": "Answer", "text": "Через эту службу Android Писарь видит поле ввода, показывает кнопку и вставляет текст. Поля паролей не читает."}}, {"@type": "Question", "name": "Какой нужен телефон?", "acceptedAnswer": {"@type": "Answer", "text": "Android 10 и новее, 64-битный процессор."}}]}]</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -212,7 +212,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 .mi{font-family:"Material Icons Outlined";font-weight:normal;font-style:normal;font-size:22px;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;font-feature-settings:"liga"}
 .ico .mi{font-size:22px}
 /* иконка в одну строку с заголовком, текст ниже */
-.card:has(>.ico),.fcard:has(>.ico){display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;align-content:start}
+.card:has(>.ico),.fcard:has(>.ico){display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center;align-content:start}
 .card:has(>.ico)>h3,.fcard:has(>.ico)>h3{margin:0;line-height:1.25}
 .card:has(>.ico)>p,.fcard:has(>.ico)>p{grid-column:1/-1;margin-top:12px}
 .plogo{display:inline-block}
@@ -362,6 +362,46 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 @media (max-width:700px){.stage{height:540px}}
 #inmsg2{opacity:0}
 .msgs{padding-bottom:12px!important}
+
+/* 13.11: компактнее */
+section{padding:72px 0}
+.final{padding:80px 0}
+.hero{min-height:0;padding-bottom:4px}
+.stage{margin:40px auto 32px}
+.grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:32px}
+.card{padding:22px}
+.fcard{padding:18px}.fcard.big{padding:22px}
+.show{margin-top:44px;gap:36px}
+.show-v{padding:28px 24px;min-height:240px}
+.card:has(>.pb){display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center;align-content:start}
+.card:has(>.pb)>h3{margin:0;line-height:1.25}
+.card:has(>.pb)>p{grid-column:1/-1;margin-top:12px}
+@media (max-width:900px){.show{margin-top:36px;gap:18px}}
+@media (max-width:700px){section{padding:48px 0}.final{padding:56px 0}.grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:24px}.card{padding:18px}.show-v{padding:18px}.stage{margin:32px auto 24px}}
+/* 13.11: камера ровно по центру */
+.sbar .cam{left:0;right:0;margin:0 auto;top:8px;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle,#2c3c94 0 2px,#0b0d1c 2.8px,#000 6.5px);box-shadow:0 0 0 1.5px #000,0 0 0 2.5px rgba(255,255,255,.12)}
+/* 13.11: Pro оранжевый, как в приложении (ProOrange #F5A524, ProLogo) */
+.badge.pro{background:#F5A524;color:#16161A;border-color:transparent;font-weight:700}
+.prologo{position:relative;display:inline-block;flex:none;width:32px;height:32px}
+.prologo img{display:block;width:100%;height:100%;border-radius:24%;box-shadow:0 0 0 1.5px rgba(255,255,255,.55)}
+.prologo b{position:absolute;right:-22%;bottom:-22%;width:52%;height:52%;border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(18,20,42,.22);color:#16161A;font-weight:900;font-size:5.2px;line-height:1;display:grid;place-items:center;letter-spacing:0}
+.prologo.lg{width:60px;height:60px}.prologo.lg b{font-size:9.6px}
+.prohead{display:flex;justify-content:center;margin-bottom:18px}
+.btn.btnpro{background:#F5A524;color:#16161A;gap:12px}
+.btn.btnpro:hover{background:#FFB23E}
+/* 13.11: подвал по колонкам */
+footer{padding:48px 0 40px;font-size:15px;color:var(--muted)}
+.fcols{display:grid;grid-template-columns:1.5fr 1fr 1.4fr 1fr;gap:32px}
+.fcols h4{margin:0 0 12px;font-size:14px;font-weight:600;color:var(--fg)}
+.fcols nav a{display:block;padding:5px 0;color:var(--muted)}
+.fcols nav a:hover{color:var(--fg)}
+.fbrand .logo{font-size:18px;color:var(--fg)}
+.fbrand p{margin:14px 0 0;font-size:14.5px;max-width:280px;line-height:1.5}
+.fbrand .copy{font-size:13.5px}
+@media (max-width:900px){.fcols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fcols{grid-template-columns:1fr;gap:26px}footer{padding:40px 0 32px}}
+.card:has(>.ico)>*:not(.ico):not(h3),.fcard:has(>.ico)>*:not(.ico):not(h3),.card:has(>.pb)>*:not(.pb):not(h3){grid-column:1/-1}
+@media (max-width:700px){.grid3,.grid4,.grid2,.fgrid{gap:10px}.card,.fcard,.fcard.big{padding:16px}.card:has(>.ico)>p,.fcard:has(>.ico)>p,.card:has(>.pb)>p{margin-top:8px}h2{font-size:28px}.sub{font-size:16px;margin-top:10px}.show{margin-top:32px;gap:14px}.show-t h3{font-size:22px;margin:10px 0 6px}.show-t p{font-size:15.5px}.hero{padding-top:92px}.stage{margin:24px auto 16px}}
 </style>
 <script>
 (function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(new URLSearchParams(location.search).get('b')==='2')document.documentElement.setAttribute('data-b','2');})();
@@ -389,9 +429,9 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 
 <div class="hero">
   <div class="wrap" style="position:relative">
-    <span class="tagpill v1">Работает без интернета<span class="pb"><svg class="plogo"><use href="#plogo"/></svg></span></span><span class="tagpill v2"><span class="tp-ok"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3.2 7.1l2.6 2.6 5-5" fill="none" style="stroke:var(--pl-check)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Работает без интернета</span>
+    <span class="tagpill v1">Голос остаётся на телефоне<span class="pb"><svg class="plogo"><use href="#plogo"/></svg></span></span><span class="tagpill v2"><span class="tp-ok"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3.2 7.1l2.6 2.6 5-5" fill="none" style="stroke:var(--pl-check)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Голос остаётся на телефоне</span>
     <h1>Говорите.<br>Писарь печатает.</h1>
-    <p class="lead">Голосовой ввод в любом приложении на Android.<br><span>Распознавание на телефоне: голос никуда не уходит.</span></p>
+    <p class="lead">Наговорите сообщение, письмо или заметку, и текст сам встанет в любое поле.<br><span>Голос не уходит с телефона.</span></p>
     <div class="ctas">
       <a class="store" aria-label="Скоро в RuStore"><img class="only-light" src="/assets/rustore-color-dark.svg" alt="Скачайте из RuStore"><img class="only-dark" src="/assets/rustore-color-light.svg" alt="Скачайте из RuStore"></a>
     </div>
@@ -438,13 +478,13 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 
 <section class="sec2">
   <div class="wrap">
-    <div class="center"><h2>Текст сразу чистый</h2><p class="sub">Знаки, заглавные, числа и английские названия Писарь ставит сам.</p></div>
+    <div class="center"><h2>Текст сразу чистый</h2><p class="sub">Исправлять ничего не нужно: знаки, заглавные и числа Писарь ставит сам.</p></div>
     <div class="said">
       <div class="colhead"><span>Сказали</span><span></span><span>Вставилось</span></div>
       <div class="row"><span class="s">двадцать пять задач в гитхаб</span><span class="arr">→</span><span class="t">25 задач в GitHub<span class="tag">числа цифрами, названия латиницей</span></span></div>
       <div class="row"><span class="s">ты придёшь в субботу</span><span class="arr">→</span><span class="t">Ты придёшь в субботу?<span class="tag">заглавная и знак вопроса</span></span></div>
-      <div class="row"><span class="s">ну короче завтра посмотрю в джире</span><span class="arr">→</span><span class="t">Завтра посмотрю в Jira.<span class="tag">чистка речи, по желанию</span></span></div>
-      <div class="row"><span class="s">мой адрес</span><span class="arr">→</span><span class="t">ул. Садовая, 12, кв. 5<span class="tag">быстрая фраза из словаря</span></span></div>
+      <div class="row"><span class="s">ну короче завтра посмотрю в джире</span><span class="arr">→</span><span class="t">Завтра посмотрю в Jira.<span class="tag">лишние слова убраны</span></span></div>
+      <div class="row"><span class="s">мой адрес</span><span class="arr">→</span><span class="t">ул. Садовая, 12, кв. 5<span class="tag">длинный адрес одной фразой</span></span></div>
     </div>
   </div>
 </section>
@@ -453,9 +493,9 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
   <div class="wrap">
     <div class="center"><h2>Три шага, и можно говорить</h2></div>
     <div class="grid3">
-      <div class="card"><div class="ico"><span class="mi">download</span></div><h3>1. Установите</h3><p>Писарь из RuStore. Аккаунт не нужен. Android 10 и новее.</p></div>
-      <div class="card"><div class="ico"><span class="mi">mic_none</span></div><h3>2. Скачайте модель</h3><p>«Только русский» или «Все языки». Один раз, дальше без интернета.</p></div>
-      <div class="card"><span class="pb"><svg class="plogo"><use href="#plogo"/></svg></span><h3>3. Коснитесь P и говорите</h3><p>Кнопка появляется у любого поля. Можно коснуться или зажать и держать.</p></div>
+      <div class="card"><div class="ico"><span class="mi">download</span></div><h3>1. Установите</h3><p>Без регистрации и аккаунта.</p></div>
+      <div class="card"><div class="ico"><span class="mi">mic_none</span></div><h3>2. Выберите язык</h3><p>Русский или сразу 25 языков. Один раз, дальше Писарь работает и без интернета.</p></div>
+      <div class="card"><span class="pb"><svg class="plogo"><use href="#plogo"/></svg></span><h3>3. Говорите</h3><p>Коснитесь кнопки P у любого поля, и текст появится сам.</p></div>
     </div>
   </div>
 </section>
@@ -465,8 +505,8 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
     <div class="center"><h2>Когда печатать неудобно</h2></div>
     <div class="grid4">
       <div class="card"><div class="ico"><span class="mi">pan_tool</span></div><h3>Руки заняты</h3><p>В дороге, на кухне, на прогулке.</p></div>
-      <div class="card"><div class="ico"><span class="mi">notes</span></div><h3>Длинные сообщения</h3><p>Письма и ответы: говорить быстрее, чем набирать.</p></div>
-      <div class="card"><div class="ico"><span class="mi">keyboard</span></div><h3>Трудно печатать</h3><p>Мелкие клавиши, уставшие руки, слабое зрение.</p></div>
+      <div class="card"><div class="ico"><span class="mi">notes</span></div><h3>Длинные сообщения</h3><p>Длинное письмо или подробный ответ проще наговорить, чем набрать.</p></div>
+      <div class="card"><div class="ico"><span class="mi">keyboard</span></div><h3>Трудно печатать</h3><p>Мелкие клавиши, уставшие руки, слабое зрение: просто скажите.</p></div>
       <div class="card"><div class="ico"><span class="mi">work_outline</span></div><h3>По работе</h3><p>Имена клиентов и термины один раз в словарь, дальше пишутся верно.</p></div>
     </div>
   </div>
@@ -477,18 +517,18 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
     <div class="center"><h2>Всё, что умеет Писарь</h2><p class="sub">Бесплатно навсегда. Без рекламы, без аккаунта, без лимитов на диктовку.</p></div>
     <div class="fgrid">
       <div class="fcard big"><div class="ico"><span class="mi">keyboard_voice</span></div><h3>Диктовка в любом приложении</h3><p>Кнопка P у любого поля: мессенджер, почта, заметки, поиск. Коснитесь и говорите или зажмите и держите. Текст встаёт туда, где курсор.</p></div>
-      <div class="fcard big"><div class="ico"><span class="mi">wifi_off</span></div><h3>Распознавание на телефоне</h3><p>«Только русский»: быстрее и точнее на русском. «Все языки»: 25 европейских языков, язык Писарь определит сам.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">text_fields</span></div><h3>Правила текста</h3><p>Знаки, заглавные, числа цифрами, «?» у вопроса.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">auto_fix_high</span></div><h3>Чистка речи</h3><p>Убирает «ну», «короче», повторы и оговорки «а нет». По желанию.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">menu_book</span></div><h3>Словарь без лимита</h3><p>Как писать имена и термины. «гитхаб» станет GitHub.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">bolt</span></div><h3>Быстрые фразы</h3><p>Говорите «мой адрес», вставляется полный адрес.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">school</span></div><h3>Учится на правках</h3><p>Поправили слово после вставки, в следующий раз Писарь напишет верно. По желанию.</p></div>
+      <div class="fcard big"><div class="ico"><span class="mi">wifi_off</span></div><h3>Понимает 25 языков</h3><p>Русский особенно точно. Язык Писарь определит сам.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">text_fields</span></div><h3>Грамотно сразу</h3><p>Знаки, заглавные, числа цифрами, вопросительный знак у вопроса.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">auto_fix_high</span></div><h3>Без «ну» и «короче»</h3><p>Убирает слова-паразиты, повторы и оговорки. По желанию.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">menu_book</span></div><h3>Имена пишутся верно</h3><p>Добавьте имена и термины один раз, дальше они пишутся правильно.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">bolt</span></div><h3>Длинное одной фразой</h3><p>Скажите «мой адрес», и вставится полный адрес.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">school</span></div><h3>Запоминает ваши правки</h3><p>Исправили слово один раз, дальше Писарь пишет верно. По желанию.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">volume_down</span></div><h3>Тише, пока говорите</h3><p>Музыка и видео приглушаются на время диктовки.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">content_copy</span></div><h3>«Вставить последнее»</h3><p>Последний текст ещё раз, одной кнопкой.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">grid_view</span></div><h3>Плитка «Диктовка»</h3><p>В шторке, работает в любой программе.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">visibility_off</span></div><h3>Кнопку можно спрятать</h3><p>Передвинуть, уменьшить, сделать прозрачнее или скрыть на час, до утра, насовсем.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">block</span></div><h3>Убрать мат</h3><p>По желанию, на 25 языках.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">ios_share</span></div><h3>Выгрузка и поиск</h3><p>Записи в .txt и .md, поиск по всем вкладкам.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">content_copy</span></div><h3>Вставить ещё раз</h3><p>Последний текст повторно, одной кнопкой.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">grid_view</span></div><h3>Диктовка из шторки</h3><p>Одна кнопка в шторке, работает в любой программе.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">visibility_off</span></div><h3>Кнопка не мешает</h3><p>Передвиньте, уменьшите, сделайте прозрачнее или скройте на время.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">block</span></div><h3>Без мата</h3><p>Писарь уберёт ругательства, по желанию.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">ios_share</span></div><h3>Любая запись найдётся</h3><p>Поиск по всем записям, выгрузка в файл.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">language</span></div><h3>11 языков интерфейса</h3><p>И никакого аккаунта.</p></div>
     </div>
   </div>
@@ -496,10 +536,10 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 
 <section id="pro-features">
   <div class="wrap">
-    <div class="center"><h2>Писарь Pro: больше, чем диктовка</h2><p class="sub">Тоже на телефоне. 399 ₽ один раз, первые 7 дней бесплатно.</p></div>
+    <div class="center"><div class="prohead"><span class="prologo lg"><img src="/assets/icon.png" alt=""><b>PRO</b></span></div><h2>Писарь Pro: больше, чем диктовка</h2><p class="sub">Когда нужно больше, чем диктовка. 399 ₽ один раз, первые 7 дней бесплатно.</p></div>
 
     <div class="show">
-      <div class="show-t"><span class="badge">Pro</span><h3>Голосовые, аудио и видео в текст</h3><p>Поделитесь голосовым из мессенджера, выберите файл или вставьте ссылку на Google Диск, Яндекс Диск, Dropbox, подкаст. Длинные файлы расшифровываются в фоне. Без лимитов.</p></div>
+      <div class="show-t"><span class="badge pro">Pro</span><h3>Голосовые можно прочитать, а не слушать</h3><p>Голосовое, видео или подкаст станут текстом. Поделитесь файлом или ссылкой, расшифровка идёт в фоне, без лимитов.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="mrow"><span class="mi">mic_none</span><div><b>Голосовое</b><small>сегодня, 0:42</small></div></div>
@@ -512,7 +552,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
     </div>
 
     <div class="show rev">
-      <div class="show-t"><span class="badge">Pro</span><h3>Текст со скриншотов и фото</h3><p>Скопировать то, что не копируется: текст со скриншота или фото. Распознаётся на телефоне.</p></div>
+      <div class="show-t"><span class="badge pro">Pro</span><h3>Текст с картинки без перепечатывания</h3><p>Номер заказа на скриншоте, адрес на фото: Писарь достанет текст.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="shot"><div class="shot-l"><i style="width:80%"></i><i style="width:65%"></i><i style="width:72%"></i></div><span class="mi shot-i">image</span></div>
@@ -523,7 +563,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
     </div>
 
     <div class="show">
-      <div class="show-t"><span class="badge">Pro</span><h3>Буфер: всё скопированное под рукой</h3><p>Всё, что копировали, в одном месте: с поиском и закреплением. Пароли и коды не запоминаются.</p></div>
+      <div class="show-t"><span class="badge pro">Pro</span><h3>Скопированное не потеряется</h3><p>Всё, что копировали, в одном месте: найти, закрепить, вставить снова. Пароли и коды не запоминаются.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="mhead">Закреплено</div>
@@ -536,7 +576,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
     </div>
 
     <div class="show rev">
-      <div class="show-t"><span class="badge">Pro</span><h3>Перевод при диктовке</h3><p>Говорите по-русски, вставляется на одном из 24 языков. Тоже на телефоне, без интернета.</p></div>
+      <div class="show-t"><span class="badge pro">Pro</span><h3>Говорите по-русски, пишите на другом языке</h3><p>Скажите по-русски, вставится на английском или ещё на 23 языках. Без интернета.</p></div>
       <div class="show-v">
         <div class="mock center-m">
           <svg class="tbar" width="176" height="32" viewBox="0 0 176 32"><rect x=".5" y=".5" width="175" height="31" rx="15.5" class="pbg"/>
@@ -552,7 +592,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
     </div>
 
     <div class="show">
-      <div class="show-t"><span class="badge">Pro</span><h3>Хранение записей сколько нужно</h3><p>Бесплатно записи хранятся день. С Pro: неделю, месяц или всегда.</p></div>
+      <div class="show-t"><span class="badge pro">Pro</span><h3>Записи не пропадут</h3><p>Бесплатно хранятся день, с Pro неделю, месяц или всегда.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="seg"><span>1 день</span><span>Неделя</span><span>Месяц</span><span class="on">Всегда</span></div>
@@ -570,14 +610,14 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
         <span class="badge">Бесплатно навсегда</span>
         <ul class="list">
           <li>Диктовка без ограничений, в любом приложении</li>
-          <li>Распознавание на телефоне, 25 языков</li>
+          <li>Голос не уходит с телефона, 25 языков</li>
           <li>Словарь, правила текста, чистка речи</li>
           <li>Записи хранятся 1 день</li>
         </ul>
-        <span class="badge" style="margin-top:22px">Pro, 399 ₽ один раз</span>
+        <span class="badge pro" style="margin-top:22px">Pro, 399 ₽ один раз</span>
         <ul class="list">
           <li>Всё бесплатное</li>
-          <li>Голосовые, аудио, видео и ссылки в текст</li>
+          <li>Голосовые и видео в текст</li>
           <li>Текст со скриншотов и фото</li>
           <li>Буфер и перевод при диктовке</li>
           <li>Хранение неделю, месяц или всегда</li>
@@ -585,10 +625,10 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 
       </div>
       <div class="price">
-        <span class="badge" style="align-self:flex-start">Цена на старте</span>
+        <span class="badge pro" style="align-self:flex-start">Цена на старте</span>
         <div class="big">399 ₽<span class="old">499 ₽</span></div>
         <p style="margin:14px 0 0;color:var(--muted)">Разовый платёж, навсегда. Карта или СБП. Первые 7 дней Pro бесплатно.</p>
-        <a class="btn btn1" style="margin-top:28px" href="/ru/pro/"><span class="pb" style="width:32px;height:32px;border-radius:9.6px"><svg class="plogo"><use href="#plogo"/></svg></span>Подробнее о Pro</a>
+        <a class="btn btnpro" style="margin-top:28px" href="/ru/pro/"><span class="prologo"><img src="/assets/icon.png" alt=""><b>PRO</b></span>Подробнее о Pro</a>
       </div>
     </div>
   </div>
@@ -601,7 +641,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
         <div class="ico"><span class="mi">lock</span></div>
         <h3 style="font-size:24px">Что уходит в сеть</h3>
         <p><b style="color:var(--fg)">Не уходят:</b> звук, тексты, имена файлов и программ.</p>
-        <p style="margin-top:10px"><b style="color:var(--fg)">Интернет нужен,</b> чтобы скачать модель, расшифровать файл по ссылке и оплатить Pro.</p>
+        <p style="margin-top:10px"><b style="color:var(--fg)">Интернет нужен,</b> только чтобы один раз скачать язык, расшифровать файл по ссылке и оплатить Pro.</p>
         <p style="margin-top:10px">Анонимную статистику сбоев можно выключить в настройках.</p>
       </div>
       <div class="card">
@@ -609,7 +649,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
         <h3 style="font-size:24px">Об ограничениях</h3>
         <ul class="list plain" style="margin-top:6px">
           <li>Иногда ошибается: в шуме, при быстрой речи, в редких словах. Словарь помогает.</li>
-          <li>Модели занимают место на телефоне.</li>
+          <li>Языки занимают место на телефоне.</li>
           <li>Часовая запись расшифровывается несколько минут.</li>
           <li>На старых телефонах медленнее.</li>
         </ul>
@@ -623,7 +663,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
     <div class="center"><h2>Частые вопросы</h2></div>
     <div class="faq">
       <details open><summary>Это клавиатура?</summary><p>Нет. Ваша клавиатура остаётся прежней, Писарь добавляет кнопку P у поля ввода.</p></details>
-      <details><summary>Какие языки?</summary><p>25 европейских языков, включая русский и английский. Для одного русского есть отдельная модель, она быстрее и точнее.</p></details>
+      <details><summary>Какие языки?</summary><p>25 европейских языков, включая русский и английский. Если пишете только по-русски, выберите «Только русский»: так ещё быстрее и точнее.</p></details>
       <details><summary>Что будет после 7 дней Pro?</summary><p>Диктовка, словарь и правила текста остаются бесплатными. Расшифровка и Буфер останавливаются, готовые тексты остаются у вас.</p></details>
       <details><summary>Зачем «Специальные возможности»?</summary><p>Через эту службу Android Писарь видит поле ввода, показывает кнопку и вставляет текст. Поля паролей не читает.</p></details>
       <details><summary>Какой нужен телефон?</summary><p>Android 10 и новее, 64-битный процессор.</p></details>
@@ -634,7 +674,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 <section id="blog" class="sec2">
   <div class="wrap">
     <div class="center"><h2>Как писать голосом</h2></div>
-    <div class="grid3"><a class="art" href="/ru/blog/kak-pechatat-golosom-na-android/"><div class="thumb"><span class="mi">keyboard_voice</span></div><h3>Как печатать голосом на Android: 3 способа</h3><p>Голосовой ввод на Android: микрофон в клавиатуре, приложение-блокнот и Писарь. Чем отличаются и что выбрать.</p></a><a class="art" href="/ru/blog/golosovoy-vvod-bez-interneta/"><div class="thumb"><span class="mi">wifi_off</span></div><h3>Голосовой ввод без интернета на Android</h3><p>Как диктовать текст на Android без интернета: распознавание речи прямо на телефоне, 25 языков, голос не уходит в облако.</p></a><a class="art" href="/ru/blog/golosovoe-soobshchenie-v-tekst/"><div class="thumb"><span class="mi">graphic_eq</span></div><h3>Как перевести голосовое сообщение в текст</h3><p>Голосовые сообщения, аудио и видео в текст на Android: поделитесь файлом с Писарем, расшифровка идёт на телефоне, без лимитов.</p><span class="badge">Pro</span></a></div>
+    <div class="grid3"><a class="art" href="/ru/blog/kak-pechatat-golosom-na-android/"><div class="thumb"><span class="mi">keyboard_voice</span></div><h3>Как печатать голосом на Android: 3 способа</h3><p>Голосовой ввод на Android: микрофон в клавиатуре, приложение-блокнот и Писарь. Чем отличаются и что выбрать.</p></a><a class="art" href="/ru/blog/golosovoy-vvod-bez-interneta/"><div class="thumb"><span class="mi">wifi_off</span></div><h3>Голосовой ввод без интернета на Android</h3><p>Как диктовать текст на Android без интернета: распознавание речи прямо на телефоне, 25 языков, голос не уходит в облако.</p></a><a class="art" href="/ru/blog/golosovoe-soobshchenie-v-tekst/"><div class="thumb"><span class="mi">graphic_eq</span></div><h3>Как перевести голосовое сообщение в текст</h3><p>Голосовые сообщения, аудио и видео в текст на Android: поделитесь файлом с Писарем, расшифровка идёт на телефоне, без лимитов.</p><span class="badge pro">Pro</span></a></div>
     <div class="center"><a class="more" href="/ru/blog/">Все статьи →</a></div>
   </div>
 </section>
@@ -648,15 +688,11 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 </div>
 
 <footer>
-  <div class="wrap f">
-    <a class="logo" href="/"><img src="/assets/icon.png" alt="" style="width:24px;height:24px;border-radius:7px">Писарь</a>
-    <a href="/ru/pro/">Писарь Pro</a>
-    <a href="/ru/blog/">Статьи</a>
-    <a href="/ru/privacy/">Политика конфиденциальности</a>
-    <a href="/ru/terms/">Пользовательское соглашение</a>
-    <a href="/en/privacy/">English</a>
-    <span class="spacer"></span>
-    <span>© 2026 Pozdnekov Labs</span>
+  <div class="wrap fcols">
+    <div class="fbrand"><a class="logo" href="/"><img src="/assets/icon.png" alt="" style="width:28px;height:28px;border-radius:8px">Писарь</a><p>Диктовка в любом приложении на Android. Голос остаётся на телефоне.</p><p class="copy">© 2026 Pozdnekov Labs</p></div>
+    <nav><h4>Писарь</h4><a href="/#all">Возможности</a><a href="/ru/pro/">Писарь Pro</a><a href="/ru/blog/">Статьи</a><a href="/#faq">Вопросы</a></nav>
+    <nav><h4>Документы</h4><a href="/ru/privacy/">Политика конфиденциальности</a><a href="/ru/terms/">Пользовательское соглашение</a><a href="/ru/pro/offer/">Оферта</a><a href="/en/privacy/">English</a></nav>
+    <nav><h4>Связь</h4><a href="mailto:poal0208@gmail.com">poal0208@gmail.com</a></nav>
   </div>
 </footer>
 

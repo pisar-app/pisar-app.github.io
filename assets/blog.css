@@ -188,7 +188,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 .mi{font-family:"Material Icons Outlined";font-weight:normal;font-style:normal;font-size:22px;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;font-feature-settings:"liga"}
 .ico .mi{font-size:22px}
 /* иконка в одну строку с заголовком, текст ниже */
-.card:has(>.ico),.fcard:has(>.ico){display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;align-content:start}
+.card:has(>.ico),.fcard:has(>.ico){display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center;align-content:start}
 .card:has(>.ico)>h3,.fcard:has(>.ico)>h3{margin:0;line-height:1.25}
 .card:has(>.ico)>p,.fcard:has(>.ico)>p{grid-column:1/-1;margin-top:12px}
 .plogo{display:inline-block}
@@ -338,6 +338,46 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 @media (max-width:700px){.stage{height:540px}}
 #inmsg2{opacity:0}
 .msgs{padding-bottom:12px!important}
+
+/* 13.11: компактнее */
+section{padding:72px 0}
+.final{padding:80px 0}
+.hero{min-height:0;padding-bottom:4px}
+.stage{margin:40px auto 32px}
+.grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:32px}
+.card{padding:22px}
+.fcard{padding:18px}.fcard.big{padding:22px}
+.show{margin-top:44px;gap:36px}
+.show-v{padding:28px 24px;min-height:240px}
+.card:has(>.pb){display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center;align-content:start}
+.card:has(>.pb)>h3{margin:0;line-height:1.25}
+.card:has(>.pb)>p{grid-column:1/-1;margin-top:12px}
+@media (max-width:900px){.show{margin-top:36px;gap:18px}}
+@media (max-width:700px){section{padding:48px 0}.final{padding:56px 0}.grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:24px}.card{padding:18px}.show-v{padding:18px}.stage{margin:32px auto 24px}}
+/* 13.11: камера ровно по центру */
+.sbar .cam{left:0;right:0;margin:0 auto;top:8px;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle,#2c3c94 0 2px,#0b0d1c 2.8px,#000 6.5px);box-shadow:0 0 0 1.5px #000,0 0 0 2.5px rgba(255,255,255,.12)}
+/* 13.11: Pro оранжевый, как в приложении (ProOrange #F5A524, ProLogo) */
+.badge.pro{background:#F5A524;color:#16161A;border-color:transparent;font-weight:700}
+.prologo{position:relative;display:inline-block;flex:none;width:32px;height:32px}
+.prologo img{display:block;width:100%;height:100%;border-radius:24%;box-shadow:0 0 0 1.5px rgba(255,255,255,.55)}
+.prologo b{position:absolute;right:-22%;bottom:-22%;width:52%;height:52%;border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(18,20,42,.22);color:#16161A;font-weight:900;font-size:5.2px;line-height:1;display:grid;place-items:center;letter-spacing:0}
+.prologo.lg{width:60px;height:60px}.prologo.lg b{font-size:9.6px}
+.prohead{display:flex;justify-content:center;margin-bottom:18px}
+.btn.btnpro{background:#F5A524;color:#16161A;gap:12px}
+.btn.btnpro:hover{background:#FFB23E}
+/* 13.11: подвал по колонкам */
+footer{padding:48px 0 40px;font-size:15px;color:var(--muted)}
+.fcols{display:grid;grid-template-columns:1.5fr 1fr 1.4fr 1fr;gap:32px}
+.fcols h4{margin:0 0 12px;font-size:14px;font-weight:600;color:var(--fg)}
+.fcols nav a{display:block;padding:5px 0;color:var(--muted)}
+.fcols nav a:hover{color:var(--fg)}
+.fbrand .logo{font-size:18px;color:var(--fg)}
+.fbrand p{margin:14px 0 0;font-size:14.5px;max-width:280px;line-height:1.5}
+.fbrand .copy{font-size:13.5px}
+@media (max-width:900px){.fcols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fcols{grid-template-columns:1fr;gap:26px}footer{padding:40px 0 32px}}
+.card:has(>.ico)>*:not(.ico):not(h3),.fcard:has(>.ico)>*:not(.ico):not(h3),.card:has(>.pb)>*:not(.pb):not(h3){grid-column:1/-1}
+@media (max-width:700px){.grid3,.grid4,.grid2,.fgrid{gap:10px}.card,.fcard,.fcard.big{padding:16px}.card:has(>.ico)>p,.fcard:has(>.ico)>p,.card:has(>.pb)>p{margin-top:8px}h2{font-size:28px}.sub{font-size:16px;margin-top:10px}.show{margin-top:32px;gap:14px}.show-t h3{font-size:22px;margin:10px 0 6px}.show-t p{font-size:15.5px}.hero{padding-top:92px}.stage{margin:24px auto 16px}}
 
 /* статьи */
 header{position:absolute}
