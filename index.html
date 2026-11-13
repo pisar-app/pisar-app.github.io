@@ -87,9 +87,20 @@ h1{font-size:clamp(40px,7vw,76px);line-height:1.04;letter-spacing:-.035em;font-w
 
 /* phone demo */
 .stage{position:relative;margin:56px auto 64px;width:340px;height:560px}
-.phone{position:absolute;inset:0 0 auto 0;height:560px;border-radius:44px;background:#0d0d18;padding:12px;box-shadow:0 40px 120px -20px rgba(20,10,80,.55),0 0 0 1px rgba(255,255,255,.12) inset}
-.screen{height:100%;border-radius:34px;background:var(--scr);color:var(--scr-ink);text-align:left;display:flex;flex-direction:column;overflow:hidden}
-.chat-h{padding:22px 18px 12px;font-weight:600;font-size:15px;border-bottom:1px solid var(--scr-line);display:flex;gap:10px;align-items:center}
+.phone{position:absolute;inset:0 0 auto 0;height:560px;border-radius:46px;background:#050507;padding:9px;
+  box-shadow:0 0 0 1.5px #3b3f4f,0 0 0 3px #1a1c25,0 0 0 4px #6b7186,0 40px 120px -20px rgba(20,10,80,.55)}
+.phone:before,.phone:after{content:"";position:absolute;width:4px;border-radius:2px;background:linear-gradient(90deg,#4a4f61,#8a90a6,#4a4f61)}
+.phone:before{right:-7px;top:150px;height:64px}
+.phone:after{left:-7px;top:110px;height:96px;box-shadow:0 0 0 0 transparent}
+.sbar{display:flex;align-items:center;justify-content:space-between;height:30px;padding:0 22px 0 26px;font-size:12.5px;font-weight:600;position:relative;flex:none}
+.sbar .cam{position:absolute;left:50%;top:9px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#050507;box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+.sbar .ic{display:flex;gap:5px;align-items:center}
+.sbar svg{display:block;fill:currentColor}
+.gbar{height:24px;flex:none;display:grid;place-items:center}
+.gbar i{display:block;width:108px;height:4px;border-radius:2px;background:var(--scr-ink);opacity:.35}
+.back{font-size:20px;opacity:.7;margin-right:-2px}
+.screen{height:100%;border-radius:38px;background:var(--scr);color:var(--scr-ink);text-align:left;display:flex;flex-direction:column;overflow:hidden}
+.chat-h{padding:6px 18px 12px 12px;font-weight:600;font-size:15px;border-bottom:1px solid var(--scr-line);display:flex;gap:10px;align-items:center}
 .ava{width:30px;height:30px;border-radius:50%;background:#d8d2ff;display:grid;place-items:center;font-size:13px;color:#4a3bb0}
 .msgs{flex:1;min-height:0;overflow:hidden;padding-bottom:70px;padding:16px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.4}
 .in{align-self:flex-start;background:var(--scr-card);border-radius:16px 16px 16px 4px;padding:9px 12px;max-width:78%;box-shadow:0 1px 1px rgba(0,0,0,.05)}
@@ -379,7 +390,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 
     <div class="stage">
       <div class="phone"><div class="screen">
-        <span class="touch" id="touch"></span><div class="chat-h"><span class="ava">М</span>Мама</div>
+        <span class="touch" id="touch"></span><div class="sbar"><span>12:30</span><span class="cam"></span><span class="ic"><svg width="15" height="11" viewBox="0 0 15 11"><rect x="0" y="7" width="3" height="4" rx=".8"/><rect x="4" y="5" width="3" height="6" rx=".8"/><rect x="8" y="2.5" width="3" height="8.5" rx=".8"/><rect x="12" y="0" width="3" height="11" rx=".8"/></svg><svg width="14" height="11" viewBox="0 0 14 11"><path d="M7 11 0 3.2A10.5 10.5 0 0 1 14 3.2Z"/></svg><svg width="23" height="11" viewBox="0 0 23 11"><rect x=".5" y=".5" width="19" height="10" rx="3" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="13" height="7" rx="1.6"/><rect x="20.6" y="3.5" width="1.6" height="4" rx=".8" opacity=".45"/></svg></span></div><div class="chat-h"><span class="mi back">arrow_back</span><span class="ava">М</span>Мама</div>
         <div class="msgs">
           <div class="in" id="inmsg">Ты во сколько приедешь?</div>
           <div class="out" id="outmsg">Мамуль, уже еду, буду через 20 минут. Поставь чайник, я с пирогом</div>
@@ -399,7 +410,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 <text x="38" y="21" class="pdone">12 слов</text></svg>
 </div>
 <div class="frow"><div class="field"><span class="ph">Сообщение</span><span class="typed">Мамуль, уже еду, буду через 20 минут. Поставь чайник, я с пирогом</span><span class="caret"></span></div><span class="send" id="sendbtn"><span class="mi">send</span></span></div>
-        <div class="spc"></div>
+        <div class="gbar"><i></i></div>
       </div></div>
     </div>
   </div>
