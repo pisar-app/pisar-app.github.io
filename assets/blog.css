@@ -491,8 +491,8 @@ ul.ticks{list-style:none;padding-left:0!important}
 ul.ticks li{position:relative;padding-left:28px}
 ul.ticks li:before{content:"";position:absolute;left:2px;top:.45em;width:14px;height:8px;border-left:2.5px solid var(--ok);border-bottom:2.5px solid var(--ok);transform:rotate(-45deg)}
 .cta{background-origin:border-box}
-.art .thumb{height:150px;overflow:hidden;background:var(--chip)}
-.art .thumb:after{display:none}
+.art .thumb:has(img){height:150px;overflow:hidden;background:var(--chip)}
+.art .thumb:has(img):after{display:none}
 .art .thumb img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
 @media (max-width:700px){.scen{grid-template-columns:1fr}.howto{grid-template-columns:1fr}.howto .appshot{max-width:260px;margin:0 auto}.ahead{padding:104px 0 24px}}
 .related h2{font-size:28px;margin:0}
