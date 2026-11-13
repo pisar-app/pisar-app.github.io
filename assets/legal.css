@@ -26,7 +26,7 @@ header{position:absolute}
 .legal main th{font-weight:600;color:var(--muted);font-size:14px;background:var(--chip)}
 .legal main s{color:var(--muted)}
 .legal.pro main h1{font-size:clamp(36px,6vw,56px)}
-@media (max-width:700px){.legal{padding-top:96px}.legal main{font-size:15.5px}.legal main h2{font-size:20px}}
+@media (max-width:700px){.legal{padding-top:118px}.legal main{font-size:15.5px}.legal main h2{font-size:20px}}
 
 /* 13.11: Pro оранжевый, как в приложении */
 .legal main .price{background:linear-gradient(135deg,#FFC93C,#F5A524 55%,#FF8A00);color:#16161A;border:0}
