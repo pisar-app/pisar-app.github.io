@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pisar-app.ru/sitemap.xml
