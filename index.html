@@ -159,7 +159,11 @@ details[open] summary:after{content:"−"}
 details p{color:var(--muted);margin:10px 0 0}
 
 /* articles */
-.art .soon{display:inline-block;margin-top:10px;font-size:13px;color:var(--muted)}
+.art p{margin:0;color:var(--muted);font-size:15px}
+.art .thumb{display:grid;place-items:center}
+.art .thumb .mi{font-size:44px;color:var(--fg);opacity:.75;position:relative;z-index:1}
+.art .badge{align-self:flex-start}
+.art:hover h3{text-decoration:underline;text-underline-offset:3px}
 .art{display:flex;flex-direction:column;gap:10px}
 .art .thumb{height:140px;border-radius:14px;background:var(--hero);position:relative;overflow:hidden}
 .art .thumb:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 80%,var(--glow),transparent 60%)}
@@ -610,11 +614,8 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 <section id="blog" class="sec2">
   <div class="wrap">
     <div class="center"><h2>Как писать голосом</h2></div>
-    <div class="grid3">
-      <div class="art"><div class="thumb"></div><h3>Как печатать голосом на Android: 3 способа</h3><p style="margin:0;color:var(--muted);font-size:15px">Встроенный ввод, клавиатуры и Писарь: чем отличаются.</p><span class="soon">Скоро</span></div>
-      <div class="art"><div class="thumb"></div><h3>Голосовой ввод без интернета</h3><p style="margin:0;color:var(--muted);font-size:15px">Как распознавание работает прямо на телефоне.</p><span class="soon">Скоро</span></div>
-      <div class="art"><div class="thumb"></div><h3>Как перевести голосовое сообщение в текст</h3><p style="margin:0;color:var(--muted);font-size:15px">Не слушать, а прочитать.</p><span class="soon">Скоро</span></div>
-    </div>
+    <div class="grid3"><a class="art" href="/ru/blog/kak-pechatat-golosom-na-android/"><div class="thumb"><span class="mi">keyboard_voice</span></div><h3>Как печатать голосом на Android: 3 способа</h3><p>Голосовой ввод на Android: микрофон в клавиатуре, приложение-блокнот и Писарь. Чем отличаются и что выбрать.</p></a><a class="art" href="/ru/blog/golosovoy-vvod-bez-interneta/"><div class="thumb"><span class="mi">wifi_off</span></div><h3>Голосовой ввод без интернета на Android</h3><p>Как диктовать текст на Android без интернета: распознавание речи прямо на телефоне, 25 языков, голос не уходит в облако.</p></a><a class="art" href="/ru/blog/golosovoe-soobshchenie-v-tekst/"><div class="thumb"><span class="mi">graphic_eq</span></div><h3>Как перевести голосовое сообщение в текст</h3><p>Голосовые сообщения, аудио и видео в текст на Android: поделитесь файлом с Писарем, расшифровка идёт на телефоне, без лимитов.</p><span class="badge">Pro</span></a></div>
+    <div class="center"><a class="more" href="/ru/blog/">Все статьи →</a></div>
   </div>
 </section>
 
@@ -630,7 +631,7 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
   <div class="wrap f">
     <a class="logo" href="/"><img src="/assets/icon.png" alt="" style="width:24px;height:24px;border-radius:7px">Писарь</a>
     <a href="/ru/pro/">Писарь Pro</a>
-    <a href="#blog">Статьи</a>
+    <a href="/ru/blog/">Статьи</a>
     <a href="/ru/privacy/">Политика конфиденциальности</a>
     <a href="/ru/terms/">Пользовательское соглашение</a>
     <a href="/en/privacy/">English</a>
