@@ -187,6 +187,10 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 
 .mi{font-family:"Material Icons Outlined";font-weight:normal;font-style:normal;font-size:22px;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;font-feature-settings:"liga"}
 .ico .mi{font-size:22px}
+/* иконка в одну строку с заголовком, текст ниже */
+.card:has(>.ico),.fcard:has(>.ico){display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;align-content:start}
+.card:has(>.ico)>h3,.fcard:has(>.ico)>h3{margin:0;line-height:1.25}
+.card:has(>.ico)>p,.fcard:has(>.ico)>p{grid-column:1/-1;margin-top:12px}
 .plogo{display:inline-block}
 .btn .plogo{width:22px;height:22px}
 .store{display:inline-block;height:54px;line-height:0}

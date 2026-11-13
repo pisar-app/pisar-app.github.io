@@ -211,6 +211,10 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 
 .mi{font-family:"Material Icons Outlined";font-weight:normal;font-style:normal;font-size:22px;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;font-feature-settings:"liga"}
 .ico .mi{font-size:22px}
+/* иконка в одну строку с заголовком, текст ниже */
+.card:has(>.ico),.fcard:has(>.ico){display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;align-content:start}
+.card:has(>.ico)>h3,.fcard:has(>.ico)>h3{margin:0;line-height:1.25}
+.card:has(>.ico)>p,.fcard:has(>.ico)>p{grid-column:1/-1;margin-top:12px}
 .plogo{display:inline-block}
 .btn .plogo{width:22px;height:22px}
 .store{display:inline-block;height:54px;line-height:0}
@@ -425,9 +429,9 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
   <div class="wrap">
     <div class="center"><h2>Говорить быстрее, чем печатать</h2></div>
     <div class="grid3">
-      <div class="card"><div class="ico"><span class="mi">wifi_off</span></div><h3>Без интернета</h3><p>Модель скачивается один раз. Дальше Писарь пишет в метро, в самолёте и за городом.</p></div>
-      <div class="card"><div class="ico"><span class="mi">text_fields</span></div><h3>В любом поле</h3><p>Мессенджер, почта, заметки, поиск. Текст встаёт туда, где курсор. Клавиатура остаётся вашей.</p></div>
-      <div class="card"><div class="ico"><span class="mi">money_off</span></div><h3>Без подписки и рекламы</h3><p>Диктовка бесплатно навсегда. Pro покупается один раз за 399 ₽.</p></div>
+      <div class="card"><div class="ico"><span class="mi">lock</span></div><h3>Голос остаётся у вас</h3><p>Речь распознаётся прямо на телефоне. Звук и текст никуда не отправляются.</p></div>
+      <div class="card"><div class="ico"><span class="mi">text_fields</span></div><h3>В любом приложении</h3><p>Мессенджер, почта, заметки, поиск: текст встаёт туда, где курсор. Клавиатуру менять не нужно.</p></div>
+      <div class="card"><div class="ico"><span class="mi">money_off</span></div><h3>Бесплатно и без рекламы</h3><p>Диктовка бесплатна навсегда, без подписки. Pro покупается один раз за 399 ₽.</p></div>
     </div>
   </div>
 </section>
