@@ -389,6 +389,48 @@ nav.menu a.on{font-weight:600}
   .hero{padding-top:118px}
 }
 
+/* 14.11: ещё компактнее */
+section{padding:56px 0}
+.final{padding:64px 0}
+h2{font-size:clamp(28px,3.6vw,40px)}
+.sub{margin-top:10px}
+.grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:24px}
+.fgrid{grid-template-columns:repeat(4,1fr);gap:12px}
+.fcard{padding:16px}
+.fcard:has(>.ico)>p{margin-top:8px}
+.fcard p{font-size:14px}
+.card{padding:20px}
+.show{margin-top:32px;gap:28px}
+.show-v{padding:22px 20px;min-height:0}
+.show-t h3{font-size:26px}
+.said .row{padding-top:12px;padding-bottom:12px}
+.art .thumb{height:96px}
+.faq details{padding:14px 4px}
+@media (max-width:900px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){
+  section{padding:36px 0}
+  .final{padding:44px 0}
+  h2{font-size:26px}
+  .grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:18px}
+  .grid3,.grid4,.grid2{gap:8px}
+  .card{padding:14px 16px}
+  .card:has(>.ico)>p,.card:has(>.pb)>p{margin-top:6px;font-size:14.5px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:8px}
+  .fcard{padding:12px}
+  .fcard:has(>.ico){column-gap:8px}
+  .fcard:has(>.ico)>h3{font-size:15px}
+  .fcard:has(>.ico)>p{margin-top:6px;font-size:13px;line-height:1.4}
+  .fcard .ico{width:28px;height:28px;border-radius:9px}.fcard .ico .mi{font-size:17px}
+  .show{margin-top:24px;gap:10px}
+  .show-t h3{font-size:21px}
+  .show-t p{font-size:15px}
+  .show-v{padding:14px}
+  .art .thumb{display:none}
+  .grid3 .art{padding:2px 0 10px;border-bottom:1px solid var(--line)}
+  .said .row{padding:10px 12px}
+  .stage{margin:20px auto 8px}
+}
+
 /* статьи */
 header{position:absolute}
 .post{padding:112px 0 80px}

@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://pisar-app.ru/">
 <meta property="og:image" content="https://pisar-app.ru/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Писарь", "operatingSystem": "Android 10+", "applicationCategory": "UtilitiesApplication", "description": "Писарь: диктовка в любом поле Android. Распознаёт речь прямо на телефоне, без интернета. Бесплатно, без рекламы и аккаунта.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Это клавиатура?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Ваша клавиатура остаётся прежней, Писарь добавляет кнопку P у поля ввода."}}, {"@type": "Question", "name": "Какие языки?", "acceptedAnswer": {"@type": "Answer", "text": "25 европейских языков, включая русский и английский. Если пишете только по-русски, выберите «Только русский»: так ещё быстрее и точнее."}}, {"@type": "Question", "name": "Что будет после 7 дней Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Диктовка, словарь и правила текста остаются бесплатными. Расшифровка и Буфер останавливаются, готовые тексты остаются у вас."}}, {"@type": "Question", "name": "Зачем «Специальные возможности»?", "acceptedAnswer": {"@type": "Answer", "text": "Через эту службу Android Писарь видит поле ввода, показывает кнопку и вставляет текст. Поля паролей не читает."}}, {"@type": "Question", "name": "Какой нужен телефон?", "acceptedAnswer": {"@type": "Answer", "text": "Android 10 и новее, 64-битный процессор."}}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Писарь", "operatingSystem": "Android 10+", "applicationCategory": "UtilitiesApplication", "description": "Писарь: диктовка в любом поле Android. Распознаёт речь прямо на телефоне, без интернета. Бесплатно, без рекламы и аккаунта.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Это клавиатура?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Ваша клавиатура остаётся прежней, Писарь добавляет кнопку P у поля ввода."}}, {"@type": "Question", "name": "Какие языки?", "acceptedAnswer": {"@type": "Answer", "text": "25 европейских языков, включая русский и английский. Если пишете только по-русски, выберите «Только русский»: так ещё быстрее и точнее."}}, {"@type": "Question", "name": "Что будет после 7 дней Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Диктовка, словарь и правила текста остаются бесплатными. Расшифровка и Буфер останавливаются, готовые тексты остаются у вас."}}, {"@type": "Question", "name": "Зачем «Специальные возможности»?", "acceptedAnswer": {"@type": "Answer", "text": "Через эту службу Android Писарь видит поле ввода, показывает кнопку и вставляет текст. Поля паролей не читает."}}, {"@type": "Question", "name": "Что уходит в сеть?", "acceptedAnswer": {"@type": "Answer", "text": "Звук, тексты, имена файлов и программ не уходят. Интернет нужен, только чтобы один раз скачать язык, расшифровать файл по ссылке и оплатить Pro. Анонимную статистику сбоев можно выключить в настройках."}}, {"@type": "Question", "name": "Какие есть ограничения?", "acceptedAnswer": {"@type": "Answer", "text": "Иногда ошибается: в шуме, при быстрой речи, в редких словах, словарь помогает. Языки занимают место на телефоне. Часовая запись расшифровывается несколько минут. На старых телефонах медленнее."}}, {"@type": "Question", "name": "Какой нужен телефон?", "acceptedAnswer": {"@type": "Answer", "text": "Android 10 и новее, 64-битный процессор."}}]}]</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -412,6 +412,48 @@ nav.menu a.on{font-weight:600}
   nav.menu::-webkit-scrollbar{display:none}
   .hero{padding-top:118px}
 }
+
+/* 14.11: ещё компактнее */
+section{padding:56px 0}
+.final{padding:64px 0}
+h2{font-size:clamp(28px,3.6vw,40px)}
+.sub{margin-top:10px}
+.grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:24px}
+.fgrid{grid-template-columns:repeat(4,1fr);gap:12px}
+.fcard{padding:16px}
+.fcard:has(>.ico)>p{margin-top:8px}
+.fcard p{font-size:14px}
+.card{padding:20px}
+.show{margin-top:32px;gap:28px}
+.show-v{padding:22px 20px;min-height:0}
+.show-t h3{font-size:26px}
+.said .row{padding-top:12px;padding-bottom:12px}
+.art .thumb{height:96px}
+.faq details{padding:14px 4px}
+@media (max-width:900px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){
+  section{padding:36px 0}
+  .final{padding:44px 0}
+  h2{font-size:26px}
+  .grid3,.grid4,.grid2,.fgrid,.said,.pro{margin-top:18px}
+  .grid3,.grid4,.grid2{gap:8px}
+  .card{padding:14px 16px}
+  .card:has(>.ico)>p,.card:has(>.pb)>p{margin-top:6px;font-size:14.5px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:8px}
+  .fcard{padding:12px}
+  .fcard:has(>.ico){column-gap:8px}
+  .fcard:has(>.ico)>h3{font-size:15px}
+  .fcard:has(>.ico)>p{margin-top:6px;font-size:13px;line-height:1.4}
+  .fcard .ico{width:28px;height:28px;border-radius:9px}.fcard .ico .mi{font-size:17px}
+  .show{margin-top:24px;gap:10px}
+  .show-t h3{font-size:21px}
+  .show-t p{font-size:15px}
+  .show-v{padding:14px}
+  .art .thumb{display:none}
+  .grid3 .art{padding:2px 0 10px;border-bottom:1px solid var(--line)}
+  .said .row{padding:10px 12px}
+  .stage{margin:20px auto 8px}
+}
 </style>
 <script>
 (function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(new URLSearchParams(location.search).get('b')==='2')document.documentElement.setAttribute('data-b','2');})();
@@ -510,24 +552,11 @@ nav.menu a.on{font-weight:600}
   </div>
 </section>
 
-<section class="sec2">
-  <div class="wrap">
-    <div class="center"><h2>Когда печатать неудобно</h2></div>
-    <div class="grid4">
-      <div class="card"><div class="ico"><span class="mi">pan_tool</span></div><h3>Руки заняты</h3><p>В дороге, на кухне, на прогулке.</p></div>
-      <div class="card"><div class="ico"><span class="mi">notes</span></div><h3>Длинные сообщения</h3><p>Длинное письмо или подробный ответ проще наговорить, чем набрать.</p></div>
-      <div class="card"><div class="ico"><span class="mi">keyboard</span></div><h3>Трудно печатать</h3><p>Мелкие клавиши, уставшие руки, слабое зрение: просто скажите.</p></div>
-      <div class="card"><div class="ico"><span class="mi">work_outline</span></div><h3>По работе</h3><p>Имена клиентов и термины один раз в словарь, дальше пишутся верно.</p></div>
-    </div>
-  </div>
-</section>
-
 <section id="all" class="sec2">
   <div class="wrap">
     <div class="center"><h2>Всё, что умеет Писарь</h2><p class="sub">Бесплатно навсегда. Без рекламы, без аккаунта, без лимитов на диктовку.</p></div>
     <div class="fgrid">
-      <div class="fcard big"><div class="ico"><span class="mi">keyboard_voice</span></div><h3>Диктовка в любом приложении</h3><p>Кнопка P у любого поля: мессенджер, почта, заметки, поиск. Коснитесь и говорите или зажмите и держите. Текст встаёт туда, где курсор.</p></div>
-      <div class="fcard big"><div class="ico"><span class="mi">wifi_off</span></div><h3>Понимает 25 языков</h3><p>Русский особенно точно. Язык Писарь определит сам.</p></div>
+      <div class="fcard"><div class="ico"><span class="mi">translate</span></div><h3>Понимает 25 языков</h3><p>Русский особенно точно. Язык Писарь определит сам.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">text_fields</span></div><h3>Грамотно сразу</h3><p>Знаки, заглавные, числа цифрами, вопросительный знак у вопроса.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">auto_fix_high</span></div><h3>Без «ну» и «короче»</h3><p>Убирает слова-паразиты, повторы и оговорки. По желанию.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">menu_book</span></div><h3>Имена пишутся верно</h3><p>Добавьте имена и термины один раз, дальше они пишутся правильно.</p></div>
@@ -539,7 +568,6 @@ nav.menu a.on{font-weight:600}
       <div class="fcard"><div class="ico"><span class="mi">visibility_off</span></div><h3>Кнопка не мешает</h3><p>Передвиньте, уменьшите, сделайте прозрачнее или скройте на время.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">block</span></div><h3>Без мата</h3><p>Писарь уберёт ругательства, по желанию.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">ios_share</span></div><h3>Любая запись найдётся</h3><p>Поиск по всем записям, выгрузка в файл.</p></div>
-      <div class="fcard"><div class="ico"><span class="mi">language</span></div><h3>11 языков интерфейса</h3><p>И никакого аккаунта.</p></div>
     </div>
   </div>
 </section>
@@ -600,15 +628,6 @@ nav.menu a.on{font-weight:600}
         </div>
       </div>
     </div>
-
-    <div class="show">
-      <div class="show-t"><span class="badge pro">Pro</span><h3>Записи не пропадут</h3><p>Бесплатно хранятся день, с Pro неделю, месяц или всегда.</p></div>
-      <div class="show-v">
-        <div class="mock">
-          <div class="seg"><span>1 день</span><span>Неделя</span><span>Месяц</span><span class="on">Всегда</span></div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -644,38 +663,16 @@ nav.menu a.on{font-weight:600}
   </div>
 </section>
 
-<section class="sec2">
-  <div class="wrap">
-    <div class="grid2" style="margin-top:0">
-      <div class="card">
-        <div class="ico"><span class="mi">lock</span></div>
-        <h3 style="font-size:24px">Что уходит в сеть</h3>
-        <p><b style="color:var(--fg)">Не уходят:</b> звук, тексты, имена файлов и программ.</p>
-        <p style="margin-top:10px"><b style="color:var(--fg)">Интернет нужен,</b> только чтобы один раз скачать язык, расшифровать файл по ссылке и оплатить Pro.</p>
-        <p style="margin-top:10px">Анонимную статистику сбоев можно выключить в настройках.</p>
-      </div>
-      <div class="card">
-        <div class="ico"><span class="mi">info</span></div>
-        <h3 style="font-size:24px">Об ограничениях</h3>
-        <ul class="list plain" style="margin-top:6px">
-          <li>Иногда ошибается: в шуме, при быстрой речи, в редких словах. Словарь помогает.</li>
-          <li>Языки занимают место на телефоне.</li>
-          <li>Часовая запись расшифровывается несколько минут.</li>
-          <li>На старых телефонах медленнее.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="faq">
   <div class="wrap">
     <div class="center"><h2>Частые вопросы</h2></div>
     <div class="faq">
-      <details open><summary>Это клавиатура?</summary><p>Нет. Ваша клавиатура остаётся прежней, Писарь добавляет кнопку P у поля ввода.</p></details>
+      <details><summary>Это клавиатура?</summary><p>Нет. Ваша клавиатура остаётся прежней, Писарь добавляет кнопку P у поля ввода.</p></details>
       <details><summary>Какие языки?</summary><p>25 европейских языков, включая русский и английский. Если пишете только по-русски, выберите «Только русский»: так ещё быстрее и точнее.</p></details>
       <details><summary>Что будет после 7 дней Pro?</summary><p>Диктовка, словарь и правила текста остаются бесплатными. Расшифровка и Буфер останавливаются, готовые тексты остаются у вас.</p></details>
       <details><summary>Зачем «Специальные возможности»?</summary><p>Через эту службу Android Писарь видит поле ввода, показывает кнопку и вставляет текст. Поля паролей не читает.</p></details>
+      <details><summary>Что уходит в сеть?</summary><p>Звук, тексты, имена файлов и программ не уходят. Интернет нужен, только чтобы один раз скачать язык, расшифровать файл по ссылке и оплатить Pro. Анонимную статистику сбоев можно выключить в настройках.</p></details>
+      <details><summary>Какие есть ограничения?</summary><p>Иногда ошибается: в шуме, при быстрой речи, в редких словах, словарь помогает. Языки занимают место на телефоне. Часовая запись расшифровывается несколько минут. На старых телефонах медленнее.</p></details>
       <details><summary>Какой нужен телефон?</summary><p>Android 10 и новее, 64-битный процессор.</p></details>
     </div>
   </div>
