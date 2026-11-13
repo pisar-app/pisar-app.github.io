@@ -454,6 +454,12 @@ h2{font-size:clamp(28px,3.6vw,40px)}
   .said .row{padding:10px 12px}
   .stage{margin:20px auto 8px}
 }
+/* 14.11: тёмная тема светлее; градиент не заходит под рамку (полоса сверху) */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10132b; --bg2:#161a38; --card:#1a1e3d; --chip:rgba(255,255,255,.08); --line:rgba(255,255,255,.12);
+  --hero:linear-gradient(180deg,#10132b 0%,#171c4a 30%,#2e2c80 55%,#6a54b0 78%,#b896d4 100%);}}
+:root[data-theme="dark"]{--bg:#10132b; --bg2:#161a38; --card:#1a1e3d; --chip:rgba(255,255,255,.08); --line:rgba(255,255,255,.12);
+  --hero:linear-gradient(180deg,#10132b 0%,#171c4a 30%,#2e2c80 55%,#6a54b0 78%,#b896d4 100%);}
+.price,.final,.hero,.cta,.show-v,.art .thumb,.ahead,.legal main .price{background-origin:border-box}
 </style>
 <script>
 (function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(new URLSearchParams(location.search).get('b')==='2')document.documentElement.setAttribute('data-b','2');})();
