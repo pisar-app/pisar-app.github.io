@@ -1,3 +1,4 @@
+# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .
 # Генератор статей Писаря: /ru/blog/<slug>/ и /ru/blog/. python3 blog.py <site_root>
 import sys, os, json, re, html
 ROOT = sys.argv[1]
