@@ -1,37 +1,212 @@
 [
  {
-  "slug": "tekst-so-skrinshota",
-  "title": "Как скопировать текст со скриншота или фото",
-  "url": "https://pisar-app.ru/ru/blog/tekst-so-skrinshota/",
-  "date": "2026-11-13",
-  "pro": true
- },
- {
-  "slug": "kak-pechatat-golosom-na-android",
-  "title": "Как печатать голосом на Android: 3 способа",
-  "url": "https://pisar-app.ru/ru/blog/kak-pechatat-golosom-na-android/",
-  "date": "2026-11-13",
+  "slug": "xiaomi-propala-knopka",
+  "title": "Xiaomi, Huawei, OPPO, vivo: пропала кнопка диктовки",
+  "url": "https://pisar-app.ru/ru/blog/xiaomi-propala-knopka/",
+  "date": "2026-11-14",
   "pro": false
  },
  {
+  "slug": "tekst-so-skrinshota",
+  "title": "Текст со скриншота или фото",
+  "url": "https://pisar-app.ru/ru/blog/tekst-so-skrinshota/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "spisok-pokupok-golosom",
+  "title": "Список покупок, пока руки в муке",
+  "url": "https://pisar-app.ru/ru/blog/spisok-pokupok-golosom/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "slovar-i-bystrye-frazy",
+  "title": "Словарь и быстрые фразы: имена, названия и адрес одним словом",
+  "url": "https://pisar-app.ru/ru/blog/slovar-i-bystrye-frazy/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "slayd-v-tekst",
+  "title": "Слайд или доска с лекции в текст",
+  "url": "https://pisar-app.ru/ru/blog/slayd-v-tekst/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "rasshifrovka-po-ssylke",
+  "title": "Расшифровка по ссылке: Яндекс Диск, Google Диск, Dropbox, подкаст",
+  "url": "https://pisar-app.ru/ru/blog/rasshifrovka-po-ssylke/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "pravila-teksta-i-chistka-rechi",
+  "title": "Правила текста и чистка речи: знаки, цифры и никаких «ну, короче»",
+  "url": "https://pisar-app.ru/ru/blog/pravila-teksta-i-chistka-rechi/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "poisk-po-golosovym",
+  "title": "Что говорили в голосовых неделю назад",
+  "url": "https://pisar-app.ru/ru/blog/poisk-po-golosovym/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "pismo-inostrancu",
+  "title": "Письмо иностранцу, говоря по-русски",
+  "url": "https://pisar-app.ru/ru/blog/pismo-inostrancu/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "perevod-pri-diktovke",
+  "title": "Перевод при диктовке: говорите по-русски, вставляется на другом языке",
+  "url": "https://pisar-app.ru/ru/blog/perevod-pri-diktovke/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "otvety-pokupatelyam",
+  "title": "Ответы покупателям пачкой",
+  "url": "https://pisar-app.ru/ru/blog/otvety-pokupatelyam/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "otvet-v-telegram-na-parkovke",
+  "title": "Длинный ответ в Telegram, пока стоите на парковке",
+  "url": "https://pisar-app.ru/ru/blog/otvet-v-telegram-na-parkovke/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "otchet-klientu-s-obekta",
+  "title": "Отчёт клиенту прямо с объекта",
+  "url": "https://pisar-app.ru/ru/blog/otchet-klientu-s-obekta/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "odnoy-rukoy-s-kolyaskoy",
+  "title": "С коляской: ответить в чат одной рукой",
+  "url": "https://pisar-app.ru/ru/blog/odnoy-rukoy-s-kolyaskoy/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "nomer-zakaza-so-skrinshota",
+  "title": "Номер заказа и реквизиты со скриншота",
+  "url": "https://pisar-app.ru/ru/blog/nomer-zakaza-so-skrinshota/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "lekciya-v-konspekt",
+  "title": "Лекция или вебинар с Яндекс Диска в конспект",
+  "url": "https://pisar-app.ru/ru/blog/lekciya-v-konspekt/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "knopka-diktovki-nastroyka",
+  "title": "Кнопка диктовки под себя: размер, место, скрыть, плитка в шторке",
+  "url": "https://pisar-app.ru/ru/blog/knopka-diktovki-nastroyka/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "kak-pechatat-golosom-na-android",
+  "title": "Диктовка в любом поле: как печатать голосом на Android",
+  "url": "https://pisar-app.ru/ru/blog/kak-pechatat-golosom-na-android/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "itogi-vstrechi",
+  "title": "Итоги встречи, пока не забыли",
+  "url": "https://pisar-app.ru/ru/blog/itogi-vstrechi/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "istoriya-diktovok",
+  "title": "История диктовок: найти, скопировать, выгрузить в файл",
+  "url": "https://pisar-app.ru/ru/blog/istoriya-diktovok/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "hranenie-zapisey",
+  "title": "Хранение: сколько живут диктовки, расшифровки и Буфер",
+  "url": "https://pisar-app.ru/ru/blog/hranenie-zapisey/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
   "slug": "golosovoy-vvod-dlya-pozhilyh",
-  "title": "Телефон пожилому родителю: как писать голосом",
+  "title": "Телефон для мамы: голосовой ввод за 10 минут",
   "url": "https://pisar-app.ru/ru/blog/golosovoy-vvod-dlya-pozhilyh/",
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "pro": false
  },
  {
   "slug": "golosovoy-vvod-bez-interneta",
-  "title": "Голосовой ввод без интернета на Android",
+  "title": "Распознавание без интернета: «Только русский» или «Все языки»",
   "url": "https://pisar-app.ru/ru/blog/golosovoy-vvod-bez-interneta/",
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "pro": false
  },
  {
   "slug": "golosovoe-soobshchenie-v-tekst",
-  "title": "Как перевести голосовое сообщение в текст",
+  "title": "Голосовые, аудио и видео в текст",
   "url": "https://pisar-app.ru/ru/blog/golosovoe-soobshchenie-v-tekst/",
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "pro": true
+ },
+ {
+  "slug": "golosovoe-na-soveshchanii",
+  "title": "Голосовое от начальника, а вы на совещании",
+  "url": "https://pisar-app.ru/ru/blog/golosovoe-na-soveshchanii/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "dlinnyy-post-golosom",
+  "title": "Длинный пост в VK или канал голосом",
+  "url": "https://pisar-app.ru/ru/blog/dlinnyy-post-golosom/",
+  "date": "2026-11-14",
+  "pro": false
+ },
+ {
+  "slug": "chto-vhodit-v-pisar-pro",
+  "title": "Что входит в Писарь Pro и что остаётся бесплатным",
+  "url": "https://pisar-app.ru/ru/blog/chto-vhodit-v-pisar-pro/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "bumazhnyy-dokument-v-tekst",
+  "title": "Бумажный документ без перепечатки",
+  "url": "https://pisar-app.ru/ru/blog/bumazhnyy-dokument-v-tekst/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "bufer-obmena",
+  "title": "Буфер: всё, что вы копировали, в одном месте",
+  "url": "https://pisar-app.ru/ru/blog/bufer-obmena/",
+  "date": "2026-11-14",
+  "pro": true
+ },
+ {
+  "slug": "bez-slov-parazitov",
+  "title": "Голосом без «ну, короче» и оговорок",
+  "url": "https://pisar-app.ru/ru/blog/bez-slov-parazitov/",
+  "date": "2026-11-14",
+  "pro": false
  }
 ]

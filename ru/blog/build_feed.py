@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Лента блога: ru/blog/feed.json (для приложения) и ru/blog/rss.xml (для Telegram-ботов).
+"""Лента блога: ru/blog/feed.json (для приложения), ru/blog/rss.xml (для Telegram-ботов)\nи ru/blog/telegram/<slug>.md (анонс для поста: заголовок, 1–2 предложения, ссылка; превью подтянет og.png).
 
 Запуск из корня сайта после любой правки статей:  python3 ru/blog/build_feed.py
-Источник — сами статьи ru/blog/<slug>/index.html:
-  title — <h1>, date — "datePublished" из JSON-LD, description — <meta name="description">,
-  pro — карточка статьи в ru/blog/index.html содержит метку class="badge pro".
+Источник: сами статьи ru/blog/<slug>/index.html:
+  title: <h1>, date: "datePublished" из JSON-LD, description: <meta name="description">,
+  pro: карточка статьи в ru/blog/index.html содержит метку class="badge pro".
 Формат описан в ru/blog/README.md.
 """
 import html
@@ -66,4 +66,9 @@ if __name__ == "__main__":
     feed = [{k: a[k] for k in ("slug", "title", "url", "date", "pro")} for a in items]
     (BLOG / "feed.json").write_text(json.dumps(feed, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (BLOG / "rss.xml").write_text(rss(items), encoding="utf-8")
-    print(f"feed.json и rss.xml: {len(items)} статей")
+    tg = BLOG / "telegram"
+    tg.mkdir(exist_ok=True)
+    for a in items:
+        lock = " (Pro)" if a["pro"] else ""
+        (tg / f"{a['slug']}.md").write_text(f"**{a['title']}**{lock}\n\n{a['description']}\n\n👉 {a['url']}\n", encoding="utf-8")
+    print(f"feed.json, rss.xml и telegram/*.md: {len(items)} статей")

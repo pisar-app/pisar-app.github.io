@@ -72,176 +72,44 @@ ul.ticks li:before{content:"";position:absolute;left:2px;top:.45em;width:14px;he
 .art .thumb{display:grid;place-items:center}
 .art .thumb .mi{font-size:44px;color:var(--fg);opacity:.75;position:relative;z-index:1}
 .art .badge{align-self:flex-start}
+.badge.pro{margin:0 6px 0 0;vertical-align:.12em}
+.badge .mi{font-size:13px;margin-right:3px;vertical-align:-2px}
+.bnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.bnav a{padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:600}
+.bsec{margin:40px 0 0;scroll-margin-top:90px}
+.bsec>h2{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.bsec>p{color:var(--muted);margin:0 0 18px}
+.list.grid3 .art h3{font-size:19px;margin:6px 0 0;letter-spacing:-.01em;line-height:1.25}
+article a:not(.art){color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.ex-out.said{margin-top:10px!important;opacity:.75;font-style:italic}
+.note{background:var(--chip);border-left:3px solid #F5A524;border-radius:10px;padding:12px 14px;margin:8px 0 18px;font-size:16px}
+.pm{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 18px}
+.pm>div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.pm h3{font-size:16px;margin:0 0 6px}
+.pm ul{margin:0;padding-left:20px;font-size:16px}
+@media (max-width:700px){.pm{grid-template-columns:1fr}}
 .art:hover h2,.art:hover h3{text-decoration:underline;text-underline-offset:3px}
 .list.grid3 .art h2{font-size:20px;margin:6px 0 0;letter-spacing:-.01em;line-height:1.25}
 @media (max-width:700px){.cta{flex-direction:column;text-align:center}.post{padding-top:118px}article{font-size:16.5px}article h2{font-size:22px}}
 '''
 
-ARTS = [
- dict(slug='kak-pechatat-golosom-na-android', cover='slovar', icon='keyboard_voice',
-  title='Как печатать голосом на Android: 3 способа',
-  desc='Голосовой ввод на Android: микрофон в клавиатуре, приложение-блокнот и Писарь. Чем отличаются и что выбрать.',
-  lead='Говорить быстрее и удобнее, чем попадать по маленьким клавишам. На Android для этого есть три пути, и они заметно отличаются.',
-  body='''
-<h2>Способ 1. Микрофон в клавиатуре</h2>
-<p>Значок микрофона есть почти в каждой клавиатуре. Ничего не нужно ставить: коснулись, сказали, текст появился.</p>
-<ul><li>Во многих клавиатурах речь распознаётся через интернет: в метро и за городом ввод не работает.</li>
-<li>Знаки препинания и заглавные буквы ставятся не всегда.</li>
-<li>Своих слов, имён и терминов клавиатура не знает.</li></ul>
+# Обложки og.png и thumb.webp: python3 ru/blog/_src/covers.py . (до этого скрипта).
+# Тексты статей — ru/blog/_src/{free,pro,scen}.py (ведёт чат «Блог»), шаблон и стили — здесь.
+SECTIONS = [('free', 'Бесплатные функции', 'Как устроена диктовка и всё, что работает без покупки.'),
+            ('pro', 'Писарь Pro', 'Голосовые и скриншоты в текст, Буфер, перевод: 399 ₽ один раз.'),
+            ('scen', 'Сценарии', 'Живые ситуации: что нажать и что получится.')]
+ARTS = []
+for _sec, _t, _d in SECTIONS:
+    _ns = {'ROOT': ROOT}
+    exec(open(os.path.join(ROOT, 'ru', 'blog', '_src', '_lib.py'), encoding='utf-8').read(), _ns)
+    exec(open(os.path.join(ROOT, 'ru', 'blog', '_src', _sec + '.py'), encoding='utf-8').read(), _ns)
+    for _a in _ns['ARTS']:
+        _a['sec'] = _sec
+        ARTS.append(_a)
+BY = {a['slug']: a for a in ARTS}
+PRO_TAG = '<span class="badge pro"><span class="mi">lock</span>Pro</span>'
 
-<h2>Способ 2. Приложение-блокнот</h2>
-<p>Отдельное приложение для заметок голосом: надиктовали, скопировали, перешли в мессенджер, вставили. Подходит для длинных заметок, но каждый раз это лишние шаги.</p>
-
-<h2>Способ 3. Писарь: кнопка у любого поля</h2>
-<p>Поставьте курсор в любое поле: мессенджер, почта, заметки, поиск. Рядом появится кнопка P. Коснитесь и говорите или зажмите и держите, пока говорите. Текст встанет туда, где курсор.</p>
-<ul><li>Распознавание идёт на телефоне, без интернета. Звук и текст не уходят с телефона.</li>
-<li>Знаки, заглавные и числа цифрами Писарь ставит сам: «двадцать пять задач» станет «25 задач».</li>
-<li>Свой словарь без лимита: как писать имена и термины.</li>
-<li>Клавиатура остаётся прежней: Писарь не клавиатура, а кнопка рядом с полем.</li></ul>
-
-<h2>Как начать с Писарем</h2>
-<ol><li><b>Установите</b> Писарь из RuStore. Аккаунт не нужен.</li>
-<li><b>Выберите язык</b> один раз: «Только русский» или «Все языки».</li>
-<li><b>Дайте разрешения:</b> микрофон и «Специальные возможности». Через эту службу Писарь видит поле ввода, показывает кнопку и вставляет текст. Поля паролей он не читает.</li>
-<li><b>Коснитесь P</b> у любого поля и говорите.</li></ol>
-
-<h2>Чтобы текст получался чище</h2>
-<ul><li>Говорите целыми фразами, без долгих пауз посреди мысли.</li>
-<li>Включите чистку речи: Писарь уберёт «ну», «короче», повторы и оговорки.</li>
-<li>Добавьте в словарь имена и термины, которые часто пишете.</li>
-<li>Заведите быстрые фразы: говорите «мой адрес», вставляется полный адрес.</li></ul>
-'''),
- dict(slug='golosovoy-vvod-bez-interneta', cover='rasp', icon='wifi_off',
-  title='Голосовой ввод без интернета на Android',
-  desc='Как диктовать текст на Android без интернета: распознавание речи прямо на телефоне, 25 языков, голос не уходит в облако.',
-  lead='Обычный голосовой ввод отправляет запись на сервер и ждёт ответа. Писарь распознаёт речь прямо на телефоне: связь не нужна, а голос остаётся у вас.',
-  body='''
-<h2>Когда это важно</h2>
-<ul><li>В метро, в самолёте, за городом, где связь пропадает.</li>
-<li>Когда мобильный интернет медленный или закончился.</li>
-<li>Когда не хочется, чтобы голос и тексты уходили в чужое облако.</li></ul>
-
-<h2>Как это устроено</h2>
-<p>Язык скачивается на телефон один раз. Дальше Писарь работает без сети: звук обрабатывает сам телефон, и текст сразу встаёт в поле.</p>
-<table class="t"><thead><tr><th>Язык</th><th>Для чего</th></tr></thead><tbody>
-<tr><td>Только русский</td><td>Быстрее и точнее на русском</td></tr>
-<tr><td>Все языки</td><td>25 европейских языков, язык Писарь определит сам</td></tr></tbody></table>
-<p>Что входит в «Все языки»: русский, английский, украинский, немецкий, французский, испанский, итальянский, португальский, польский, нидерландский, чешский, словацкий, болгарский, хорватский, словенский, румынский, венгерский, греческий, шведский, датский, финский, эстонский, латышский, литовский, мальтийский.</p>
-
-<h2>Как включить</h2>
-<ol><li>Откройте Писарь: Настройки → Распознавание.</li>
-<li>Скачайте «Только русский» или «Все языки». Лучше по Wi-Fi: Писарь спросит, если вы в мобильной сети.</li>
-<li>Готово: кнопка P у любого поля работает и без интернета.</li></ol>
-
-<h2>Что всё же уходит в сеть</h2>
-<p>Звук, тексты, имена файлов и программ не уходят. Интернет нужен, только чтобы один раз скачать язык, расшифровать файл по ссылке и оплатить Pro. Анонимную статистику сбоев можно выключить: Настройки → Помощь и связь → О программе.</p>
-
-<h2>Честно об ограничениях</h2>
-<ul class="plain"><li>Иногда ошибается: в шуме, при быстрой речи, в редких словах. Словарь помогает.</li>
-<li>Языки занимают место на телефоне.</li>
-<li>На старых телефонах распознавание медленнее.</li>
-<li>Нужен Android 10 и новее, 64-битный процессор.</li></ul>
-'''),
- dict(slug='golosovoe-soobshchenie-v-tekst', cover='rassh', icon='graphic_eq', pro=True,
-  title='Как перевести голосовое сообщение в текст',
-  desc='Голосовые сообщения, аудио и видео в текст на Android: поделитесь файлом с Писарем, расшифровка идёт на телефоне, без лимитов.',
-  lead='Длинное голосовое неудобно слушать в транспорте или на встрече. Его можно не слушать, а прочитать.',
-  body='''
-<h2>Когда это выручает</h2>
-<div class="scen">
-<div class="sc"><span class="mi">directions_bus</span><b>В транспорте без наушников</b><p>Голосовое пришло, а слушать негде. Открыли текст и прочитали.</p></div>
-<div class="sc"><span class="mi">groups</span><b>На встрече</b><p>Звук не включишь, а ответить надо. Текст можно пробежать глазами.</p></div>
-<div class="sc"><span class="mi">search</span><b>Найти адрес или время</b><p>Длинное голосовое не надо переслушивать: нужное место видно в тексте.</p></div>
-</div>
-
-<h2>Как перевести голосовое в текст</h2>
-<div class="howto">
-<ol class="steps">
-<li><b>Зажмите голосовое</b> в Telegram или WhatsApp.</li>
-<li><b>Нажмите «Поделиться»</b> и выберите Писарь.</li>
-<li><b>Откройте вкладку «Расшифровка»</b>: голосовое уже там текстом. Его можно скопировать или найти по слову.</li>
-</ol>
-<figure class="appshot"><img src="/assets/shots/rassh.webp" alt="Вкладка «Расшифровка» в Писаре: голосовое и видео уже текстом"><figcaption>Вкладка «Расшифровка» в Писаре</figcaption></figure>
-</div>
-
-<h2>Как это выглядит</h2>
-<div class="ex">
-<div class="ex-in"><span class="mi">mic_none</span><div><b>Голосовое · 1:24</b><small>Telegram</small></div></div>
-<div class="ex-arr"><span class="mi">south</span></div>
-<p class="ex-out">Привет! По поводу субботы: собираемся в два у метро, Лёша берёт машину, с тебя мангал и уголь…</p>
-</div>
-
-<h2>Что ещё можно расшифровать</h2>
-<ul class="ticks">
-<li><b>Видео</b> с телефона или из соцсетей, тоже через «Поделиться».</li>
-<li><b>Аудиозапись</b>: выберите файл прямо в Писаре.</li>
-<li><b>Ссылку</b> на Google Диск, Яндекс Диск, Dropbox или подкаст.</li>
-</ul>
-<p>Длинные записи расшифровываются в фоне, ход видно в уведомлении. Распознавание идёт на самом телефоне: голосовые не уходят на чужие серверы.</p>
-
-<h2>Сколько стоит</h2>
-<div class="howto">
-<div>
-<p>Расшифровка входит в <b>Писарь Pro</b>: 399 ₽ один раз, без подписки. Первые 7 дней бесплатно, лимитов на длину и количество файлов нет.</p>
-<p>Если после пробных дней Pro не покупать, готовые тексты останутся у вас, а диктовка, словарь и правила текста продолжат работать бесплатно.</p>
-</div>
-<figure class="appshot"><img src="/assets/shots/pro.webp" alt="Экран «Писарь Pro» в приложении"><figcaption>Экран Pro в приложении</figcaption></figure>
-</div>
-'''),
- dict(slug='tekst-so-skrinshota', cover='bufer', icon='image', pro=True,
-  title='Как скопировать текст со скриншота или фото',
-  desc='Как достать текст из картинки на Android: поделитесь скриншотом или фото с Писарем, текст распознается на телефоне.',
-  lead='Номер заказа на скриншоте, адрес на фото вывески, текст в приложении, где он не выделяется. Перепечатывать его вручную не нужно.',
-  body='''
-<h2>Когда пригодится</h2>
-<ul><li>Текст в приложении не выделяется и не копируется.</li>
-<li>Прислали скриншот с номером заказа, адресом или реквизитами.</li>
-<li>Нужно переписать объявление, расписание или страницу книги с фото.</li></ul>
-
-<h2>Как это сделать</h2>
-<ol><li>Сделайте скриншот или откройте фото в галерее.</li>
-<li>Нажмите «Поделиться» и выберите Писарь.</li>
-<li>Текст с картинки появится во вкладке «Расшифровка». Скопируйте его целиком или нужный кусок.</li></ol>
-
-<h2>Без интернета</h2>
-<p>Текст распознаётся на телефоне. Картинка никуда не отправляется, поэтому так можно разбирать и личные документы.</p>
-
-<h2>Сколько стоит</h2>
-<p>Текст со скриншотов и фото входит в Писарь Pro: 399 ₽ один раз, без подписки. Первые 7 дней Pro бесплатно. В Pro также расшифровка голосовых, Буфер со всем скопированным и перевод при диктовке.</p>
-'''),
- dict(slug='golosovoy-vvod-dlya-pozhilyh', cover='dikt2', icon='elderly',
-  title='Телефон пожилому родителю: как писать голосом',
-  desc='Как настроить голосовой ввод на Android для пожилых родителей: кнопка у любого поля, без рекламы и аккаунта, работает без интернета.',
-  lead='Мелкие клавиши, слабое зрение, уставшие руки: родителям часто трудно набирать сообщения. Проще сказать, а телефон напишет.',
-  body='''
-<h2>Почему голосом проще</h2>
-<ul><li>Не нужно попадать по маленьким буквам.</li>
-<li>Знаки препинания и заглавные Писарь ставит сам.</li>
-<li>Одна и та же кнопка P у любого поля: в мессенджере, в почте, в поиске.</li></ul>
-
-<h2>Настройте вместе за один раз</h2>
-<ol><li>Установите Писарь из RuStore. Аккаунт не нужен.</li>
-<li>Выберите язык «Только русский» и скачайте его, лучше по Wi-Fi.</li>
-<li>Дайте разрешения: микрофон и «Специальные возможности». Писарь объяснит, зачем каждое.</li>
-<li>Покажите кнопку P: коснуться и говорить или зажать и держать, пока говоришь. Можно выбрать то, что удобнее.</li>
-<li>Если кнопка мешает, её можно передвинуть или сделать прозрачнее.</li></ol>
-
-<h2>Чего не будет</h2>
-<ul class="plain"><li>Рекламы: её в Писаре нет совсем.</li>
-<li>Подписок: диктовка бесплатна навсегда.</li>
-<li>Аккаунтов и паролей: ничего не нужно заводить.</li></ul>
-
-<h2>Если кнопка пропадает</h2>
-<p>На некоторых телефонах, например Xiaomi, система сама выключает фоновые программы. Откройте в Писаре Настройки → Разрешения и включите автозапуск, работу батареи без ограничений и всплывающие окна в фоне.</p>
-
-<h2>Полезные мелочи</h2>
-<ul><li>Музыка и видео приглушаются, пока человек говорит.</li>
-<li>Быстрые фразы: сказать «мой адрес», и вставится полный адрес.</li>
-<li>Писарь работает без интернета, в том числе на даче.</li></ul>
-'''),
-]
-
-def page(title, desc, canon, body, ld, extra_css=''):
+def page(title, desc, canon, body, ld, extra_css='', og=None):
     return f'''<!doctype html>
 <html lang="ru">
 <head>
@@ -257,7 +125,13 @@ def page(title, desc, canon, body, ld, extra_css=''):
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:url" content="{canon}">
-<meta property="og:image" content="{SITE}/assets/og.png">
+<meta property="og:image" content="{og or SITE + '/assets/og.png'}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="{html.escape(title)}">
+<meta name="twitter:description" content="{html.escape(desc)}">
+<meta name="twitter:image" content="{og or SITE + '/assets/og.png'}">
+{extra_css}
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -297,15 +171,19 @@ def page(title, desc, canon, body, ld, extra_css=''):
 STORE = '<a class="store" aria-label="Скоро в RuStore"><img class="only-light" src="/assets/rustore-color-dark.svg" alt="Скачайте из RuStore"><img class="only-dark" src="/assets/rustore-color-light.svg" alt="Скачайте из RuStore"></a>'
 
 def card(a, h='h3'):
-    tag = '<span class="badge pro">Pro</span>' if a.get('pro') else ''
-    return f'<a class="art" href="/ru/blog/{a["slug"]}/"><div class="thumb"><img src="/assets/shots/{a["cover"]}.webp" alt="" style="object-position:center {a.get("pos","8%")}"></div><{h}>{a["title"]}</{h}><p>{a["desc"]}</p>{tag}</a>'
+    tag = PRO_TAG if a.get('pro') else ''
+    return f'<a class="art" href="/ru/blog/{a["slug"]}/"><div class="thumb"><img src="/ru/blog/{a["slug"]}/thumb.webp" alt="" loading="lazy" style="object-position:center"></div><{h}>{tag}{a["title"]}</{h}><p>{a["desc"]}</p></a>'
 
 for a in ARTS:
     canon = f'{SITE}/ru/blog/{a["slug"]}/'
-    others = [o for o in ARTS if o is not a][:3]
+    _rel = [x for x in a.get('rel', []) if x in BY and x != a['slug']]
+    _rel += [o['slug'] for o in ARTS if o is not a and o['sec'] == a['sec']]
+    others = [BY[x] for x in dict.fromkeys(_rel)][:3]
     cta_sub = 'Писарь Pro: 399 ₽ один раз, первые 7 дней бесплатно.' if a.get('pro') else 'Диктовка бесплатно навсегда. Без рекламы и аккаунта.'
     read = max(2, round(len(re.sub('<[^>]+>', '', a["body"]).split()) / 160))
-    tag = '<span class="badge pro">Pro</span>' if a.get('pro') else '<span class="badge">Бесплатно</span>'
+    tag = PRO_TAG if a.get('pro') else '<span class="badge">Бесплатно</span>'
+    date = a.get('date', DATE)
+    og = f'{SITE}/ru/blog/{a["slug"]}/og.png'
     body = f'''<main class="post">
   <section class="ahead">
     <div class="wrap narrow">
@@ -328,8 +206,8 @@ for a in ARTS:
   </section>
 </main>'''
     ld = [{"@context": "https://schema.org", "@type": "Article", "headline": a["title"], "description": a["desc"],
-           "datePublished": DATE, "dateModified": DATE, "inLanguage": "ru", "mainEntityOfPage": canon,
-           "image": f"{SITE}/assets/og.png",
+           "datePublished": date, "dateModified": date, "inLanguage": "ru", "mainEntityOfPage": canon,
+           "image": og,
            "author": {"@type": "Organization", "name": "Pozdnekov Labs"},
            "publisher": {"@type": "Organization", "name": "Pozdnekov Labs", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/icon.png"}}},
           {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -337,7 +215,7 @@ for a in ARTS:
               {"@type": "ListItem", "position": 2, "name": "Статьи", "item": f"{SITE}/ru/blog/"},
               {"@type": "ListItem", "position": 3, "name": a["title"], "item": canon}]}]
     d = os.path.join(ROOT, 'ru', 'blog', a['slug']); os.makedirs(d, exist_ok=True)
-    open(os.path.join(d, 'index.html'), 'w').write(page(a['title'] + ' | Писарь', a['desc'], canon, body, ld))
+    open(os.path.join(d, 'index.html'), 'w').write(page(a.get('seo', a['title']) + ' | Писарь', a['desc'], canon, body, ld, og=og))
 
 open(os.path.join(ROOT, 'assets', 'blog.css'), 'w').write(BASE_CSS + EXTRA_CSS)
 # список статей
@@ -345,10 +223,11 @@ body = f'''<main class="post">
   <section class="ahead"><div class="wrap">
     <nav class="crumbs"><a href="/">Писарь</a><span>/</span><span>Статьи</span></nav>
     <h1>Как писать голосом</h1>
-    <p class="lead">Короткие инструкции: голосовой ввод на Android, диктовка без интернета, голосовые и скриншоты в текст.</p>
+    <p class="lead">Как пользоваться каждой функцией Писаря, честно о плюсах и минусах, и живые сценарии: что нажать и что получится.</p>
+    <nav class="bnav"><a href="#free">Бесплатные функции</a><a href="#pro">Писарь Pro</a><a href="#scen">Сценарии</a></nav>
   </div></section>
   <div class="wrap">
-    <div class="grid3 list">{"".join(card(a, 'h2') for a in ARTS)}</div>
+    {"".join(f'<section class="bsec" id="{k}"><h2>{t}</h2><p>{d}</p><div class="grid3 list">' + "".join(card(a, 'h3') for a in ARTS if a['sec'] == k) + '</div></section>' for k, t, d in SECTIONS)}
   </div>
 </main>'''
 ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Статьи Писаря", "url": f"{SITE}/ru/blog/",
@@ -357,16 +236,19 @@ os.makedirs(os.path.join(ROOT, 'ru', 'blog'), exist_ok=True)
 open(os.path.join(ROOT, 'ru', 'blog', 'index.html'), 'w').write(page('Статьи: как писать голосом | Писарь', 'Инструкции по голосовому вводу на Android: диктовка без интернета, голосовые и скриншоты в текст, телефон для пожилых.', f'{SITE}/ru/blog/', body, ld))
 
 # карточки для главной
-open(os.path.join(os.path.dirname(__file__), 'home_cards.html'), 'w').write(''.join(card(a) for a in ARTS[:3]))
+open(os.path.join(os.path.dirname(__file__), 'home_cards.html'), 'w').write(''.join(card(a) for a in ([a for a in ARTS if a.get('home')] or ARTS)[:3]))
 # sitemap
-urls = [('/', '1.0'), ('/ru/blog/', '0.7')] + [(f'/ru/blog/{a["slug"]}/', '0.7') for a in ARTS] + [('/ru/pro/', '0.8'), ('/ru/privacy/', '0.3'), ('/ru/terms/', '0.3')]
-open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{DATE}</lastmod><priority>{p}</priority></url>\n' for u, p in urls) + '</urlset>\n')
+LAST = max([DATE] + [a.get('date', DATE) for a in ARTS])
+urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('date', DATE)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE)]
+open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{m}</lastmod><priority>{p}</priority></url>\n' for u, p, m in urls) + '</urlset>\n')
 # проверка текстов
 for dp, _, fs in os.walk(os.path.join(ROOT, 'ru', 'blog')):
-    for f in fs:
+    for f in [x for x in fs if x.endswith((".html", ".py", ".md", ".json", ".xml"))]:
         t = open(os.path.join(dp, f)).read()
         assert '—' not in t, (dp, 'long dash')
         assert 'GitHub' not in t and 'гитхаб' not in t.lower(), dp
         assert not re.search(r'\d+\s*секунд', t), dp
         assert 'МБ' not in t, (dp, 'megabytes')
+import subprocess
+subprocess.run([sys.executable, os.path.join(ROOT, 'ru', 'blog', 'build_feed.py')], check=True)
 print('ok', len(ARTS))

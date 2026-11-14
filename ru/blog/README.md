@@ -4,9 +4,9 @@
 
 После любой правки статей из корня сайта: `python3 ru/blog/build_feed.py`. Скрипт пересобирает два файла.
 
-### `ru/blog/feed.json` — для приложения
+### `ru/blog/feed.json`: для приложения
 
-https://pisar-app.ru/ru/blog/feed.json — массив, новые статьи сверху (по `date`, затем по `slug`).
+https://pisar-app.ru/ru/blog/feed.json: массив, новые статьи сверху (по `date`, затем по `slug`).
 
 | Поле | Тип | Что это |
 |---|---|---|
@@ -23,6 +23,19 @@ https://pisar-app.ru/ru/blog/feed.json — массив, новые статьи
 
 Поля только добавляются, старые не переименовываются и не удаляются.
 
-### `ru/blog/rss.xml` — RSS 2.0 для Telegram-ботов
+### `ru/blog/rss.xml`: RSS 2.0 для Telegram-ботов
 
-https://pisar-app.ru/ru/blog/rss.xml — `title`, `link`, `guid`, `pubDate`, `description` (из `<meta name="description">`).
+https://pisar-app.ru/ru/blog/rss.xml: `title`, `link`, `guid`, `pubDate`, `description` (из `<meta name="description">`).
+
+## Статьи
+
+Тексты: `ru/blog/_src/free.py` (бесплатные функции), `pro.py` (Писарь Pro), `scen.py` (сценарии); помощники разметки в `_lib.py`. Шаблон, стили, шапка и подвал: `tools/blog.py`, `tools/footer.py`, `tools/nav.py` (чат «Сайт»).
+
+Сборка из корня сайта, по порядку:
+
+1. `python3 ru/blog/_src/covers.py .`: обложки `ru/blog/<slug>/og.png` (1200×630, превью ссылки) и `thumb.webp` (карточка).
+2. `python3 tools/blog.py .`: страницы, `assets/blog.css`, `sitemap.xml`; в конце сам вызывает `build_feed.py`.
+3. `python3 tools/footer.py .`
+4. `python3 tools/nav.py .`
+
+`ru/blog/telegram/<slug>.md`: анонс для поста в Telegram (заголовок, 1–2 предложения, ссылка). Картинку Telegram подтянет из og.png.

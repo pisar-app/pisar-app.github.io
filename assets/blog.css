@@ -436,6 +436,29 @@ h2{font-size:clamp(28px,3.6vw,40px)}
 :root[data-theme="dark"]{--bg:#10132b; --bg2:#161a38; --card:#1a1e3d; --chip:rgba(255,255,255,.08); --line:rgba(255,255,255,.12);
   --hero:linear-gradient(180deg,#10132b 0%,#171c4a 30%,#2e2c80 55%,#6a54b0 78%,#b896d4 100%);}
 .price,.final,.hero,.cta,.show-v,.art .thumb,.ahead,.legal main .price{background-origin:border-box}
+/* 14.11: как в приложении. Фон #0f1226; цена спокойно (ProUi «399 ₽ · 499 ₽ цена на старте»); ProLogo пропорционально; метки как ProChip */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1226}}
+:root[data-theme="dark"]{--bg:#0f1226}
+.price{background:var(--card)!important;border:1px solid var(--line);box-shadow:none}
+.price:before,.price:after{display:none!important}
+.pr-row{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.pr-name{display:block;font-size:18px}.pr-sub{display:block;color:var(--muted);font-size:14px}
+.price .big{font-size:48px;font-weight:800;letter-spacing:-.03em;line-height:1;margin:0;color:var(--fg)}
+.price .was{margin:8px 0 0;color:var(--muted);font-size:15px}
+.price .was s{opacity:.85}
+.prologo{width:32px;height:32px}
+.prologo img{border-radius:23.8%;box-shadow:0 0 0 1.5px var(--line)}
+.prologo b{right:-13%;bottom:-13%;width:52%;height:52%;min-width:15px;min-height:15px;font-size:5.2px;box-shadow:0 0 0 1px rgba(18,20,42,.22)}
+.prologo.lg{width:56px;height:56px}.prologo.lg b{font-size:9px}
+.prohead .prologo.lg{width:60px;height:60px}.prohead .prologo.lg b{font-size:9.7px}
+.badge.pro{display:inline-flex;align-items:center;gap:3px;border-radius:6px;padding:3px 7px;font-size:12px;line-height:14px;font-weight:700;background:#F5A524;color:#16161A;border:0}
+.badge.pro .mi{font-size:11px;line-height:1;color:#16161A}
+h3>.badge.pro{vertical-align:2px;line-height:14px;margin-right:6px;font-size:11.5px;padding:2px 6px;letter-spacing:0}
+.badge.pro .mi{display:block;width:11px;height:11px;overflow:hidden}
+h3>.badge.pro{display:inline-block;height:20px;box-sizing:border-box;line-height:14px;vertical-align:3px}
+h3>.badge.pro .mi{display:inline-block;vertical-align:-1px;margin-right:3px}
+.badge.pro{margin-top:0}
+h3>.badge.pro{margin:0 6px 0 0}
 
 /* статьи */
 header{position:absolute}
@@ -501,6 +524,22 @@ ul.ticks li:before{content:"";position:absolute;left:2px;top:.45em;width:14px;he
 .art .thumb{display:grid;place-items:center}
 .art .thumb .mi{font-size:44px;color:var(--fg);opacity:.75;position:relative;z-index:1}
 .art .badge{align-self:flex-start}
+.badge.pro{margin:0 6px 0 0;vertical-align:.12em}
+.badge .mi{font-size:13px;margin-right:3px;vertical-align:-2px}
+.bnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.bnav a{padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:600}
+.bsec{margin:40px 0 0;scroll-margin-top:90px}
+.bsec>h2{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.bsec>p{color:var(--muted);margin:0 0 18px}
+.list.grid3 .art h3{font-size:19px;margin:6px 0 0;letter-spacing:-.01em;line-height:1.25}
+article a:not(.art){color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.ex-out.said{margin-top:10px!important;opacity:.75;font-style:italic}
+.note{background:var(--chip);border-left:3px solid #F5A524;border-radius:10px;padding:12px 14px;margin:8px 0 18px;font-size:16px}
+.pm{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 18px}
+.pm>div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.pm h3{font-size:16px;margin:0 0 6px}
+.pm ul{margin:0;padding-left:20px;font-size:16px}
+@media (max-width:700px){.pm{grid-template-columns:1fr}}
 .art:hover h2,.art:hover h3{text-decoration:underline;text-underline-offset:3px}
 .list.grid3 .art h2{font-size:20px;margin:6px 0 0;letter-spacing:-.01em;line-height:1.25}
 @media (max-width:700px){.cta{flex-direction:column;text-align:center}.post{padding-top:118px}article{font-size:16.5px}article h2{font-size:22px}}
