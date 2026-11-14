@@ -169,7 +169,7 @@ def page(title, desc, canon, body, ld, extra_css='', og=None):
 </html>
 '''
 
-STORE = '<a class="store" aria-label="Скоро в RuStore"><img class="only-light" src="/assets/rustore-color-dark.svg" alt="Скачайте из RuStore"><img class="only-dark" src="/assets/rustore-color-light.svg" alt="Скачайте из RuStore"></a>'
+STORE = '<a class="store" href="https://www.rustore.ru/catalog/app/com.pisar.android" target="_blank" rel="noopener" aria-label="Скачать в RuStore"><img class="only-light" src="/assets/rustore-color-dark.svg" alt="Скачайте из RuStore"><img class="only-dark" src="/assets/rustore-color-light.svg" alt="Скачайте из RuStore"></a>'
 
 def card(a, h='h3'):
     tag = PRO_TAG if a.get('pro') else ''
@@ -199,7 +199,7 @@ for a in ARTS:
     <div class="cta">
       <span class="pb"><svg class="plogo"><use href="#plogo"/></svg></span>
       <div class="cta-t"><b>Писарь: диктовка без интернета</b><span>{cta_sub}</span></div>
-      <div class="cta-b">{STORE}<small>Скоро в RuStore</small></div>
+      <div class="cta-b">{STORE}<small>Бесплатно, без рекламы</small></div>
     </div>
   </div>
   <section class="related">
