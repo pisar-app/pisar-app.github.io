@@ -454,6 +454,35 @@ h2{font-size:clamp(28px,3.6vw,40px)}
   .said .row{padding:10px 12px}
   .stage{margin:20px auto 8px}
 }
+/* 14.11: тёмная тема светлее; градиент не заходит под рамку (полоса сверху) */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10132b; --bg2:#161a38; --card:#1a1e3d; --chip:rgba(255,255,255,.08); --line:rgba(255,255,255,.12);
+  --hero:linear-gradient(180deg,#10132b 0%,#171c4a 30%,#2e2c80 55%,#6a54b0 78%,#b896d4 100%);}}
+:root[data-theme="dark"]{--bg:#10132b; --bg2:#161a38; --card:#1a1e3d; --chip:rgba(255,255,255,.08); --line:rgba(255,255,255,.12);
+  --hero:linear-gradient(180deg,#10132b 0%,#171c4a 30%,#2e2c80 55%,#6a54b0 78%,#b896d4 100%);}
+.price,.final,.hero,.cta,.show-v,.art .thumb,.ahead,.legal main .price{background-origin:border-box}
+/* 14.11: как в приложении. Фон #0f1226; цена спокойно (ProUi «399 ₽ · 499 ₽ цена на старте»); ProLogo пропорционально; метки как ProChip */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1226}}
+:root[data-theme="dark"]{--bg:#0f1226}
+.price{background:var(--card)!important;border:1px solid var(--line);box-shadow:none}
+.price:before,.price:after{display:none!important}
+.pr-row{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.pr-name{display:block;font-size:18px}.pr-sub{display:block;color:var(--muted);font-size:14px}
+.price .big{font-size:48px;font-weight:800;letter-spacing:-.03em;line-height:1;margin:0;color:var(--fg)}
+.price .was{margin:8px 0 0;color:var(--muted);font-size:15px}
+.price .was s{opacity:.85}
+.prologo{width:32px;height:32px}
+.prologo img{border-radius:23.8%;box-shadow:0 0 0 1.5px var(--line)}
+.prologo b{right:-13%;bottom:-13%;width:52%;height:52%;min-width:15px;min-height:15px;font-size:5.2px;box-shadow:0 0 0 1px rgba(18,20,42,.22)}
+.prologo.lg{width:56px;height:56px}.prologo.lg b{font-size:9px}
+.prohead .prologo.lg{width:60px;height:60px}.prohead .prologo.lg b{font-size:9.7px}
+.badge.pro{display:inline-flex;align-items:center;gap:3px;border-radius:6px;padding:3px 7px;font-size:12px;line-height:14px;font-weight:700;background:#F5A524;color:#16161A;border:0}
+.badge.pro .mi{font-size:11px;line-height:1;color:#16161A}
+h3>.badge.pro{vertical-align:2px;line-height:14px;margin-right:6px;font-size:11.5px;padding:2px 6px;letter-spacing:0}
+.badge.pro .mi{display:block;width:11px;height:11px;overflow:hidden}
+h3>.badge.pro{display:inline-block;height:20px;box-sizing:border-box;line-height:14px;vertical-align:3px}
+h3>.badge.pro .mi{display:inline-block;vertical-align:-1px;margin-right:3px}
+.badge.pro{margin-top:0}
+h3>.badge.pro{margin:0 6px 0 0}
 </style>
 <script>
 (function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(new URLSearchParams(location.search).get('b')==='2')document.documentElement.setAttribute('data-b','2');})();
@@ -577,7 +606,7 @@ h2{font-size:clamp(28px,3.6vw,40px)}
     <div class="center"><div class="prohead"><span class="prologo lg"><img src="/assets/icon.png" alt=""><b>PRO</b></span></div><h2>Писарь Pro: больше, чем диктовка</h2><p class="sub">Когда нужно больше, чем диктовка. 399 ₽ один раз, первые 7 дней бесплатно.</p></div>
 
     <div class="show">
-      <div class="show-t"><span class="badge pro">Pro</span><h3>Голосовые можно прочитать, а не слушать</h3><p>Голосовое, видео или подкаст станут текстом. Поделитесь файлом или ссылкой, расшифровка идёт в фоне, без лимитов.</p></div>
+      <div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Голосовые можно прочитать, а не слушать</h3><p>Голосовое, видео или подкаст станут текстом. Поделитесь файлом или ссылкой, расшифровка идёт в фоне, без лимитов.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="mrow"><span class="mi">mic_none</span><div><b>Голосовое</b><small>сегодня, 0:42</small></div></div>
@@ -590,7 +619,7 @@ h2{font-size:clamp(28px,3.6vw,40px)}
     </div>
 
     <div class="show rev">
-      <div class="show-t"><span class="badge pro">Pro</span><h3>Текст с картинки без перепечатывания</h3><p>Номер заказа на скриншоте, адрес на фото: Писарь достанет текст.</p></div>
+      <div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Текст с картинки без перепечатывания</h3><p>Номер заказа на скриншоте, адрес на фото: Писарь достанет текст.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="shot"><div class="shot-l"><i style="width:80%"></i><i style="width:65%"></i><i style="width:72%"></i></div><span class="mi shot-i">image</span></div>
@@ -601,7 +630,7 @@ h2{font-size:clamp(28px,3.6vw,40px)}
     </div>
 
     <div class="show">
-      <div class="show-t"><span class="badge pro">Pro</span><h3>Скопированное не потеряется</h3><p>Всё, что копировали, в одном месте: найти, закрепить, вставить снова. Пароли и коды не запоминаются.</p></div>
+      <div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Скопированное не потеряется</h3><p>Всё, что копировали, в одном месте: найти, закрепить, вставить снова. Пароли и коды не запоминаются.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="mhead">Закреплено</div>
@@ -614,7 +643,7 @@ h2{font-size:clamp(28px,3.6vw,40px)}
     </div>
 
     <div class="show rev">
-      <div class="show-t"><span class="badge pro">Pro</span><h3>Говорите по-русски, пишите на другом языке</h3><p>Скажите по-русски, вставится на английском или ещё на 23 языках. Без интернета.</p></div>
+      <div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Говорите по-русски, пишите на другом языке</h3><p>Скажите по-русски, вставится на английском или ещё на 23 языках. Без интернета.</p></div>
       <div class="show-v">
         <div class="mock center-m">
           <svg class="tbar" width="176" height="32" viewBox="0 0 176 32"><rect x=".5" y=".5" width="175" height="31" rx="15.5" class="pbg"/>
@@ -643,7 +672,7 @@ h2{font-size:clamp(28px,3.6vw,40px)}
           <li>Словарь, правила текста, чистка речи</li>
           <li>Записи хранятся 1 день</li>
         </ul>
-        <span class="badge pro" style="margin-top:22px">Pro, 399 ₽ один раз</span>
+        <span class="badge pro" style="margin-top:22px"><span class="mi">lock</span>Pro, 399 ₽ один раз</span>
         <ul class="list">
           <li>Всё бесплатное</li>
           <li>Голосовые и видео в текст</li>
@@ -654,10 +683,11 @@ h2{font-size:clamp(28px,3.6vw,40px)}
 
       </div>
       <div class="price">
-        <span class="badge pro" style="align-self:flex-start">Цена на старте</span>
-        <div class="big">399 ₽<span class="old">499 ₽</span></div>
-        <p style="margin:14px 0 0;color:var(--muted)">Разовый платёж, навсегда. Карта или СБП. Первые 7 дней Pro бесплатно.</p>
-        <a class="btn btnpro" style="margin-top:28px" href="/ru/pro/"><span class="prologo"><img src="/assets/icon.png" alt=""><b>PRO</b></span>Подробнее о Pro</a>
+        <div class="pr-row"><span class="prologo lg"><img src="/assets/icon.png" alt=""><b>PRO</b></span><div><b class="pr-name">Писарь Pro</b><span class="pr-sub">Один раз, без подписки</span></div></div>
+        <div class="big">399 ₽</div>
+        <p class="was"><s>499 ₽</s> · цена на старте</p>
+        <p style="margin:12px 0 0;color:var(--muted)">Разовый платёж, навсегда. Карта или СБП. Первые 7 дней Pro бесплатно.</p>
+        <a class="btn btnpro" style="margin-top:22px" href="/ru/pro/">Подробнее о Pro</a>
       </div>
     </div>
   </div>
@@ -681,7 +711,7 @@ h2{font-size:clamp(28px,3.6vw,40px)}
 <section id="blog" class="sec2">
   <div class="wrap">
     <div class="center"><h2>Как писать голосом</h2></div>
-    <div class="grid3"><a class="art" href="/ru/blog/kak-pechatat-golosom-na-android/"><div class="thumb"><span class="mi">keyboard_voice</span></div><h3>Как печатать голосом на Android: 3 способа</h3><p>Голосовой ввод на Android: микрофон в клавиатуре, приложение-блокнот и Писарь. Чем отличаются и что выбрать.</p></a><a class="art" href="/ru/blog/golosovoy-vvod-bez-interneta/"><div class="thumb"><span class="mi">wifi_off</span></div><h3>Голосовой ввод без интернета на Android</h3><p>Как диктовать текст на Android без интернета: распознавание речи прямо на телефоне, 25 языков, голос не уходит в облако.</p></a><a class="art" href="/ru/blog/golosovoe-soobshchenie-v-tekst/"><div class="thumb"><span class="mi">graphic_eq</span></div><h3>Как перевести голосовое сообщение в текст</h3><p>Голосовые сообщения, аудио и видео в текст на Android: поделитесь файлом с Писарем, расшифровка идёт на телефоне, без лимитов.</p><span class="badge pro">Pro</span></a></div>
+    <div class="grid3"><a class="art" href="/ru/blog/kak-pechatat-golosom-na-android/"><div class="thumb"><span class="mi">keyboard_voice</span></div><h3>Как печатать голосом на Android: 3 способа</h3><p>Голосовой ввод на Android: микрофон в клавиатуре, приложение-блокнот и Писарь. Чем отличаются и что выбрать.</p></a><a class="art" href="/ru/blog/golosovoy-vvod-bez-interneta/"><div class="thumb"><span class="mi">wifi_off</span></div><h3>Голосовой ввод без интернета на Android</h3><p>Как диктовать текст на Android без интернета: распознавание речи прямо на телефоне, 25 языков, голос не уходит в облако.</p></a><a class="art" href="/ru/blog/golosovoe-soobshchenie-v-tekst/"><div class="thumb"><span class="mi">graphic_eq</span></div><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Как перевести голосовое сообщение в текст</h3><p>Голосовые сообщения, аудио и видео в текст на Android: поделитесь файлом с Писарем, расшифровка идёт на телефоне, без лимитов.</p></a></div>
     <div class="center"><a class="more" href="/ru/blog/">Все статьи →</a></div>
   </div>
 </section>
