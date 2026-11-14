@@ -28,6 +28,7 @@ article b{font-weight:600}
 .t{border-collapse:collapse;width:100%;margin:8px 0 18px;font-size:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:table}
 .t th,.t td{padding:12px 14px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
 .t th{font-size:13px;font-weight:600;color:var(--muted);border-top:0;background:var(--chip)}
+@media(max-width:520px){.t{font-size:14px}.t th,.t td{padding:10px 8px;overflow-wrap:anywhere}}
 .cta{display:flex;align-items:center;gap:18px;margin-top:48px;padding:24px;border-radius:22px;background:var(--hero);border:1px solid var(--line)}
 .cta .pb{width:56px;height:56px;border-radius:16.8px}
 .cta-t{flex:1;display:flex;flex-direction:column;gap:4px}
