@@ -1,4 +1,4 @@
-# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .
+# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .  4) python3 tools/geo.py .
 # Новый подвал по колонкам на все страницы, кроме главной (её подвал ставит round2.py). python3 footer.py <site_root>
 import sys, os, re, glob
 ROOT = sys.argv[1]

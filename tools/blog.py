@@ -1,4 +1,4 @@
-# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .
+# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .  4) python3 tools/geo.py .
 # Генератор статей Писаря: /ru/blog/<slug>/ и /ru/blog/. python3 blog.py <site_root>
 import sys, os, json, re, html
 ROOT = sys.argv[1]
@@ -209,8 +209,9 @@ for a in ARTS:
     ld = [{"@context": "https://schema.org", "@type": "Article", "headline": a["title"], "description": a["desc"],
            "datePublished": date, "dateModified": date, "inLanguage": "ru", "mainEntityOfPage": canon,
            "image": og,
-           "author": {"@type": "Organization", "name": "Pozdnekov Labs"},
-           "publisher": {"@type": "Organization", "name": "Pozdnekov Labs", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/icon.png"}}},
+           "author": {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Pozdnekov Labs", "url": f"{SITE}/"},
+           "publisher": {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Pozdnekov Labs", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/icon.png"}},
+           "about": {"@id": f"{SITE}/#app"}, "isPartOf": {"@id": f"{SITE}/#website"}},
           {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
               {"@type": "ListItem", "position": 1, "name": "Писарь", "item": f"{SITE}/"},
               {"@type": "ListItem", "position": 2, "name": "Статьи", "item": f"{SITE}/ru/blog/"},
@@ -240,7 +241,7 @@ open(os.path.join(ROOT, 'ru', 'blog', 'index.html'), 'w').write(page('Стать
 open(os.path.join(os.path.dirname(__file__), 'home_cards.html'), 'w').write(''.join(card(a) for a in ([a for a in ARTS if a.get('home')] or ARTS)[:3]))
 # sitemap
 LAST = max([DATE] + [a.get('date', DATE) for a in ARTS])
-urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('date', DATE)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE)]
+urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('date', DATE)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE), ('/en/privacy/', '0.3', DATE), ('/en/terms/', '0.3', DATE)]
 open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{m}</lastmod><priority>{p}</priority></url>\n' for u, p, m in urls) + '</urlset>\n')
 # проверка текстов
 for dp, _, fs in os.walk(os.path.join(ROOT, 'ru', 'blog')):
