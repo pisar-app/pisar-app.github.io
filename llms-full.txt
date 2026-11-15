@@ -9,7 +9,7 @@
 - Языки распознавания: 25 европейских, русский особенно точно; можно выбрать «Только русский» (быстрее и точнее).
 - Текст сразу чистый: знаки препинания, заглавные, числа цифрами, «?» у вопроса; по желанию убирает слова-паразиты, повторы, оговорки и мат.
 - Бесплатно навсегда: диктовка без лимитов, без рекламы и без аккаунта. Записи хранятся 1 день.
-- Писарь Pro, 399 ₽ один раз (без подписки, первые 7 дней бесплатно): голосовые, аудио и видео в текст (файл или ссылка), текст со скриншотов и фото, Буфер скопированного с поиском, перевод при диктовке на 24 языка, хранение записей неделю, месяц или всегда. Оплата картой или СБП, возврат в течение 14 дней.
+- Писарь Pro, 399 ₽ один раз (без подписки, первые 7 дней бесплатно): голосовые, аудио и видео в текст (файл или ссылка), текст со скриншотов и фото, Буфер скопированного с поиском, перевод при диктовке на 23 языка, хранение записей неделю, месяц или всегда. Оплата картой или СБП, возврат в течение 14 дней.
 - Требования: Android 10 и новее, 64-битный процессор. Нужно разрешение «Специальные возможности»: через него Писарь видит поле, показывает кнопку и вставляет текст; поля паролей не читает.
 - Ограничения: иногда ошибается в шуме, при быстрой речи и в редких словах (помогает словарь); языки занимают место на телефоне; часовая запись расшифровывается несколько минут; на старых телефонах медленнее.
 - Где скачать: RuStore (https://www.rustore.ru/catalog/app/com.pisar.android). Скоро в Xiaomi GetApps, Huawei AppGallery и Google Play.
@@ -22,7 +22,7 @@ Pisar is an offline voice typing app for Android by Pozdnekov Labs. It adds a di
 - 25 European recognition languages, Russian is the most accurate.
 - Punctuation, capital letters and numbers as digits are added automatically; filler words and repetitions can be removed.
 - Dictation is free forever: no ads, no account, no limits.
-- Pisar Pro is a one-time purchase (399 RUB, no subscription, 7-day free trial): voice messages, audio and video to text, text from screenshots and photos, clipboard history with search, translation while dictating into 24 languages.
+- Pisar Pro is a one-time purchase, no subscription, 7-day free trial: voice messages, audio and video to text, text from screenshots and photos, clipboard history with search, translation while dictating into 23 languages.
 - Requires Android 10+ and a 64-bit CPU. Uses the Android Accessibility Service to see the text field and insert text; never reads password fields.
 - Available on RuStore: https://www.rustore.ru/catalog/app/com.pisar.android. Coming to Xiaomi GetApps, Huawei AppGallery and Google Play.
 - Support: poal0208@gmail.com. Privacy policy: https://pisar-app.ru/en/privacy/
@@ -269,7 +269,7 @@ image
 
 #### Pro Говорите по-русски, пишите на другом языке
 
-Скажите по-русски, вставится на английском или ещё на 23 языках. Без интернета.
+Скажите по-русски, вставится на английском или ещё на 22 языках. Без интернета.
 
 «Спасибо, всё получил, завтра отвечу»
 
@@ -398,7 +398,7 @@ Pro : все функции Писаря на этом телефоне. Одн�
 
 | «Музыка и видео», «Вставить последнее» | Буфер: всё скопированное в одном месте, с поиском
 
-| Записи хранятся 1 день | Перевод при диктовке на 24 языка
+| Записи хранятся 1 день | Перевод при диктовке на 23 языка
 
 | | Хранение записей неделю, месяц или всегда
 
@@ -835,7 +835,7 @@ Pro2 мин чтения
 | Распознавание без интернета, 25 языков | Расшифровка по ссылке: Яндекс Диск, Google Диск, Dropbox, подкаст
 | Правила текста, чистка речи, фильтр мата | Текст со скриншотов и фото
 | Словарь и быстрые фразы без лимита | Буфер: всё скопированное, с поиском
-| История диктовок, поиск, выгрузка | Перевод при диктовке на 24 языка
+| История диктовок, поиск, выгрузка | Перевод при диктовке на 23 языка
 | Хранение 1 день | Хранение: неделя, месяц или всегда
 
 ### Сколько стоит
@@ -1119,7 +1119,7 @@ Hello! Is the room still available for Friday? We will arrive around 10 pm.
 #### Плюсы
 
 - Переводит сам телефон, текст не уходит в онлайн-переводчик.
-- 24 языка.
+- 23 языка.
 - Не нужно копировать текст туда-обратно.
 
 #### Минусы и ограничения

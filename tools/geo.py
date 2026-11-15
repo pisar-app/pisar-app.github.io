@@ -69,7 +69,7 @@ APP = {"@type": "MobileApplication", "@id": APP_ID, "name": "Писарь",
            "Pro: голосовые, аудио и видео в текст, по файлу или ссылке",
            "Pro: текст со скриншотов и фото",
            "Pro: Буфер обмена с поиском и закреплением",
-           "Pro: перевод при диктовке на 24 языка, без интернета"],
+           "Pro: перевод при диктовке на 23 языка, без интернета"],
        "offers": [
            {"@type": "Offer", "name": "Диктовка", "price": "0", "priceCurrency": "RUB",
             "description": "Бесплатно навсегда, без рекламы, аккаунта и лимитов"},
@@ -156,6 +156,38 @@ pro = {"@context": "https://schema.org", "@graph": [
     crumbs([('Писарь', f'{SITE}/'), ('Писарь Pro', f'{SITE}/ru/pro/')])]}
 wr(p, head_add(s, meta(PRO_DESC, title, f'{SITE}/ru/pro/', 'ru') + ld_tag(pro)))
 
+# ---------- /get/: одна ссылка на установку (для «Поделиться» и подписи в приложении) ----------
+STORE_BTN = re.search(r'<a class="store"[^>]*>.*?</a>', rd('index.html'), re.S).group(0)
+GET_DESC = ('Скачать Писарь: офлайн-диктовка для Android. Сейчас в RuStore, скоро в Xiaomi GetApps, '
+            'Huawei AppGallery и Google Play.')
+GET_MAIN = f"""<main><nav><a href="/">Писарь</a> · Скачать</nav>
+<h1>Скачать Писарь</h1>
+<p>Писарь: офлайн-диктовка для Android. Кнопка голосового ввода у любого поля, речь распознаётся на телефоне без интернета. Диктовка бесплатна, без рекламы и аккаунта.</p>
+<p>{STORE_BTN}</p>
+<h2>Другие магазины</h2>
+<table>
+<tr><th>Магазин</th><th></th></tr>
+<tr><td>RuStore</td><td><a href="{RUSTORE}" target="_blank" rel="noopener">Установить</a></td></tr>
+<tr><td>Xiaomi GetApps</td><td>Скоро</td></tr>
+<tr><td>Huawei AppGallery</td><td>Скоро</td></tr>
+<tr><td>Google Play</td><td>Скоро</td></tr>
+</table>
+<p>Нужен Android 10 и новее, 64-битный процессор. <a href="/">Что умеет Писарь</a></p>
+<p lang="en">Pisar: offline voice typing for Android. Get it on RuStore; Xiaomi GetApps, Huawei AppGallery and Google Play are coming soon.</p>
+</main>"""
+g = rd('ru/pro/index.html')
+g = re.sub(r'<title>.*?</title>', '<title>Скачать Писарь · Писарь</title>', g, count=1)
+g = g.replace(f'href="{SITE}/ru/pro/"', f'href="{SITE}/get/"', 1)
+g = g.replace(' class="on" aria-current="page"', '')
+g = re.sub(r'<main>[\s\S]*?</main>', lambda m: GET_MAIN, g, count=1)
+g = re.sub(r'<aside class="pro-aside">[\s\S]*?</aside>\n?', '', g, count=1)  # скриншот Pro здесь не нужен
+get_ld = {"@context": "https://schema.org", "@graph": [
+    {"@type": "WebPage", "name": "Скачать Писарь", "url": f"{SITE}/get/", "inLanguage": "ru", "description": GET_DESC,
+     "about": {"@id": APP_ID}, "publisher": {"@id": ORG_ID}},
+    crumbs([('Писарь', f'{SITE}/'), ('Скачать', f'{SITE}/get/')])]}
+os.makedirs(os.path.join(ROOT, 'get'), exist_ok=True)
+wr('get/index.html', head_add(g, meta(GET_DESC, 'Скачать Писарь', f'{SITE}/get/', 'ru') + ld_tag(get_ld)))
+
 LEGAL = {
     ('privacy', 'ru'): 'Политика конфиденциальности Писаря: звук и тексты распознаются на телефоне и никуда не отправляются. Что и когда уходит в сеть.',
     ('privacy', 'en'): 'Pisar privacy policy: speech is recognized on the phone, audio and text never leave it. What goes online and when.',
@@ -192,7 +224,7 @@ FACTS_RU = '''- Что это: приложение для Android. Добавл
 - Языки распознавания: 25 европейских, русский особенно точно; можно выбрать «Только русский» (быстрее и точнее).
 - Текст сразу чистый: знаки препинания, заглавные, числа цифрами, «?» у вопроса; по желанию убирает слова-паразиты, повторы, оговорки и мат.
 - Бесплатно навсегда: диктовка без лимитов, без рекламы и без аккаунта. Записи хранятся 1 день.
-- Писарь Pro, 399 ₽ один раз (без подписки, первые 7 дней бесплатно): голосовые, аудио и видео в текст (файл или ссылка), текст со скриншотов и фото, Буфер скопированного с поиском, перевод при диктовке на 24 языка, хранение записей неделю, месяц или всегда. Оплата картой или СБП, возврат в течение 14 дней.
+- Писарь Pro, 399 ₽ один раз (без подписки, первые 7 дней бесплатно): голосовые, аудио и видео в текст (файл или ссылка), текст со скриншотов и фото, Буфер скопированного с поиском, перевод при диктовке на 23 языка, хранение записей неделю, месяц или всегда. Оплата картой или СБП, возврат в течение 14 дней.
 - Требования: Android 10 и новее, 64-битный процессор. Нужно разрешение «Специальные возможности»: через него Писарь видит поле, показывает кнопку и вставляет текст; поля паролей не читает.
 - Ограничения: иногда ошибается в шуме, при быстрой речи и в редких словах (помогает словарь); языки занимают место на телефоне; часовая запись расшифровывается несколько минут; на старых телефонах медленнее.
 - Где скачать: RuStore ({rustore}). Скоро в Xiaomi GetApps, Huawei AppGallery и Google Play.
@@ -203,7 +235,7 @@ FACTS_EN = '''Pisar is an offline voice typing app for Android by Pozdnekov Labs
 - 25 European recognition languages, Russian is the most accurate.
 - Punctuation, capital letters and numbers as digits are added automatically; filler words and repetitions can be removed.
 - Dictation is free forever: no ads, no account, no limits.
-- Pisar Pro is a one-time purchase (399 RUB, no subscription, 7-day free trial): voice messages, audio and video to text, text from screenshots and photos, clipboard history with search, translation while dictating into 24 languages.
+- Pisar Pro is a one-time purchase, no subscription, 7-day free trial: voice messages, audio and video to text, text from screenshots and photos, clipboard history with search, translation while dictating into 23 languages.
 - Requires Android 10+ and a 64-bit CPU. Uses the Android Accessibility Service to see the text field and insert text; never reads password fields.
 - Available on RuStore: {rustore}. Coming to Xiaomi GetApps, Huawei AppGallery and Google Play.
 - Support: {email}. Privacy policy: {site}/en/privacy/'''.format(rustore=RUSTORE, email=EMAIL, site=SITE)
@@ -279,7 +311,7 @@ llms = f'''# Писарь (Pisar)
 - [Писарь: диктовка без интернета]({SITE}/): что умеет, цены, частые вопросы
 - [Писарь Pro]({SITE}/ru/pro/): что входит в Pro, как купить, восстановить покупку и вернуть деньги
 - [Статьи: как писать голосом]({SITE}/ru/blog/): инструкции к каждой функции и сценарии
-- [Скачать в RuStore]({RUSTORE})
+- [Скачать Писарь]({SITE}/get/): RuStore, скоро Xiaomi GetApps, Huawei AppGallery, Google Play
 
 ## Статьи
 
