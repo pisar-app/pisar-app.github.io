@@ -208,6 +208,60 @@ FACTS_EN = '''Pisar is an offline voice typing app for Android by Pozdnekov Labs
 - Available on RuStore: {rustore}. Coming to Xiaomi GetApps, Huawei AppGallery and Google Play.
 - Support: {email}. Privacy policy: {site}/en/privacy/'''.format(rustore=RUSTORE, email=EMAIL, site=SITE)
 
+# справка на остальных 8 языках карточек (термины как в карточках магазинов)
+INTL = [
+('Deutsch', 'de', '''Pisar ist eine Offline-App für Spracheingabe auf Android von Pozdnekov Labs. Neben jedem Textfeld (Messenger, E-Mail, Notizen, Suche) erscheint eine Diktiertaste, und das Gesagte steht dort, wo der Cursor ist. Pisar ist keine Tastatur: Ihre Tastatur bleibt.
+- Die Spracherkennung läuft komplett auf dem Handy. Ton und Text verlassen das Gerät nicht; Internet braucht man nur einmal zum Herunterladen einer Sprache.
+- 25 europäische Sprachen, darunter Deutsch und Englisch.
+- Satzzeichen, Großschreibung und Zahlen als Ziffern kommen automatisch; Füllwörter und Wiederholungen können entfernt werden.
+- Diktieren ist dauerhaft kostenlos: ohne Werbung, ohne Konto, ohne Limits. Pisar Pro ist ein Einmalkauf ohne Abo, 7 Tage gratis testen: Sprachnachrichten, Audio und Video als Text, Text aus Screenshots, Zwischenablage-Verlauf, Übersetzung beim Diktieren.
+- Android 10 oder neuer, 64-Bit-Prozessor. Nutzt den Bedienungshilfen-Dienst von Android, um das Feld zu erkennen und Text einzufügen; Passwortfelder werden nie gelesen.'''),
+('Français', 'fr', '''Pisar est une application de saisie vocale hors ligne pour Android, par Pozdnekov Labs. Un bouton de dictée apparaît à côté de chaque champ de texte (messagerie, e-mail, notes, recherche) et ce que vous dites s'écrit là où se trouve le curseur. Ce n'est pas un clavier : votre clavier reste le même.
+- La reconnaissance vocale fonctionne entièrement sur le téléphone. Le son et le texte ne quittent pas l'appareil ; Internet sert une seule fois, pour télécharger une langue.
+- 25 langues européennes, dont le français et l'anglais.
+- Ponctuation, majuscules et nombres en chiffres sont ajoutés automatiquement ; les mots de remplissage et répétitions peuvent être supprimés.
+- La dictée est gratuite pour toujours : sans publicité, sans compte, sans limite. Pisar Pro est un achat unique sans abonnement, 7 jours d'essai gratuit : messages vocaux, audio et vidéo en texte, texte depuis une capture d'écran, historique du presse-papiers, traduction pendant la dictée.
+- Android 10 ou plus récent, processeur 64 bits. Utilise le service d'accessibilité d'Android pour voir le champ et insérer le texte ; ne lit jamais les champs de mot de passe.'''),
+('Español', 'es', '''Pisar es una app de escritura por voz sin conexión para Android, de Pozdnekov Labs. Junto a cualquier campo de texto (mensajería, correo, notas, búsqueda) aparece un botón de dictado, y lo que dices se escribe donde está el cursor. No es un teclado: tu teclado sigue igual.
+- El reconocimiento de voz funciona por completo en el teléfono. El audio y el texto no salen del dispositivo; internet solo hace falta una vez, para descargar un idioma.
+- 25 idiomas europeos, entre ellos español e inglés.
+- Signos de puntuación, mayúsculas y números en cifras se ponen solos; se pueden quitar muletillas y repeticiones.
+- El dictado es gratis para siempre: sin anuncios, sin cuenta, sin límites. Pisar Pro es un pago único sin suscripción, con 7 días de prueba gratis: notas de voz, audio y vídeo a texto, texto de capturas de pantalla, historial del portapapeles, traducción al dictar.
+- Android 10 o posterior, procesador de 64 bits. Usa el servicio de accesibilidad de Android para ver el campo e insertar el texto; nunca lee campos de contraseña.'''),
+('Italiano', 'it', '''Pisar è un'app di dettatura vocale offline per Android, di Pozdnekov Labs. Accanto a ogni campo di testo (messaggi, email, note, ricerca) compare un pulsante di dettatura e ciò che dici viene scritto dove si trova il cursore. Non è una tastiera: la tua tastiera resta la stessa.
+- Il riconoscimento vocale funziona interamente sul telefono. Audio e testo non lasciano il dispositivo; internet serve solo una volta, per scaricare una lingua.
+- 25 lingue europee, tra cui italiano e inglese.
+- Punteggiatura, maiuscole e numeri in cifre vengono inseriti da soli; intercalari e ripetizioni si possono eliminare.
+- La dettatura è gratuita per sempre: senza pubblicità, senza account, senza limiti. Pisar Pro è un acquisto unico senza abbonamento, con 7 giorni di prova gratuita: vocali, audio e video in testo, testo dagli screenshot, cronologia degli appunti, traduzione durante la dettatura.
+- Android 10 o successivo, processore a 64 bit. Usa il servizio di accessibilità di Android per vedere il campo e inserire il testo; non legge mai i campi password.'''),
+('Português', 'pt', '''Pisar é um app de digitação por voz offline para Android, da Pozdnekov Labs. Ao lado de qualquer campo de texto (mensageiro, e-mail, notas, busca) aparece um botão de ditado, e o que você fala é escrito onde está o cursor. Não é um teclado: seu teclado continua o mesmo.
+- O reconhecimento de voz funciona inteiramente no celular. O áudio e o texto não saem do aparelho; a internet só é necessária uma vez, para baixar um idioma.
+- 25 idiomas europeus, incluindo português e inglês.
+- Pontuação, maiúsculas e números em algarismos entram sozinhos; vícios de linguagem e repetições podem ser removidos.
+- O ditado é grátis para sempre: sem anúncios, sem conta, sem limites. O Pisar Pro é uma compra única, sem assinatura, com 7 dias grátis: áudios, gravações e vídeos em texto, texto de capturas de tela, histórico da área de transferência, tradução ao ditar.
+- Android 10 ou mais recente, processador de 64 bits. Usa o serviço de acessibilidade do Android para ver o campo e inserir o texto; nunca lê campos de senha.'''),
+('Polski', 'pl', '''Pisar to aplikacja do pisania głosem offline na Androida od Pozdnekov Labs. Obok każdego pola tekstowego (komunikator, poczta, notatki, wyszukiwarka) pojawia się przycisk dyktowania, a to, co powiesz, trafia tam, gdzie jest kursor. To nie klawiatura: Twoja klawiatura zostaje bez zmian.
+- Rozpoznawanie mowy działa w całości na telefonie. Dźwięk i tekst nie opuszczają urządzenia; internet jest potrzebny tylko raz, by pobrać język.
+- 25 języków europejskich, w tym polski i angielski.
+- Interpunkcja, wielkie litery i liczby cyframi wstawiają się same; można usuwać wtrącenia i powtórzenia.
+- Dyktowanie jest darmowe na zawsze: bez reklam, bez konta, bez limitów. Pisar Pro to jednorazowy zakup bez subskrypcji, 7 dni za darmo: głosówki, audio i wideo na tekst, tekst ze zrzutów ekranu, historia schowka, tłumaczenie podczas dyktowania.
+- Android 10 lub nowszy, procesor 64-bitowy. Korzysta z usługi ułatwień dostępu Androida, by widzieć pole i wstawiać tekst; nigdy nie czyta pól haseł.'''),
+('Nederlands', 'nl', '''Pisar is een offline app voor spraakinvoer op Android, van Pozdnekov Labs. Naast elk tekstveld (messenger, mail, notities, zoekbalk) verschijnt een dicteerknop, en wat je zegt komt waar de cursor staat. Het is geen toetsenbord: je eigen toetsenbord blijft.
+- Spraakherkenning draait volledig op de telefoon. Geluid en tekst verlaten het toestel niet; internet is maar één keer nodig, om een taal te downloaden.
+- 25 Europese talen, waaronder Nederlands en Engels.
+- Leestekens, hoofdletters en getallen in cijfers komen er vanzelf in; stopwoorden en herhalingen kunnen worden weggelaten.
+- Dicteren is voor altijd gratis: zonder advertenties, zonder account, zonder limieten. Pisar Pro is een eenmalige aankoop zonder abonnement, 7 dagen gratis: spraakberichten, audio en video naar tekst, tekst uit screenshots, klembordgeschiedenis, vertalen tijdens het dicteren.
+- Android 10 of nieuwer, 64-bit processor. Gebruikt de toegankelijkheidsservice van Android om het veld te zien en tekst in te voegen; leest nooit wachtwoordvelden.'''),
+('Български', 'bg', '''Pisar е приложение за гласово въвеждане офлайн за Android от Pozdnekov Labs. До всяко текстово поле (месинджър, поща, бележки, търсене) се появява бутон за диктовка и казаното се изписва там, където е курсорът. Не е клавиатура: вашата клавиатура остава същата.
+- Разпознаването на реч работи изцяло на телефона. Звукът и текстът не напускат устройството; интернет трябва само веднъж, за да изтеглите език.
+- 25 европейски езика, сред тях български и английски.
+- Препинателните знаци, главните букви и числата с цифри се поставят сами; думите паразити и повторенията могат да се махат.
+- Диктовката е безплатна завинаги: без реклами, без акаунт, без ограничения. Pisar Pro е еднократна покупка без абонамент, 7 дни безплатно: гласови съобщения, аудио и видео в текст, текст от екранни снимки, история на клипборда, превод при диктовка.
+- Android 10 или по-нов, 64-битов процесор. Използва услугата за достъпност на Android, за да вижда полето и да вмъква текст; никога не чете полета за пароли.'''),
+]
+TAIL = f'\n- RuStore: {RUSTORE} · Xiaomi GetApps, Huawei AppGallery, Google Play: soon · {EMAIL}'
+INTL_MD = ''.join(f'\n\n## {name} ({code})\n\n{body}{TAIL}' for name, code, body in INTL)
+
 llms = f'''# Писарь (Pisar)
 
 > {DESC} Диктовка бесплатна навсегда; Писарь Pro покупается один раз за 399 ₽. Разработчик: Pozdnekov Labs.
@@ -218,7 +272,7 @@ llms = f'''# Писарь (Pisar)
 
 ## In English
 
-{FACTS_EN}
+{FACTS_EN}{INTL_MD}
 
 ## Главные страницы
 
@@ -248,7 +302,7 @@ home_txt = text(re.search(r'<body[\s\S]*</body>', rd('index.html')).group(0))
 pro_txt = text(re.search(r'<main[\s\S]*?</main>', rd('ru/pro/index.html')).group(0)) if '<main' in rd('ru/pro/index.html') \
     else text(re.search(r'<body[\s\S]*</body>', rd('ru/pro/index.html')).group(0))
 pro_txt = re.split(r'\n#+ Продавец', pro_txt)[0]  # реквизиты продавца остаются только на странице
-full = (f'# Писарь (Pisar): полный текст сайта {SITE}\n\n> {DESC}\n\n## Коротко о Писаре\n\n{FACTS_RU}\n\n## In English\n\n{FACTS_EN}\n\n'
+full = (f'# Писарь (Pisar): полный текст сайта {SITE}\n\n> {DESC}\n\n## Коротко о Писаре\n\n{FACTS_RU}\n\n## In English\n\n{FACTS_EN}{INTL_MD}\n\n'
         f'---\n\n# Главная: {SITE}/\n\n{home_txt}\n\n---\n\n# Писарь Pro: {SITE}/ru/pro/\n\n{pro_txt}\n\n'
         + ''.join(f'---\n\n# {h1}\n\nАдрес: {SITE}/ru/blog/{slug}/\n\n{body}\n\n' for slug, h1, _, body in arts))
 full = full.replace('—', ':')  # правило сайта: без длинного тире
