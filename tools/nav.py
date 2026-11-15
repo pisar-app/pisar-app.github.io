@@ -1,4 +1,4 @@
-# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .  4) python3 tools/geo.py .
+# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/geo.py .  3) python3 tools/footer.py .  4) python3 tools/nav.py .
 # Одинаковая шапка с настоящими ссылками и активным пунктом на всех русских страницах. python3 nav.py <site_root>
 import sys, os, re, glob
 ROOT = sys.argv[1]
@@ -6,13 +6,20 @@ ITEMS = [('/#all', 'Возможности', None), ('/ru/blog/', 'Статьи'
 n = 0
 for f in glob.glob(os.path.join(ROOT, '**', 'index.html'), recursive=True):
     rel = os.path.relpath(os.path.dirname(f), ROOT).replace(os.sep, '/')
-    s = open(f).read()
+    s = s0 = open(f).read()
     if '<html lang="en"' in s or '<header>' not in s: continue
     links = ''.join(f'<a href="{h}"' + (' class="on" aria-current="page"' if key and (rel == key or rel.startswith(key + '/')) else '') + f'>{t}</a>' for h, t, key in ITEMS)
     nav = f'<nav class="menu">{links}</nav>'
+    mac = rel == 'mac' or rel.startswith('mac/')
+    on = ' class="on" aria-current="page"'
+    plat = f'<nav class="plat" aria-label="Раздел"><a href="/"{"" if mac else on}>Android</a><a href="/mac/"{on if mac else ""}>Mac</a></nav>'
+    if '<nav class="plat"' in s:
+        s = re.sub(r'<nav class="plat".*?</nav>', plat, s, count=1)
+    else:
+        s = re.sub(r'(<header>\s*<div class="wrap bar">\s*<a class="logo"[^>]*>.*?</a>)', lambda m: m.group(1) + '\n    ' + plat, s, count=1, flags=re.S)
     if '<nav class="menu">' in s:
         s2 = re.sub(r'<nav class="menu">.*?</nav>', nav, s, count=1)
     else:  # правовые страницы без меню: вставить после логотипа
         s2 = re.sub(r'(<header>\s*<div class="wrap bar">\s*<a class="logo"[^>]*>.*?</a>)\s*', r'\1\n    ' + nav + '\n    ', s, count=1, flags=re.S)
-    if s2 != s: open(f, 'w').write(s2); n += 1
+    if s2 != s0: open(f, 'w').write(s2); n += 1
 print('navs', n)

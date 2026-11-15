@@ -1,4 +1,4 @@
-# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .  4) python3 tools/geo.py .
+# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/geo.py .  3) python3 tools/footer.py .  4) python3 tools/nav.py .
 # Генератор статей Писаря: /ru/blog/<slug>/ и /ru/blog/. python3 blog.py <site_root>
 import sys, os, json, re, html
 ROOT = sys.argv[1]
@@ -241,7 +241,7 @@ open(os.path.join(ROOT, 'ru', 'blog', 'index.html'), 'w').write(page('Стать
 open(os.path.join(os.path.dirname(__file__), 'home_cards.html'), 'w').write(''.join(card(a) for a in ([a for a in ARTS if a.get('home')] or ARTS)[:3]))
 # sitemap
 LAST = max([DATE] + [a.get('date', DATE) for a in ARTS])
-urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('date', DATE)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/get/', '0.6', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE), ('/en/privacy/', '0.3', DATE), ('/en/terms/', '0.3', DATE)]
+urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('date', DATE)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/get/', '0.6', DATE), ('/mac/', '0.3', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE), ('/en/privacy/', '0.3', DATE), ('/en/terms/', '0.3', DATE)]
 open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{m}</lastmod><priority>{p}</priority></url>\n' for u, p, m in urls) + '</urlset>\n')
 # проверка текстов
 for dp, _, fs in os.walk(os.path.join(ROOT, 'ru', 'blog')):

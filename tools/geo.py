@@ -1,4 +1,4 @@
-# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/footer.py .  3) python3 tools/nav.py .  4) python3 tools/geo.py .
+# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/geo.py .  3) python3 tools/footer.py .  4) python3 tools/nav.py .
 # Нейропоиск (ChatGPT, Perplexity, Claude, Google AI Overviews, Алиса): разметка schema.org,
 # описания и hreflang у правовых страниц и Pro, llms.txt и llms-full.txt. Повторный запуск ничего не меняет.
 import sys, os, re, json, html, glob
@@ -180,6 +180,7 @@ g = re.sub(r'<title>.*?</title>', '<title>Скачать Писарь · Пис�
 g = g.replace(f'href="{SITE}/ru/pro/"', f'href="{SITE}/get/"', 1)
 g = g.replace(' class="on" aria-current="page"', '')
 g = re.sub(r'<main>[\s\S]*?</main>', lambda m: GET_MAIN, g, count=1)
+g = g.replace('<div class="legal is-pro">', '<div class="legal">', 1)  # одна колонка, как у политики
 g = re.sub(r'<aside class="pro-aside">[\s\S]*?</aside>\n?', '', g, count=1)  # скриншот Pro здесь не нужен
 get_ld = {"@context": "https://schema.org", "@graph": [
     {"@type": "WebPage", "name": "Скачать Писарь", "url": f"{SITE}/get/", "inLanguage": "ru", "description": GET_DESC,
@@ -187,6 +188,20 @@ get_ld = {"@context": "https://schema.org", "@graph": [
     crumbs([('Писарь', f'{SITE}/'), ('Скачать', f'{SITE}/get/')])]}
 os.makedirs(os.path.join(ROOT, 'get'), exist_ok=True)
 wr('get/index.html', head_add(g, meta(GET_DESC, 'Скачать Писарь', f'{SITE}/get/', 'ru') + ld_tag(get_ld)))
+
+# ---------- /mac/: заглушка раздела «Писарь для Mac» ----------
+MAC_DESC = 'Писарь для Mac: скоро здесь. Это отдельное приложение для Mac со своими функциями.'
+MAC_MAIN = """<main><nav><a href="/">Писарь</a> · Mac</nav>
+<h1>Писарь для Mac</h1>
+<p>Скоро здесь.</p>
+<p>Это отдельное приложение для Mac, со своими функциями.</p>
+<p><a href="/">Писарь для Android</a></p>
+</main>"""
+m = re.sub(r'<main>[\s\S]*?</main>', lambda _: MAC_MAIN, g, count=1)
+m = re.sub(r'<title>.*?</title>', '<title>Писарь для Mac · Писарь</title>', m, count=1)
+m = m.replace(f'href="{SITE}/get/"', f'href="{SITE}/mac/"', 1)
+os.makedirs(os.path.join(ROOT, 'mac'), exist_ok=True)
+wr('mac/index.html', head_add(m, meta(MAC_DESC, 'Писарь для Mac', f'{SITE}/mac/', 'ru')))
 
 LEGAL = {
     ('privacy', 'ru'): 'Политика конфиденциальности Писаря: звук и тексты распознаются на телефоне и никуда не отправляются. Что и когда уходит в сеть.',
