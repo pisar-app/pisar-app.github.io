@@ -55,22 +55,24 @@ header{position:absolute}
 .legal main .cols{display:grid;gap:28px}
 .legal main .cols>*{min-width:0}
 .legal main .intro>:last-child{margin-bottom:0}
-.legal main .stores{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.legal main .stores li{margin:0;border:1px solid var(--line);border-radius:16px;background:var(--bg)}
-.legal main .stores li>a,.legal main .stores li>div{display:flex;flex-direction:column;gap:4px;padding:16px 18px;height:100%;box-sizing:border-box}
-.legal main .stores a{text-decoration:none;color:inherit;border-radius:15px}
+.legal main .stores{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px;max-width:360px}
+.legal main .stores li{margin:0;border-radius:14px;border:1px solid var(--line);background:transparent}
+.legal main .stores li>a,.legal main .stores li>div{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px 16px;box-sizing:border-box;height:100%}
+.legal main .stores a{text-decoration:none;color:inherit;border-radius:13px}
+.legal main .stores .si{flex:none;width:28px;height:28px;display:grid;place-items:center}
+.legal main .stores .si svg{width:24px;height:24px}
+.legal main .stores .tx{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.legal main .stores .st{font-size:12px;opacity:.8}
+.legal main .stores .sn{font-weight:700;font-size:16px}
+.legal main .stores li.on{background:var(--fg);border-color:var(--fg)}
+.legal main .stores li.on a{color:var(--bg)}
+.legal main .stores li.on a:hover{opacity:.9}
+.legal main .stores li[aria-disabled]{border-style:dashed;color:var(--muted)}
 .legal main .cols+p{margin-top:28px}
-.legal main .stores .sn{font-weight:600;font-size:16px;color:var(--fg)}
-.legal main .stores .st{font-size:14px;color:var(--muted)}
-.legal main .stores li.on{border-color:var(--accent)}
-.legal main .stores li.on .st{color:var(--accent);font-weight:600}
-.legal main .stores li.on a:hover{background:var(--chip)}
 @media (min-width:1024px){
   .legal.is-wide main{padding:48px 56px}
   .legal main .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
   .legal main .cols:has(.mbp){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-  .legal main .stores{gap:16px}
-  .legal main .stores li>a,.legal main .stores li>div{padding:22px}
   .legal main .cols:not(:has(.mbp)){align-items:start}
   .legal main .cols .side{padding-top:84px}
 }

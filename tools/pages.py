@@ -3,14 +3,16 @@
 
 
 def stores(items):
-    """Магазины сеткой. items: [(название, подпись, ссылка или None)]."""
+    """Магазины кнопками одного вида. items: [(название, подпись сверху, ссылка или None)]. Без ссылки: «скоро», кнопка неактивна."""
+    down = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    soon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
     li = []
     for name, note, href in items:
-        inner = f'<span class="sn">{name}</span><span class="st">{note}</span>'
+        inner = f'<span class="si">{down if href else soon}</span><span class="tx"><span class="st">{note}</span><span class="sn">{name}</span></span>'
         if href:
             li.append(f'<li class="on"><a href="{href}" target="_blank" rel="noopener">{inner}</a></li>')
         else:
-            li.append(f'<li><div>{inner}</div></li>')
+            li.append(f'<li aria-disabled="true"><div>{inner}</div></li>')
     return '<ul class="stores">\n' + '\n'.join(li) + '\n</ul>'
 
 

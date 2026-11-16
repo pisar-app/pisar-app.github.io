@@ -165,10 +165,9 @@ GET_DESC = ('Скачать Писарь: офлайн-диктовка для A
 GET_MAIN = ('<main><nav><a href="/">Писарь</a> · Скачать</nav>\n' + pages.get_main(f"""
 <h1>Скачать Писарь</h1>
 <p>Писарь: офлайн-диктовка для Android. Кнопка голосового ввода у любого поля, речь распознаётся на телефоне без интернета. Диктовка бесплатна, без рекламы и аккаунта.</p>
-<p>{STORE_BTN}</p>
 <p>Нужен Android 10 и новее, 64-битный процессор. <a href="/">Что умеет Писарь</a></p>""",
-    [('RuStore', 'Установить', RUSTORE), ('Xiaomi GetApps', 'Скоро', None), ('Huawei AppGallery', 'Скоро', None),
-     ('Google Play', 'Скоро', None)]) + '\n</main>')
+    [('RuStore', 'Скачайте из', RUSTORE), ('Xiaomi GetApps', 'Скоро в', None), ('Huawei AppGallery', 'Скоро в', None),
+     ('Google Play', 'Скоро в', None)]) + '\n</main>')
 g = rd('ru/pro/index.html')
 g = re.sub(r'<title>.*?</title>', '<title>Скачать Писарь · Писарь</title>', g, count=1)
 g = g.replace(f'href="{SITE}/ru/pro/"', f'href="{SITE}/get/"', 1)
