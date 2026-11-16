@@ -465,6 +465,18 @@ h3>.badge.pro{margin:0 6px 0 0}
 .plat a:hover{color:var(--fg)}
 .plat a.on{background:var(--line);color:var(--fg);font-weight:600}
 
+/* 16.11: на широком экране первый экран в две колонки: текст слева, телефон справа */
+@media (min-width:1024px){
+.hero{min-height:0;padding:128px 0 80px;text-align:left}
+.hero>.wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:1fr auto auto auto auto 1fr;column-gap:56px}
+.hero>.wrap>h1{grid-column:1;grid-row:2;margin-top:0}
+.hero>.wrap>.lead{grid-column:1;grid-row:3;margin-left:0}
+.hero>.wrap>.ctas{grid-column:1;grid-row:4;justify-content:flex-start}
+.hero>.wrap>.note{grid-column:1;grid-row:5}
+.hero>.wrap>.stage{grid-column:2;grid-row:1/7;margin:0 auto}
+}
+@media (max-width:700px){header .bar{column-gap:12px}}
+
 /* статьи */
 header{position:absolute}
 .post{padding:112px 0 80px}
@@ -549,4 +561,3 @@ article a:not(.art){color:var(--accent);text-decoration:underline;text-underline
 .art:hover h2,.art:hover h3{text-decoration:underline;text-underline-offset:3px}
 .list.grid3 .art h2{font-size:20px;margin:6px 0 0;letter-spacing:-.01em;line-height:1.25}
 @media (max-width:700px){.cta{flex-direction:column;text-align:center}.post{padding-top:118px}article{font-size:16.5px}article h2{font-size:22px}}
-@media (max-width:700px){header .bar{column-gap:12px}}
