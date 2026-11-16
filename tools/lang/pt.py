@@ -74,7 +74,7 @@ HOME = {
     'm_said': '“Obrigado, recebi tudo, respondo amanhã”',
     'm_out': "Thanks, got everything, I'll reply tomorrow.",
     'cta': 'Onde baixar',
-    'hero_note': 'O ditado é grátis para sempre. Sem anúncios e sem conta.<br>Em breve no Google Play, Xiaomi GetApps e Huawei AppGallery.',
+    'hero_note': 'O ditado é grátis para sempre. Sem anúncios e sem conta.',
     'price': {
         'h2': 'Grátis e Pro', 'sub': 'O ditado é grátis para sempre. O Pro é comprado uma vez no app, sem assinatura.',
         'free': 'Grátis',
@@ -142,7 +142,7 @@ PRO = {
 GET = {
     'crumb': 'Baixar', 'h1': 'Baixar o Pisar',
     'p': 'O Pisar é digitação por voz offline para Android. Um botão de ditado aparece ao lado de cada campo de texto, e a voz é reconhecida no celular, sem internet. O ditado é grátis, sem anúncios e sem conta.',
-    'store': 'Loja', 'soon': 'Em breve', 'rustore': 'Disponível (Rússia)',
+    'store': 'Loja', 'soon': 'Em breve', 'rustore': 'Disponível (Rússia)', 'russia': 'Rússia',
     'req': 'É preciso Android 10 ou mais recente e um processador de 64 bits.', 'what': 'O que o Pisar faz',
 }
 

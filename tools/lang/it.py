@@ -74,7 +74,7 @@ HOME = {
     'm_said': '«Grazie, ho ricevuto tutto, rispondo domani»',
     'm_out': "Thanks, got everything, I'll reply tomorrow.",
     'cta': 'Dove scaricarlo',
-    'hero_note': 'La dettatura è gratis per sempre. Senza pubblicità e senza account.<br>Presto su Google Play, Xiaomi GetApps e Huawei AppGallery.',
+    'hero_note': 'La dettatura è gratis per sempre. Senza pubblicità e senza account.',
     'price': {
         'h2': 'Gratis e Pro', 'sub': 'La dettatura è gratis per sempre. Pro si compra una volta nell’app, senza abbonamento.',
         'free': 'Gratis',
@@ -142,7 +142,7 @@ PRO = {
 GET = {
     'crumb': 'Scarica', 'h1': 'Scarica Pisar',
     'p': 'Pisar è la dettatura vocale offline per Android. Accanto a ogni campo di testo compare un pulsante di dettatura e la voce viene riconosciuta sul telefono, senza internet. La dettatura è gratis, senza pubblicità e senza account.',
-    'store': 'Store', 'soon': 'Presto', 'rustore': 'Disponibile (Russia)',
+    'store': 'Store', 'soon': 'Presto', 'rustore': 'Disponibile (Russia)', 'russia': 'Russia',
     'req': 'Serve Android 10 o successivo e un processore a 64 bit.', 'what': 'Cosa fa Pisar',
 }
 

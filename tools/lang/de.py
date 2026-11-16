@@ -74,7 +74,7 @@ HOME = {
     'm_said': '„Danke, alles bekommen, ich antworte morgen“',
     'm_out': "Thanks, got everything, I'll reply tomorrow.",
     'cta': 'Wo herunterladen',
-    'hero_note': 'Diktieren ist dauerhaft kostenlos. Ohne Werbung, ohne Konto.<br>Bald bei Google Play, Xiaomi GetApps und Huawei AppGallery.',
+    'hero_note': 'Diktieren ist dauerhaft kostenlos. Ohne Werbung, ohne Konto.',
     'price': {
         'h2': 'Kostenlos und Pro', 'sub': 'Diktieren ist dauerhaft kostenlos. Pro kaufen Sie einmal in der App, ohne Abo.',
         'free': 'Kostenlos',
@@ -142,7 +142,7 @@ PRO = {
 GET = {
     'crumb': 'Download', 'h1': 'Pisar herunterladen',
     'p': 'Pisar ist Spracheingabe offline für Android. Neben jedem Textfeld erscheint eine Diktiertaste, die Sprache wird auf dem Handy erkannt, ohne Internet. Diktieren ist kostenlos, ohne Werbung und ohne Konto.',
-    'store': 'Store', 'soon': 'Bald', 'rustore': 'Verfügbar (Russland)',
+    'store': 'Store', 'soon': 'Bald', 'rustore': 'Verfügbar (Russland)', 'russia': 'Russland',
     'req': 'Benötigt Android 10 oder neuer und einen 64-Bit-Prozessor.', 'what': 'Was Pisar kann',
 }
 

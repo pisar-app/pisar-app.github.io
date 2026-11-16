@@ -74,7 +74,7 @@ HOME = {
     'm_said': '«Gracias, ya me ha llegado todo, mañana te contesto»',
     'm_out': "Thanks, got everything, I'll reply tomorrow.",
     'cta': 'Dónde descargar',
-    'hero_note': 'El dictado es gratis para siempre. Sin anuncios y sin cuenta.<br>Muy pronto en Google Play, Xiaomi GetApps y Huawei AppGallery.',
+    'hero_note': 'El dictado es gratis para siempre. Sin anuncios y sin cuenta.',
     'price': {
         'h2': 'Gratis y Pro', 'sub': 'El dictado es gratis para siempre. Pro se compra una vez en la app, sin suscripción.',
         'free': 'Gratis',
@@ -142,7 +142,7 @@ PRO = {
 GET = {
     'crumb': 'Descargar', 'h1': 'Descargar Pisar',
     'p': 'Pisar es dictado por voz sin conexión para Android. Junto a cada campo de texto aparece un botón de dictado y la voz se reconoce en el teléfono, sin internet. El dictado es gratis, sin anuncios y sin cuenta.',
-    'store': 'Tienda', 'soon': 'Muy pronto', 'rustore': 'Disponible (Rusia)',
+    'store': 'Tienda', 'soon': 'Muy pronto', 'rustore': 'Disponible (Rusia)', 'russia': 'Rusia',
     'req': 'Necesitas Android 10 o posterior y un procesador de 64 bits.', 'what': 'Qué hace Pisar',
 }
 

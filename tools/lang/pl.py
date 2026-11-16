@@ -74,7 +74,7 @@ HOME = {
     'm_said': '„Dzięki, wszystko doszło, odpiszę jutro”',
     'm_out': "Thanks, got everything, I'll reply tomorrow.",
     'cta': 'Gdzie pobrać',
-    'hero_note': 'Dyktowanie jest darmowe na zawsze. Bez reklam i bez konta.<br>Wkrótce w Google Play, Xiaomi GetApps i Huawei AppGallery.',
+    'hero_note': 'Dyktowanie jest darmowe na zawsze. Bez reklam i bez konta.',
     'price': {
         'h2': 'Za darmo i Pro', 'sub': 'Dyktowanie jest darmowe na zawsze. Pro kupujesz raz w aplikacji, bez subskrypcji.',
         'free': 'Za darmo',
@@ -142,7 +142,7 @@ PRO = {
 GET = {
     'crumb': 'Pobierz', 'h1': 'Pobierz Pisar',
     'p': 'Pisar to pisanie głosem offline na Androida. Przy każdym polu tekstowym pojawia się przycisk dyktowania, a mowa jest rozpoznawana na telefonie, bez internetu. Dyktowanie jest darmowe, bez reklam i bez konta.',
-    'store': 'Sklep', 'soon': 'Wkrótce', 'rustore': 'Dostępny (Rosja)',
+    'store': 'Sklep', 'soon': 'Wkrótce', 'rustore': 'Dostępny (Rosja)', 'russia': 'Rosja',
     'req': 'Wymaga Androida 10 lub nowszego i procesora 64-bitowego.', 'what': 'Co potrafi Pisar',
 }
 

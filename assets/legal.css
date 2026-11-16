@@ -49,51 +49,6 @@ header{position:absolute}
 /* 14.11: цена спокойно, как в приложении */
 .legal main .price{background:none!important;color:var(--fg);font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;padding:6px 0 0;border-radius:0;margin:8px 0 6px}
 
-/* 16.11: широкий экран. «Скачать» и Mac: карточка шире, внутри две колонки; на телефоне одна */
-.legal.is-wide>.wrap{max-width:1120px}
-.legal.is-wide main{max-width:none}
-.legal main .cols{display:grid;gap:28px}
-.legal main .cols>*{min-width:0}
-.legal main .intro>:last-child{margin-bottom:0}
-.legal main .stores{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px;max-width:360px}
-.legal main .stores li{margin:0;border-radius:14px;border:1px solid var(--line);background:transparent}
-.legal main .stores li>a,.legal main .stores li>div{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px 16px;box-sizing:border-box;height:100%}
-.legal main .stores a{text-decoration:none;color:inherit;border-radius:13px}
-.legal main .stores .si{flex:none;width:28px;height:28px;display:grid;place-items:center}
-.legal main .stores .si svg{width:24px;height:24px}
-.legal main .stores .tx{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-.legal main .stores .st{font-size:12px;opacity:.8}
-.legal main .stores .sn{font-weight:700;font-size:16px}
-.legal main .stores li.on{background:var(--fg);border-color:var(--fg)}
-.legal main .stores li.on a{color:var(--bg)}
-.legal main .stores li.on a:hover{opacity:.9}
-.legal main .stores li[aria-disabled]{border-style:dashed;color:var(--muted)}
-.legal main .cols+p{margin-top:28px}
-@media (min-width:1024px){
-  .legal.is-wide main{padding:48px 56px}
-  .legal main .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
-  .legal main .cols:has(.mbp){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-  .legal main .cols:not(:has(.mbp)){align-items:start}
-  .legal main .cols .side{padding-top:84px}
-}
-
-/* MacBook на /mac/: рамка и корпус как у телефона на главной (чёрный экран, переливающийся край, свечение) */
-.mbp{margin:8px auto 0;width:100%;max-width:640px}
-.mbp-lid{position:relative;border-radius:18px 18px 6px 6px;padding:2.4% 2.4% 3%;border:3px solid transparent;
-  background:linear-gradient(#030306,#030306) padding-box,linear-gradient(140deg,#f1e9ff 0%,#a68bff 18%,#5b3df5 38%,#21155e 55%,#7d5cff 74%,#ffb3e6 90%,#fff 100%) border-box;
-  box-shadow:0 0 0 1px rgba(255,255,255,.35),0 40px 90px -30px rgba(91,61,245,.7),0 0 70px -14px rgba(168,139,255,.5)}
-.mbp-scr{position:relative;border-radius:6px;overflow:hidden;background:#0b0d14;aspect-ratio:1600/896}
-.mbp-scr img{display:block;width:100%;height:auto}
-.mbp-cam{position:absolute;left:50%;top:0;transform:translateX(-50%);width:13%;height:2.6%;min-height:7px;background:#030306;border-radius:0 0 8px 8px}
-.mbp-cam:after{content:"";position:absolute;left:50%;top:30%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#1d2140}
-.mbp-base{position:relative;height:14px;margin:0 -7%;border-radius:2px 2px 14px 14px;
-  background:linear-gradient(180deg,#e6e3f3 0%,#c3bfd6 45%,#8f8aa8 100%);box-shadow:0 18px 40px -16px rgba(60,40,160,.45)}
-.mbp-base i{position:absolute;left:50%;top:0;transform:translateX(-50%);width:16%;height:5px;border-radius:0 0 6px 6px;background:rgba(0,0,0,.18)}
-.mbp figcaption{font-size:13px;color:var(--muted);text-align:center;padding:16px 4px 0}
-@media (max-width:700px){.mbp-lid{border-radius:12px 12px 4px 4px}.mbp-base{height:9px;border-radius:2px 2px 9px 9px}.mbp-base i{height:3px}}
-[data-theme="dark"] .mbp-base{background:linear-gradient(180deg,#77749a 0%,#4a4766 50%,#2c2a40 100%)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mbp-base{background:linear-gradient(180deg,#77749a 0%,#4a4766 50%,#2c2a40 100%)}}
-
 /* Документы: на ПК оглавление справа, едет со страницей */
 .legal .toc{display:none}
 @media (min-width:1100px){
@@ -107,39 +62,3 @@ header{position:absolute}
   .legal .toc a:hover{color:var(--fg)}
 }
 html{scroll-padding-top:24px}
-
-/* 16.11, чат 35: /mac/. Функции блоками, как «Всё, что умеет Писарь» на главной: иконка и заголовок в строку, ниже текст */
-.legal main .mfeats{margin-top:44px}
-.legal main .mfeats h2{margin:0 0 6px}
-.legal main .msub{color:var(--muted);margin:0 0 20px}
-.legal main .feats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
-.legal main .feats li{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center;align-content:start;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:20px}
-.legal main .feats .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--chip);color:var(--accent)}
-.legal main .feats svg{width:22px;height:22px;display:block}
-.legal main .feats h3{margin:0;font-size:17px;line-height:1.25;letter-spacing:-.01em}
-.legal main .feats p{grid-column:1/-1;margin:12px 0 0;color:var(--muted);font-size:14.5px;line-height:1.55}
-@media (min-width:640px){.legal main .feats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1024px){.legal main .mfeats{margin-top:56px}.legal main .feats{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.legal main .feats li{padding:22px}}
-
-/* «Сообщить о выходе»: почта и кнопка в строку, на телефоне кнопка во всю ширину */
-.legal main .notify{margin:22px 0 18px;position:relative}
-.legal main .notify>label{display:block;font-weight:600;font-size:15.5px;line-height:1.45;margin-bottom:10px}
-.legal main .nrow{display:flex;flex-wrap:wrap;gap:10px}
-.legal main .nrow input{flex:1 1 200px;min-width:0;box-sizing:border-box;font:inherit;font-size:16px;line-height:1.3;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.legal main .nrow input::placeholder{color:var(--muted);opacity:1}
-.legal main .nrow input:focus{outline:2px solid var(--accent);outline-offset:1px}
-.legal main .nrow input[aria-invalid="true"]{border-color:var(--nerr)}
-.legal main .nrow button{flex:0 0 auto;font:inherit;font-size:16px;font-weight:600;line-height:1.3;color:var(--card);background:var(--accent);border:0;border-radius:12px;padding:12px 18px;cursor:pointer}
-.legal main .nrow button:hover{opacity:.92}
-.legal main .nrow button:disabled{opacity:.6;cursor:default}
-.legal main .nrow button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.legal main .nmsg{min-height:1.5em;margin:10px 0 0;font-size:15px;line-height:1.5}
-.legal main .nmsg.ok{color:var(--accent);font-weight:600}
-.legal main .nmsg.err{color:var(--nerr)}
-.legal main .nnote{font-size:13.5px;line-height:1.5;color:var(--muted);margin:2px 0 0}
-.legal main .nnote a{color:inherit}
-.legal main .notify .hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-.legal{--nerr:#c62828}
-[data-theme="dark"] .legal{--nerr:#ff8a80}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .legal{--nerr:#ff8a80}}
-@media (max-width:700px){.legal main .nrow button{flex:1 1 100%}}

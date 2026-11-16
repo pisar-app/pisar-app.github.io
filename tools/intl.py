@@ -122,7 +122,7 @@ HOME_SRC = [
     ('m_out', "Thanks, got everything, I'll reply tomorrow."),
 ]
 # Блоки, которые на других языках устроены иначе (без цены, без кнопки RuStore, без русского блога)
-HERO_CTA = re.compile(r'<div class="ctas">\n\s*<a class="store"[\s\S]*?</div>\s*<p class="note">[\s\S]*?</p>')
+HERO_NOTE = re.compile(r'(<!-- /stores -->\n\s*<p class="note">)[\s\S]*?(</p>)')
 SAID_ROW = re.compile(r'<div class="row"><span class="s">.*?</span><span class="arr">→</span><span class="t">.*?<span class="tag">.*?</span></span></div>')
 FCARD = re.compile(r'(<div class="fcard"><div class="ico"><span class="mi">\w+</span></div>)<h3>.*?</h3><p>.*?</p></div>')
 SHOW_T = re.compile(r'(<div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> ).*?</h3><p>.*?</p></div>')
@@ -163,9 +163,8 @@ def home(lang, L):
     shows = iter(H['shows'])
     assert len(SHOW_T.findall(s)) == len(H['shows']) == 4
     s = SHOW_T.sub(lambda m: m.group(1) + '{}</h3><p>{}</p></div>'.format(*next(shows)), s)
-    get = f'/{lang}/get/'
-    s = one(HERO_CTA, s, f'<div class="ctas">\n      <a class="btn btn1" href="{get}">{H["cta"]}</a>\n    </div>\n'
-                         f'    <p class="note">{H["hero_note"]}</p>')
+    s = HERO_NOTE.sub(lambda m: m.group(1) + H['hero_note'] + m.group(2), s, count=1)
+    s = layout.fill_stores(s, layout.badges(lang, L.GET['soon'], L.GET['russia']))
     P = H['price']
     li = lambda xs: ''.join(f'\n          <li>{x}</li>' for x in xs)
     s = one(PRICE, s, f'''<section id="pro">
@@ -197,7 +196,7 @@ def home(lang, L):
   <div class="wrap" style="position:relative">
     <h2>{H["final_h2"]}</h2>
     <p class="sub" style="margin-left:auto;margin-right:auto">{H["final_sub"]}</p>
-    <div class="ctas"><a class="btn btn1" href="{get}">{H["cta"]}</a></div><p class="note">{H["soon"]}</p>
+    <!-- stores --><!-- /stores -->
   </div>
 </div>''')
     M = L.META
@@ -235,13 +234,12 @@ def pro(lang, L):
     return s.replace('<!-- /geo -->', ld_tag(ld) + '<!-- /geo -->', 1)
 
 
-def simple(lang, L, pid, main, title, desc, crumb):
+def simple(lang, L, pid, body, title, desc, crumb):
+    """«Скачать» и Mac: оболочка своей Pro (шапка, подвал), вместо карточки документа тело в стиле главной."""
     s = rd(f'{lang}/pro/index.html')
     s = re.sub(r'<script type="application/ld\+json">.*?</script>\n', '', s)
     s = head(s, lang, pid, title, desc)
-    s = s.replace('<div class="legal is-pro">', '<div class="legal is-wide">', 1)  # на ПК две колонки внутри карточки
-    s = one(ASIDE, s, '')
-    s = one(MAIN, s, f'<main><nav><a href="/{lang}/">Pisar</a> · {crumb}</nav>\n{main.strip()}\n</main>')
+    s = layout.shell(s, body)
     s = s.replace(' class="on" aria-current="page"', '')
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebPage", "name": title, "url": f"{SITE}/{lang}/{pid}/", "inLanguage": lang, "description": desc,
@@ -250,21 +248,18 @@ def simple(lang, L, pid, main, title, desc, crumb):
     return s.replace('<!-- /geo -->', ld_tag(ld) + '<!-- /geo -->', 1)
 
 
-RUSTORE = 'https://www.rustore.ru/catalog/app/com.pisar.android'
-
-
 def get(lang, L):
     G = L.GET
-    intro = f'<h1>{G["h1"]}</h1>\n<p>{G["p"]}</p>\n<p>{G["req"]} <a href="/{lang}/">{G["what"]}</a></p>'
-    items = [(n, G['soon'], None) for n in ('Google Play', 'Xiaomi GetApps', 'Huawei AppGallery')] + [('RuStore', G['rustore'], RUSTORE)]
-    return simple(lang, L, 'get', layout.get_main(intro, items), L.META['get_title'], L.META['get_desc'], G['crumb'])
+    body = layout.get_body(G['h1'], G['p'], layout.badges(lang, G['soon'], G['russia']),
+                           f'{G["req"]} <a href="/{lang}/">{G["what"]}</a>')
+    return simple(lang, L, 'get', body, L.META['get_title'], L.META['get_desc'], G['crumb'])
 
 
 def mac(lang, L):
     G = L.MAC
-    text = f'<h1>{G["h1"]}</h1>\n<p>{G["soon"]}</p>\n<p>{G["p"]}</p>\n{layout.notify(L.MAC_N, lang)}\n<p><a href="/{lang}/">{G["android"]}</a></p>'
-    main = layout.mac_main(text, G['alt'], layout.feats(G['head'], G['sub'], L.MAC_F))
-    return mac_js(simple(lang, L, 'mac', main, L.META['mac_title'], L.META['mac_desc'], 'Mac'))
+    body = layout.mac_body(G['h1'], G['soon'], G['p'], layout.notify(L.MAC_N, lang), G['alt'],
+                           layout.feats(G['head'], G['sub'], L.MAC_F))
+    return mac_js(simple(lang, L, 'mac', body, L.META['mac_title'], L.META['mac_desc'], 'Mac'))
 
 
 def mac_js(s):

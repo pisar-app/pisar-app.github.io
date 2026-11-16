@@ -74,7 +74,7 @@ HOME = {
     'm_said': '“Bedankt, alles ontvangen, ik antwoord morgen”',
     'm_out': "Thanks, got everything, I'll reply tomorrow.",
     'cta': 'Waar downloaden',
-    'hero_note': 'Dicteren is voor altijd gratis. Zonder advertenties en zonder account.<br>Binnenkort in Google Play, Xiaomi GetApps en Huawei AppGallery.',
+    'hero_note': 'Dicteren is voor altijd gratis. Zonder advertenties en zonder account.',
     'price': {
         'h2': 'Gratis en Pro', 'sub': 'Dicteren is voor altijd gratis. Pro koop je één keer in de app, zonder abonnement.',
         'free': 'Gratis',
@@ -142,7 +142,7 @@ PRO = {
 GET = {
     'crumb': 'Downloaden', 'h1': 'Pisar downloaden',
     'p': 'Pisar is offline spraakinvoer voor Android. Naast elk tekstveld verschijnt een dicteerknop, en spraak wordt op de telefoon herkend, zonder internet. Dicteren is gratis, zonder advertenties en zonder account.',
-    'store': 'Winkel', 'soon': 'Binnenkort', 'rustore': 'Beschikbaar (Rusland)',
+    'store': 'Winkel', 'soon': 'Binnenkort', 'rustore': 'Beschikbaar (Rusland)', 'russia': 'Rusland',
     'req': 'Vereist Android 10 of nieuwer en een 64-bit processor.', 'what': 'Wat Pisar kan',
 }
 

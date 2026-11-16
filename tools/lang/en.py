@@ -74,7 +74,7 @@ HOME = {
     'm_said': '“Thanks, got everything, I’ll reply tomorrow”',
     'm_out': 'Gracias, ya lo tengo todo, mañana te respondo.',
     'cta': 'Where to download',
-    'hero_note': 'Dictation is free forever. No ads, no account.<br>Coming soon to Google Play, Xiaomi GetApps and Huawei AppGallery.',
+    'hero_note': 'Dictation is free forever. No ads, no account.',
     'price': {
         'h2': 'Free and Pro', 'sub': 'Dictation is free forever. Pro is bought once in the app, no subscription.',
         'free': 'Free',
@@ -142,7 +142,7 @@ PRO = {
 GET = {
     'crumb': 'Download', 'h1': 'Download Pisar',
     'p': 'Pisar is offline voice typing for Android. A dictation button appears next to any text field, and speech is recognized on the phone with no internet. Dictation is free, with no ads and no account.',
-    'store': 'Store', 'soon': 'Coming soon', 'rustore': 'Available (Russia)',
+    'store': 'Store', 'soon': 'Coming soon', 'rustore': 'Available (Russia)', 'russia': 'Russia',
     'req': 'Requires Android 10 or newer and a 64-bit processor.', 'what': 'What Pisar can do',
 }
 

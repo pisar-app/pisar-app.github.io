@@ -10,7 +10,7 @@ from nav import menu_items, lang_items
 def footer(root, lang, pid):
     f = lambda k: html.escape(t(FOOT, lang, k))
     h = lambda k: html.escape(t(HEAD, lang, k))
-    app = ''.join(f'<a href="{u}">{f("pro_long") if k == "pro" else h(k)}</a>' for k, u, _ in menu_items(root, lang, pid))
+    app = ''.join(f'<a href="{u}">{f("pro_long") if k == "pro" else h(k)}</a>' for k, u, _ in menu_items(root, lang, pid, footer=True))
     docs = f'<a href="{link(root, lang, "privacy")}">{f("privacy")}</a><a href="{link(root, lang, "terms")}">{f("terms")}</a>'
     if FOOT.get(lang, {}).get('offer'):
         docs += f'<a href="{link(root, lang, "pro/offer")}">{f("offer")}</a>'

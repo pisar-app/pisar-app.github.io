@@ -1,0 +1,70 @@
+/* «Скачать» (/get/) и «Писарь для Mac» (/mac/) на всех языках, в стиле главной. Разметка tools/pages.py.
+   Основа (.hero, h1, .lead, .note, секции, .fgrid, .fcard, .ico) из assets/blog.css, она же стили главной;
+   значки магазинов и шапка в assets/site.css. Здесь только своё. */
+html{scroll-padding-top:24px}
+.hero .note a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+
+/* Скачать: первый экран по центру, как блок внизу главной */
+.phero{padding-bottom:96px}
+.phero .lead{max-width:640px}
+.phero:before{top:52%}
+@media (min-width:1024px){
+  .phero{padding:156px 0 132px;text-align:center}
+  .phero>.wrap{display:block}
+  .phero>.wrap>.sbadges,.phero>.wrap>.sbadges .sb-group{align-items:center}
+  .phero>.wrap>.sbadges .sb-row{justify-content:center}
+}
+@media (max-width:700px){.phero{padding-bottom:64px}}
+
+/* Mac: слева заголовок, «Скоро» и форма, справа MacBook */
+.mhero{padding-bottom:72px}
+.mhero .lead b{font-weight:700}
+.mhero .mbp{margin:48px auto 0}
+@media (min-width:1024px){
+  .mhero>.wrap{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+  .mhero>.wrap>.notify{grid-column:1;grid-row:4;margin-left:0}
+  .mhero>.wrap>.mbp{grid-column:2;grid-row:1/7;margin:0;align-self:center}
+  .mhero:before{left:72%;top:50%}
+}
+@media (max-width:700px){.mhero{padding-bottom:48px}.mhero .mbp{margin-top:36px}}
+.fgrid.mgrid .fcard p{line-height:1.55}
+@media (min-width:901px){.fgrid.mgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* MacBook: рамка, переливающийся край и свечение как у телефона на главной */
+.mbp{width:100%;max-width:680px}
+.mbp-lid{position:relative;border-radius:18px 18px 6px 6px;padding:2.4% 2.4% 3%;border:3px solid transparent;
+  background:linear-gradient(#030306,#030306) padding-box,linear-gradient(140deg,#f1e9ff 0%,#a68bff 18%,#5b3df5 38%,#21155e 55%,#7d5cff 74%,#ffb3e6 90%,#fff 100%) border-box;
+  box-shadow:0 0 0 1px rgba(255,255,255,.35),0 50px 110px -25px rgba(91,61,245,.75),0 0 90px -10px rgba(168,139,255,.55),0 0 0 9px rgba(140,110,255,.08)}
+.mbp-scr{position:relative;border-radius:6px;overflow:hidden;background:#0b0d14;aspect-ratio:1600/896}
+.mbp-scr img{display:block;width:100%;height:auto}
+.mbp-cam{position:absolute;left:50%;top:0;transform:translateX(-50%);width:13%;height:2.6%;min-height:7px;background:#030306;border-radius:0 0 8px 8px}
+.mbp-cam:after{content:"";position:absolute;left:50%;top:30%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#1d2140}
+.mbp-base{position:relative;height:14px;margin:0 -7%;border-radius:2px 2px 14px 14px;
+  background:linear-gradient(180deg,#e6e3f3 0%,#c3bfd6 45%,#8f8aa8 100%);box-shadow:0 18px 40px -16px rgba(60,40,160,.45)}
+.mbp-base i{position:absolute;left:50%;top:0;transform:translateX(-50%);width:16%;height:5px;border-radius:0 0 6px 6px;background:rgba(0,0,0,.18)}
+@media (max-width:700px){.mbp-lid{border-radius:12px 12px 4px 4px}.mbp-base{height:9px;border-radius:2px 2px 9px 9px}.mbp-base i{height:3px}}
+:root[data-theme="dark"] .mbp-base{background:linear-gradient(180deg,#77749a 0%,#4a4766 50%,#2c2a40 100%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mbp-base{background:linear-gradient(180deg,#77749a 0%,#4a4766 50%,#2c2a40 100%)}}
+
+/* «Сообщить о выходе» (assets/notify.js): поле и главная кнопка, как кнопка главной */
+:root{--nerr:#c62828}
+:root[data-theme="dark"]{--nerr:#ff8a80}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--nerr:#ff8a80}}
+.notify{position:relative;max-width:480px;margin:30px auto 0;text-align:left}
+.notify>label{display:block;font-size:15px;line-height:1.45;color:var(--muted);margin-bottom:10px}
+.nrow{display:flex;flex-wrap:wrap;gap:10px}
+.nrow input{flex:1 1 200px;min-width:0;height:48px;box-sizing:border-box;font:inherit;font-size:16px;color:var(--fg);background:var(--btn2-bg);border:1px solid var(--line);border-radius:12px;padding:0 16px}
+.nrow input::placeholder{color:var(--muted);opacity:1}
+.nrow input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.nrow input[aria-invalid="true"]{border-color:var(--nerr)}
+.nrow button{flex:0 0 auto;height:48px;font:inherit;font-size:15px;font-weight:600;color:var(--btn1-fg);background:var(--btn1-bg);border:0;border-radius:12px;padding:0 22px;cursor:pointer;transition:opacity .15s}
+.nrow button:hover{opacity:.88}
+.nrow button:disabled{opacity:.6;cursor:default}
+.nrow button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nmsg{min-height:1.5em;margin:10px 0 0;font-size:15px;line-height:1.5}
+.nmsg.ok{color:var(--accent);font-weight:600}
+.nmsg.err{color:var(--nerr)}
+.nnote{font-size:13.5px;line-height:1.5;color:var(--muted);margin:0}
+.nnote a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.notify .hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+@media (max-width:480px){.nrow button{flex:1 1 100%}}

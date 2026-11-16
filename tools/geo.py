@@ -96,7 +96,7 @@ def faq_from(s):
 
 
 # ---------- главная: вопросы для нейропоиска + разметка из видимого текста ----------
-home = rd('index.html')
+home = pages.fill_stores(rd('index.html'), pages.badges('ru', 'Скоро', alt='Скачайте из RuStore'))
 NEW_FAQ = [
     ('Писарь работает без интернета?',
      'Да. Речь распознаётся прямо на телефоне, звук и текст никуда не отправляются. Интернет нужен один раз, '
@@ -159,22 +159,18 @@ pro = {"@context": "https://schema.org", "@graph": [
 wr(p, head_add(s, meta(PRO_DESC, title, f'{SITE}/ru/pro/', 'ru') + ld_tag(pro)))
 
 # ---------- /get/: одна ссылка на установку (для «Поделиться» и подписи в приложении) ----------
-STORE_BTN = re.search(r'<a class="store"[^>]*>.*?</a>', rd('index.html'), re.S).group(0)
 GET_DESC = ('Скачать Писарь: офлайн-диктовка для Android. Сейчас в RuStore, скоро в Xiaomi GetApps, '
             'Huawei AppGallery и Google Play.')
-GET_MAIN = ('<main><nav><a href="/">Писарь</a> · Скачать</nav>\n' + pages.get_main(f"""
-<h1>Скачать Писарь</h1>
-<p>Писарь: офлайн-диктовка для Android. Кнопка голосового ввода у любого поля, речь распознаётся на телефоне без интернета. Диктовка бесплатна, без рекламы и аккаунта.</p>
-<p>Нужен Android 10 и новее, 64-битный процессор. <a href="/">Что умеет Писарь</a></p>""",
-    [('RuStore', 'Скачайте из', RUSTORE), ('Xiaomi GetApps', 'Скоро в', None), ('Huawei AppGallery', 'Скоро в', None),
-     ('Google Play', 'Скоро в', None)]) + '\n</main>')
+GET_MAIN = pages.get_body('Скачать Писарь',
+    'Офлайн-диктовка для Android. Кнопка голосового ввода у любого поля, речь распознаётся на телефоне без интернета.<br>'
+    '<span>Диктовка бесплатна, без рекламы и аккаунта.</span>',
+    pages.badges('ru', 'Скоро', alt='Скачайте из RuStore'),
+    'Нужен Android 10 и новее, 64-битный процессор. <a href="/">Что умеет Писарь</a>')
 g = rd('ru/pro/index.html')
 g = re.sub(r'<title>.*?</title>', '<title>Скачать Писарь · Писарь</title>', g, count=1)
 g = g.replace(f'href="{SITE}/ru/pro/"', f'href="{SITE}/get/"', 1)
 g = g.replace(' class="on" aria-current="page"', '')
-g = re.sub(r'<main>[\s\S]*?</main>', lambda m: GET_MAIN, g, count=1)
-g = g.replace('<div class="legal is-pro">', '<div class="legal is-wide">', 1)  # на ПК две колонки внутри карточки
-g = re.sub(r'<aside class="pro-aside">[\s\S]*?</aside>\n?', '', g, count=1)  # скриншот Pro здесь не нужен
+g = pages.shell(g, GET_MAIN)
 get_ld = {"@context": "https://schema.org", "@graph": [
     {"@type": "WebPage", "name": "Скачать Писарь", "url": f"{SITE}/get/", "inLanguage": "ru", "description": GET_DESC,
      "about": {"@id": APP_ID}, "publisher": {"@id": ORG_ID}},
@@ -198,16 +194,12 @@ MAC_N = {  # «Сообщить о выходе»: почта в лист ожи
     'many': 'Слишком много попыток. Попробуйте через час.', 'err': 'Не получилось отправить. Попробуйте позже.', 'wait': 'Отправляю…',
     'note': 'Одно письмо о выходе, без рассылок. <a href="{href}">Политика конфиденциальности</a>',
 }
-MAC_MAIN = ('<main><nav><a href="/">Писарь</a> · Mac</nav>\n' + pages.mac_main(f"""
-<h1>Писарь для Mac</h1>
-<p>Скоро здесь.</p>
-<p>Это отдельное приложение для Mac, со своими функциями.</p>
-{pages.notify(MAC_N, 'ru')}
-<p><a href="/">Писарь для Android</a></p>""", 'Окно Писаря для Mac: раздел «Запись»',
-    pages.feats('Что умеет Писарь для Mac', 'Запись, расшифровка и диктовка работают прямо на Маке.', MAC_F)) + '\n</main>')
-m = re.sub(r'<main>[\s\S]*?</main>', lambda _: MAC_MAIN, g, count=1)
-m = re.sub(r'<title>.*?</title>', '<title>Писарь для Mac · Писарь</title>', m, count=1)
-m = m.replace(f'href="{SITE}/get/"', f'href="{SITE}/mac/"', 1)
+MAC_MAIN = pages.mac_body('Писарь для Mac', 'Скоро.', 'Отдельное приложение для Mac, со своими функциями.',
+    pages.notify(MAC_N, 'ru'), 'Окно Писаря для Mac: раздел «Запись»',
+    pages.feats('Что умеет Писарь для Mac', 'Запись, расшифровка и диктовка работают прямо на Маке.', MAC_F))
+m = re.sub(r'<title>.*?</title>', '<title>Писарь для Mac · Писарь</title>', rd('ru/pro/index.html'), count=1)
+m = m.replace(f'href="{SITE}/ru/pro/"', f'href="{SITE}/mac/"', 1).replace(' class="on" aria-current="page"', '')
+m = pages.shell(m, MAC_MAIN)
 os.makedirs(os.path.join(ROOT, 'mac'), exist_ok=True)
 m = m if 'assets/notify.js' in m else m.replace('</head>', '<script src="/assets/notify.js" defer></script>\n</head>', 1)  # форма «Сообщить о выходе»
 wr('mac/index.html', chrome(head_add(m, meta(MAC_DESC, 'Писарь для Mac', f'{SITE}/mac/', 'ru')), 'mac'))
