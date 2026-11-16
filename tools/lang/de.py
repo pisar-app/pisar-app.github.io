@@ -146,6 +146,26 @@ GET = {
     'req': 'Benötigt Android 10 oder neuer und einen 64-Bit-Prozessor.', 'what': 'Was Pisar kann',
 }
 
-MAC = {'h1': 'Pisar für Mac', 'soon': 'Kommt bald.', 'p': 'Das ist eine eigene App für den Mac, mit eigenen Funktionen.', 'android': 'Pisar für Android', 'alt': 'Fenster von Pisar für Mac: Bereich Aufnahme', 'cap': 'Vorschau des App-Fensters'}
+MAC = {'h1': 'Pisar für Mac', 'soon': 'Kommt bald.', 'p': 'Das ist eine eigene App für den Mac, mit eigenen Funktionen.', 'android': 'Pisar für Android', 'alt': 'Fenster von Pisar für Mac: Bereich Aufnahme', 'head': 'Was Pisar für Mac kann', 'sub': 'Aufnahme, Transkription und Diktat laufen direkt auf dem Mac.'}
+MAC_F = {  # функции Мак-Писаря: (заголовок, строка), порядок и иконки в tools/pages.py
+    'rec': ('Bildschirm, Kamera und Ton aufnehmen', 'Bildschirm mit Kamera und Ton, nur Kamera oder nur Ton. Ganzer Bildschirm, ein Bereich oder ein Fenster; Ihr Mikrofon und die Gegenseite im Gespräch in einer Datei.'),
+    'reel': ('Videos im Format 9:16', 'Hochformat: oben der Bildschirm, unten Sie, ein Kamerakreis oder nur der Bildschirm. Der Ausschnitt kann der Maus folgen.'),
+    'tr': ('Audio und Video in Text', 'Eine Datei oder Ihre eigene Aufnahme wird zu Text nach Sprechern: wer was gesagt hat. Auf Wunsch mit Zusammenfassung und Übersetzung.'),
+    'dict': ('Diktat in jeder App', 'Taste drücken und sprechen: Der Text landet dort, wo der Cursor steht, in jedem Programm.'),
+    'clip': ('Zwischenablage', 'Ein Verlauf von allem, was Sie kopiert haben: das Gesuchte finden und in jedes Programm einfügen, ⇧⌘V.'),
+    'scr': ('Text vom Bildschirm', 'Text in einem Bild, Video oder Fenster einkreisen, in dem er sich nicht markieren lässt, und er ist schon in der Zwischenablage.'),
+}
+MAC_N = {  # «Сообщить о выходе»: подпись, поле, кнопка, ответы формы, строка под ней
+    'label': 'Hinterlassen Sie Ihre E-Mail-Adresse, wir schreiben, sobald die Mac-Version erscheint.',
+    'ph': 'Ihre E-Mail-Adresse',
+    'btn': 'Benachrichtigen',
+    'empty': 'Bitte E-Mail-Adresse eingeben.',
+    'bad': 'Bitte prüfen Sie die Adresse, sie scheint einen Fehler zu enthalten.',
+    'ok': 'Fertig, wir schreiben, sobald sie erscheint.',
+    'many': 'Zu viele Versuche. Bitte in einer Stunde erneut.',
+    'err': 'Senden hat nicht geklappt. Bitte später erneut versuchen.',
+    'wait': 'Wird gesendet…',
+    'note': 'Eine E-Mail zum Start, kein Newsletter. <a href="{href}">Datenschutzerklärung</a>',
+}
 
 LEGAL_NOTE = 'Diese Übersetzung dient nur der Orientierung. Maßgeblich ist die <a href="{href}" hreflang="ru">russische Fassung</a>.'

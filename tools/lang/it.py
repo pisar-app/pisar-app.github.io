@@ -146,6 +146,26 @@ GET = {
     'req': 'Serve Android 10 o successivo e un processore a 64 bit.', 'what': 'Cosa fa Pisar',
 }
 
-MAC = {'h1': 'Pisar per Mac', 'soon': 'Presto qui.', 'p': 'È un’app a parte per Mac, con funzioni proprie.', 'android': 'Pisar per Android', 'alt': 'Finestra di Pisar per Mac: sezione Registrazione', 'cap': 'Anteprima della finestra dell’app'}
+MAC = {'h1': 'Pisar per Mac', 'soon': 'Presto qui.', 'p': 'È un’app a parte per Mac, con funzioni proprie.', 'android': 'Pisar per Android', 'alt': 'Finestra di Pisar per Mac: sezione Registrazione', 'head': 'Cosa fa Pisar per Mac', 'sub': 'Registrazione, trascrizione e dettatura funzionano direttamente sul Mac.'}
+MAC_F = {  # функции Мак-Писаря: (заголовок, строка), порядок и иконки в tools/pages.py
+    'rec': ('Registrare schermo, fotocamera e audio', 'Schermo con fotocamera e audio, solo fotocamera o solo audio. Tutto lo schermo, un’area o una finestra; il tuo microfono e gli altri in chiamata in un unico file.'),
+    'reel': ('Video 9:16', 'Video verticale: lo schermo sopra e tu sotto, un cerchio con la fotocamera o solo lo schermo. L’inquadratura può seguire il mouse.'),
+    'tr': ('Audio e video in testo', 'Un file o una tua registrazione diventa testo diviso per voci: chi ha detto cosa. Riassunto e traduzione se vuoi.'),
+    'dict': ('Dettatura in qualsiasi app', 'Premi il tasto e parla: il testo finisce dove si trova il cursore, in qualsiasi programma.'),
+    'clip': ('Appunti', 'Un elenco di tutto ciò che hai copiato: trova quello che serve e incollalo in qualsiasi programma, ⇧⌘V.'),
+    'scr': ('Testo dallo schermo', 'Cerchia il testo in un’immagine, un video o una finestra dove non si può selezionare, ed è già negli appunti.'),
+}
+MAC_N = {  # «Сообщить о выходе»: подпись, поле, кнопка, ответы формы, строка под ней
+    'label': 'Lascia la tua email e ti scriveremo quando uscirà la versione per Mac.',
+    'ph': 'La tua email',
+    'btn': 'Avvisami',
+    'empty': 'Inserisci la tua email.',
+    'bad': 'Controlla l’indirizzo: sembra esserci un errore.',
+    'ok': 'Fatto, ti scriveremo quando uscirà.',
+    'many': 'Troppi tentativi. Riprova tra un’ora.',
+    'err': 'Invio non riuscito. Riprova più tardi.',
+    'wait': 'Invio…',
+    'note': 'Una sola email all’uscita, niente newsletter. <a href="{href}">Informativa sulla privacy</a>',
+}
 
 LEGAL_NOTE = 'Questa traduzione è fornita per comodità. Fa fede la <a href="{href}" hreflang="ru">versione russa</a>.'

@@ -146,6 +146,26 @@ GET = {
     'req': 'Vereist Android 10 of nieuwer en een 64-bit processor.', 'what': 'Wat Pisar kan',
 }
 
-MAC = {'h1': 'Pisar voor Mac', 'soon': 'Binnenkort.', 'p': 'Het is een aparte app voor de Mac, met eigen functies.', 'android': 'Pisar voor Android', 'alt': 'Venster van Pisar voor Mac: onderdeel Opnemen', 'cap': 'Voorbeeld van het app-venster'}
+MAC = {'h1': 'Pisar voor Mac', 'soon': 'Binnenkort.', 'p': 'Het is een aparte app voor de Mac, met eigen functies.', 'android': 'Pisar voor Android', 'alt': 'Venster van Pisar voor Mac: onderdeel Opnemen', 'head': 'Wat Pisar voor Mac doet', 'sub': 'Opnemen, uitschrijven en dicteren gebeuren op de Mac zelf.'}
+MAC_F = {  # функции Мак-Писаря: (заголовок, строка), порядок и иконки в tools/pages.py
+    'rec': ('Scherm, camera en geluid opnemen', 'Scherm met camera en geluid, alleen camera of alleen geluid. Het hele scherm, een gebied of een venster; je microfoon en je gesprekspartners in één bestand.'),
+    'reel': ('Video’s in 9:16', 'Staande video: bovenin het scherm en jij eronder, een cameracirkel of alleen het scherm. Het beeld kan de muis volgen.'),
+    'tr': ('Audio en video naar tekst', 'Een bestand of je eigen opname wordt tekst per spreker: wie wat zei. Desgewenst met samenvatting en vertaling.'),
+    'dict': ('Dicteren in elke app', 'Druk op de toets en praat: de tekst komt waar de cursor staat, in elk programma.'),
+    'clip': ('Klembord', 'Een overzicht van alles wat je hebt gekopieerd: vind wat je zoekt en plak het in elk programma, ⇧⌘V.'),
+    'scr': ('Tekst van het scherm', 'Omcirkel tekst in een afbeelding, een video of een venster waar je hem niet kunt selecteren, en hij staat al op het klembord.'),
+}
+MAC_N = {  # «Сообщить о выходе»: подпись, поле, кнопка, ответы формы, строка под ней
+    'label': 'Laat je e-mailadres achter, dan mailen we als de Mac-versie uitkomt.',
+    'ph': 'Je e-mailadres',
+    'btn': 'Laat het me weten',
+    'empty': 'Vul je e-mailadres in.',
+    'bad': 'Controleer het adres: er lijkt een fout in te zitten.',
+    'ok': 'Klaar, we mailen als hij uitkomt.',
+    'many': 'Te veel pogingen. Probeer het over een uur opnieuw.',
+    'err': 'Versturen lukte niet. Probeer het later opnieuw.',
+    'wait': 'Versturen…',
+    'note': 'Eén mail bij de lancering, geen nieuwsbrief. <a href="{href}">Privacybeleid</a>',
+}
 
 LEGAL_NOTE = 'Deze vertaling is er voor je gemak. Bindend is de <a href="{href}" hreflang="ru">Russische versie</a>.'

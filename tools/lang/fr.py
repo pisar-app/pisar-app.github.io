@@ -146,6 +146,26 @@ GET = {
     'req': 'Il faut Android 10 ou plus récent et un processeur 64 bits.', 'what': 'Ce que fait Pisar',
 }
 
-MAC = {'h1': 'Pisar pour Mac', 'soon': 'Bientôt ici.', 'p': 'C’est une appli distincte pour Mac, avec ses propres fonctions.', 'android': 'Pisar pour Android', 'alt': 'Fenêtre de Pisar pour Mac : section Enregistrement', 'cap': 'Aperçu de la fenêtre de l’appli'}
+MAC = {'h1': 'Pisar pour Mac', 'soon': 'Bientôt ici.', 'p': 'C’est une appli distincte pour Mac, avec ses propres fonctions.', 'android': 'Pisar pour Android', 'alt': 'Fenêtre de Pisar pour Mac : section Enregistrement', 'head': 'Ce que fait Pisar pour Mac', 'sub': 'L’enregistrement, la transcription et la dictée se font directement sur le Mac.'}
+MAC_F = {  # функции Мак-Писаря: (заголовок, строка), порядок и иконки в tools/pages.py
+    'rec': ('Enregistrer l’écran, la caméra et le son', 'L’écran avec caméra et son, la caméra seule ou le son seul. Tout l’écran, une zone ou une fenêtre ; votre micro et vos interlocuteurs dans un seul fichier.'),
+    'reel': ('Vidéos 9:16', 'Vidéo verticale : l’écran en haut et vous en bas, une bulle caméra ou l’écran seul. Le cadre peut suivre la souris.'),
+    'tr': ('Audio et vidéo en texte', 'Un fichier ou votre propre enregistrement devient un texte par intervenant : qui a dit quoi. Résumé et traduction si vous voulez.'),
+    'dict': ('Dictée dans toutes les applis', 'Appuyez sur la touche et parlez : le texte arrive là où se trouve le curseur, dans n’importe quelle appli.'),
+    'clip': ('Presse-papiers', 'Un fil de tout ce que vous avez copié : retrouvez ce qu’il vous faut et collez-le dans n’importe quelle appli, ⇧⌘V.'),
+    'scr': ('Texte à l’écran', 'Entourez un texte dans une image, une vidéo ou une fenêtre où il ne se sélectionne pas, et il est déjà dans le presse-papiers.'),
+}
+MAC_N = {  # «Сообщить о выходе»: подпись, поле, кнопка, ответы формы, строка под ней
+    'label': 'Laissez votre e-mail, nous vous écrirons à la sortie de la version Mac.',
+    'ph': 'Votre e-mail',
+    'btn': 'Me prévenir',
+    'empty': 'Saisissez votre e-mail.',
+    'bad': 'Vérifiez l’adresse : elle semble contenir une erreur.',
+    'ok': 'C’est noté, nous vous écrirons à la sortie.',
+    'many': 'Trop de tentatives. Réessayez dans une heure.',
+    'err': 'L’envoi a échoué. Réessayez plus tard.',
+    'wait': 'Envoi…',
+    'note': 'Un seul e-mail à la sortie, pas de newsletter. <a href="{href}">Politique de confidentialité</a>',
+}
 
 LEGAL_NOTE = 'Cette traduction est fournie pour plus de commodité. Seule la <a href="{href}" hreflang="ru">version russe</a> fait foi.'

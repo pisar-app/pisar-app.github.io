@@ -146,6 +146,26 @@ GET = {
     'req': 'Requires Android 10 or newer and a 64-bit processor.', 'what': 'What Pisar can do',
 }
 
-MAC = {'h1': 'Pisar for Mac', 'soon': 'Coming soon.', 'p': 'It is a separate app for Mac, with its own features.', 'android': 'Pisar for Android', 'alt': 'Pisar for Mac window: the Recording section', 'cap': 'A preview of the app window'}
+MAC = {'h1': 'Pisar for Mac', 'soon': 'Coming soon.', 'p': 'It is a separate app for Mac, with its own features.', 'android': 'Pisar for Android', 'alt': 'Pisar for Mac window: the Recording section', 'head': 'What Pisar for Mac does', 'sub': 'Recording, transcription and dictation run right on your Mac.'}
+MAC_F = {  # функции Мак-Писаря: (заголовок, строка), порядок и иконки в tools/pages.py
+    'rec': ('Screen, camera and sound recording', 'Screen with camera and sound, camera only or sound only. Full screen, an area or a window; your mic and the other side of the call in one file.'),
+    'reel': ('9:16 videos', 'Vertical video: screen on top and you below, a camera circle, or just the screen. The frame can follow the mouse.'),
+    'tr': ('Audio and video to text', 'A file or your own recording becomes text by speaker: who said what. Summary and translation if you want.'),
+    'dict': ('Dictation in any app', 'Press the key and speak: the text lands where the cursor is, in any app.'),
+    'clip': ('Clipboard', 'A feed of everything you copied: find what you need and paste it into any app, ⇧⌘V.'),
+    'scr': ('Text from the screen', 'Draw around text in a picture, a video or a window where it can’t be selected, and it’s already on the clipboard.'),
+}
+MAC_N = {  # «Сообщить о выходе»: подпись, поле, кнопка, ответы формы, строка под ней
+    'label': 'Leave your email and we’ll write when the Mac version is out.',
+    'ph': 'Your email',
+    'btn': 'Notify me',
+    'empty': 'Enter your email.',
+    'bad': 'Check your email: it looks like there’s a typo.',
+    'ok': 'Done, we’ll write when it’s out.',
+    'many': 'Too many tries. Try again in an hour.',
+    'err': 'Couldn’t send. Please try later.',
+    'wait': 'Sending…',
+    'note': 'One email about the release, no newsletters. <a href="{href}">Privacy policy</a>',
+}
 
 LEGAL_NOTE = 'This is a translation for your convenience. The <a href="{href}" hreflang="ru">Russian version</a> is the one that applies.'

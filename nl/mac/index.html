@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="/assets/blog.css">
 <link rel="stylesheet" href="/assets/legal.css">
 <script>(function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)})();</script>
+<script src="/assets/notify.js" defer></script>
 <!-- lang -->
 <link rel="alternate" hreflang="ru" href="https://pisar-app.ru/mac/">
 <link rel="alternate" hreflang="en" href="https://pisar-app.ru/en/mac/">
@@ -67,10 +68,29 @@
 <h1>Pisar voor Mac</h1>
 <p>Binnenkort.</p>
 <p>Het is een aparte app voor de Mac, met eigen functies.</p>
+<form class="notify" action="https://api.pisar-app.ru/waitlist" method="post" novalidate data-empty="Vul je e-mailadres in." data-bad="Controleer het adres: er lijkt een fout in te zitten." data-ok="Klaar, we mailen als hij uitkomt." data-many="Te veel pogingen. Probeer het over een uur opnieuw." data-err="Versturen lukte niet. Probeer het later opnieuw." data-wait="Versturen…">
+<label for="nm">Laat je e-mailadres achter, dan mailen we als de Mac-versie uitkomt.</label>
+<div class="nrow"><input id="nm" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Je e-mailadres"><button type="submit">Laat het me weten</button></div>
+<div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<p class="nmsg" role="status" aria-live="polite"></p>
+<p class="nnote">Eén mail bij de lancering, geen nieuwsbrief. <a href="/nl/privacy/">Privacybeleid</a></p>
+</form>
 <p><a href="/nl/">Pisar voor Android</a></p>
 </div>
-<figure class="mbp"><div class="mbp-lid"><div class="mbp-scr"><img src="/assets/shots/mac.webp" width="1600" height="896" alt="Venster van Pisar voor Mac: onderdeel Opnemen"></div><i class="mbp-cam"></i></div><div class="mbp-base"><i></i></div><figcaption>Voorbeeld van het app-venster</figcaption></figure>
+<figure class="mbp"><div class="mbp-lid"><div class="mbp-scr"><img src="/assets/shots/mac.webp" width="1600" height="896" alt="Venster van Pisar voor Mac: onderdeel Opnemen"></div><i class="mbp-cam"></i></div><div class="mbp-base"><i></i></div></figure>
 </div>
+<section class="mfeats">
+<h2>Wat Pisar voor Mac doet</h2>
+<p class="msub">Opnemen, uitschrijven en dicteren gebeuren op de Mac zelf.</p>
+<ul class="feats">
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 3H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h5v2H7v2h10v-2h-2v-2h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm0 13H4V5h16v11Z"/><circle cx="12" cy="10.5" r="3"/></svg></span><h3>Scherm, camera en geluid opnemen</h3><p>Scherm met camera en geluid, alleen camera of alleen geluid. Het hele scherm, een gebied of een venster; je microfoon en je gesprekspartners in één bestand.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 1H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3Zm1 19a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16Z"/><path d="M10 8.5v7l5.5-3.5z"/></svg></span><h3>Video’s in 9:16</h3><p>Staande video: bovenin het scherm en jij eronder, een cameracirkel of alleen het scherm. Het beeld kan de muis volgen.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm4 18H6V4h7v5h5v11Z"/><path d="M8 12h8v2H8zm0 4h5v2H8z"/></svg></span><h3>Audio en video naar tekst</h3><p>Een bestand of je eigen opname wordt tekst per spreker: wie wat zei. Desgewenst met samenvatting en vertaling.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/></svg></span><h3>Dicteren in elke app</h3><p>Druk op de toets en praat: de tekst komt waar de cursor staat, in elk programma.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3h-4.18a3 3 0 0 0-5.64 0H5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm7 17H5V5h2v3h10V5h2v15Z"/></svg></span><h3>Klembord</h3><p>Een overzicht van alles wat je hebt gekopieerd: vind wat je zoekt en plak het in elk programma, ⇧⌘V.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h6v2H5v4H3V3Zm12 0h6v6h-2V5h-4V3ZM3 15h2v4h4v2H3v-6Zm16 4v-4h2v6h-6v-2h4Z"/><path d="M7 7h10v3h-2V9h-2v7h1.5v2h-5v-2H11V9H9v1H7V7Z"/></svg></span><h3>Tekst van het scherm</h3><p>Omcirkel tekst in een afbeelding, een video of een venster waar je hem niet kunt selecteren, en hij staat al op het klembord.</p></li>
+</ul>
+</section>
 </main>
 </div></div>
 <footer>

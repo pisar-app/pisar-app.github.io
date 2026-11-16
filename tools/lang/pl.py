@@ -146,6 +146,26 @@ GET = {
     'req': 'Wymaga Androida 10 lub nowszego i procesora 64-bitowego.', 'what': 'Co potrafi Pisar',
 }
 
-MAC = {'h1': 'Pisar na Maca', 'soon': 'Już wkrótce.', 'p': 'To osobna aplikacja na Maca, z własnymi funkcjami.', 'android': 'Pisar na Androida', 'alt': 'Okno aplikacji Pisar na Maca: sekcja Nagrywanie', 'cap': 'Podgląd okna aplikacji'}
+MAC = {'h1': 'Pisar na Maca', 'soon': 'Już wkrótce.', 'p': 'To osobna aplikacja na Maca, z własnymi funkcjami.', 'android': 'Pisar na Androida', 'alt': 'Okno aplikacji Pisar na Maca: sekcja Nagrywanie', 'head': 'Co potrafi Pisar na Maca', 'sub': 'Nagrywanie, transkrypcja i dyktowanie działają na samym Macu.'}
+MAC_F = {  # функции Мак-Писаря: (заголовок, строка), порядок и иконки в tools/pages.py
+    'rec': ('Nagrywanie ekranu, kamery i dźwięku', 'Ekran z kamerą i dźwiękiem, sama kamera albo sam dźwięk. Cały ekran, obszar lub okno; twój mikrofon i rozmówcy w jednym pliku.'),
+    'reel': ('Filmy 9:16', 'Pionowe wideo: ekran na górze, ty na dole, kółko z kamerą albo sam ekran. Kadr może podążać za myszą.'),
+    'tr': ('Audio i wideo na tekst', 'Plik albo twoje nagranie staje się tekstem z podziałem na mówców: kto co powiedział. Na życzenie streszczenie i tłumaczenie.'),
+    'dict': ('Dyktowanie w każdej aplikacji', 'Naciśnij klawisz i mów: tekst trafi tam, gdzie jest kursor, w dowolnym programie.'),
+    'clip': ('Schowek', 'Historia wszystkiego, co skopiowano: znajdź, czego potrzebujesz, i wklej w dowolnym programie, ⇧⌘V.'),
+    'scr': ('Tekst z ekranu', 'Obrysuj tekst na obrazku, w filmie albo w oknie, gdzie nie da się go zaznaczyć, i już jest w schowku.'),
+}
+MAC_N = {  # «Сообщить о выходе»: подпись, поле, кнопка, ответы формы, строка под ней
+    'label': 'Zostaw e-mail, a napiszemy, gdy wyjdzie wersja na Maca.',
+    'ph': 'Twój e-mail',
+    'btn': 'Powiadom mnie',
+    'empty': 'Wpisz e-mail.',
+    'bad': 'Sprawdź adres: wygląda na to, że jest w nim błąd.',
+    'ok': 'Gotowe, napiszemy, gdy wyjdzie.',
+    'many': 'Za dużo prób. Spróbuj za godzinę.',
+    'err': 'Nie udało się wysłać. Spróbuj później.',
+    'wait': 'Wysyłam…',
+    'note': 'Jeden e-mail o premierze, bez newslettera. <a href="{href}">Polityka prywatności</a>',
+}
 
 LEGAL_NOTE = 'To tłumaczenie ma charakter pomocniczy. Wiążąca jest <a href="{href}" hreflang="ru">wersja rosyjska</a>.'

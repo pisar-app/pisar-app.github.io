@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="/assets/blog.css">
 <link rel="stylesheet" href="/assets/legal.css">
 <script>(function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)})();</script>
+<script src="/assets/notify.js" defer></script>
 <!-- lang -->
 <link rel="alternate" hreflang="ru" href="https://pisar-app.ru/mac/">
 <link rel="alternate" hreflang="en" href="https://pisar-app.ru/en/mac/">
@@ -67,10 +68,29 @@
 <h1>Pisar para Mac</h1>
 <p>Muy pronto.</p>
 <p>Es una app aparte para Mac, con sus propias funciones.</p>
+<form class="notify" action="https://api.pisar-app.ru/waitlist" method="post" novalidate data-empty="Escribe tu correo." data-bad="Revisa el correo: parece que tiene un error." data-ok="Listo, te escribiremos cuando salga." data-many="Demasiados intentos. Prueba dentro de una hora." data-err="No se pudo enviar. Prueba más tarde." data-wait="Enviando…">
+<label for="nm">Deja tu correo y te escribiremos cuando salga la versión para Mac.</label>
+<div class="nrow"><input id="nm" type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Tu correo"><button type="submit">Avisarme</button></div>
+<div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<p class="nmsg" role="status" aria-live="polite"></p>
+<p class="nnote">Un solo correo cuando salga, sin boletines. <a href="/es/privacy/">Política de privacidad</a></p>
+</form>
 <p><a href="/es/">Pisar para Android</a></p>
 </div>
-<figure class="mbp"><div class="mbp-lid"><div class="mbp-scr"><img src="/assets/shots/mac.webp" width="1600" height="896" alt="Ventana de Pisar para Mac: sección Grabación"></div><i class="mbp-cam"></i></div><div class="mbp-base"><i></i></div><figcaption>Vista previa de la ventana de la app</figcaption></figure>
+<figure class="mbp"><div class="mbp-lid"><div class="mbp-scr"><img src="/assets/shots/mac.webp" width="1600" height="896" alt="Ventana de Pisar para Mac: sección Grabación"></div><i class="mbp-cam"></i></div><div class="mbp-base"><i></i></div></figure>
 </div>
+<section class="mfeats">
+<h2>Qué hace Pisar para Mac</h2>
+<p class="msub">La grabación, la transcripción y el dictado funcionan en el propio Mac.</p>
+<ul class="feats">
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 3H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h5v2H7v2h10v-2h-2v-2h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm0 13H4V5h16v11Z"/><circle cx="12" cy="10.5" r="3"/></svg></span><h3>Grabar pantalla, cámara y sonido</h3><p>Pantalla con cámara y sonido, solo cámara o solo sonido. Toda la pantalla, una zona o una ventana; tu micrófono y los demás de la llamada en un solo archivo.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 1H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3Zm1 19a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16Z"/><path d="M10 8.5v7l5.5-3.5z"/></svg></span><h3>Vídeos 9:16</h3><p>Vídeo vertical: la pantalla arriba y tú abajo, un círculo de cámara o solo la pantalla. El encuadre puede seguir al ratón.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm4 18H6V4h7v5h5v11Z"/><path d="M8 12h8v2H8zm0 4h5v2H8z"/></svg></span><h3>Audio y vídeo a texto</h3><p>Un archivo o tu propia grabación se convierte en texto por hablantes: quién dijo qué. Resumen y traducción si quieres.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/></svg></span><h3>Dictado en cualquier app</h3><p>Pulsa la tecla y habla: el texto aparece donde está el cursor, en cualquier programa.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3h-4.18a3 3 0 0 0-5.64 0H5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm7 17H5V5h2v3h10V5h2v15Z"/></svg></span><h3>Portapapeles</h3><p>Un historial de todo lo que copiaste: encuentra lo que buscas y pégalo en cualquier programa, ⇧⌘V.</p></li>
+<li><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h6v2H5v4H3V3Zm12 0h6v6h-2V5h-4V3ZM3 15h2v4h4v2H3v-6Zm16 4v-4h2v6h-6v-2h4Z"/><path d="M7 7h10v3h-2V9h-2v7h1.5v2h-5v-2H11V9H9v1H7V7Z"/></svg></span><h3>Texto de la pantalla</h3><p>Rodea el texto de una imagen, un vídeo o una ventana donde no se puede seleccionar, y ya está en el portapapeles.</p></li>
+</ul>
+</section>
 </main>
 </div></div>
 <footer>

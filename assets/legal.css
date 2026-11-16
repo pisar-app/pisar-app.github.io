@@ -105,3 +105,39 @@ header{position:absolute}
   .legal .toc a:hover{color:var(--fg)}
 }
 html{scroll-padding-top:24px}
+
+/* 16.11, чат 35: /mac/. Функции блоками, как «Всё, что умеет Писарь» на главной: иконка и заголовок в строку, ниже текст */
+.legal main .mfeats{margin-top:44px}
+.legal main .mfeats h2{margin:0 0 6px}
+.legal main .msub{color:var(--muted);margin:0 0 20px}
+.legal main .feats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.legal main .feats li{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center;align-content:start;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:20px}
+.legal main .feats .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--chip);color:var(--accent)}
+.legal main .feats svg{width:22px;height:22px;display:block}
+.legal main .feats h3{margin:0;font-size:17px;line-height:1.25;letter-spacing:-.01em}
+.legal main .feats p{grid-column:1/-1;margin:12px 0 0;color:var(--muted);font-size:14.5px;line-height:1.55}
+@media (min-width:640px){.legal main .feats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.legal main .mfeats{margin-top:56px}.legal main .feats{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.legal main .feats li{padding:22px}}
+
+/* «Сообщить о выходе»: почта и кнопка в строку, на телефоне кнопка во всю ширину */
+.legal main .notify{margin:22px 0 18px;position:relative}
+.legal main .notify>label{display:block;font-weight:600;font-size:15.5px;line-height:1.45;margin-bottom:10px}
+.legal main .nrow{display:flex;flex-wrap:wrap;gap:10px}
+.legal main .nrow input{flex:1 1 200px;min-width:0;box-sizing:border-box;font:inherit;font-size:16px;line-height:1.3;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.legal main .nrow input::placeholder{color:var(--muted);opacity:1}
+.legal main .nrow input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.legal main .nrow input[aria-invalid="true"]{border-color:var(--nerr)}
+.legal main .nrow button{flex:0 0 auto;font:inherit;font-size:16px;font-weight:600;line-height:1.3;color:var(--card);background:var(--accent);border:0;border-radius:12px;padding:12px 18px;cursor:pointer}
+.legal main .nrow button:hover{opacity:.92}
+.legal main .nrow button:disabled{opacity:.6;cursor:default}
+.legal main .nrow button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legal main .nmsg{min-height:1.5em;margin:10px 0 0;font-size:15px;line-height:1.5}
+.legal main .nmsg.ok{color:var(--accent);font-weight:600}
+.legal main .nmsg.err{color:var(--nerr)}
+.legal main .nnote{font-size:13.5px;line-height:1.5;color:var(--muted);margin:2px 0 0}
+.legal main .nnote a{color:inherit}
+.legal main .notify .hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.legal{--nerr:#c62828}
+[data-theme="dark"] .legal{--nerr:#ff8a80}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .legal{--nerr:#ff8a80}}
+@media (max-width:700px){.legal main .nrow button{flex:1 1 100%}}

@@ -262,8 +262,15 @@ def get(lang, L):
 
 def mac(lang, L):
     G = L.MAC
-    text = f'<h1>{G["h1"]}</h1>\n<p>{G["soon"]}</p>\n<p>{G["p"]}</p>\n<p><a href="/{lang}/">{G["android"]}</a></p>'
-    return simple(lang, L, 'mac', layout.mac_main(text, G['alt'], G['cap']), L.META['mac_title'], L.META['mac_desc'], 'Mac')
+    text = f'<h1>{G["h1"]}</h1>\n<p>{G["soon"]}</p>\n<p>{G["p"]}</p>\n{layout.notify(L.MAC_N, lang)}\n<p><a href="/{lang}/">{G["android"]}</a></p>'
+    main = layout.mac_main(text, G['alt'], layout.feats(G['head'], G['sub'], L.MAC_F))
+    return mac_js(simple(lang, L, 'mac', main, L.META['mac_title'], L.META['mac_desc'], 'Mac'))
+
+
+def mac_js(s):
+    """Форма «Сообщить о выходе» на /mac/: assets/notify.js (повторная сборка не дублирует)."""
+    tag = '<script src="/assets/notify.js" defer></script>\n'
+    return s if tag in s else s.replace('</head>', tag + '</head>', 1)
 
 
 # ---------- политика и соглашение: перевод для удобства, действует русская версия ----------
