@@ -52,3 +52,10 @@
   function f() { h.classList.toggle('stuck', window.scrollY > 8); }
   f(); window.addEventListener('scroll', f, { passive: true });
 })();
+
+/* Главная: пока кнопки магазинов видны на экране, «Скачать» в шапке не нужна — прячем; появляется, когда они ушли из виду */
+(function () {
+  var h = document.querySelector('header.hd'), d = document.getElementById('download');
+  if (!h || !d || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (es) { h.classList.toggle('dl-on', es[0].isIntersecting); }, { rootMargin: '-72px 0px 0px 0px' }).observe(d);
+})();

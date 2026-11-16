@@ -104,3 +104,6 @@ a.sbtn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 }
 
 .hd-bar .tbtn{flex-shrink:0}
+
+.getbtn{transition:transform .15s,background .15s,opacity .2s}
+header.hd.dl-on .getbtn{opacity:0;pointer-events:none}
