@@ -10,7 +10,7 @@ GP_LANGS = {'ru', 'en', 'de', 'fr', 'es', 'it', 'pt', 'pl', 'nl', 'bg'}  # ес�
 def _rustore(alt):
     """Официальный значок RuStore (assets/rustore-color-dark.svg) в обеих темах: все значки одинаковые чёрные плитки."""
     return (f'<a class="sb-rs" href="{RUSTORE}" target="_blank" rel="noopener">'
-            f'<img src="/assets/rustore-color-dark.svg" width="111" height="40" alt="{alt}"></a>')
+            f'<img src="/assets/badges/rustore-tile.svg" width="111" height="40" alt="{alt}"></a>')
 
 
 def _soon(lang):
