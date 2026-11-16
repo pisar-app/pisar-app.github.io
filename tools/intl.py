@@ -163,6 +163,7 @@ def home(lang, L):
     shows = iter(H['shows'])
     assert len(SHOW_T.findall(s)) == len(H['shows']) == 4
     s = SHOW_T.sub(lambda m: m.group(1) + '{}</h3><p>{}</p></div>'.format(*next(shows)), s)
+    s = sub1(s, '/assets/shots/app/ru/', f'/assets/shots/app/{lang}/', 4)  # экраны телефона у блоков Pro на своём языке
     s = HERO_NOTE.sub(lambda m: m.group(1) + H['hero_note'] + m.group(2), s, count=1)
     s = layout.fill_stores(s, layout.badges(lang, L.GET['soon'], L.GET['russia']))
     P = H['price']
@@ -215,7 +216,6 @@ def home(lang, L):
 
 # ---------- Pro, Скачать, Mac ----------
 MAIN = re.compile(r'<main>[\s\S]*?</main>')
-ASIDE = re.compile(r'<aside class="pro-aside">[\s\S]*?</aside>\n?')
 
 
 def pro(lang, L):
@@ -223,10 +223,8 @@ def pro(lang, L):
     s = rd('ru/pro/index.html')
     s = LD_RE.sub('', s)
     s = head(s, lang, 'pro', M['pro_title'], M['pro_desc'])
-    s = one(MAIN, s, f'<main><nav><a href="/{lang}/">Pisar</a> · Pisar Pro</nav>\n{P["main"].strip()}\n'
-                     f'<p><a href="/{lang}/terms/">{t(FOOT, lang, "terms")}</a> · <a href="/{lang}/privacy/">{t(FOOT, lang, "privacy")}</a></p>\n</main>')
-    s = one(ASIDE, s, f'<aside class="pro-aside"><figure class="appshot"><img src="/assets/shots/pro-{lang}.webp" alt="{esc(P["shot_alt"])}">'
-                      f'<figcaption>{P["shot_cap"]}</figcaption></figure></aside>\n')
+    links = f'<p><a href="/{lang}/terms/">{t(FOOT, lang, "terms")}</a> · <a href="/{lang}/privacy/">{t(FOOT, lang, "privacy")}</a></p>'
+    s = layout.shell(s, layout.pro_body(P['main'] + links, f'/assets/shots/app/{lang}/pro.webp', esc(P['shot_alt'])))
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebPage", "name": M['pro_title'], "url": f"{SITE}/{lang}/pro/", "inLanguage": lang,
          "description": M['pro_desc'], "about": {"@id": f"{SITE}/{lang}/#app"}, "publisher": {"@id": ORG_ID}},

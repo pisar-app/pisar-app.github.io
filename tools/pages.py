@@ -57,8 +57,9 @@ def fill_stores(s, block):
 
 
 def shell(s, body):
-    """Страница из копии Pro: вместо карточки документа своё тело, вместо legal.css стили страниц."""
-    s = re.sub(r'<div class="legal[^"]*"><div class="wrap">[\s\S]*?\n(?=<footer)', lambda m: body.strip() + '\n', s, count=1)
+    """Страница из копии Pro: всё между шапкой и подвалом заменяется своим телом, вместо legal.css стили страниц."""
+    s, n = re.subn(r'(?<=</header>\n)[\s\S]*?\n(?=<footer)', lambda m: body.strip() + '\n', s, count=1)
+    assert n == 1, 'нет места между </header> и <footer>'
     return s.replace('<link rel="stylesheet" href="/assets/legal.css">', '<link rel="stylesheet" href="/assets/pages.css">', 1)
 
 
@@ -126,4 +127,32 @@ def mac_body(h1, soon, p, form, alt, after):
   </div>
 </div>
 {after}
+</main>'''
+
+
+def pro_body(main, shot, alt):
+    """Pro (чат 38) в стиле главной. main: текст Pro как был (h1, вступление, p.price и строка под ним, дальше разделы h2).
+    Всё до первого h2 уходит на первый экран с градиентом .hero: слева заголовок, вступление и цена, справа телефон
+    с экраном Pro (assets/shots/app/<код>/pro.webp, корпус и свечение телефона главной); разделы ниже обычным текстом."""
+    main = re.sub(r'^\s*<nav>[\s\S]*?</nav>\s*', '', main.strip())  # хлебные крошки: на странице в стиле главной не нужны
+    i = main.index('<h2>')
+    top, rest = main[:i].strip(), main[i:].strip()
+    h1 = re.match(r'<h1>[\s\S]*?</h1>', top).group(0)
+    top = top[len(h1):].strip()
+    j = top.index('<p class="price">')
+    intro, price = top[:j].strip(), top[j:].strip()
+    return f'''<main class="ppage">
+<div class="hero prohero">
+  <div class="wrap" style="position:relative">
+    {h1}
+    <div class="lead">{intro}</div>
+    <div class="pprice">{price}</div>
+    <div class="stage pstage"><div class="phone"><div class="screen"><img src="{shot}" width="552" height="1197" alt="{alt}"></div></div></div>
+  </div>
+</div>
+<section class="pdoc">
+  <div class="wrap">
+{rest}
+  </div>
+</section>
 </main>'''
