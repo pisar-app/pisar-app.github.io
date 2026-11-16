@@ -28,7 +28,7 @@ HOME = {
     'f2_h': 'In qualsiasi app', 'f2_p': 'Messaggi, email, note, ricerca: il testo va dove c’è il cursore. Non serve cambiare tastiera.',
     'f3_h': 'Gratis e senza pubblicità', 'f3_p': 'Dettatura senza abbonamento e senza limiti. Pro si compra una volta sola.',
     'c_h2': 'Testo pulito da subito', 'c_sub': 'Niente da correggere: punteggiatura, maiuscole e cifre le mette Pisar.',
-    'c_said': '<span>Dici</span>', 'c_ins': '<span>Viene scritto</span>',
+    'c_said': '<span>Dici</span>', 'c_ins': '<span>Pisar scrive</span>',
     'rows': [
         ('venticinque attività su github', '25 attività su GitHub', 'cifre, nomi dal tuo dizionario'),
         ('vieni sabato', 'Vieni sabato?', 'maiuscola e punto interrogativo'),
@@ -44,11 +44,11 @@ HOME = {
         ('Capisce 24 lingue', 'Italiano, inglese, francese e altre. La lingua la riconosce Pisar da solo.'),
         ('Scritto bene subito', 'Punteggiatura, maiuscole, numeri in cifre, punto interrogativo dopo una domanda.'),
         ('Senza «cioè» e «tipo»', 'Toglie intercalari, ripetizioni e lapsus. Se vuoi.'),
-        ('Nomi scritti giusti', 'Aggiungi nomi e termini una volta, poi si scrivono sempre bene.'),
+        ('Nomi scritti correttamente', 'Aggiungi nomi e termini una volta, poi si scrivono sempre bene.'),
         ('Testo lungo, frase breve', 'Di’ «il mio indirizzo» e viene inserito l’indirizzo completo.'),
         ('Impara dalle tue correzioni', 'Correggi una parola una volta e Pisar la scrive giusta in seguito. Se vuoi.'),
-        ('Più piano mentre parli', 'Musica e video abbassano il volume mentre detti.'),
-        ('Incolla di nuovo', 'L’ultimo testo un’altra volta, con un pulsante.'),
+        ('Volume basso mentre parli', 'Musica e video abbassano il volume mentre detti.'),
+        ('Incolla di nuovo', 'Reinserisci l’ultimo testo con un solo tocco.'),
         ('Dettatura dalle impostazioni rapide', 'Un riquadro nelle impostazioni rapide, funziona in ogni app.'),
         ('Un pulsante che non dà fastidio', 'Spostalo, rimpiccioliscilo, rendilo più trasparente o nascondilo per un po’.'),
         ('Senza parolacce', 'Pisar toglie le parolacce, se vuoi.'),
@@ -72,7 +72,7 @@ HOME = {
     'm_clip1': 'Link alla prenotazione dal medico', 'm_clip2': 'Lista della spesa: latte, pane, mele',
     'm_pair': '>IT→EN<',
     'm_said': '«Grazie, ho ricevuto tutto, rispondo domani»',
-    'm_out': "Thanks, got everything, I'll reply tomorrow.",
+    'm_out': "Thanks, got everything, I’ll reply tomorrow.",
     'cta': 'Dove scaricarlo',
     'hero_note': 'La dettatura è gratis per sempre. Senza pubblicità e senza account.',
     'price': {
@@ -80,7 +80,7 @@ HOME = {
         'free': 'Gratis',
         'free_items': ['Dettatura senza limiti, in ogni app', 'Offline, 24 lingue', 'Dizionario, regole del testo, pulizia del parlato', 'Voci conservate 1 giorno'],
         'pro': 'Pro, un solo acquisto',
-        'pro_items': ['Tutto il gratuito', 'Vocali e video in testo', 'Testo da screenshot e foto', 'Appunti e traduzione durante la dettatura', 'Voci conservate una settimana, un mese o per sempre'],
+        'pro_items': ['Tutto quello che è gratis', 'Vocali e video in testo', 'Testo da screenshot e foto', 'Appunti e traduzione durante la dettatura', 'Voci conservate una settimana, un mese o per sempre'],
         'pr_sub': 'Un solo acquisto, per sempre, senza abbonamento',
         'big': '7 giorni gratis',
         'text': 'Poi compri Pro una volta nell’app ed è tuo. Il prezzo è indicato nell’app prima di pagare.',
@@ -96,11 +96,11 @@ FAQ = [
     ('Quanto costa Pisar?', 'La dettatura è gratis per sempre: senza pubblicità, senza account, senza limiti. Pisar Pro (vocali e video in testo, testo dagli screenshot, Appunti, traduzione durante la dettatura) è un solo acquisto nell’app, senza abbonamento. I primi 7 giorni di Pro sono gratis.'),
     ('Pisar funziona senza internet?', 'Sì. La voce viene riconosciuta direttamente sul telefono, audio e testo non vengono inviati da nessuna parte. Internet serve una volta per scaricare una lingua e poi solo per trascrivere un file da link e pagare Pro.'),
     ('È una tastiera?', 'No. La tua tastiera resta quella di sempre, Pisar aggiunge un pulsante P accanto al campo di testo.'),
-    ('Quali lingue?', '24 lingue europee, tra cui italiano, inglese, francese, tedesco, spagnolo, portoghese, polacco, olandese e bulgaro. Pisar riconosce la lingua da solo, oppure la scegli tu.'),
-    ('Cosa succede dopo i 7 giorni di Pro?', 'Dettatura, dizionario e regole del testo restano gratis. Trascrizione e Appunti si fermano, i testi già pronti restano a te.'),
-    ('Perché serve l’«Accessibilità»?', 'Con questo servizio di Android Pisar vede il campo di testo, mostra il pulsante e inserisce il testo. Non legge i campi password.'),
+    ('Quali lingue supporta?', '24 lingue europee, tra cui italiano, inglese, francese, tedesco, spagnolo, portoghese, polacco, olandese e bulgaro. Pisar riconosce la lingua da solo, oppure la scegli tu.'),
+    ('Cosa succede dopo i 7 giorni di Pro?', 'Dettatura, dizionario e regole del testo restano gratis. Trascrizione e Appunti non sono più disponibili, ma i testi già trascritti restano tuoi.'),
+    ('Perché serve il servizio di Accessibilità?', 'Con questo servizio di Android Pisar vede il campo di testo, mostra il pulsante e inserisce il testo. Non legge i campi password.'),
     ('Cosa va su internet?', 'Audio, testi, nomi di file e di app non lasciano il telefono. Internet serve solo per scaricare una lingua una volta, trascrivere un file da link e pagare Pro. Le statistiche anonime sugli arresti anomali si disattivano nelle impostazioni.'),
-    ('Che limiti ha?', 'A volte sbaglia: nel rumore, se si parla veloce, con parole rare (il dizionario aiuta). Le lingue occupano spazio sul telefono. Un’ora di registrazione richiede qualche minuto. Sui telefoni vecchi è più lento.'),
+    ('Che limiti ha?', 'A volte sbaglia: nel rumore, se si parla veloce, con parole rare (il dizionario aiuta). Le lingue occupano spazio sul telefono. Per trascrivere un’ora di registrazione servono alcuni minuti. Sui telefoni vecchi è più lento.'),
     ('Che telefono serve?', 'Android 10 o successivo, processore a 64 bit.'),
 ]
 
@@ -124,7 +124,7 @@ PRO = {
 <h2>Come acquistare</h2>
 <ol>
 <li>Installa Pisar e apri Impostazioni → Pisar Pro → Acquista.</li>
-<li>L’app mostra il prezzo e come pagare prima del pagamento.</li>
+<li>L’app mostra il prezzo e il metodo di pagamento prima che tu paghi.</li>
 <li>Dopo il pagamento Pisar attiva Pro da solo, di solito in pochi secondi. Niente chiavi né password.</li>
 </ol>
 <p>Se nel tuo paese Pro non si può ancora acquistare, Pisar ti propone di lasciare la tua email per sapere quando arriva.</p>
@@ -146,7 +146,7 @@ GET = {
     'req': 'Serve Android 10 o successivo e un processore a 64 bit.', 'what': 'Cosa fa Pisar',
 }
 
-MAC = {'h1': 'Pisar per Mac', 'soon': 'Presto qui.', 'p': 'È un’app a parte per Mac, con funzioni proprie.', 'android': 'Pisar per Android', 'alt': 'Finestra di Pisar per Mac: sezione Registrazione', 'head': 'Cosa fa Pisar per Mac', 'sub': 'Registrazione, trascrizione e dettatura funzionano direttamente sul Mac.'}
+MAC = {'h1': 'Pisar per Mac', 'soon': 'In arrivo.', 'p': 'È un’app a parte per Mac, con funzioni proprie.', 'android': 'Pisar per Android', 'alt': 'Finestra di Pisar per Mac: sezione Registrazione', 'head': 'Cosa fa Pisar per Mac', 'sub': 'Registrazione, trascrizione e dettatura funzionano direttamente sul Mac.'}
 MAC_F = {  # функции Мак-Писаря: (заголовок, строка), порядок и иконки в tools/pages.py
     'rec': ('Registrare schermo, fotocamera e audio', 'Schermo con fotocamera e audio, solo fotocamera o solo audio. Tutto lo schermo, un’area o una finestra; il tuo microfono e gli altri in chiamata in un unico file.'),
     'reel': ('Video 9:16', 'Video verticale: lo schermo sopra e tu sotto, un cerchio con la fotocamera o solo lo schermo. L’inquadratura può seguire il mouse.'),

@@ -28,7 +28,7 @@ HOME = {
     'f2_h': 'W każdej aplikacji', 'f2_p': 'Komunikator, poczta, notatki, wyszukiwarka: tekst trafia tam, gdzie kursor. Nie trzeba zmieniać klawiatury.',
     'f3_h': 'Za darmo i bez reklam', 'f3_p': 'Dyktowanie bez subskrypcji i bez limitów. Pro kupujesz raz.',
     'c_h2': 'Od razu czysty tekst', 'c_sub': 'Nic nie trzeba poprawiać: interpunkcję, wielkie litery i cyfry Pisar stawia sam.',
-    'c_said': '<span>Mówisz</span>', 'c_ins': '<span>Wstawia się</span>',
+    'c_said': '<span>Mówisz</span>', 'c_ins': '<span>Pisar wstawia</span>',
     'rows': [
         ('dwadzieścia pięć zadań w githubie', '25 zadań w GitHubie', 'cyfry, nazwy z twojego słownika'),
         ('przyjdziesz w sobotę', 'Przyjdziesz w sobotę?', 'wielka litera i znak zapytania'),
@@ -44,11 +44,11 @@ HOME = {
         ('Rozumie 24 języki', 'Polski, angielski, niemiecki i inne. Język Pisar rozpozna sam.'),
         ('Od razu poprawnie', 'Interpunkcja, wielkie litery, liczby cyframi, znak zapytania po pytaniu.'),
         ('Bez „no” i „w sensie”', 'Usuwa wtrącenia, powtórzenia i przejęzyczenia. Jeśli chcesz.'),
-        ('Imiona zapisane poprawnie', 'Dodaj imiona i terminy raz, a potem zawsze zapiszą się dobrze.'),
+        ('Nazwy zapisane poprawnie', 'Dodaj nazwy i terminy raz, a potem zawsze będą zapisane dobrze.'),
         ('Długi tekst jedną frazą', 'Powiedz „mój adres”, a wstawi się pełny adres.'),
         ('Uczy się z twoich poprawek', 'Poprawisz słowo raz, a Pisar potem zapisze je dobrze. Jeśli chcesz.'),
-        ('Ciszej, gdy mówisz', 'Muzyka i wideo ściszają się na czas dyktowania.'),
-        ('Wklej jeszcze raz', 'Ostatni tekst ponownie, jednym przyciskiem.'),
+        ('Ciszej, gdy mówisz', 'Muzyka i wideo są ściszane na czas dyktowania.'),
+        ('Wklej jeszcze raz', 'Wstaw ostatni tekst jeszcze raz jednym dotknięciem.'),
         ('Dyktowanie z szybkich ustawień', 'Jeden kafelek w szybkich ustawieniach, działa w każdej aplikacji.'),
         ('Przycisk nie przeszkadza', 'Przesuń go, zmniejsz, zrób bardziej przezroczystym albo ukryj na chwilę.'),
         ('Bez przekleństw', 'Pisar usunie przekleństwa, jeśli chcesz.'),
@@ -58,7 +58,7 @@ HOME = {
     'shows': [
         ('Głosówki i wideo jako tekst', 'Głosówka, wideo albo podcast zamieniają się w tekst. Udostępnij plik lub link, transkrypcja idzie w tle, bez limitów.'),
         ('Tekst z obrazka bez przepisywania', 'Numer zamówienia na zrzucie ekranu, adres na zdjęciu: Pisar wyciągnie tekst.'),
-        ('Nic skopiowanego nie zginie', 'Wszystko, co skopiowałeś, w jednym miejscu: znajdź, przypnij, wklej ponownie. Hasła i kody nie są zapisywane.'),
+        ('Nic skopiowanego nie zginie', 'Wszystko, co skopiujesz, w jednym miejscu: znajdź, przypnij, wklej ponownie. Hasła i kody nie są zapisywane.'),
         ('Mów po polsku, pisz w innym języku', 'Powiedz po polsku, a wstawi się po angielsku lub w jednym z 22 języków. Bez internetu.'),
     ],
     'm_voice': '<b>Głosówka</b><small>dziś, 0:42</small>',
@@ -72,7 +72,7 @@ HOME = {
     'm_clip1': 'Link do wizyty u lekarza', 'm_clip2': 'Lista zakupów: mleko, chleb, jabłka',
     'm_pair': '>PL→EN<',
     'm_said': '„Dzięki, wszystko doszło, odpiszę jutro”',
-    'm_out': "Thanks, got everything, I'll reply tomorrow.",
+    'm_out': "Thanks, got everything, I’ll reply tomorrow.",
     'cta': 'Gdzie pobrać',
     'hero_note': 'Dyktowanie jest darmowe na zawsze. Bez reklam i bez konta.',
     'price': {
@@ -96,11 +96,11 @@ FAQ = [
     ('Ile kosztuje Pisar?', 'Dyktowanie jest darmowe na zawsze: bez reklam, bez konta, bez limitów. Pisar Pro (głosówki i wideo na tekst, tekst ze zrzutów ekranu, Schowek, tłumaczenie podczas dyktowania) to jednorazowy zakup w aplikacji, bez subskrypcji. Pierwsze 7 dni Pro są za darmo.'),
     ('Czy Pisar działa bez internetu?', 'Tak. Mowa jest rozpoznawana na samym telefonie, dźwięk i tekst nigdzie nie są wysyłane. Internet jest potrzebny raz, żeby pobrać język, a potem tylko do transkrypcji pliku z linku i zapłaty za Pro.'),
     ('Czy to klawiatura?', 'Nie. Twoja klawiatura zostaje bez zmian, Pisar dodaje przycisk P obok pola tekstowego.'),
-    ('Jakie języki?', '24 języki europejskie, w tym polski, angielski, niemiecki, francuski, hiszpański, włoski, portugalski, niderlandzki i bułgarski. Pisar sam rozpoznaje język albo wybierasz go ty.'),
-    ('Co po 7 dniach Pro?', 'Dyktowanie, słownik i reguły tekstu zostają za darmo. Transkrypcja i Schowek się zatrzymują, gotowe teksty zostają u ciebie.'),
-    ('Po co „Ułatwienia dostępu”?', 'Dzięki tej usłudze Androida Pisar widzi pole tekstowe, pokazuje przycisk i wstawia tekst. Pól haseł nie czyta.'),
-    ('Co trafia do sieci?', 'Dźwięk, teksty, nazwy plików i aplikacji nie opuszczają telefonu. Internet jest potrzebny tylko, żeby raz pobrać język, przepisać plik z linku i zapłacić za Pro. Anonimowe statystyki awarii można wyłączyć w ustawieniach.'),
-    ('Jakie są ograniczenia?', 'Czasem się myli: w hałasie, przy szybkiej mowie, przy rzadkich słowach (słownik pomaga). Języki zajmują miejsce w telefonie. Godzinne nagranie przepisuje się kilka minut. Na starszych telefonach działa wolniej.'),
+    ('Jakie języki obsługuje?', '24 języki europejskie, w tym polski, angielski, niemiecki, francuski, hiszpański, włoski, portugalski, niderlandzki i bułgarski. Pisar sam rozpoznaje język albo wybierasz go ty.'),
+    ('Co się dzieje po 7 dniach Pro?', 'Dyktowanie, słownik i reguły tekstu zostają za darmo. Transkrypcja i Schowek przestają działać, ale gotowe teksty zostają u ciebie.'),
+    ('Po co Pisarowi ułatwienia dostępu?', 'Dzięki tej usłudze Androida Pisar widzi pole tekstowe, pokazuje przycisk i wstawia tekst. Pól haseł nie czyta.'),
+    ('Co trafia do sieci?', 'Dźwięk, teksty, nazwy plików i aplikacji nie opuszczają telefonu. Internet jest potrzebny tylko po to, żeby raz pobrać język, przepisać plik z linku i zapłacić za Pro. Anonimowe statystyki awarii można wyłączyć w ustawieniach.'),
+    ('Jakie są ograniczenia?', 'Czasem się myli: w hałasie, przy szybkiej mowie, przy rzadkich słowach (słownik pomaga). Języki zajmują miejsce w telefonie. Transkrypcja godzinnego nagrania trwa kilka minut. Na starszych telefonach działa wolniej.'),
     ('Jaki telefon jest potrzebny?', 'Android 10 lub nowszy, procesor 64-bitowy.'),
 ]
 
@@ -127,11 +127,11 @@ PRO = {
 <li>Aplikacja pokaże cenę i sposób płatności, zanim zapłacisz.</li>
 <li>Po zapłacie Pisar sam włączy Pro, zwykle w kilka sekund. Bez kluczy i haseł.</li>
 </ol>
-<p>Jeśli w twoim kraju nie można jeszcze kupić Pro, Pisar zaproponuje zostawienie adresu e-mail, żeby dać znać, gdy Pro się pojawi.</p>
+<p>Jeśli w twoim kraju nie można jeszcze kupić Pro, Pisar poprosi o adres e-mail i da znać, gdy Pro będzie dostępne.</p>
 <h2>Nowy telefon</h2>
-<p>Ustawienia → Pisar Pro → „Przywróć zakup” → e-mail, na który przyszedł paragon → kod z wiadomości. Pro włączy się na nowym telefonie.</p>
+<p>Ustawienia → Pisar Pro → „Przywróć zakup” → e-mail, na który przyszło potwierdzenie zakupu → kod z wiadomości. Pro włączy się na nowym telefonie.</p>
 <h2>Zwrot pieniędzy</h2>
-<p>Jeśli Pro się nie włączy albo nie działa tak, jak opisano, napisz na poal0208@gmail.com w ciągu 14 dni od zapłaty, a zwrócimy pieniądze. Jeśli płaciłeś przez sklep z aplikacjami, obowiązują jego zasady zwrotów.</p>
+<p>Jeśli Pro się nie włączy albo nie działa tak, jak opisano, napisz na poal0208@gmail.com w ciągu 14 dni od zapłaty, a zwrócimy pieniądze. Jeśli płatność przeszła przez sklep z aplikacjami, obowiązują jego zasady zwrotów.</p>
 <h2>Kontakt</h2>
 <p>Pisar tworzy Pozdnekov Labs. E-mail: poal0208@gmail.com</p>
 ''',
@@ -152,7 +152,7 @@ MAC_F = {  # функции Мак-Писаря: (заголовок, строк
     'reel': ('Filmy 9:16', 'Pionowe wideo: ekran na górze, ty na dole, kółko z kamerą albo sam ekran. Kadr może podążać za myszą.'),
     'tr': ('Audio i wideo na tekst', 'Plik albo twoje nagranie staje się tekstem z podziałem na mówców: kto co powiedział. Na życzenie streszczenie i tłumaczenie.'),
     'dict': ('Dyktowanie w każdej aplikacji', 'Naciśnij klawisz i mów: tekst trafi tam, gdzie jest kursor, w dowolnym programie.'),
-    'clip': ('Schowek', 'Historia wszystkiego, co skopiowano: znajdź, czego potrzebujesz, i wklej w dowolnym programie, ⇧⌘V.'),
+    'clip': ('Schowek', 'Historia wszystkiego, co skopiujesz: znajdź, czego potrzebujesz, i wklej w dowolnym programie, ⇧⌘V.'),
     'scr': ('Tekst z ekranu', 'Obrysuj tekst na obrazku, w filmie albo w oknie, gdzie nie da się go zaznaczyć, i już jest w schowku.'),
 }
 MAC_N = {  # «Сообщить о выходе»: подпись, поле, кнопка, ответы формы, строка под ней
@@ -164,7 +164,7 @@ MAC_N = {  # «Сообщить о выходе»: подпись, поле, к�
     'ok': 'Gotowe, napiszemy, gdy wyjdzie.',
     'many': 'Za dużo prób. Spróbuj za godzinę.',
     'err': 'Nie udało się wysłać. Spróbuj później.',
-    'wait': 'Wysyłam…',
+    'wait': 'Wysyłanie…',
     'note': 'Jeden e-mail o premierze, bez newslettera. <a href="{href}">Polityka prywatności</a>',
 }
 

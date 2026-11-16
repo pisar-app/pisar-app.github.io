@@ -82,3 +82,64 @@ python3 tools/build.py
 ### Свои кнопки магазинов (16.11)
 
 По решению владельца вместо официальных значков стоят свои кнопки одного вида: чёрная плитка, логотип магазина (вырезан из официального значка, `assets/badges/icons/`), две строки одним шрифтом. Код: `tools/pages.py` (`_btn`, `GET_ON`, `SOON_ON`), стили: `assets/site.css` (`.sbtn`). Правила Google Play требуют официальный значок без изменений: когда Писарь выйдет в Google Play, кнопку Google Play стоит заменить на официальный значок.
+
+## Вычитка переводов 16.11 (чат 39)
+
+Вычитаны тексты главной, Pro, «Скачать», Mac, шапки и подвала на 9 языках, пункт 11.4 соглашения на всех языках, типографика политики и соглашения. Обращение проверено: de Sie, fr vous, bg вие, es it pt pl nl на «ты» (как в карточках магазинов). Термины сверены с `pisar-android/docs/stores-listing-i18n.md`. Длинного тире нет нигде. В таблице только значимые правки; мелкие (порядок слов, «für immer», «Bitte versuchen Sie es…», прямой апостроф в I’ll) не перечислены.
+
+| язык | было | стало | почему |
+| --- | --- | --- | --- |
+| en | The last text once more, with one button. | Paste your last text again with one tap. | неполное предложение |
+| en | it goes in as Spanish | it’s typed in Spanish | калька |
+| en | Transcription and Clips stop, the texts… | …stop working, but the texts… | склейка двух предложений запятой |
+| en | the trial starts with the first Pro feature you use, and only once | starts the first time you use a Pro feature and is available only once | неясно |
+| en | Pisar offers to leave your email so you hear… | Pisar lets you leave your email so we can tell you… | калька |
+| en | "Share", "Agreement" | “Share”, “Agreement” | в политике и соглашении стояли прямые кавычки (108 пар) |
+| de | Das Wasser kocht gleich, bis gleich | Super, ich setze gleich Wasser auf. Bis dann! | повтор «gleich» |
+| de | Der Text ist gleich sauber | Sofort sauberer Text | неестественно для заголовка |
+| de | Sprache laden | Sprachpaket laden | «Sprache» читается как «речь» |
+| de | Wo herunterladen | Zum Download | обрывок фразы на кнопке |
+| de | Probieren Sie es auf Ihrem Handy | …auf Ihrem Handy aus | нет отделяемой приставки |
+| de | Transkription und Ablage halten an | …sind dann gesperrt, fertige Texte bleiben Ihnen erhalten | калька «останавливаются» |
+| de | Wo sind die Grenzen? | Gibt es Einschränkungen? | калька |
+| de | Der Test beginnt mit der ersten Pro-Funktion | Der Testzeitraum beginnt, sobald Sie zum ersten Mal eine Pro-Funktion nutzen | неясно |
+| de | Bitte in einer Stunde erneut. | Bitte versuchen Sie es in einer Stunde erneut. | обрывок фразы |
+| de | 11.4: schränkt nichts in dieser Vereinbarung … ein | schränkt diese Vereinbarung … nicht ein | естественнее для юридического немецкого |
+| fr | Marche sans Internet | Fonctionne sans Internet | разговорно для заголовка |
+| fr | Ça s’écrit | Pisar écrit | неестественно |
+| fr | Coller encore / Le dernier texte à nouveau | Coller à nouveau / Recollez le dernier texte d’une seule touche | калька, неполное предложение |
+| fr | Tout le gratuit | Tout ce qui est gratuit | так не говорят |
+| fr | …s’arrêtent, les textes déjà prêts restent chez vous | …ne sont plus disponibles, mais les textes déjà transcrits restent chez vous | калька |
+| fr | Pourquoi l’« Accessibilité » ? | Pourquoi Pisar a-t-il besoin de l’Accessibilité ? | обрывок вопроса |
+| fr | l’e-mail qui a reçu le reçu | l’adresse e-mail où le reçu a été envoyé | тавтология и ошибка смысла |
+| fr | `Tu viens samedi ?` (обычный пробел) | неразрывный узкий пробел перед ? ! ; и неразрывный перед : и внутри « » | по правилам французской типографики, перенос не отрывает знак (fr.py, политика, соглашение) |
+| es | Más bajo mientras hablas / La música y los vídeos bajan el volumen | Baja el volumen mientras hablas / …suenan más bajo | музыка сама не «убавляет громкость» |
+| es | …se detienen, los textos… | …dejan de estar disponibles, pero los textos… | калька |
+| es | La que vale es la versión rusa | Prevalece la versión rusa | разговорно для юридической оговорки |
+| it | Nomi scritti giusti | Nomi scritti correttamente | разговорно, грамматически небрежно |
+| it | Tutto il gratuito | Tutto quello che è gratis | так не говорят |
+| it | …si fermano, i testi già pronti restano a te | …non sono più disponibili, ma i testi già trascritti restano tuoi | калька |
+| it | …e come pagare prima del pagamento | …e il metodo di pagamento prima che tu paghi | тавтология |
+| pt | …param, os textos prontos ficam com você | …deixam de funcionar, mas os textos já transcritos continuam com você | калька |
+| pt | Para que serve a “Acessibilidade”? | Por que o Pisar precisa da Acessibilidade? | вопрос звучал как «зачем вообще нужна» |
+| pt | o Pisar oferece deixar seu e-mail para avisar | o Pisar sugere que você deixe seu e-mail para ser avisado | грамматика |
+| pt | Vale a versão em russo | Prevalece a versão em russo | разговорно для юридической оговорки |
+| pt | 11.4: onde se aplicam | onde se apliquem | нужен сослагательный |
+| pl | Imiona zapisane poprawnie | Nazwy zapisane poprawnie | «imiona» только имена людей, а речь о названиях и терминах |
+| pl | Wszystko, co skopiowałeś | Wszystko, co skopiujesz | мужской род, обращение без рода |
+| pl | …się zatrzymują, gotowe teksty… | …przestają działać, ale gotowe teksty… | калька |
+| pl | Godzinne nagranie przepisuje się kilka minut. | Transkrypcja godzinnego nagrania trwa kilka minut. | грамматическая ошибка |
+| pl | paragon | potwierdzenie zakupu | «paragon» это бумажный чек из кассы |
+| pl | 11.4: Wielkiej Brytanii lub innym kraju | Zjednoczonym Królestwie lub innym państwie | юридическое название |
+| nl | “eh” … ‘Muziek en video’ | везде ‘…’ | на главной были одни кавычки, на Pro другие |
+| nl | het komt erin in het Engels | het verschijnt in het Engels | неуклюже |
+| nl | …stoppen, de teksten… | …werken dan niet meer, maar de teksten… | калька |
+| nl | De app toont de prijs en hoe je betaalt voordat je betaalt. | Voordat je betaalt, toont de app de prijs en de betaalmethode. | тавтология |
+| nl | „…” в политике и соглашении, “…” на главной | везде ‘…’ | одни кавычки по всему языку; „…” в нидерландском устарели |
+| nl | 11.4: de rechten die dat recht hem geeft | de rechten die hij aan dat recht ontleent | юридический оборот |
+| bg | Да говориш е по-бързо… | Говоренето е по-бързо от писането | обращение на «ты» при «вы» по всему сайту |
+| bg | Поправите дума веднъж… | Поправете дума веднъж… | грамматическая ошибка |
+| bg | Гласови, видео… в текст | Гласови съобщения, видео… | прилагательное без существительного |
+| bg | Всичко безплатно / Текст от екранни снимки и снимки | Всичко от безплатната версия / …и фотографии | двусмысленно, повтор |
+| bg | касовата бележка | разписката | «касова бележка» это бумажный чек |
+| bg | 11.4: Ако Потребителят е потребител | Ако Потребителят има качеството на потребител | тавтология |

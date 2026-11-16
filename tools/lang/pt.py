@@ -44,15 +44,15 @@ HOME = {
         ('Entende 24 idiomas', 'Português, inglês, espanhol e outros. O Pisar identifica o idioma sozinho.'),
         ('Certo logo de cara', 'Pontuação, maiúsculas, números em algarismos, ponto de interrogação nas perguntas.'),
         ('Sem “tipo” e “né”', 'Tira vícios de linguagem, repetições e lapsos. Se você quiser.'),
-        ('Nomes escritos certo', 'Adicione nomes e termos uma vez, e eles passam a sair certos.'),
+        ('Nomes escritos do jeito certo', 'Adicione nomes e termos uma vez, e eles passam a sair certos.'),
         ('Texto longo com uma frase curta', 'Diga “meu endereço”, e o endereço completo entra.'),
         ('Aprende com suas correções', 'Corrigiu uma palavra uma vez, e o Pisar acerta dali em diante. Se você quiser.'),
-        ('Mais baixo enquanto você fala', 'Música e vídeos ficam mais baixos durante o ditado.'),
-        ('Colar de novo', 'O último texto outra vez, com um botão.'),
+        ('Som mais baixo enquanto você fala', 'Música e vídeos ficam mais baixos durante o ditado.'),
+        ('Colar de novo', 'Cole o último texto de novo com um toque.'),
         ('Ditado nas configurações rápidas', 'Um bloco nas configurações rápidas, funciona em qualquer app.'),
         ('Um botão que não atrapalha', 'Mova, diminua, deixe mais transparente ou esconda por um tempo.'),
         ('Sem palavrão', 'O Pisar tira os palavrões, se você quiser.'),
-        ('Tudo se encontra', 'Busca em todos os registros, exportação para arquivo.'),
+        ('Ache tudo', 'Busca em todos os registros, exportação para arquivo.'),
     ],
     'p_h2': 'Pisar Pro: mais que ditado', 'p_sub': 'Áudios, vídeos e capturas de tela em texto. Compra única, os primeiros 7 dias são grátis.',
     'shows': [
@@ -72,7 +72,7 @@ HOME = {
     'm_clip1': 'Link da consulta médica', 'm_clip2': 'Lista de compras: leite, pão, maçãs',
     'm_pair': '>PT→EN<',
     'm_said': '“Obrigado, recebi tudo, respondo amanhã”',
-    'm_out': "Thanks, got everything, I'll reply tomorrow.",
+    'm_out': "Thanks, got everything, I’ll reply tomorrow.",
     'cta': 'Onde baixar',
     'hero_note': 'O ditado é grátis para sempre. Sem anúncios e sem conta.',
     'price': {
@@ -96,12 +96,12 @@ FAQ = [
     ('Quanto custa o Pisar?', 'O ditado é grátis para sempre: sem anúncios, sem conta, sem limites. O Pisar Pro (áudios e vídeos em texto, texto de capturas de tela, Copiados, tradução ao ditar) é uma compra única no app, sem assinatura. Os primeiros 7 dias de Pro são grátis.'),
     ('O Pisar funciona sem internet?', 'Sim. A voz é reconhecida no próprio celular, o áudio e o texto não são enviados para lugar nenhum. A internet é necessária uma vez para baixar um idioma e, depois, só para transcrever um arquivo por link e pagar o Pro.'),
     ('É um teclado?', 'Não. Seu teclado continua o mesmo, o Pisar adiciona um botão P ao lado do campo de texto.'),
-    ('Quais idiomas?', '24 idiomas europeus, entre eles português, inglês, espanhol, francês, alemão, italiano, polonês, holandês e búlgaro. O Pisar identifica o idioma sozinho, ou você escolhe.'),
-    ('O que acontece depois dos 7 dias de Pro?', 'O ditado, o dicionário e as regras de texto continuam grátis. A transcrição e os Copiados param, os textos prontos ficam com você.'),
-    ('Para que serve a “Acessibilidade”?', 'Por esse serviço do Android, o Pisar vê o campo de texto, mostra o botão e insere o texto. Ele não lê campos de senha.'),
+    ('Quais idiomas o Pisar entende?', '24 idiomas europeus, entre eles português, inglês, espanhol, francês, alemão, italiano, polonês, holandês e búlgaro. O Pisar identifica o idioma sozinho, ou você escolhe.'),
+    ('O que acontece depois dos 7 dias de Pro?', 'O ditado, o dicionário e as regras de texto continuam grátis. A transcrição e os Copiados deixam de funcionar, mas os textos já transcritos continuam com você.'),
+    ('Por que o Pisar precisa da Acessibilidade?', 'Por esse serviço do Android, o Pisar vê o campo de texto, mostra o botão e insere o texto. Ele não lê campos de senha.'),
     ('O que vai para a internet?', 'Áudio, textos, nomes de arquivos e de apps não saem do celular. A internet só é necessária para baixar um idioma uma vez, transcrever um arquivo por link e pagar o Pro. As estatísticas anônimas de falhas podem ser desativadas nas configurações.'),
     ('Quais são as limitações?', 'Às vezes ele erra: com barulho, fala rápida, palavras raras (o dicionário ajuda). Os idiomas ocupam espaço no celular. Uma gravação de uma hora leva alguns minutos para ser transcrita. Em celulares antigos é mais lento.'),
-    ('Que celular eu preciso?', 'Android 10 ou mais recente, com processador de 64 bits.'),
+    ('De que celular eu preciso?', 'Android 10 ou mais recente, com processador de 64 bits.'),
 ]
 
 PRO = {
@@ -127,9 +127,9 @@ PRO = {
 <li>O app mostra o preço e a forma de pagamento antes de você pagar.</li>
 <li>Depois do pagamento, o Pisar ativa o Pro sozinho, normalmente em segundos. Sem chaves nem senhas.</li>
 </ol>
-<p>Se o Pro ainda não puder ser comprado no seu país, o Pisar oferece deixar seu e-mail para avisar quando ele chegar.</p>
+<p>Se o Pro ainda não puder ser comprado no seu país, o Pisar sugere que você deixe seu e-mail para ser avisado quando ele chegar.</p>
 <h2>Celular novo</h2>
-<p>Configurações → Pisar Pro → “Restaurar compra” → o e-mail para onde foi o recibo → o código do e-mail. O Pro é ativado no celular novo.</p>
+<p>Configurações → Pisar Pro → “Restaurar compra” → o e-mail que recebeu o recibo → o código enviado por e-mail. O Pro é ativado no celular novo.</p>
 <h2>Reembolso</h2>
 <p>Se o Pro não ativar ou não funcionar como descrito, escreva para poal0208@gmail.com em até 14 dias após o pagamento e devolvemos o dinheiro. Se você pagou por uma loja de apps, valem as regras de reembolso dela.</p>
 <h2>Contato</h2>
@@ -168,4 +168,4 @@ MAC_N = {  # «Сообщить о выходе»: подпись, поле, к�
     'note': 'Um único e-mail no lançamento, sem newsletter. <a href="{href}">Política de privacidade</a>',
 }
 
-LEGAL_NOTE = 'Esta tradução é oferecida para sua conveniência. Vale a <a href="{href}" hreflang="ru">versão em russo</a>.'
+LEGAL_NOTE = 'Esta tradução é apenas informativa. Prevalece a <a href="{href}" hreflang="ru">versão em russo</a>.'
