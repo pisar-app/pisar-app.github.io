@@ -53,7 +53,13 @@ STORES = re.compile(r'<!-- stores -->[\s\S]*?<!-- /stores -->')
 def fill_stores(s, block):
     """Главная: значки в метки <!-- stores --> (первый экран и блок внизу). Повторный запуск ничего не меняет."""
     assert len(STORES.findall(s)) == 2, 'на главной нет двух меток <!-- stores -->'
-    return STORES.sub(lambda m: f'<!-- stores -->{block}<!-- /stores -->', s)
+    n = [0]
+
+    def one(m):
+        n[0] += 1  # первый блок (первый экран) — цель кнопки «Скачать» в шапке
+        b = block.replace('<div class="sbadges">', '<div class="sbadges" id="download">', 1) if n[0] == 1 else block
+        return f'<!-- stores -->{b}<!-- /stores -->'
+    return STORES.sub(one, s)
 
 
 def shell(s, body):

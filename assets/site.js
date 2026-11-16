@@ -45,3 +45,10 @@
   x.addEventListener('click', function () { bar.remove(); remember(); });
   w.appendChild(link); w.appendChild(x); bar.appendChild(w); h.insertBefore(bar, h.firstChild);
 })();
+
+/* Шапка закреплена: при прокрутке получает фон с размытием */
+(function () {
+  var h = document.querySelector('header.hd'); if (!h) return;
+  function f() { h.classList.toggle('stuck', window.scrollY > 8); }
+  f(); window.addEventListener('scroll', f, { passive: true });
+})();

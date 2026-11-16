@@ -64,7 +64,7 @@ def header(root, lang, pid):
                     for k, h, key in menu_items(root, lang, pid))
     name = dict((c, n) for c, n, _, _ in versions(root, pid))[lang]
     # главная кнопка: на Android «Скачать», на Mac «Сообщить о выходе»; на телефоне она же первым пунктом в ☰
-    btn = ('#notify', s('notify')) if is_mac(pid) else (link(root, lang, 'get'), s('get'))
+    btn = ('#notify', s('notify')) if is_mac(pid) else (('#download' if pid == '' else link(root, lang, '') + '#download'), s('get'))
     if not is_mac(pid):
         links = f'<a class="mget" href="{btn[0]}">{btn[1]}</a>' + links
     return f'''<header class="hd" data-lang="{lang}">
