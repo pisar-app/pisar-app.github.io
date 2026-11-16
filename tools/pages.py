@@ -15,14 +15,12 @@ def _rustore(alt):
 
 
 def _soon(lang):
-    """Магазины, где Писаря ещё нет: без ссылок.
-    Google Play: официальный значок на языке страницы (assets/badges, не перекрашен, не меньше значка RuStore).
-    Xiaomi GetApps и Huawei AppGallery: публичных значков нет (Huawei выдаёт значок только опубликованному приложению),
-    поэтому название фирменным цветом, без логотипа. Источники и условия в README.md."""
+    """Магазины, где Писаря ещё нет: официальные значки без ссылок, одной высоты, не перекрашены. Источники и условия в README.md.
+    Google Play на языке страницы; Xiaomi (архив значков с сайта GetApps) и Huawei (сайт Huawei Mobile Services) есть только на английском."""
     gp = lang if lang in GP_LANGS else 'en'
     return [f'<span class="sb-gp"><img src="/assets/badges/google-play-{gp}.png" width="646" height="192" alt="Google Play"></span>',
-            '<span class="sb-name sb-xm">Xiaomi GetApps</span>',
-            '<span class="sb-name sb-hw">Huawei AppGallery</span>']
+            '<span class="sb-gp"><img src="/assets/badges/xiaomi-getapps.svg" width="255" height="80" alt="Xiaomi GetApps"></span>',
+            '<span class="sb-gp"><img src="/assets/badges/huawei-appgallery.png" width="570" height="170" alt="Huawei AppGallery"></span>']
 
 
 def badges(lang, soon, russia='', alt='RuStore'):
