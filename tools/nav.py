@@ -75,7 +75,7 @@ def header(root, lang, pid):
     <div class="spacer"></div>
     <div class="lsw"><button class="lbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lmenu" aria-label="{s('lang')}: {name}">{lang.upper()}{CHEVRON}</button><ul class="lmenu" id="lmenu" hidden>{lang_items(root, lang, pid)}</ul></div>
     <button class="tbtn" id="tbtn" type="button" aria-label="{s('theme')}">{THEME}</button>
-    <a class="getbtn" href="{btn[0]}">{btn[1]}</a>
+    <a class="getbtn" href="{btn[0]}"><img src="/assets/icon.png" width="22" height="22" alt="">{btn[1]}</a>
     <button class="burger" type="button" aria-controls="hdmenu" aria-expanded="false" aria-label="{s('menu')}">{BARS}</button>
   </div>
 </header>'''
