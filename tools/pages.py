@@ -34,12 +34,12 @@ def _soon(lang):
 
 
 def badges(lang, soon, russia='', alt='RuStore'):
-    """Кнопки магазинов. Русский: RuStore со ссылкой, ниже три «Скоро в». Другие языки: три «Скоро», ниже RuStore с подписью «Россия».
+    """Кнопки магазинов. Русский: RuStore со ссылкой, ниже три «Скоро в». Другие языки: только три «Скоро», без RuStore (решение 16.11).
     Подпись «Скоро» над рядом не нужна: она есть на самих кнопках."""
     if lang == 'ru':
         groups = [('', [_rustore(alt, lang)]), ('', _soon(lang))]
     else:
-        groups = [('', _soon(lang)), (russia, [_rustore(alt, lang)])]
+        groups = [('', _soon(lang))]  # 16.11 владелец: RuStore только на русском, за пределами России его не ищут
     out = []
     for cap, items in groups:
         c = f'<span class="sb-cap">{cap}</span>' if cap else ''
