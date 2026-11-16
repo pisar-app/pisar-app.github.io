@@ -84,7 +84,7 @@ header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
 .sb-cap{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .sb-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .sb-rs,.sb-gp{display:grid;place-items:center;width:178px;height:54px;box-sizing:border-box;border:1px solid #a6a6a6;border-radius:9px;overflow:hidden;background:#000;line-height:0}
-.sb-rs{background:#1A1C20}
+.sb-rs{background:#000}
 .sb-rs img{width:auto!important;height:60px!important}
 .sb-rs img,.sb-gp img{display:block;width:182px;max-width:none;height:auto}
 .sb-rs{transition:transform .15s}
