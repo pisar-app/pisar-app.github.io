@@ -3,7 +3,7 @@
 # Строки в tools/i18n.py. Запуск: python3 tools/nav.py .   (всё сразу: python3 tools/build.py)
 import sys, os, re, html
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from i18n import HEAD, SITE, FALLBACK, t, link, versions, exists, url, pages, CODES
+from i18n import HEAD, SITE, FALLBACK, NAMES, t, link, versions, exists, url, pages, CODES
 
 CHEVRON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>'
 BARS = ('<svg class="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -26,16 +26,16 @@ def is_on(pid, key):
 
 
 def lang_items(root, lang, pid, tag='li'):
-    """Пункты списка языков. Настоящая версия: hreflang и data-hint; запасная (английская): без hreflang; нет: неактивен."""
+    """Пункты списка языков. Настоящая версия: hreflang и data-hint; запасная (английская, для блога и оферты русская): без hreflang; нет: неактивен."""
     out = []
     for c, name, u, real in versions(root, pid):
         if c == lang:
             a = f'<a href="{url(c, pid) if exists(root, c, pid) else u}" lang="{c}" class="on" aria-current="true">{name}<small>{c.upper()}</small></a>'
-        elif u and real:
+        elif u and real is True:
             a = (f'<a href="{u}" hreflang="{c}" lang="{c}" data-hint="{html.escape(t(HEAD, c, "hint"))}" '
                  f'data-close="{html.escape(t(HEAD, c, "close"))}">{name}<small>{c.upper()}</small></a>')
         elif u:
-            a = f'<a href="{u}" lang="{c}" title="English">{name}<small>EN</small></a>'
+            a = f'<a href="{u}" lang="{c}" title="{NAMES[real]}">{name}<small>{real.upper()}</small></a>'
         else:
             a = f'<span class="off" lang="{c}" aria-disabled="true">{name}<small>{c.upper()}</small></span>'
         out.append(f'<{tag}>{a}</{tag}>' if tag else a)

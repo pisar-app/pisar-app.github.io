@@ -147,6 +147,18 @@ Pisar е приложение за гласово въвеждане офлай�
 - [Что говорили в голосовых неделю назад](https://pisar-app.ru/ru/blog/poisk-po-golosovym/): В рабочем чате тридцать голосовых, и в одном из них был адрес. Как найти его по слову, не переслушивая всё подряд.
 - [Длинный пост в VK или канал голосом](https://pisar-app.ru/ru/blog/dlinnyy-post-golosom/): Пост на экран набирать долго, а мысль уходит. Как надиктовать пост с паузами и сразу получить текст со знаками.
 
+## Other languages
+
+- English: [https://pisar-app.ru/en/](https://pisar-app.ru/en/) · [Pisar Pro](https://pisar-app.ru/en/pro/) · [Privacy](https://pisar-app.ru/en/privacy/)
+- Deutsch: [https://pisar-app.ru/de/](https://pisar-app.ru/de/) · [Pisar Pro](https://pisar-app.ru/de/pro/) · [Privacy](https://pisar-app.ru/de/privacy/)
+- Français: [https://pisar-app.ru/fr/](https://pisar-app.ru/fr/) · [Pisar Pro](https://pisar-app.ru/fr/pro/) · [Privacy](https://pisar-app.ru/fr/privacy/)
+- Español: [https://pisar-app.ru/es/](https://pisar-app.ru/es/) · [Pisar Pro](https://pisar-app.ru/es/pro/) · [Privacy](https://pisar-app.ru/es/privacy/)
+- Italiano: [https://pisar-app.ru/it/](https://pisar-app.ru/it/) · [Pisar Pro](https://pisar-app.ru/it/pro/) · [Privacy](https://pisar-app.ru/it/privacy/)
+- Português: [https://pisar-app.ru/pt/](https://pisar-app.ru/pt/) · [Pisar Pro](https://pisar-app.ru/pt/pro/) · [Privacy](https://pisar-app.ru/pt/privacy/)
+- Polski: [https://pisar-app.ru/pl/](https://pisar-app.ru/pl/) · [Pisar Pro](https://pisar-app.ru/pl/pro/) · [Privacy](https://pisar-app.ru/pl/privacy/)
+- Nederlands: [https://pisar-app.ru/nl/](https://pisar-app.ru/nl/) · [Pisar Pro](https://pisar-app.ru/nl/pro/) · [Privacy](https://pisar-app.ru/nl/privacy/)
+- Български: [https://pisar-app.ru/bg/](https://pisar-app.ru/bg/) · [Pisar Pro](https://pisar-app.ru/bg/pro/) · [Privacy](https://pisar-app.ru/bg/privacy/)
+
 ## Документы
 
 - [Политика конфиденциальности](https://pisar-app.ru/ru/privacy/) ([English](https://pisar-app.ru/en/privacy/))

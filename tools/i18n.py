@@ -19,17 +19,33 @@ HEAD = {
     'ru': {'brand': 'Писарь', 'features': 'Возможности', 'pro': 'Pro', 'blog': 'Статьи', 'faq': 'Вопросы',
            'mac': 'Для Mac (скоро)', 'get': 'Скачать', 'menu': 'Меню', 'lang': 'Язык', 'theme': 'Светлая или тёмная тема',
            'hint': 'Эта страница есть на русском', 'close': 'Закрыть'},
-    'en': {'brand': 'Pisar', 'features': 'Features', 'pro': 'Pro', 'blog': 'Articles', 'faq': 'FAQ',
+    'en': {'brand': 'Pisar', 'features': 'Features', 'pro': 'Pro', 'blog': 'Articles (RU)', 'faq': 'FAQ',
            'mac': 'For Mac (soon)', 'get': 'Download', 'menu': 'Menu', 'lang': 'Language', 'theme': 'Light or dark theme',
            'hint': 'This page is available in English', 'close': 'Close'},
-    'de': {'hint': 'Diese Seite gibt es auf Deutsch', 'close': 'Schließen'},
-    'fr': {'hint': 'Cette page existe en français', 'close': 'Fermer'},
-    'es': {'hint': 'Esta página está disponible en español', 'close': 'Cerrar'},
-    'it': {'hint': 'Questa pagina è disponibile in italiano', 'close': 'Chiudi'},
-    'pt': {'hint': 'Esta página está disponível em português', 'close': 'Fechar'},
-    'pl': {'hint': 'Ta strona jest dostępna po polsku', 'close': 'Zamknij'},
-    'nl': {'hint': 'Deze pagina is beschikbaar in het Nederlands', 'close': 'Sluiten'},
-    'bg': {'hint': 'Тази страница е налична на български', 'close': 'Затвори'},
+    'de': {'brand': 'Pisar', 'features': 'Funktionen', 'pro': 'Pro', 'blog': 'Artikel (RU)', 'faq': 'Fragen',
+           'mac': 'Für Mac (bald)', 'get': 'Download', 'menu': 'Menü', 'lang': 'Sprache', 'theme': 'Helles oder dunkles Design',
+           'hint': 'Diese Seite gibt es auf Deutsch', 'close': 'Schließen'},
+    'fr': {'brand': 'Pisar', 'features': 'Fonctions', 'pro': 'Pro', 'blog': 'Articles (RU)', 'faq': 'Questions',
+           'mac': 'Pour Mac (bientôt)', 'get': 'Télécharger', 'menu': 'Menu', 'lang': 'Langue', 'theme': 'Thème clair ou sombre',
+           'hint': 'Cette page existe en français', 'close': 'Fermer'},
+    'es': {'brand': 'Pisar', 'features': 'Funciones', 'pro': 'Pro', 'blog': 'Artículos (RU)', 'faq': 'Preguntas',
+           'mac': 'Para Mac (pronto)', 'get': 'Descargar', 'menu': 'Menú', 'lang': 'Idioma', 'theme': 'Tema claro u oscuro',
+           'hint': 'Esta página está disponible en español', 'close': 'Cerrar'},
+    'it': {'brand': 'Pisar', 'features': 'Funzioni', 'pro': 'Pro', 'blog': 'Articoli (RU)', 'faq': 'Domande',
+           'mac': 'Per Mac (presto)', 'get': 'Scarica', 'menu': 'Menu', 'lang': 'Lingua', 'theme': 'Tema chiaro o scuro',
+           'hint': 'Questa pagina è disponibile in italiano', 'close': 'Chiudi'},
+    'pt': {'brand': 'Pisar', 'features': 'Recursos', 'pro': 'Pro', 'blog': 'Artigos (RU)', 'faq': 'Perguntas',
+           'mac': 'Para Mac (em breve)', 'get': 'Baixar', 'menu': 'Menu', 'lang': 'Idioma', 'theme': 'Tema claro ou escuro',
+           'hint': 'Esta página está disponível em português', 'close': 'Fechar'},
+    'pl': {'brand': 'Pisar', 'features': 'Funkcje', 'pro': 'Pro', 'blog': 'Artykuły (RU)', 'faq': 'Pytania',
+           'mac': 'Na Maca (wkrótce)', 'get': 'Pobierz', 'menu': 'Menu', 'lang': 'Język', 'theme': 'Jasny lub ciemny motyw',
+           'hint': 'Ta strona jest dostępna po polsku', 'close': 'Zamknij'},
+    'nl': {'brand': 'Pisar', 'features': 'Functies', 'pro': 'Pro', 'blog': 'Artikelen (RU)', 'faq': 'Vragen',
+           'mac': 'Voor Mac (binnenkort)', 'get': 'Downloaden', 'menu': 'Menu', 'lang': 'Taal', 'theme': 'Licht of donker thema',
+           'hint': 'Deze pagina is beschikbaar in het Nederlands', 'close': 'Sluiten'},
+    'bg': {'brand': 'Pisar', 'features': 'Функции', 'pro': 'Pro', 'blog': 'Статии (RU)', 'faq': 'Въпроси',
+           'mac': 'За Mac (скоро)', 'get': 'Изтегляне', 'menu': 'Меню', 'lang': 'Език', 'theme': 'Светла или тъмна тема',
+           'hint': 'Тази страница е достъпна на български', 'close': 'Затвори'},
 }
 
 # Строки подвала. offer только у русского: оферта есть только на русском (оплата в рублях).
@@ -40,6 +56,30 @@ FOOT = {
     'en': {'tagline': 'Voice typing in any Android app. Your voice stays on your phone.', 'col_app': 'Pisar',
            'pro_long': 'Pisar Pro', 'col_docs': 'Documents', 'privacy': 'Privacy Policy', 'terms': 'Terms of Use',
            'col_contact': 'Contact', 'col_lang': 'Language'},
+    'de': {'tagline': 'Spracheingabe in jeder Android-App. Ihre Stimme bleibt auf dem Handy.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Rechtliches', 'privacy': 'Datenschutzerklärung', 'terms': 'Nutzungsbedingungen',
+           'col_contact': 'Kontakt', 'col_lang': 'Sprache'},
+    'fr': {'tagline': 'La saisie vocale dans toutes les applis Android. Votre voix reste sur le téléphone.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Documents', 'privacy': 'Politique de confidentialité', 'terms': "Conditions d'utilisation",
+           'col_contact': 'Contact', 'col_lang': 'Langue'},
+    'es': {'tagline': 'Dictado por voz en cualquier app de Android. Tu voz no sale del teléfono.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Documentos', 'privacy': 'Política de privacidad', 'terms': 'Condiciones de uso',
+           'col_contact': 'Contacto', 'col_lang': 'Idioma'},
+    'it': {'tagline': 'Dettatura vocale in ogni app Android. La tua voce resta sul telefono.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Documenti', 'privacy': 'Informativa sulla privacy', 'terms': "Condizioni d'uso",
+           'col_contact': 'Contatti', 'col_lang': 'Lingua'},
+    'pt': {'tagline': 'Digitação por voz em qualquer app Android. Sua voz fica no celular.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Documentos', 'privacy': 'Política de privacidade', 'terms': 'Termos de uso',
+           'col_contact': 'Contato', 'col_lang': 'Idioma'},
+    'pl': {'tagline': 'Pisanie głosem w każdej aplikacji na Androida. Twój głos zostaje na telefonie.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Dokumenty', 'privacy': 'Polityka prywatności', 'terms': 'Warunki korzystania',
+           'col_contact': 'Kontakt', 'col_lang': 'Język'},
+    'nl': {'tagline': 'Spraakinvoer in elke Android-app. Je stem blijft op je telefoon.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Documenten', 'privacy': 'Privacybeleid', 'terms': 'Gebruiksvoorwaarden',
+           'col_contact': 'Contact', 'col_lang': 'Taal'},
+    'bg': {'tagline': 'Гласово въвеждане във всяко приложение за Android. Гласът ви остава на телефона.', 'col_app': 'Pisar',
+           'pro_long': 'Pisar Pro', 'col_docs': 'Документи', 'privacy': 'Политика за поверителност', 'terms': 'Условия за ползване',
+           'col_contact': 'Контакт', 'col_lang': 'Език'},
 }
 
 
@@ -78,13 +118,15 @@ def link(root, lang, pid):
 
 
 def versions(root, pid):
-    """Для переключателя: [(код, название, адрес или None, настоящая ли версия)]."""
+    """Для переключателя: [(код, название, адрес или None, True если версия своя, иначе код запасной (en, ru) или False)]."""
     out = []
     for c, name in LANGS:
         if exists(root, c, pid):
             out.append((c, name, url(c, pid), True))
         elif exists(root, FALLBACK, pid):
-            out.append((c, name, url(FALLBACK, pid), False))
+            out.append((c, name, url(FALLBACK, pid), FALLBACK))
+        elif exists(root, 'ru', pid):  # блог и оферта есть только на русском
+            out.append((c, name, url('ru', pid), 'ru'))
         else:
             out.append((c, name, None, False))
     return out

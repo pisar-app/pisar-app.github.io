@@ -205,11 +205,9 @@ m = m.replace(f'href="{SITE}/get/"', f'href="{SITE}/mac/"', 1)
 os.makedirs(os.path.join(ROOT, 'mac'), exist_ok=True)
 wr('mac/index.html', chrome(head_add(m, meta(MAC_DESC, 'Писарь для Mac', f'{SITE}/mac/', 'ru')), 'mac'))
 
-LEGAL = {
+LEGAL = {  # другие языки собирает tools/intl.py
     ('privacy', 'ru'): 'Политика конфиденциальности Писаря: звук и тексты распознаются на телефоне и никуда не отправляются. Что и когда уходит в сеть.',
-    ('privacy', 'en'): 'Pisar privacy policy: speech is recognized on the phone, audio and text never leave it. What goes online and when.',
     ('terms', 'ru'): 'Пользовательское соглашение Писаря: лицензионная оферта на использование приложения.',
-    ('terms', 'en'): 'Pisar terms of use: license agreement for the app.',
 }
 for (kind, lang), desc in LEGAL.items():
     p = f'{lang}/{kind}/index.html'
@@ -333,6 +331,11 @@ llms = f'''# Писарь (Pisar)
 ## Статьи
 
 ''' + '\n'.join(f'- [{h1}]({SITE}/ru/blog/{slug}/): {d}' for slug, h1, d, _ in arts) + f'''
+
+## Other languages
+
+''' + '\n'.join(f'- {n}: [{SITE}/{c}/]({SITE}/{c}/) · [Pisar Pro]({SITE}/{c}/pro/) · [Privacy]({SITE}/{c}/privacy/)'
+                for n, c in [('English', 'en')] + [(n, c) for n, c, _ in INTL]) + f'''
 
 ## Документы
 

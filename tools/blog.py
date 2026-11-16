@@ -238,7 +238,8 @@ open(os.path.join(ROOT, 'ru', 'blog', 'index.html'), 'w').write(page('Стать
 open(os.path.join(os.path.dirname(__file__), 'home_cards.html'), 'w').write(''.join(card(a) for a in ([a for a in ARTS if a.get('home')] or ARTS)[:3]))
 # sitemap
 LAST = max([DATE, MOD] + [a.get('date', DATE) for a in ARTS])
-urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('mod', MOD)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/get/', '0.6', DATE), ('/mac/', '0.3', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE), ('/en/privacy/', '0.3', DATE), ('/en/terms/', '0.3', DATE)]
+urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('mod', MOD)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/get/', '0.6', DATE), ('/mac/', '0.3', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE), ] + [(f'/{l}/{pg}', pr, DATE) for l in ('en', 'de', 'fr', 'es', 'it', 'pt', 'pl', 'nl', 'bg')
+       for pg, pr in (('', '0.9'), ('pro/', '0.7'), ('get/', '0.5'), ('mac/', '0.3'), ('privacy/', '0.3'), ('terms/', '0.3'))]  # страницы tools/intl.py
 open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{m}</lastmod><priority>{p}</priority></url>\n' for u, p, m in urls) + '</urlset>\n')
 # проверка текстов
 for dp, _, fs in os.walk(os.path.join(ROOT, 'ru', 'blog')):

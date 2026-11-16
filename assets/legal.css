@@ -8,6 +8,8 @@ header{position:absolute}
 .legal main{max-width:760px;font-size:16.5px;line-height:1.7}
 .legal main>nav{display:block;font-size:14px;color:var(--muted);margin-bottom:18px}
 .legal main>nav a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.legal main .tnote{font-size:14px;color:var(--muted);background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:20px}
+.legal main .tnote a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .legal main>nav a:hover{color:var(--fg)}
 .legal main h1{font-size:clamp(30px,4.6vw,44px);line-height:1.12;letter-spacing:-.03em;margin:0 0 18px}
 .legal main h2{font-size:22px;line-height:1.25;letter-spacing:-.015em;margin:40px 0 10px}
