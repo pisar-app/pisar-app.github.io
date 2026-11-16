@@ -1,12 +1,15 @@
-# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/geo.py .  3) python3 tools/footer.py .  4) python3 tools/nav.py .
-# Генератор статей Писаря: /ru/blog/<slug>/ и /ru/blog/. python3 blog.py <site_root>
+# Генератор статей Писаря: /ru/blog/<slug>/ и /ru/blog/. python3 tools/blog.py .   (всё сразу: python3 tools/build.py)
+# Шапку и подвал ставят nav.py и footer.py (строки в i18n.py), здесь только их места.
 import sys, os, json, re, html
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import nav, footer
 ROOT = sys.argv[1]
 SITE = 'https://pisar-app.ru'
 DATE = '2026-11-13'
 MOD = '2026-11-16'  # проверка блога 16.11: дата правки во всех статьях
 _home = open(os.path.join(ROOT, 'index.html')).read()
-BASE_CSS = re.search(r'<style>(.*?)</style>', _home, re.S).group(1)
+# База стилей своя (tools/base.css), не копия <style> главной: правки главной не уезжают в статьи и документы.
+BASE_CSS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'base.css'), encoding='utf-8').read()
 DEFS = re.search(r'(<svg width="0" height="0".*?</svg>)', _home, re.S).group(1)
 EXTRA_CSS = '''
 /* статьи */
@@ -67,7 +70,7 @@ ul.ticks li:before{content:"";position:absolute;left:2px;top:.45em;width:14px;he
 .art .thumb:has(img){height:150px;overflow:hidden;background:var(--chip)}
 .art .thumb:has(img):after{display:none}
 .art .thumb img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
-@media (max-width:700px){.scen{grid-template-columns:1fr}.howto{grid-template-columns:1fr}.howto .appshot{max-width:260px;margin:0 auto}.ahead{padding:104px 0 24px}}
+@media (max-width:700px){.scen{grid-template-columns:1fr}.howto{grid-template-columns:1fr}.howto .appshot{max-width:260px;margin:0 auto}.ahead{padding:88px 0 24px}}
 .related h2{font-size:28px;margin:0}
 .back{margin:28px 0 0;text-align:center}.back a{font-weight:600;color:var(--accent)}
 .art p{margin:0;color:var(--muted);font-size:15px}
@@ -92,7 +95,7 @@ article a:not(.art){color:var(--accent);text-decoration:underline;text-underline
 @media (max-width:700px){.pm{grid-template-columns:1fr}}
 .art:hover h2,.art:hover h3{text-decoration:underline;text-underline-offset:3px}
 .list.grid3 .art h2{font-size:20px;margin:6px 0 0;letter-spacing:-.01em;line-height:1.25}
-@media (max-width:700px){.cta{flex-direction:column;text-align:center}.post{padding-top:118px}article{font-size:16.5px}article h2{font-size:22px}}
+@media (max-width:700px){.cta{flex-direction:column;text-align:center}.post{padding-top:96px}article{font-size:16.5px}article h2{font-size:22px}}
 '''
 
 # Обложки og.png и thumb.webp: python3 ru/blog/_src/covers.py . (до этого скрипта).
@@ -112,6 +115,11 @@ BY = {a['slug']: a for a in ARTS}
 PRO_TAG = '<span class="badge pro"><span class="mi">lock</span>Pro</span>'
 
 def page(title, desc, canon, body, ld, extra_css='', og=None):
+    pid = canon[len(SITE) + len('/ru/'):].strip('/')
+    return footer.apply(ROOT, nav.apply(ROOT, _page(title, desc, canon, body, ld, extra_css, og), 'ru', pid), 'ru', pid)
+
+
+def _page(title, desc, canon, body, ld, extra_css='', og=None):
     return f'''<!doctype html>
 <html lang="ru">
 <head>
@@ -144,27 +152,9 @@ def page(title, desc, canon, body, ld, extra_css='', og=None):
 </head>
 <body>
 {DEFS}
-<header>
-  <div class="wrap bar">
-    <a class="logo" href="/"><img src="/assets/icon.png" alt="">Писарь</a>
-    <nav class="menu"><a href="/#all">Возможности</a><a href="/#pro">Pro</a><a href="/ru/blog/">Статьи</a><a href="/#faq">Вопросы</a></nav>
-    <div class="spacer"></div>
-    <button class="tbtn" id="tbtn" aria-label="Светлая или тёмная тема"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-  </div>
-</header>
+<header></header>
 {body}
-<footer>
-  <div class="wrap f">
-    <a class="logo" href="/"><img src="/assets/icon.png" alt="" style="width:24px;height:24px;border-radius:7px">Писарь</a>
-    <a href="/ru/pro/">Писарь Pro</a>
-    <a href="/ru/blog/">Статьи</a>
-    <a href="/ru/privacy/">Политика конфиденциальности</a>
-    <a href="/ru/terms/">Пользовательское соглашение</a>
-    <a href="/en/privacy/">English</a>
-    <span class="spacer"></span>
-    <span>© 2026 Pozdnekov Labs</span>
-  </div>
-</footer>
+<footer></footer>
 <script>(function(){{var r=document.documentElement;function d(){{var t=r.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches}}document.getElementById('tbtn').addEventListener('click',function(){{var t=d()?'light':'dark';r.setAttribute('data-theme',t);try{{localStorage.setItem('theme',t)}}catch(e){{}}}})}})();</script>
 </body>
 </html>

@@ -1,7 +1,9 @@
-# Порядок запуска из корня сайта: 1) python3 tools/blog.py .  2) python3 tools/geo.py .  3) python3 tools/footer.py .  4) python3 tools/nav.py .
+# Запуск всей сборки: python3 tools/build.py (blog, geo, footer, nav по порядку)
 # Нейропоиск (ChatGPT, Perplexity, Claude, Google AI Overviews, Алиса): разметка schema.org,
-# описания и hreflang у правовых страниц и Pro, llms.txt и llms-full.txt. Повторный запуск ничего не меняет.
+# описания у правовых страниц и Pro (hreflang ставит nav.py), llms.txt и llms-full.txt. Повторный запуск ничего не меняет.
 import sys, os, re, json, html, glob
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import nav, footer
 ROOT = sys.argv[1]
 SITE = 'https://pisar-app.ru'
 RUSTORE = 'https://www.rustore.ru/catalog/app/com.pisar.android'
@@ -19,6 +21,11 @@ def wr(p, s):
     if old != s:
         open(f, 'w', encoding='utf-8').write(s)
         print('  обновлён', p)
+
+
+def chrome(s, pid):
+    """Шапка и подвал своей страницы (get и mac собираются из копии Pro)."""
+    return footer.apply(ROOT, nav.apply(ROOT, s, 'ru', pid), 'ru', pid)
 
 
 def ld_tag(obj): return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>\n'
@@ -117,11 +124,6 @@ def head_add(s, extra):
     return s.replace('<link rel="preconnect"', '<!-- geo -->\n' + extra + '<!-- /geo -->\n<link rel="preconnect"', 1)
 
 
-def alt(path_ru, path_en, xdef):
-    return (f'<link rel="alternate" hreflang="ru" href="{SITE}{path_ru}">\n'
-            f'<link rel="alternate" hreflang="en" href="{SITE}{path_en}">\n'
-            f'<link rel="alternate" hreflang="x-default" href="{SITE}{xdef}">\n')
-
 
 def meta(desc, title, url, lang):
     loc = 'ru_RU' if lang == 'ru' else 'en_US'
@@ -187,7 +189,7 @@ get_ld = {"@context": "https://schema.org", "@graph": [
      "about": {"@id": APP_ID}, "publisher": {"@id": ORG_ID}},
     crumbs([('Писарь', f'{SITE}/'), ('Скачать', f'{SITE}/get/')])]}
 os.makedirs(os.path.join(ROOT, 'get'), exist_ok=True)
-wr('get/index.html', head_add(g, meta(GET_DESC, 'Скачать Писарь', f'{SITE}/get/', 'ru') + ld_tag(get_ld)))
+wr('get/index.html', chrome(head_add(g, meta(GET_DESC, 'Скачать Писарь', f'{SITE}/get/', 'ru') + ld_tag(get_ld)), 'get'))
 
 # ---------- /mac/: заглушка раздела «Писарь для Mac» ----------
 MAC_DESC = 'Писарь для Mac: скоро здесь. Это отдельное приложение для Mac со своими функциями.'
@@ -201,7 +203,7 @@ m = re.sub(r'<main>[\s\S]*?</main>', lambda _: MAC_MAIN, g, count=1)
 m = re.sub(r'<title>.*?</title>', '<title>Писарь для Mac · Писарь</title>', m, count=1)
 m = m.replace(f'href="{SITE}/get/"', f'href="{SITE}/mac/"', 1)
 os.makedirs(os.path.join(ROOT, 'mac'), exist_ok=True)
-wr('mac/index.html', head_add(m, meta(MAC_DESC, 'Писарь для Mac', f'{SITE}/mac/', 'ru')))
+wr('mac/index.html', chrome(head_add(m, meta(MAC_DESC, 'Писарь для Mac', f'{SITE}/mac/', 'ru')), 'mac'))
 
 LEGAL = {
     ('privacy', 'ru'): 'Политика конфиденциальности Писаря: звук и тексты распознаются на телефоне и никуда не отправляются. Что и когда уходит в сеть.',
@@ -216,7 +218,7 @@ for (kind, lang), desc in LEGAL.items():
     url = f'{SITE}/{lang}/{kind}/'
     page_ld = {"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": url,
                "inLanguage": lang, "description": desc, "publisher": {"@id": ORG_ID}, "about": {"@id": APP_ID}}
-    wr(p, head_add(s, meta(desc, title, url, lang) + alt(f'/ru/{kind}/', f'/en/{kind}/', f'/en/{kind}/') + ld_tag(page_ld)))
+    wr(p, head_add(s, meta(desc, title, url, lang) + ld_tag(page_ld)))
 
 # ---------- llms.txt и llms-full.txt ----------
 arts = []
@@ -241,7 +243,7 @@ FACTS_RU = '''- Что это: приложение для Android. Добавл
 - Бесплатно навсегда: диктовка без лимитов, без рекламы и без аккаунта. Записи хранятся 1 день.
 - Писарь Pro, 399 ₽ один раз (без подписки, первые 7 дней бесплатно): голосовые, аудио и видео в текст (файл или ссылка), текст со скриншотов и фото, Буфер скопированного с поиском, перевод при диктовке на 22 языка, хранение записей неделю, месяц или всегда. Оплата картой или СБП, возврат в течение 14 дней.
 - Требования: Android 10 и новее, 64-битный процессор. Нужно разрешение «Специальные возможности»: через него Писарь видит поле, показывает кнопку и вставляет текст; поля паролей не читает.
-- Ограничения: иногда ошибается в шуме, при быстрой речи и в редких словах (помогает словарь); языки занимают место на телефоне; часовая запись расшифровывается несколько минут; на старых телефонах медленнее.
+- Ограничения: иногда ошибается в шуме, при быстрой речи и в редких словах (помогает словарь); языки занимают место на телефоне; на старых телефонах медленнее.
 - Где скачать: RuStore ({rustore}). Скоро в Xiaomi GetApps, Huawei AppGallery и Google Play.
 - Разработчик: Pozdnekov Labs. Поддержка: {email}.'''.format(rustore=RUSTORE, email=EMAIL)
 

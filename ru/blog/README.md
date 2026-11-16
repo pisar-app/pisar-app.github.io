@@ -34,9 +34,7 @@ https://pisar-app.ru/ru/blog/rss.xml: `title`, `link`, `guid`, `pubDate`, `descr
 Сборка из корня сайта, по порядку:
 
 1. `python3 ru/blog/_src/covers.py .`: обложки `ru/blog/<slug>/og.png` (1200×630, превью ссылки) и `thumb.webp` (карточка).
-2. `python3 tools/blog.py .`: страницы, `assets/blog.css`, `sitemap.xml`; в конце сам вызывает `build_feed.py`.
-3. `python3 tools/footer.py .`
-4. `python3 tools/nav.py .`
+2. `python3 tools/build.py .`: по порядку `blog.py` (страницы, `assets/blog.css`, `sitemap.xml`, `build_feed.py`), `geo.py`, `footer.py`, `nav.py`. Шапку и подвал статьи получают сразу из `nav.py` и `footer.py`; языки и строки в `tools/i18n.py`, подробно в `README.md` в корне.
 
 `ru/blog/telegram/<slug>.md`: анонс для поста в Telegram (заголовок, 1–2 предложения, ссылка). Картинку Telegram подтянет из og.png.
 
@@ -83,5 +81,3 @@ https://pisar-app.ru/ru/blog/rss.xml: `title`, `link`, `guid`, `pubDate`, `descr
 - Слить `nomer-zakaza-so-skrinshota` в `tekst-so-skrinshota`? Пока разведены по запросу.
 - Сравнение с Яндекс Клавиатурой («голосовой ввод через интернет») и Google («русский офлайн на многих телефонах») не проверено на телефоне.
 - `strings_help.xml` в приложении: «Чистка речи… пока только для русской речи» устарело после `cebdc4a`.
-- `tools/geo.py` (llms.txt): «часовая запись расшифровывается несколько минут» без замера.
-- `tools/footer.py` и `blog.py` при сборке переносят подвал и CSS главной (после 6e2dad3) на get, mac, privacy, terms, pro: в этой ветке откатил, это работа чата шапки.

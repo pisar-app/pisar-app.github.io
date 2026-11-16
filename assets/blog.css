@@ -1,4 +1,5 @@
-
+/* Общая база внутренних страниц (снимок стилей главной 16.11). blog.py собирает из неё assets/blog.css.
+   Главная живёт своими стилями в index.html; шапка, подвал и языки в assets/site.css. */
 :root{
   --bg:#fbfaff; --bg2:#f2f0fb; --fg:#14132b; --muted:#5d5b78; --line:rgba(20,19,43,.10);
   --card:#ffffff; --chip:rgba(20,19,43,.05);
@@ -34,11 +35,8 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
 /* header */
-header{position:absolute;top:0;left:0;right:0;z-index:5}
-.bar{display:flex;align-items:center;gap:28px;height:72px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
 .logo img{width:32px;height:32px;border-radius:9px}
-nav.menu{display:flex;gap:24px;font-size:15px;color:var(--muted);margin-left:12px}
 .spacer{flex:1}
 .theme{display:flex;gap:2px;padding:4px;border-radius:999px;border:1px solid var(--line);background:var(--chip)}
 .theme button{all:unset;cursor:pointer;width:28px;height:28px;border-radius:999px;display:grid;place-items:center;color:var(--muted)}
@@ -173,8 +171,6 @@ footer .f{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 }
 @media (max-width:700px){
   .wrap{padding:0 16px}
-  nav.menu{display:none}
-  .bar{height:64px}
   .hero{padding-top:104px}
   section{padding:72px 0}
   .grid3,.grid4,.grid2{grid-template-columns:1fr;margin-top:32px}
@@ -379,14 +375,8 @@ footer{padding:48px 0 40px;font-size:15px;color:var(--muted)}
 .card:has(>.ico)>*:not(.ico):not(h3),.fcard:has(>.ico)>*:not(.ico):not(h3),.card:has(>.pb)>*:not(.pb):not(h3){grid-column:1/-1}
 @media (max-width:700px){.grid3,.grid4,.grid2,.fgrid{gap:10px}.card,.fcard,.fcard.big{padding:16px}.card:has(>.ico)>p,.fcard:has(>.ico)>p,.card:has(>.pb)>p{margin-top:8px}h2{font-size:28px}.sub{font-size:16px;margin-top:10px}.show{margin-top:32px;gap:14px}.show-t h3{font-size:22px;margin:10px 0 6px}.show-t p{font-size:15.5px}.hero{padding-top:92px}.stage{margin:24px auto 16px}}
 /* 13.11: шапка с настоящими ссылками, активный пункт, меню на телефоне */
-nav.menu a{transition:color .15s}
-nav.menu a:hover,nav.menu a.on{color:var(--fg)}
-nav.menu a.on{font-weight:600}
 @media (max-width:700px){
-  header .bar{position:relative;flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:10px;row-gap:6px}
-  nav.menu{display:flex;order:3;width:100%;margin:0;gap:20px;font-size:14.5px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
-  nav.menu::-webkit-scrollbar{display:none}
-  .hero{padding-top:118px}
+  .hero{padding-top:96px}
 }
 
 /* 14.11: ещё компактнее */
@@ -459,11 +449,6 @@ h3>.badge.pro{display:inline-block;height:20px;box-sizing:border-box;line-height
 h3>.badge.pro .mi{display:inline-block;vertical-align:-1px;margin-right:3px}
 .badge.pro{margin-top:0}
 h3>.badge.pro{margin:0 6px 0 0}
-/* разделы Android и Mac в шапке */
-.plat{display:flex;gap:2px;padding:2px;border:1px solid var(--line);border-radius:9px;font-size:13.5px;font-weight:500;line-height:20px}
-.plat a{padding:4px 11px;border-radius:7px;color:var(--muted);transition:color .15s}
-.plat a:hover{color:var(--fg)}
-.plat a.on{background:var(--line);color:var(--fg);font-weight:600}
 
 /* 16.11: на широком экране первый экран в две колонки: текст слева, телефон справа */
 @media (min-width:1024px){
@@ -475,7 +460,6 @@ h3>.badge.pro{margin:0 6px 0 0}
 .hero>.wrap>.note{grid-column:1;grid-row:5}
 .hero>.wrap>.stage{grid-column:2;grid-row:1/7;margin:0 auto}
 }
-@media (max-width:700px){header .bar{column-gap:12px}}
 
 /* статьи */
 header{position:absolute}
@@ -535,7 +519,7 @@ ul.ticks li:before{content:"";position:absolute;left:2px;top:.45em;width:14px;he
 .art .thumb:has(img){height:150px;overflow:hidden;background:var(--chip)}
 .art .thumb:has(img):after{display:none}
 .art .thumb img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
-@media (max-width:700px){.scen{grid-template-columns:1fr}.howto{grid-template-columns:1fr}.howto .appshot{max-width:260px;margin:0 auto}.ahead{padding:104px 0 24px}}
+@media (max-width:700px){.scen{grid-template-columns:1fr}.howto{grid-template-columns:1fr}.howto .appshot{max-width:260px;margin:0 auto}.ahead{padding:88px 0 24px}}
 .related h2{font-size:28px;margin:0}
 .back{margin:28px 0 0;text-align:center}.back a{font-weight:600;color:var(--accent)}
 .art p{margin:0;color:var(--muted);font-size:15px}
@@ -560,4 +544,4 @@ article a:not(.art){color:var(--accent);text-decoration:underline;text-underline
 @media (max-width:700px){.pm{grid-template-columns:1fr}}
 .art:hover h2,.art:hover h3{text-decoration:underline;text-underline-offset:3px}
 .list.grid3 .art h2{font-size:20px;margin:6px 0 0;letter-spacing:-.01em;line-height:1.25}
-@media (max-width:700px){.cta{flex-direction:column;text-align:center}.post{padding-top:118px}article{font-size:16.5px}article h2{font-size:22px}}
+@media (max-width:700px){.cta{flex-direction:column;text-align:center}.post{padding-top:96px}article{font-size:16.5px}article h2{font-size:22px}}

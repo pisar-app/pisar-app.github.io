@@ -1,0 +1,56 @@
+/* Шапка, подвал, переключатель языка и подсказка о языке на всех страницах. Разметку ставят tools/nav.py и tools/footer.py. */
+header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
+.hd-bar{position:relative;display:flex;align-items:center;gap:10px;height:72px}
+.hd-bar .logo{margin-right:22px;flex-shrink:0}
+.hd-menu{display:flex;gap:22px;font-size:15px;color:var(--muted)}
+.hd-menu a{white-space:nowrap;transition:color .15s}
+.hd-menu a:hover,.hd-menu a.on{color:var(--fg)}
+.hd-menu a.on{font-weight:600}
+.hd-bar .spacer{flex:1}
+.lbtn,.burger{all:unset;box-sizing:border-box;cursor:pointer;height:38px;border-radius:12px;color:var(--fg);border:1px solid var(--line);background:var(--chip)}
+.lbtn{display:inline-flex;align-items:center;gap:3px;padding:0 8px 0 11px;font-size:14px;font-weight:600;letter-spacing:.02em}
+.lbtn svg{width:16px;height:16px;transition:transform .15s}
+.lbtn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.burger{display:none;width:38px;place-items:center}
+.burger svg{width:20px;height:20px}
+.burger .i-x,.hd.open .burger .i-bars{display:none}
+.hd.open .burger .i-x{display:block}
+.getbtn{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:12px;font-weight:600;font-size:14.5px;background:var(--btn1-bg);color:var(--btn1-fg);white-space:nowrap;transition:opacity .15s}
+.getbtn:hover{opacity:.88}
+.lbtn:focus-visible,.burger:focus-visible,.getbtn:focus-visible,.tbtn:focus-visible,.lmenu a:focus-visible,.hd-menu a:focus-visible,.lhint button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.lsw{position:relative}
+.lmenu{position:absolute;right:0;top:calc(100% + 8px);min-width:200px;margin:0;padding:6px;list-style:none;background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 44px -18px rgba(20,19,43,.4);z-index:30}
+.lmenu[hidden]{display:none}
+.lmenu a,.lmenu .off{display:flex;justify-content:space-between;gap:16px;padding:8px 12px;border-radius:10px;font-size:15px;line-height:1.35}
+.lmenu a:hover{background:var(--chip)}
+.lmenu a.on{background:var(--chip);font-weight:600}
+.lmenu small{color:var(--muted);font-size:12px;font-weight:500;letter-spacing:.04em;align-self:center}
+.lmenu .off{color:var(--muted);opacity:.5;cursor:default}
+/* подсказка о версии на языке браузера */
+.lhint{background:var(--bg2);border-bottom:1px solid var(--line);font-size:14px}
+.lhint .wrap{display:flex;align-items:center;justify-content:center;gap:12px;min-height:36px}
+.lhint a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.lhint button{all:unset;cursor:pointer;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:20px;line-height:1}
+.lhint button:hover{color:var(--fg);background:var(--chip)}
+@media (max-width:900px){
+  .burger{display:grid}
+  .hd-bar .logo{margin-right:auto}
+  .hd-bar .spacer{display:none}
+  .hd-menu{display:none;position:absolute;left:16px;right:16px;top:calc(100% - 2px);flex-direction:column;gap:0;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 44px -18px rgba(20,19,43,.4);font-size:16px;z-index:25}
+  .hd.open .hd-menu{display:flex}
+  .hd-menu a{padding:11px 14px;border-radius:10px;color:var(--fg)}
+  .hd-menu a:hover,.hd-menu a.on{background:var(--chip)}
+}
+@media (max-width:700px){
+  .hd-bar{height:64px;gap:8px}
+  .getbtn{padding:0 12px;font-size:14px}
+  .lmenu{right:-46px}
+}
+@media (max-width:360px){.hd-bar .logo .lt{display:none}}
+/* подвал: список языков */
+.flangs{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-top:32px;padding-top:20px;border-top:1px solid var(--line);font-size:14px}
+.flangs h4{margin:0 6px 0 0;font-size:14px;font-weight:600;color:var(--fg)}
+.flangs a{color:var(--muted);transition:color .15s}
+.flangs a:hover,.flangs a.on{color:var(--fg)}
+.flangs a.on{font-weight:600}
+.flangs .off{color:var(--muted);opacity:.5}
