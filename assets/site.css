@@ -72,7 +72,7 @@ header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
 .flangs .off{color:var(--muted);opacity:.5}
 
 /* Плашка Boosty: подвал и конец статей */
-.boosty{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:9px 16px 9px 13px;border-radius:999px;background:#F15F2C;color:#fff!important;font-weight:600;font-size:14px;line-height:1;text-decoration:none;transition:background .15s,transform .15s}
+.boosty{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:9px 16px 9px 13px;border-radius:10px;background:#F15F2C;color:#fff!important;font-weight:600;font-size:14px;line-height:1;text-decoration:none;transition:background .15s,transform .15s}
 .boosty:hover{background:#d94f1f;transform:translateY(-1px)}
 .boosty svg{width:16px;height:16px;flex:none}
 .fcols nav a.boosty{display:inline-flex;padding:9px 16px 9px 13px}

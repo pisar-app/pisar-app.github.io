@@ -80,7 +80,7 @@ ul.ticks li:before{content:"";position:absolute;left:2px;top:.45em;width:14px;he
 .badge.pro{margin:0 6px 0 0;vertical-align:.12em}
 .badge .mi{font-size:13px;margin-right:3px;vertical-align:-2px}
 .bnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.bnav a{padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:600}
+.bnav a{padding:8px 14px;border-radius:10px;background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:600}
 .bsec{margin:40px 0 0;scroll-margin-top:90px}
 .bsec>h2{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
 .bsec>p{color:var(--muted);margin:0 0 18px}
