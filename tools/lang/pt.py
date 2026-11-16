@@ -146,6 +146,6 @@ GET = {
     'req': 'É preciso Android 10 ou mais recente e um processador de 64 bits.', 'what': 'O que o Pisar faz',
 }
 
-MAC = {'h1': 'Pisar para Mac', 'soon': 'Em breve.', 'p': 'É um app separado para Mac, com recursos próprios.', 'android': 'Pisar para Android'}
+MAC = {'h1': 'Pisar para Mac', 'soon': 'Em breve.', 'p': 'É um app separado para Mac, com recursos próprios.', 'android': 'Pisar para Android', 'alt': 'Janela do Pisar para Mac: seção Gravação', 'cap': 'Prévia da janela do app'}
 
 LEGAL_NOTE = 'Esta tradução é oferecida para sua conveniência. Vale a <a href="{href}" hreflang="ru">versão em russo</a>.'

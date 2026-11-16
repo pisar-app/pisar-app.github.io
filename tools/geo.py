@@ -3,7 +3,7 @@
 # описания у правовых страниц и Pro (hreflang ставит nav.py), llms.txt и llms-full.txt. Повторный запуск ничего не меняет.
 import sys, os, re, json, html, glob
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import nav, footer
+import nav, footer, pages
 ROOT = sys.argv[1]
 SITE = 'https://pisar-app.ru'
 RUSTORE = 'https://www.rustore.ru/catalog/app/com.pisar.android'
@@ -162,27 +162,20 @@ wr(p, head_add(s, meta(PRO_DESC, title, f'{SITE}/ru/pro/', 'ru') + ld_tag(pro)))
 STORE_BTN = re.search(r'<a class="store"[^>]*>.*?</a>', rd('index.html'), re.S).group(0)
 GET_DESC = ('Скачать Писарь: офлайн-диктовка для Android. Сейчас в RuStore, скоро в Xiaomi GetApps, '
             'Huawei AppGallery и Google Play.')
-GET_MAIN = f"""<main><nav><a href="/">Писарь</a> · Скачать</nav>
+GET_MAIN = ('<main><nav><a href="/">Писарь</a> · Скачать</nav>\n' + pages.get_main(f"""
 <h1>Скачать Писарь</h1>
 <p>Писарь: офлайн-диктовка для Android. Кнопка голосового ввода у любого поля, речь распознаётся на телефоне без интернета. Диктовка бесплатна, без рекламы и аккаунта.</p>
 <p>{STORE_BTN}</p>
-<h2>Другие магазины</h2>
-<table>
-<tr><th>Магазин</th><th></th></tr>
-<tr><td>RuStore</td><td><a href="{RUSTORE}" target="_blank" rel="noopener">Установить</a></td></tr>
-<tr><td>Xiaomi GetApps</td><td>Скоро</td></tr>
-<tr><td>Huawei AppGallery</td><td>Скоро</td></tr>
-<tr><td>Google Play</td><td>Скоро</td></tr>
-</table>
-<p>Нужен Android 10 и новее, 64-битный процессор. <a href="/">Что умеет Писарь</a></p>
-<p lang="en">Pisar: offline voice typing for Android. Get it on RuStore; Xiaomi GetApps, Huawei AppGallery and Google Play are coming soon.</p>
-</main>"""
+<p>Нужен Android 10 и новее, 64-битный процессор. <a href="/">Что умеет Писарь</a></p>""",
+    [('RuStore', 'Установить', RUSTORE), ('Xiaomi GetApps', 'Скоро', None), ('Huawei AppGallery', 'Скоро', None),
+     ('Google Play', 'Скоро', None)],
+    '<p lang="en">Pisar: offline voice typing for Android. Get it on RuStore; Xiaomi GetApps, Huawei AppGallery and Google Play are coming soon.</p>') + '\n</main>')
 g = rd('ru/pro/index.html')
 g = re.sub(r'<title>.*?</title>', '<title>Скачать Писарь · Писарь</title>', g, count=1)
 g = g.replace(f'href="{SITE}/ru/pro/"', f'href="{SITE}/get/"', 1)
 g = g.replace(' class="on" aria-current="page"', '')
 g = re.sub(r'<main>[\s\S]*?</main>', lambda m: GET_MAIN, g, count=1)
-g = g.replace('<div class="legal is-pro">', '<div class="legal">', 1)  # одна колонка, как у политики
+g = g.replace('<div class="legal is-pro">', '<div class="legal is-wide">', 1)  # на ПК две колонки внутри карточки
 g = re.sub(r'<aside class="pro-aside">[\s\S]*?</aside>\n?', '', g, count=1)  # скриншот Pro здесь не нужен
 get_ld = {"@context": "https://schema.org", "@graph": [
     {"@type": "WebPage", "name": "Скачать Писарь", "url": f"{SITE}/get/", "inLanguage": "ru", "description": GET_DESC,
@@ -193,12 +186,11 @@ wr('get/index.html', chrome(head_add(g, meta(GET_DESC, 'Скачать Писа�
 
 # ---------- /mac/: заглушка раздела «Писарь для Mac» ----------
 MAC_DESC = 'Писарь для Mac: скоро здесь. Это отдельное приложение для Mac со своими функциями.'
-MAC_MAIN = """<main><nav><a href="/">Писарь</a> · Mac</nav>
+MAC_MAIN = ('<main><nav><a href="/">Писарь</a> · Mac</nav>\n' + pages.mac_main("""
 <h1>Писарь для Mac</h1>
 <p>Скоро здесь.</p>
 <p>Это отдельное приложение для Mac, со своими функциями.</p>
-<p><a href="/">Писарь для Android</a></p>
-</main>"""
+<p><a href="/">Писарь для Android</a></p>""", 'Окно Писаря для Mac: раздел «Запись»', 'Предварительный вид окна') + '\n</main>')
 m = re.sub(r'<main>[\s\S]*?</main>', lambda _: MAC_MAIN, g, count=1)
 m = re.sub(r'<title>.*?</title>', '<title>Писарь для Mac · Писарь</title>', m, count=1)
 m = m.replace(f'href="{SITE}/get/"', f'href="{SITE}/mac/"', 1)

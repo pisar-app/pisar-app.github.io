@@ -48,3 +48,60 @@ header{position:absolute}
 @media (max-width:700px){.legal main{padding:22px 18px;border-radius:18px}.legal{padding-bottom:40px}}
 /* 14.11: цена спокойно, как в приложении */
 .legal main .price{background:none!important;color:var(--fg);font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;padding:6px 0 0;border-radius:0;margin:8px 0 6px}
+
+/* 16.11: широкий экран. «Скачать» и Mac: карточка шире, внутри две колонки; на телефоне одна */
+.legal.is-wide>.wrap{max-width:1120px}
+.legal.is-wide main{max-width:none}
+.legal main .cols{display:grid;gap:28px}
+.legal main .cols>*{min-width:0}
+.legal main .intro>:last-child{margin-bottom:0}
+.legal main .stores{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.legal main .stores li{margin:0;border:1px solid var(--line);border-radius:16px;background:var(--bg)}
+.legal main .stores li>a,.legal main .stores li>div{display:flex;flex-direction:column;gap:4px;padding:16px 18px;height:100%;box-sizing:border-box}
+.legal main .stores a{text-decoration:none;color:inherit;border-radius:15px}
+.legal main .cols+p{margin-top:28px}
+.legal main .stores .sn{font-weight:600;font-size:16px;color:var(--fg)}
+.legal main .stores .st{font-size:14px;color:var(--muted)}
+.legal main .stores li.on{border-color:var(--accent)}
+.legal main .stores li.on .st{color:var(--accent);font-weight:600}
+.legal main .stores li.on a:hover{background:var(--chip)}
+@media (min-width:1024px){
+  .legal.is-wide main{padding:48px 56px}
+  .legal main .cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+  .legal main .cols:has(.mbp){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+  .legal main .stores{gap:16px}
+  .legal main .stores li>a,.legal main .stores li>div{padding:22px}
+  .legal main .cols:not(:has(.mbp)){align-items:start}
+  .legal main .cols .side{padding-top:84px}
+}
+
+/* MacBook на /mac/: рамка и корпус как у телефона на главной (чёрный экран, переливающийся край, свечение) */
+.mbp{margin:8px auto 0;width:100%;max-width:640px}
+.mbp-lid{position:relative;border-radius:18px 18px 6px 6px;padding:2.4% 2.4% 3%;border:3px solid transparent;
+  background:linear-gradient(#030306,#030306) padding-box,linear-gradient(140deg,#f1e9ff 0%,#a68bff 18%,#5b3df5 38%,#21155e 55%,#7d5cff 74%,#ffb3e6 90%,#fff 100%) border-box;
+  box-shadow:0 0 0 1px rgba(255,255,255,.35),0 40px 90px -30px rgba(91,61,245,.7),0 0 70px -14px rgba(168,139,255,.5)}
+.mbp-scr{position:relative;border-radius:6px;overflow:hidden;background:#0b0d14;aspect-ratio:1600/896}
+.mbp-scr img{display:block;width:100%;height:auto}
+.mbp-cam{position:absolute;left:50%;top:0;transform:translateX(-50%);width:13%;height:2.6%;min-height:7px;background:#030306;border-radius:0 0 8px 8px}
+.mbp-cam:after{content:"";position:absolute;left:50%;top:30%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#1d2140}
+.mbp-base{position:relative;height:14px;margin:0 -7%;border-radius:2px 2px 14px 14px;
+  background:linear-gradient(180deg,#e6e3f3 0%,#c3bfd6 45%,#8f8aa8 100%);box-shadow:0 18px 40px -16px rgba(60,40,160,.45)}
+.mbp-base i{position:absolute;left:50%;top:0;transform:translateX(-50%);width:16%;height:5px;border-radius:0 0 6px 6px;background:rgba(0,0,0,.18)}
+.mbp figcaption{font-size:13px;color:var(--muted);text-align:center;padding:16px 4px 0}
+@media (max-width:700px){.mbp-lid{border-radius:12px 12px 4px 4px}.mbp-base{height:9px;border-radius:2px 2px 9px 9px}.mbp-base i{height:3px}}
+[data-theme="dark"] .mbp-base{background:linear-gradient(180deg,#77749a 0%,#4a4766 50%,#2c2a40 100%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mbp-base{background:linear-gradient(180deg,#77749a 0%,#4a4766 50%,#2c2a40 100%)}}
+
+/* Документы: на ПК оглавление справа, едет со страницей */
+.legal .toc{display:none}
+@media (min-width:1100px){
+  .legal.has-toc>.wrap{max-width:1120px;display:grid;grid-template-columns:minmax(0,760px) 260px;gap:40px;justify-content:center;align-items:start}
+  .legal.has-toc main{margin:0}
+  .legal .toc{display:block;position:sticky;top:96px;max-height:calc(100vh - 120px);overflow:auto;font-size:14px;line-height:1.4}
+  .legal .toc p{margin:6px 0 10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .legal .toc ol{list-style:none;margin:0;padding:0 0 0 12px;border-left:1px solid var(--line)}
+  .legal .toc li{margin:0}
+  .legal .toc a{display:block;padding:6px 0;color:var(--muted);text-decoration:none}
+  .legal .toc a:hover{color:var(--fg)}
+}
+html{scroll-padding-top:24px}

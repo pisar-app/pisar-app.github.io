@@ -60,12 +60,12 @@
     <button class="burger" type="button" aria-controls="hdmenu" aria-expanded="false" aria-label="Menú"><svg class="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
 </header>
-<div class="legal"><div class="wrap">
+<div class="legal has-toc"><div class="wrap">
 <main><p class="tnote">Esta traducción se ofrece para tu comodidad. La que vale es la <a href="/ru/privacy/" hreflang="ru">versión rusa</a>.</p>
 <h1>Política de privacidad</h1>
 <p>Versión del 16 de noviembre de 2026.</p>
 <p>Esta política describe cómo la app para Android Pisar («Pisar») trata los datos. Pisar sirve para dictar y transcribir: tú hablas y el teléfono escribe. Desarrollador: Pozdnekov Labs («nosotros»).</p>
-<h2>En resumen</h2>
+<h2 id="s-1">En resumen</h2>
 <ul>
 <li>La voz se reconoce <strong>solo en el teléfono</strong>. El audio no se envía ni a nosotros, ni a Google, ni a nadie. El reconocimiento funciona también en modo avión.</li>
 <li>Los dictados, las transcripciones, Copiados, el diccionario y los ajustes se guardan <strong>solo en el teléfono</strong>. No hay cuentas ni anuncios.</li>
@@ -74,7 +74,7 @@
 <li>Las novedades y ofertas solo llegan si das tu consentimiento.</li>
 <li>Para borrarlo todo, desinstala la app.</li>
 </ul>
-<h2>1. Qué datos se tratan</h2>
+<h2 id="s-2">1. Qué datos se tratan</h2>
 <h3>1.1. Reconocimiento de voz</h3>
 <p>El micrófono solo se enciende cuando empiezas a dictar. El audio lo reconoce un modelo descargado en el teléfono («Todos los idiomas» o «Solo ruso»), directamente en el dispositivo. No se usan el reconocimiento de voz de Google ni otros servicios en la nube. El audio no se guarda: tras el reconocimiento solo queda el texto.</p>
 <h3>1.2. Accesibilidad</h3>
@@ -168,7 +168,7 @@
 </table>
 <p>Puedes elegir «No guardar»: entonces el texto va directamente al portapapeles y no entra en el Historial. «Borrar» en las pestañas «Historial», «Transcripción» y «Copiados» elimina los registros al momento (los fijados se quedan y se borran aparte). Los datos están en la carpeta privada de Pisar y no entran en las copias de seguridad de Android. La vinculación con el Mac se guarda cifrada con una clave de Android Keystore.</p>
 <p>Los textos solo salen del teléfono si tú tocas «Compartir» o «Copiar», o exportas el Historial a un archivo.</p>
-<h2>2. Transmisión de datos</h2>
+<h2 id="s-3">2. Transmisión de datos</h2>
 <h3>2.1. Descarga de modelos</h3>
 <ul>
 <li>Los <strong>modelos de reconocimiento de voz</strong> se descargan de Hugging Face, de la organización pública <code>pisar</code> (huggingface.co/pisar).</li>
@@ -208,32 +208,45 @@ https://yandex.com/legal/confidential/</p>
 <p>El correo y el número de factura se guardan mientras la compra es válida y solo sirven para activar y restaurar Pro y para responder a tus consultas. Para que los borremos, escribe a la dirección de la sección 10.</p>
 <h3>2.8. Lista de artículos del blog</h3>
 <p>Cuando abres «Ayuda y contacto → Acerca de», Pisar descarga de pisar-app.ru, como mucho una vez al día, la lista de artículos del blog para mostrar uno reciente. La web ve una solicitud normal desde la dirección IP del teléfono; no se envía nada sobre ti ni sobre tus textos.</p>
-<h2>3. Lo que no hacemos</h2>
+<h2 id="s-4">3. Lo que no hacemos</h2>
 <ul>
 <li>No vendemos datos ni los cedemos para publicidad. Pisar no tiene anuncios.</li>
 <li>No usamos tus textos ni tu voz para entrenar modelos.</li>
 <li>No pedimos cuenta ni número de teléfono. El correo solo hace falta para comprar Pro o para la lista de espera (sección 2.7).</li>
 <li>No recogemos la ubicación, los contactos ni el historial de llamadas.</li>
 </ul>
-<h2>4. Borrar los datos</h2>
+<h2 id="s-5">4. Borrar los datos</h2>
 <ul>
 <li>Registros sueltos: ⋮ → «Borrar»; todo de una vez: «Borrar» en la pestaña correspondiente.</li>
 <li>Desactivar las estadísticas: «Ajustes → Ayuda y contacto → Acerca de».</li>
 <li>Borrar todo del teléfono: desinstala la app y Android eliminará la carpeta de Pisar con el historial, los modelos y los ajustes.</li>
 <li>Borrar las estadísticas ya enviadas a AppMetrica: escríbenos (sección 10).</li>
 </ul>
-<h2>5. Menores</h2>
+<h2 id="s-6">5. Menores</h2>
 <p>Pisar no está pensado para menores de 13 años (en la UE, menores de 16, salvo que tu país fije otra edad) y no recoge datos sobre ellos a sabiendas. Si crees que un menor nos ha enviado sus datos, escríbenos y los borraremos.</p>
-<h2>6. Rusia</h2>
+<h2 id="s-7">6. Rusia</h2>
 <p>Responsable del tratamiento: el desarrollador indicado en la ficha de la app Pisar en la tienda de apps desde la que la instalaste (nombre comercial Pozdnekov Labs). Los datos que pueden considerarse personales (identificador del dispositivo y dirección IP en AppMetrica, token push de RuStore) se tratan para mejorar la app y enviar notificaciones, y se guardan en Yandex y VK en Rusia. Base jurídica: tu consentimiento; si sigues usando Pisar con las estadísticas activadas, das tu consentimiento; para retirarlo, desactiva «Enviar estadísticas y fallos» y las notificaciones, o escríbenos. Tienes derecho a saber qué datos sobre ti se tratan, a pedir que se corrijan o se borren y a reclamar ante Roskomnadzor.</p>
-<h2>7. Unión Europea y Reino Unido</h2>
+<h2 id="s-8">7. Unión Europea y Reino Unido</h2>
 <p>Bases jurídicas: para las estadísticas y los fallos, el interés legítimo en que la app funcione sin errores (puedes oponerte desactivándolos en un paso); para las novedades y ofertas, el consentimiento. Los datos de AppMetrica y RuStore se tratan en Rusia, que no cuenta con una decisión de adecuación de la UE; los datos están anonimizados y reducidos al mínimo. Tus derechos: acceso, rectificación, supresión, limitación, portabilidad, oposición, retirada del consentimiento y reclamación ante la autoridad de control de tu país.</p>
-<h2>8. California</h2>
+<h2 id="s-9">8. California</h2>
 <p>No vendemos ni «compartimos» (sharing) datos personales en el sentido de la CCPA ni los usamos para publicidad. Categorías: identificadores del dispositivo e información sobre el uso de la app (sección 2.3). Tienes derecho a saber qué datos se han recogido y a pedir que se borren; no sufrirás ninguna discriminación por ello.</p>
-<h2>9. Cambios</h2>
+<h2 id="s-10">9. Cambios</h2>
 <p>Si la política cambia, la nueva versión aparecerá en esta página y en la app («Ajustes → Ayuda y contacto → Acerca de → Información legal»), con una fecha nueva; los cambios importantes los indicaremos en la descripción de la actualización en la tienda.</p>
-<h2>10. Contacto</h2>
+<h2 id="s-11">10. Contacto</h2>
 <p>poal0208@gmail.com</p></main>
+<aside class="toc" aria-label="Índice"><p>Índice</p><ol>
+<li><a href="#s-1">En resumen</a></li>
+<li><a href="#s-2">1. Qué datos se tratan</a></li>
+<li><a href="#s-3">2. Transmisión de datos</a></li>
+<li><a href="#s-4">3. Lo que no hacemos</a></li>
+<li><a href="#s-5">4. Borrar los datos</a></li>
+<li><a href="#s-6">5. Menores</a></li>
+<li><a href="#s-7">6. Rusia</a></li>
+<li><a href="#s-8">7. Unión Europea y Reino Unido</a></li>
+<li><a href="#s-9">8. California</a></li>
+<li><a href="#s-10">9. Cambios</a></li>
+<li><a href="#s-11">10. Contacto</a></li>
+</ol></aside>
 </div></div>
 <footer>
   <div class="wrap fcols">

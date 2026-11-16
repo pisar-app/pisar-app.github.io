@@ -8,7 +8,8 @@ import sys, os, re, json, html, importlib.util
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from i18n import SITE, EMAIL, FOOT, t
-import nav, footer
+import nav, footer, toc
+import pages as layout
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '.'
 LANGS = ['en', 'de', 'fr', 'es', 'it', 'pt', 'pl', 'nl', 'bg']
@@ -238,7 +239,7 @@ def simple(lang, L, pid, main, title, desc, crumb):
     s = rd(f'{lang}/pro/index.html')
     s = re.sub(r'<script type="application/ld\+json">.*?</script>\n', '', s)
     s = head(s, lang, pid, title, desc)
-    s = s.replace('<div class="legal is-pro">', '<div class="legal">', 1)  # одна колонка, как у политики
+    s = s.replace('<div class="legal is-pro">', '<div class="legal is-wide">', 1)  # на ПК две колонки внутри карточки
     s = one(ASIDE, s, '')
     s = one(MAIN, s, f'<main><nav><a href="/{lang}/">Pisar</a> · {crumb}</nav>\n{main.strip()}\n</main>')
     s = s.replace(' class="on" aria-current="page"', '')
@@ -254,26 +255,20 @@ RUSTORE = 'https://www.rustore.ru/catalog/app/com.pisar.android'
 
 def get(lang, L):
     G = L.GET
-    rows = ''.join(f'<tr><td>{n}</td><td>{G["soon"]}</td></tr>\n' for n in ('Google Play', 'Xiaomi GetApps', 'Huawei AppGallery'))
-    main = f'''<h1>{G["h1"]}</h1>
-<p>{G["p"]}</p>
-<table>
-<tr><th>{G["store"]}</th><th></th></tr>
-{rows}<tr><td>RuStore</td><td><a href="{RUSTORE}" target="_blank" rel="noopener">{G["rustore"]}</a></td></tr>
-</table>
-<p>{G["req"]} <a href="/{lang}/">{G["what"]}</a></p>'''
-    return simple(lang, L, 'get', main, L.META['get_title'], L.META['get_desc'], G['crumb'])
+    intro = f'<h1>{G["h1"]}</h1>\n<p>{G["p"]}</p>\n<p>{G["req"]} <a href="/{lang}/">{G["what"]}</a></p>'
+    items = [(n, G['soon'], None) for n in ('Google Play', 'Xiaomi GetApps', 'Huawei AppGallery')] + [('RuStore', G['rustore'], RUSTORE)]
+    return simple(lang, L, 'get', layout.get_main(intro, items), L.META['get_title'], L.META['get_desc'], G['crumb'])
 
 
 def mac(lang, L):
     G = L.MAC
-    main = f'<h1>{G["h1"]}</h1>\n<p>{G["soon"]}</p>\n<p>{G["p"]}</p>\n<p><a href="/{lang}/">{G["android"]}</a></p>'
-    return simple(lang, L, 'mac', main, L.META['mac_title'], L.META['mac_desc'], 'Mac')
+    text = f'<h1>{G["h1"]}</h1>\n<p>{G["soon"]}</p>\n<p>{G["p"]}</p>\n<p><a href="/{lang}/">{G["android"]}</a></p>'
+    return simple(lang, L, 'mac', layout.mac_main(text, G['alt'], G['cap']), L.META['mac_title'], L.META['mac_desc'], 'Mac')
 
 
 # ---------- политика и соглашение: перевод для удобства, действует русская версия ----------
 def legal(lang, L, kind):
-    s = rd(f'ru/{kind}/index.html')
+    s = toc.strip(rd(f'ru/{kind}/index.html'))  # оглавление ставит toc.py уже по своему языку
     s = LD_RE.sub('', s)
     M = L.META
     s = head(s, lang, kind, M[kind + '_title'], M[kind + '_desc'])
@@ -282,7 +277,7 @@ def legal(lang, L, kind):
     s = one(MAIN, s, f'<main>{note}\n{body}</main>')
     ld = {"@context": "https://schema.org", "@type": "WebPage", "name": M[kind + '_title'], "url": f"{SITE}/{lang}/{kind}/",
           "inLanguage": lang, "description": M[kind + '_desc'], "publisher": {"@id": ORG_ID}, "about": {"@id": f"{SITE}/{lang}/#app"}}
-    return s.replace('<!-- /geo -->', ld_tag(ld) + '<!-- /geo -->', 1)
+    return toc.apply(s.replace('<!-- /geo -->', ld_tag(ld) + '<!-- /geo -->', 1), lang)
 
 
 if __name__ == '__main__':

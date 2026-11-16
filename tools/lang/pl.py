@@ -146,6 +146,6 @@ GET = {
     'req': 'Wymaga Androida 10 lub nowszego i procesora 64-bitowego.', 'what': 'Co potrafi Pisar',
 }
 
-MAC = {'h1': 'Pisar na Maca', 'soon': 'Już wkrótce.', 'p': 'To osobna aplikacja na Maca, z własnymi funkcjami.', 'android': 'Pisar na Androida'}
+MAC = {'h1': 'Pisar na Maca', 'soon': 'Już wkrótce.', 'p': 'To osobna aplikacja na Maca, z własnymi funkcjami.', 'android': 'Pisar na Androida', 'alt': 'Okno aplikacji Pisar na Maca: sekcja Nagrywanie', 'cap': 'Podgląd okna aplikacji'}
 
 LEGAL_NOTE = 'To tłumaczenie ma charakter pomocniczy. Wiążąca jest <a href="{href}" hreflang="ru">wersja rosyjska</a>.'

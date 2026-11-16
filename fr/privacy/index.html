@@ -60,12 +60,12 @@
     <button class="burger" type="button" aria-controls="hdmenu" aria-expanded="false" aria-label="Menu"><svg class="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
 </header>
-<div class="legal"><div class="wrap">
+<div class="legal has-toc"><div class="wrap">
 <main><p class="tnote">Cette traduction est fournie pour plus de commodité. Seule la <a href="/ru/privacy/" hreflang="ru">version russe</a> fait foi.</p>
 <h1>Politique de confidentialité</h1>
 <p>Version du 16 novembre 2026.</p>
 <p>Cette politique décrit comment l’application Android Pisar (« Pisar ») traite les données. Pisar sert à dicter et à transcrire : vous parlez, le téléphone écrit. Développeur : Pozdnekov Labs (« nous »).</p>
-<h2>En bref</h2>
+<h2 id="s-1">En bref</h2>
 <ul>
 <li>La voix est reconnue <strong>uniquement sur le téléphone</strong>. Le son n’est envoyé ni à nous, ni à Google, ni à personne d’autre. La reconnaissance marche aussi en mode avion.</li>
 <li>Les dictées, transcriptions, Copies, le dictionnaire et les réglages sont stockés <strong>uniquement sur le téléphone</strong>. Ni compte, ni publicité.</li>
@@ -74,7 +74,7 @@
 <li>Les nouveautés et les offres ne vous parviennent qu’avec votre accord.</li>
 <li>Pour tout supprimer, désinstallez l’appli.</li>
 </ul>
-<h2>1. Données traitées</h2>
+<h2 id="s-2">1. Données traitées</h2>
 <h3>1.1. Reconnaissance vocale</h3>
 <p>Le micro ne s’allume que lorsque vous lancez une dictée. Le son est reconnu par un modèle téléchargé sur le téléphone (« Toutes les langues » ou « Russe uniquement »), directement sur l’appareil. La reconnaissance vocale de Google et les autres services cloud ne sont pas utilisés. Le son n’est pas conservé : après la reconnaissance, il ne reste que le texte.</p>
 <h3>1.2. Accessibilité</h3>
@@ -168,7 +168,7 @@
 </table>
 <p>Vous pouvez choisir « Ne pas conserver » : le texte va alors directement dans le presse-papiers et n’entre pas dans l’Historique. « Effacer » dans les onglets « Historique », « Transcription » et « Copies » supprime les entrées tout de suite (les entrées épinglées restent, elles se suppriment à part). Les données sont dans le dossier privé de Pisar et ne vont pas dans les sauvegardes Android. La liaison avec le Mac est stockée chiffrée avec une clé Android Keystore.</p>
 <p>Les textes ne sortent du téléphone que si vous appuyez vous-même sur « Partager » ou « Copier », ou exportez l’Historique dans un fichier.</p>
-<h2>2. Transmission des données</h2>
+<h2 id="s-3">2. Transmission des données</h2>
 <h3>2.1. Téléchargement des modèles</h3>
 <ul>
 <li>Les <strong>modèles de reconnaissance vocale</strong> sont téléchargés depuis Hugging Face, depuis l’organisation publique <code>pisar</code> (huggingface.co/pisar).</li>
@@ -208,32 +208,45 @@ https://yandex.com/legal/confidential/</p>
 <p>L’e-mail et le numéro de facture sont conservés tant que l’achat est valable et servent uniquement à activer et restaurer Pro et à répondre à vos demandes. Pour les faire supprimer, écrivez à l’adresse de la section 10.</p>
 <h3>2.8. Liste des articles du blog</h3>
 <p>Quand vous ouvrez « Aide et contact → À propos », Pisar télécharge au plus une fois par jour la liste des articles du blog depuis pisar-app.ru pour en montrer un récent. Le site voit une requête normale depuis l’adresse IP du téléphone ; rien sur vous ni sur vos textes n’est transmis.</p>
-<h2>3. Ce que nous ne faisons pas</h2>
+<h2 id="s-4">3. Ce que nous ne faisons pas</h2>
 <ul>
 <li>Nous ne vendons pas de données et ne les transmettons pas à des fins publicitaires. Pisar n’a pas de publicité.</li>
 <li>Nous n’utilisons pas vos textes ni votre voix pour entraîner des modèles.</li>
 <li>Nous n’exigeons ni compte ni numéro de téléphone. Un e-mail n’est nécessaire que pour acheter Pro ou pour la liste d’attente (section 2.7).</li>
 <li>Nous ne collectons ni la localisation, ni les contacts, ni l’historique des appels.</li>
 </ul>
-<h2>4. Suppression des données</h2>
+<h2 id="s-5">4. Suppression des données</h2>
 <ul>
 <li>Entrées une par une : ⋮ → « Supprimer » ; tout d’un coup : « Effacer » dans l’onglet voulu.</li>
 <li>Désactiver les statistiques : « Paramètres → Aide et contact → À propos ».</li>
 <li>Tout supprimer du téléphone : désinstallez l’appli, Android efface le dossier de Pisar avec l’historique, les modèles et les réglages.</li>
 <li>Supprimer les statistiques déjà envoyées à AppMetrica : écrivez-nous (section 10).</li>
 </ul>
-<h2>5. Enfants</h2>
+<h2 id="s-6">5. Enfants</h2>
 <p>Pisar n’est pas destiné aux enfants de moins de 13 ans (dans l’UE, moins de 16 ans si votre pays ne fixe pas un autre âge) et ne collecte pas sciemment de données sur eux. Si vous pensez qu’un enfant nous a envoyé ses données, écrivez-nous : nous les supprimerons.</p>
-<h2>6. Russie</h2>
+<h2 id="s-7">6. Russie</h2>
 <p>Responsable du traitement : le développeur indiqué sur la page de l’appli Pisar dans le store d’applis depuis lequel vous l’avez installée (nom commercial Pozdnekov Labs). Les données pouvant être considérées comme personnelles (identifiant de l’appareil et adresse IP dans AppMetrica, jeton push RuStore) sont traitées pour améliorer l’appli et distribuer les notifications, et sont conservées chez Yandex et VK en Russie. Base légale : votre consentement ; en continuant à utiliser Pisar avec les statistiques activées, vous consentez ; pour retirer votre consentement, désactivez « Envoyer les statistiques et les plantages » et les notifications, ou écrivez-nous. Vous avez le droit de savoir quelles données vous concernant sont traitées, d’en demander la rectification ou la suppression, et de contester nos actions auprès de Roskomnadzor.</p>
-<h2>7. Union européenne et Royaume-Uni</h2>
+<h2 id="s-8">7. Union européenne et Royaume-Uni</h2>
 <p>Bases légales : pour les statistiques et les plantages, l’intérêt légitime à ce que l’appli fonctionne sans erreur (vous pouvez vous y opposer en les désactivant en une étape) ; pour les nouveautés et les offres, le consentement. Les données d’AppMetrica et de RuStore sont traitées en Russie, qui ne fait pas l’objet d’une décision d’adéquation de l’UE ; les données sont anonymisées et réduites au minimum. Vos droits : accès, rectification, effacement, limitation, portabilité, opposition, retrait du consentement, réclamation auprès de l’autorité de contrôle de votre pays.</p>
-<h2>8. Californie</h2>
+<h2 id="s-9">8. Californie</h2>
 <p>Nous ne vendons pas et ne « partageons » pas (sharing) de données personnelles au sens du CCPA, et ne les utilisons pas pour la publicité. Catégories : identifiants de l’appareil et informations sur l’usage de l’appli (section 2.3). Vous avez le droit de savoir quelles données ont été collectées et d’en demander la suppression ; cela n’entraînera aucune discrimination.</p>
-<h2>9. Modifications</h2>
+<h2 id="s-10">9. Modifications</h2>
 <p>Si la politique change, la nouvelle version paraîtra sur cette page et dans l’appli (« Paramètres → Aide et contact → À propos → Informations légales »), avec une nouvelle date ; nous signalerons les changements importants dans la description de la mise à jour sur le store.</p>
-<h2>10. Contact</h2>
+<h2 id="s-11">10. Contact</h2>
 <p>poal0208@gmail.com</p></main>
+<aside class="toc" aria-label="Sommaire"><p>Sommaire</p><ol>
+<li><a href="#s-1">En bref</a></li>
+<li><a href="#s-2">1. Données traitées</a></li>
+<li><a href="#s-3">2. Transmission des données</a></li>
+<li><a href="#s-4">3. Ce que nous ne faisons pas</a></li>
+<li><a href="#s-5">4. Suppression des données</a></li>
+<li><a href="#s-6">5. Enfants</a></li>
+<li><a href="#s-7">6. Russie</a></li>
+<li><a href="#s-8">7. Union européenne et Royaume-Uni</a></li>
+<li><a href="#s-9">8. Californie</a></li>
+<li><a href="#s-10">9. Modifications</a></li>
+<li><a href="#s-11">10. Contact</a></li>
+</ol></aside>
 </div></div>
 <footer>
   <div class="wrap fcols">
