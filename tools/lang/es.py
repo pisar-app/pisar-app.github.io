@@ -28,7 +28,7 @@ HOME = {
     'f2_h': 'En cualquier app', 'f2_p': 'Mensajería, correo, notas, búsqueda: el texto va donde está el cursor. No hace falta cambiar de teclado.',
     'f3_h': 'Gratis y sin anuncios', 'f3_p': 'Dictado sin suscripción y sin límites. Pro se compra una sola vez.',
     'c_h2': 'Texto limpio desde el principio', 'c_sub': 'No hay nada que corregir: Pisar pone la puntuación, las mayúsculas y las cifras.',
-    'c_said': '<span>Dices</span>', 'c_ins': '<span>Se escribe</span>',
+    'c_said': '<span>Dices</span>', 'c_ins': '<span>Pisar escribe</span>',
     'rows': [
         ('veinticinco tareas en github', '25 tareas en GitHub', 'cifras, nombres de tu diccionario'),
         ('vienes el sábado', '¿Vienes el sábado?', 'mayúscula y signos de interrogación'),
@@ -47,8 +47,8 @@ HOME = {
         ('Nombres bien escritos', 'Añade nombres y términos una vez y a partir de ahí se escriben bien.'),
         ('Texto largo con una frase corta', 'Di «mi dirección» y se inserta la dirección completa.'),
         ('Aprende de tus correcciones', 'Corriges una palabra una vez y Pisar la escribe bien después. Si quieres.'),
-        ('Más bajo mientras hablas', 'La música y los vídeos bajan el volumen mientras dictas.'),
-        ('Pegar otra vez', 'El último texto otra vez, con un botón.'),
+        ('Baja el volumen mientras hablas', 'La música y los vídeos suenan más bajo mientras dictas.'),
+        ('Pegar otra vez', 'Vuelve a pegar el último texto con un solo toque.'),
         ('Dictado desde los ajustes rápidos', 'Un icono en los ajustes rápidos, funciona en cualquier app.'),
         ('Un botón que no estorba', 'Muévelo, hazlo más pequeño o más transparente, u ocúltalo un rato.'),
         ('Sin palabrotas', 'Pisar quita las palabrotas, si quieres.'),
@@ -72,7 +72,7 @@ HOME = {
     'm_clip1': 'Enlace a la cita con el médico', 'm_clip2': 'Lista de la compra: leche, pan, manzanas',
     'm_pair': '>ES→EN<',
     'm_said': '«Gracias, ya me ha llegado todo, mañana te contesto»',
-    'm_out': "Thanks, got everything, I'll reply tomorrow.",
+    'm_out': "Thanks, got everything, I’ll reply tomorrow.",
     'cta': 'Dónde descargar',
     'hero_note': 'El dictado es gratis para siempre. Sin anuncios y sin cuenta.',
     'price': {
@@ -80,7 +80,7 @@ HOME = {
         'free': 'Gratis',
         'free_items': ['Dictado sin límites, en cualquier app', 'Sin conexión, 24 idiomas', 'Diccionario, reglas de texto, limpieza del habla', 'Registros guardados 1 día'],
         'pro': 'Pro, un solo pago',
-        'pro_items': ['Todo lo gratuito', 'Notas de voz y vídeos a texto', 'Texto de capturas y fotos', 'Copiados y traducción al dictar', 'Registros guardados una semana, un mes o siempre'],
+        'pro_items': ['Todo lo gratuito', 'Notas de voz y vídeos a texto', 'Texto de capturas y fotos', 'Copiados y traducción al dictar', 'Registros guardados una semana, un mes o para siempre'],
         'pr_sub': 'Un solo pago para siempre, sin suscripción',
         'big': '7 días gratis',
         'text': 'Después compras Pro una vez en la app y es tuyo. El precio aparece en la app antes de pagar.',
@@ -97,8 +97,8 @@ FAQ = [
     ('¿Pisar funciona sin internet?', 'Sí. La voz se reconoce en el propio teléfono, el audio y el texto no se envían a ninguna parte. Internet hace falta una vez para descargar un idioma y, después, solo para transcribir un archivo por enlace y pagar Pro.'),
     ('¿Es un teclado?', 'No. Tu teclado sigue igual, Pisar añade un botón P junto al campo de texto.'),
     ('¿Qué idiomas reconoce?', '24 idiomas europeos, entre ellos español, inglés, francés, alemán, italiano, portugués, polaco, neerlandés y búlgaro. Pisar reconoce el idioma solo, o lo eliges tú.'),
-    ('¿Qué pasa después de los 7 días de Pro?', 'El dictado, el diccionario y las reglas de texto siguen siendo gratis. La transcripción y Copiados se detienen, los textos que ya tienes se quedan contigo.'),
-    ('¿Para qué necesita «Accesibilidad»?', 'Con este servicio de Android, Pisar ve el campo de texto, muestra el botón e inserta el texto. No lee los campos de contraseña.'),
+    ('¿Qué pasa después de los 7 días de Pro?', 'El dictado, el diccionario y las reglas de texto siguen siendo gratis. La transcripción y Copiados dejan de estar disponibles, pero los textos que ya tienes se quedan contigo.'),
+    ('¿Para qué necesita Pisar la Accesibilidad?', 'Con este servicio de Android, Pisar ve el campo de texto, muestra el botón e inserta el texto. No lee los campos de contraseña.'),
     ('¿Qué se envía a internet?', 'El audio, los textos y los nombres de archivos y apps no salen del teléfono. Internet solo hace falta para descargar un idioma una vez, transcribir un archivo por enlace y pagar Pro. Las estadísticas anónimas de fallos se pueden desactivar en los ajustes.'),
     ('¿Qué limitaciones tiene?', 'A veces se equivoca: con ruido, si se habla rápido o con palabras poco comunes (el diccionario ayuda). Los idiomas ocupan espacio en el teléfono. Una grabación de una hora tarda unos minutos en transcribirse. En teléfonos antiguos va más lento.'),
     ('¿Qué teléfono necesito?', 'Android 10 o posterior, con procesador de 64 bits.'),
@@ -117,10 +117,10 @@ PRO = {
 <tr><td>Diccionario sin límites</td><td>Texto de capturas e imágenes</td></tr>
 <tr><td>«Música y vídeo», «Pegar lo último»</td><td>Copiados: todo lo que copias en un solo lugar, con búsqueda</td></tr>
 <tr><td>Registros guardados 1 día</td><td>Traducción al dictar a 22 idiomas</td></tr>
-<tr><td></td><td>Registros guardados una semana, un mes o siempre</td></tr>
+<tr><td></td><td>Registros guardados una semana, un mes o para siempre</td></tr>
 <tr><td></td><td>Todas las novedades de Pisar en el teléfono</td></tr>
 </table>
-<p>Los primeros 7 días de Pro son gratis: la prueba empieza con la primera función Pro que usas, y solo una vez. Pisar no tiene anuncios.</p>
+<p>Los primeros 7 días de Pro son gratis: la prueba empieza la primera vez que usas una función Pro y solo se puede activar una vez. Pisar no tiene anuncios.</p>
 <h2>Cómo comprar</h2>
 <ol>
 <li>Instala Pisar y abre Ajustes → Pisar Pro → Comprar.</li>
@@ -168,4 +168,4 @@ MAC_N = {  # «Сообщить о выходе»: подпись, поле, к�
     'note': 'Un solo correo cuando salga, sin boletines. <a href="{href}">Política de privacidad</a>',
 }
 
-LEGAL_NOTE = 'Esta traducción se ofrece para tu comodidad. La que vale es la <a href="{href}" hreflang="ru">versión rusa</a>.'
+LEGAL_NOTE = 'Esta traducción es solo orientativa. Prevalece la <a href="{href}" hreflang="ru">versión rusa</a>.'

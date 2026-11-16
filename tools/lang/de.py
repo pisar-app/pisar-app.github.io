@@ -20,14 +20,14 @@ HOME = {
     'chat_name': 'Mama',
     'chat_in1': 'Wann bist du da?',
     'chat_out': 'Bin unterwegs, Mama, in 20 Minuten bin ich da. Setz schon mal Wasser auf, ich bringe Kuchen mit',
-    'chat_in2': 'Schön! Das Wasser kocht gleich, bis gleich',
+    'chat_in2': 'Super, ich setze gleich Wasser auf. Bis dann!',
     'chat_ph': 'Nachricht',
     'words': '{n} Wörter',
     'f_h2': 'Sprechen geht schneller als Tippen',
     'f1_h': '<h3>Funktioniert offline</h3>', 'f1_p': 'In der U-Bahn, im Flugzeug, auf dem Land. Die Sprache wird direkt auf dem Handy erkannt.',
     'f2_h': 'In jeder App', 'f2_p': 'Messenger, E-Mail, Notizen, Suche: Der Text steht dort, wo der Cursor ist. Die Tastatur bleibt, wie sie ist.',
     'f3_h': 'Kostenlos und ohne Werbung', 'f3_p': 'Diktieren ohne Abo und ohne Limits. Pro kaufen Sie einmal.',
-    'c_h2': 'Der Text ist gleich sauber', 'c_sub': 'Nichts nachbessern: Satzzeichen, Großschreibung und Ziffern setzt Pisar selbst.',
+    'c_h2': 'Sofort sauberer Text', 'c_sub': 'Nichts nachbessern: Satzzeichen, Großschreibung und Ziffern setzt Pisar selbst.',
     'c_said': '<span>Gesagt</span>', 'c_ins': '<span>Eingefügt</span>',
     'rows': [
         ('fünfundzwanzig aufgaben in github', '25 Aufgaben in GitHub', 'Ziffern, Namen aus Ihrem Wörterbuch'),
@@ -37,7 +37,7 @@ HOME = {
     ],
     's_h2': 'Drei Schritte, dann einfach sprechen',
     's1_h': '1. Installieren', 's1_p': 'Ohne Anmeldung und ohne Konto.',
-    's2_h': '2. Sprache laden', 's2_p': 'Nur einmal. Danach funktioniert Pisar auch ohne Internet.',
+    's2_h': '2. Sprachpaket laden', 's2_p': 'Nur einmal. Danach funktioniert Pisar auch ohne Internet.',
     's3_h': '3. Sprechen', 's3_p': 'Tippen Sie auf die Taste P neben einem Feld, und der Text erscheint.',
     'a_h2': 'Alles, was Pisar kann', 'a_sub': 'All das gehört zum kostenlosen Diktieren. Ohne Werbung, ohne Konto, ohne Limits.',
     'fcards': [
@@ -48,7 +48,7 @@ HOME = {
         ('Langer Text, kurzes Wort', 'Sagen Sie „meine Adresse“, und die ganze Adresse wird eingefügt.'),
         ('Lernt aus Ihren Korrekturen', 'Ein Wort einmal korrigiert, und Pisar schreibt es künftig richtig. Wenn Sie wollen.'),
         ('Leiser beim Sprechen', 'Musik und Videos werden beim Diktieren leiser.'),
-        ('Noch einmal einfügen', 'Den letzten Text erneut, mit einer Taste.'),
+        ('Noch einmal einfügen', 'Den letzten Text noch einmal einfügen, mit einem Tipp.'),
         ('Diktat aus den Schnelleinstellungen', 'Eine Kachel in den Schnelleinstellungen, funktioniert in jeder App.'),
         ('Die Taste stört nicht', 'Verschieben, verkleinern, transparenter machen oder für eine Weile ausblenden.'),
         ('Ohne Schimpfwörter', 'Pisar entfernt Kraftausdrücke, wenn Sie wollen.'),
@@ -59,7 +59,7 @@ HOME = {
         ('Sprachnachrichten und Videos als Text', 'Sprachnachricht, Video oder Podcast werden zu Text. Datei oder Link teilen, die Transkription läuft im Hintergrund, ohne Limits.'),
         ('Text aus Bildern, ohne Abtippen', 'Die Bestellnummer im Screenshot, die Adresse im Foto: Pisar holt den Text heraus.'),
         ('Nichts Kopiertes geht verloren', 'Alles Kopierte an einem Ort: finden, anheften, wieder einfügen. Passwörter und Codes werden nicht gespeichert.'),
-        ('Deutsch sprechen, in einer anderen Sprache schreiben', 'Auf Deutsch sagen, auf Englisch oder in einer von 22 Sprachen einfügen. Ohne Internet.'),
+        ('Deutsch sprechen, in einer anderen Sprache schreiben', 'Auf Deutsch sprechen, auf Englisch oder in einer von 22 Sprachen einfügen. Ohne Internet.'),
     ],
     'm_voice': '<b>Sprachnachricht</b><small>heute, 0:42</small>',
     'm_voice_t': 'Hallo! Also, Samstag treffen wir uns um eins bei Oma. Denk an die Torte, ich habe sie auf deinen Namen bestellt.',
@@ -72,22 +72,22 @@ HOME = {
     'm_clip1': 'Link zum Arzttermin', 'm_clip2': 'Einkaufsliste: Milch, Brot, Äpfel',
     'm_pair': '>DE→EN<',
     'm_said': '„Danke, alles bekommen, ich antworte morgen“',
-    'm_out': "Thanks, got everything, I'll reply tomorrow.",
-    'cta': 'Wo herunterladen',
+    'm_out': "Thanks, got everything, I’ll reply tomorrow.",
+    'cta': 'Zum Download',
     'hero_note': 'Diktieren ist dauerhaft kostenlos. Ohne Werbung, ohne Konto.',
     'price': {
         'h2': 'Kostenlos und Pro', 'sub': 'Diktieren ist dauerhaft kostenlos. Pro kaufen Sie einmal in der App, ohne Abo.',
         'free': 'Kostenlos',
         'free_items': ['Diktieren ohne Limit, in jeder App', 'Offline, 24 Sprachen', 'Wörterbuch, Textregeln, Sprachbereinigung', 'Einträge bleiben 1 Tag'],
         'pro': 'Pro, Einmalkauf',
-        'pro_items': ['Alles Kostenlose', 'Sprachnachrichten und Videos als Text', 'Text aus Screenshots und Fotos', 'Ablage und Übersetzen beim Diktieren', 'Einträge bleiben eine Woche, einen Monat oder immer'],
+        'pro_items': ['Alles Kostenlose', 'Sprachnachrichten und Videos als Text', 'Text aus Screenshots und Fotos', 'Ablage und Übersetzen beim Diktieren', 'Einträge bleiben eine Woche, einen Monat oder für immer'],
         'pr_sub': 'Einmal kaufen, für immer, ohne Abo',
         'big': '7 Tage gratis',
         'text': 'Danach kaufen Sie Pro einmal in der App und behalten es. Den Preis sehen Sie in der App, bevor Sie bezahlen.',
         'btn': 'Mehr über Pro',
     },
     'faq_h2': 'Häufige Fragen',
-    'final_h2': 'Probieren Sie es auf Ihrem Handy', 'final_sub': 'Pisar ist kostenlos. Pro können Sie 7 Tage testen.',
+    'final_h2': 'Probieren Sie es auf Ihrem Handy aus', 'final_sub': 'Pisar ist kostenlos. Pro können Sie 7 Tage testen.',
     'soon': 'Bald bei Google Play, Xiaomi GetApps und Huawei AppGallery',
 }
 
@@ -97,10 +97,10 @@ FAQ = [
     ('Funktioniert Pisar ohne Internet?', 'Ja. Die Sprache wird direkt auf dem Handy erkannt, Ton und Text werden nirgendwohin gesendet. Internet brauchen Sie einmal, um eine Sprache zu laden, danach nur noch für Dateien per Link und zum Bezahlen von Pro.'),
     ('Ist das eine Tastatur?', 'Nein. Ihre Tastatur bleibt, wie sie ist, Pisar fügt neben dem Eingabefeld die Taste P hinzu.'),
     ('Welche Sprachen gibt es?', '24 europäische Sprachen, darunter Deutsch, Englisch, Französisch, Spanisch, Italienisch, Portugiesisch, Polnisch, Niederländisch und Bulgarisch. Pisar erkennt die Sprache selbst, oder Sie wählen sie aus.'),
-    ('Was passiert nach den 7 Tagen Pro?', 'Diktieren, Wörterbuch und Textregeln bleiben kostenlos. Transkription und Ablage halten an, fertige Texte bleiben bei Ihnen.'),
+    ('Was passiert nach den 7 Tagen Pro?', 'Diktieren, Wörterbuch und Textregeln bleiben kostenlos. Transkription und Ablage sind dann gesperrt, fertige Texte bleiben Ihnen erhalten.'),
     ('Wozu braucht Pisar die Bedienungshilfen?', 'Über diesen Android-Dienst sieht Pisar das Eingabefeld, zeigt die Taste und fügt den Text ein. Passwortfelder liest Pisar nicht.'),
     ('Was geht ins Internet?', 'Ton, Texte, Datei- und App-Namen verlassen das Handy nicht. Internet braucht es nur, um einmal eine Sprache zu laden, eine Datei per Link zu transkribieren und Pro zu bezahlen. Die anonyme Absturzstatistik lässt sich in den Einstellungen ausschalten.'),
-    ('Wo sind die Grenzen?', 'Manchmal macht Pisar Fehler: bei Lärm, schnellem Sprechen und seltenen Wörtern (das Wörterbuch hilft). Sprachen brauchen Speicherplatz auf dem Handy. Eine Stunde Aufnahme braucht einige Minuten. Auf älteren Handys geht es langsamer.'),
+    ('Gibt es Einschränkungen?', 'Manchmal macht Pisar Fehler: bei Lärm, schnellem Sprechen und seltenen Wörtern (das Wörterbuch hilft). Sprachen brauchen Speicherplatz auf dem Handy. Eine einstündige Aufnahme ist in einigen Minuten transkribiert. Auf älteren Handys geht es langsamer.'),
     ('Welches Handy brauche ich?', 'Android 10 oder neuer, mit 64-Bit-Prozessor.'),
 ]
 
@@ -110,17 +110,17 @@ PRO = {
 <p>Pisar ist eine Android-App für Spracheingabe in jedem Textfeld und zum Umwandeln von Sprachnachrichten, Audio und Video in Text. Alles wird auf dem Handy erkannt, ohne Internet: Der Ton wird nirgendwohin gesendet.</p>
 <p>Pro schaltet alle Funktionen von Pisar auf diesem Handy frei. Ein Kauf für immer, ohne Abo und ohne automatische Abbuchungen.</p>
 <p class="price">7 Tage gratis</p><p>Danach ein Einmalkauf in der App. Den Preis sehen Sie in der App, bevor Sie bezahlen.</p>
-<h2>Was ist kostenlos, was gibt es in Pro</h2>
+<h2>Was ist kostenlos, was bietet Pro</h2>
 <table>
 <tr><th>Für immer kostenlos</th><th>Pro</th></tr>
 <tr><td>Diktieren ohne Limit</td><td>Sprachnachrichten, Audio und Video als Text, ohne Limits</td></tr>
 <tr><td>Wörterbuch ohne Limit</td><td>Text aus Screenshots und Bildern</td></tr>
 <tr><td>„Musik und Video“, „Letztes einfügen“</td><td>Ablage: alles Kopierte an einem Ort, mit Suche</td></tr>
 <tr><td>Einträge bleiben 1 Tag</td><td>Übersetzen beim Diktieren in 22 Sprachen</td></tr>
-<tr><td></td><td>Einträge bleiben eine Woche, einen Monat oder immer</td></tr>
+<tr><td></td><td>Einträge bleiben eine Woche, einen Monat oder für immer</td></tr>
 <tr><td></td><td>Alles Neue in Pisar auf dem Handy</td></tr>
 </table>
-<p>Die ersten 7 Tage Pro sind gratis: Der Test beginnt mit der ersten Pro-Funktion und gilt einmal. Werbung gibt es in Pisar nicht.</p>
+<p>Die ersten 7 Tage Pro sind gratis: Der Testzeitraum beginnt, sobald Sie zum ersten Mal eine Pro-Funktion nutzen, und gilt nur einmal. Werbung gibt es in Pisar nicht.</p>
 <h2>So kaufen Sie Pro</h2>
 <ol>
 <li>Pisar installieren und Einstellungen → Pisar Pro → Kaufen öffnen.</li>
@@ -129,7 +129,7 @@ PRO = {
 </ol>
 <p>Lässt sich Pro in Ihrem Land noch nicht kaufen, können Sie in Pisar Ihre E-Mail hinterlassen und erfahren, wann es so weit ist.</p>
 <h2>Neues Handy</h2>
-<p>Einstellungen → Pisar Pro → „Kauf wiederherstellen“ → die E-Mail-Adresse, an die der Beleg ging → Code aus der E-Mail. Pro ist auf dem neuen Handy wieder an.</p>
+<p>Einstellungen → Pisar Pro → „Kauf wiederherstellen“ → die E-Mail-Adresse, an die der Beleg ging → Code aus der E-Mail. Pro ist auf dem neuen Handy wieder aktiv.</p>
 <h2>Erstattung</h2>
 <p>Schaltet sich Pro nicht ein oder funktioniert es nicht wie beschrieben, schreiben Sie innerhalb von 14 Tagen nach der Zahlung an poal0208@gmail.com: Wir erstatten das Geld. Haben Sie über einen App-Store bezahlt, gelten dessen Erstattungsregeln.</p>
 <h2>Kontakt</h2>
@@ -159,11 +159,11 @@ MAC_N = {  # «Сообщить о выходе»: подпись, поле, к�
     'label': 'Hinterlassen Sie Ihre E-Mail-Adresse, wir schreiben, sobald die Mac-Version erscheint.',
     'ph': 'Ihre E-Mail-Adresse',
     'btn': 'Benachrichtigen',
-    'empty': 'Bitte E-Mail-Adresse eingeben.',
+    'empty': 'Bitte geben Sie Ihre E-Mail-Adresse ein.',
     'bad': 'Bitte prüfen Sie die Adresse, sie scheint einen Fehler zu enthalten.',
-    'ok': 'Fertig, wir schreiben, sobald sie erscheint.',
-    'many': 'Zu viele Versuche. Bitte in einer Stunde erneut.',
-    'err': 'Senden hat nicht geklappt. Bitte später erneut versuchen.',
+    'ok': 'Danke! Wir schreiben Ihnen, sobald sie erscheint.',
+    'many': 'Zu viele Versuche. Bitte versuchen Sie es in einer Stunde erneut.',
+    'err': 'Senden fehlgeschlagen. Bitte versuchen Sie es später erneut.',
     'wait': 'Wird gesendet…',
     'note': 'Eine E-Mail zum Start, kein Newsletter. <a href="{href}">Datenschutzerklärung</a>',
 }

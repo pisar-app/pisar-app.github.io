@@ -19,8 +19,8 @@ HOME = {
     'lead': 'Say a message, an email or a note, and the text lands in any field.<br><span>Your voice stays on your phone.</span>',
     'chat_name': 'Mom',
     'chat_in1': 'What time will you be here?',
-    'chat_out': "On my way, Mom, see you in 20 minutes. Put the kettle on, I'm bringing pie",
-    'chat_in2': "Great, I'm putting the kettle on now. See you soon!",
+    'chat_out': "On my way, Mom, see you in 20 minutes. Put the kettle on, I’m bringing pie",
+    'chat_in2': "Great, I’m putting the kettle on now. See you soon!",
     'chat_ph': 'Message',
     'words': '{n} words',
     'f_h2': 'Speaking is faster than typing',
@@ -48,7 +48,7 @@ HOME = {
         ('Long text, short phrase', 'Say “my address” and the full address goes in.'),
         ('Learns your fixes', 'Correct a word once, and Pisar gets it right next time. If you want.'),
         ('Quieter while you talk', 'Music and video are turned down while you dictate.'),
-        ('Paste again', 'The last text once more, with one button.'),
+        ('Paste again', 'Paste your last text again with one tap.'),
         ('Dictation from Quick Settings', 'One tile in Quick Settings, works in any app.'),
         ('A button that stays out of the way', 'Move it, shrink it, make it more transparent or hide it for a while.'),
         ('No swearing', 'Pisar removes swear words, if you want.'),
@@ -59,7 +59,7 @@ HOME = {
         ('Voice messages and video as text', 'A voice message, a video or a podcast turns into text. Share a file or a link, transcription runs in the background, with no limits.'),
         ('Text from a picture, no retyping', 'An order number in a screenshot, an address in a photo: Pisar pulls out the text.'),
         ('Nothing you copy gets lost', 'Everything you copied in one place: find it, pin it, paste it again. Passwords and codes are not saved.'),
-        ('Speak English, write in another language', 'Say it in English, and it goes in as Spanish or one of 22 languages. No internet needed.'),
+        ('Speak English, write in another language', 'Say it in English, and it’s typed in Spanish or any of 22 languages. No internet needed.'),
     ],
     'm_voice': '<b>Voice message</b><small>today, 0:42</small>',
     'm_voice_t': "Hi! So we're meeting at Grandma's on Saturday at one. Don't forget to pick up the cake, I ordered it in your name.",
@@ -80,7 +80,7 @@ HOME = {
         'free': 'Free',
         'free_items': ['Unlimited dictation in any app', 'Offline, 24 languages', 'Dictionary, text rules, speech cleanup', 'Entries kept for 1 day'],
         'pro': 'Pro, one-time purchase',
-        'pro_items': ['Everything free', 'Voice messages and video to text', 'Text from screenshots and photos', 'Clips and translation while dictating', 'Entries kept for a week, a month or forever'],
+        'pro_items': ['Everything in Free', 'Voice messages and video to text', 'Text from screenshots and photos', 'Clips and translation while dictating', 'Entries kept for a week, a month or forever'],
         'pr_sub': 'One purchase, forever, no subscription',
         'big': '7 days free',
         'text': 'Then buy Pro once in the app and keep it. The price is shown in the app before you pay.',
@@ -97,7 +97,7 @@ FAQ = [
     ('Does Pisar work offline?', 'Yes. Speech is recognized right on the phone, audio and text are not sent anywhere. You need the internet once to download a language, and after that only to transcribe a file by link and to pay for Pro.'),
     ('Is it a keyboard?', 'No. Your keyboard stays the same, Pisar adds a P button next to the text field.'),
     ('Which languages does it support?', '24 European languages, including English, German, French, Spanish, Italian, Portuguese, Polish, Dutch and Bulgarian. Pisar detects the language itself, or you can choose it.'),
-    ('What happens after the 7 days of Pro?', 'Dictation, the dictionary and text rules stay free. Transcription and Clips stop, the texts you already have stay with you.'),
+    ('What happens after the 7 days of Pro?', 'Dictation, the dictionary and text rules stay free. Transcription and Clips stop working, but the texts you already have stay with you.'),
     ('Why does it need Accessibility?', 'Through this Android service Pisar sees the text field, shows the button and inserts the text. It never reads password fields.'),
     ('What goes online?', 'Audio, texts, file names and app names never leave the phone. The internet is needed only to download a language once, to transcribe a file by link and to pay for Pro. Anonymous crash statistics can be turned off in settings.'),
     ('Are there any limitations?', 'It sometimes makes mistakes: in noise, with fast speech, with rare words (the dictionary helps). Languages take up space on the phone. An hour-long recording takes a few minutes to transcribe. Older phones are slower.'),
@@ -120,14 +120,14 @@ PRO = {
 <tr><td></td><td>Entries kept for a week, a month or forever</td></tr>
 <tr><td></td><td>Everything new in Pisar on the phone</td></tr>
 </table>
-<p>The first 7 days of Pro are free: the trial starts with the first Pro feature you use, and only once. Pisar has no ads.</p>
+<p>The first 7 days of Pro are free: the trial starts the first time you use a Pro feature and is available only once. Pisar has no ads.</p>
 <h2>How to buy</h2>
 <ol>
 <li>Install Pisar and open Settings → Pisar Pro → Buy.</li>
 <li>The app shows the price and how to pay before you pay.</li>
 <li>After payment Pisar turns Pro on by itself, usually within seconds. No keys or passwords.</li>
 </ol>
-<p>If Pro can’t be bought in your country yet, Pisar offers to leave your email so you hear when it arrives.</p>
+<p>If Pro can’t be bought in your country yet, Pisar lets you leave your email so we can tell you when it does.</p>
 <h2>New phone</h2>
 <p>Settings → Pisar Pro → “Restore purchase” → the email the receipt was sent to → the code from the email. Pro turns on on the new phone.</p>
 <h2>Refunds</h2>
@@ -163,7 +163,7 @@ MAC_N = {  # «Сообщить о выходе»: подпись, поле, к�
     'bad': 'Check your email: it looks like there’s a typo.',
     'ok': 'Done, we’ll write when it’s out.',
     'many': 'Too many tries. Try again in an hour.',
-    'err': 'Couldn’t send. Please try later.',
+    'err': 'Couldn’t send. Please try again later.',
     'wait': 'Sending…',
     'note': 'One email about the release, no newsletters. <a href="{href}">Privacy policy</a>',
 }

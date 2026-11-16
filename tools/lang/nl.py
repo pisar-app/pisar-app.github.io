@@ -43,12 +43,12 @@ HOME = {
     'fcards': [
         ('Begrijpt 24 talen', 'Nederlands, Engels, Duits en meer. Pisar herkent de taal zelf.'),
         ('Meteen goed geschreven', 'Leestekens, hoofdletters, getallen in cijfers, een vraagteken na een vraag.'),
-        ('Zonder “eh” en “dus”', 'Haalt stopwoorden, herhalingen en versprekingen weg. Als je wilt.'),
+        ('Zonder ‘eh’ en ‘dus’', 'Haalt stopwoorden, herhalingen en versprekingen weg. Als je wilt.'),
         ('Namen goed gespeld', 'Voeg namen en termen één keer toe, daarna kloppen ze altijd.'),
-        ('Lange tekst, korte zin', 'Zeg “mijn adres” en het hele adres wordt ingevoegd.'),
+        ('Lange tekst, korte zin', 'Zeg ‘mijn adres’ en het hele adres wordt ingevoegd.'),
         ('Leert van je correcties', 'Verbeter een woord één keer en Pisar schrijft het daarna goed. Als je wilt.'),
         ('Zachter terwijl je praat', 'Muziek en video gaan zachter tijdens het dicteren.'),
-        ('Nog een keer plakken', 'De laatste tekst opnieuw, met één knop.'),
+        ('Nog een keer plakken', 'Plak de laatste tekst opnieuw met één tik.'),
         ('Dicteren vanuit snelle instellingen', 'Eén tegel in de snelle instellingen, werkt in elke app.'),
         ('Een knop die niet in de weg zit', 'Verplaats hem, maak hem kleiner of transparanter, of verberg hem even.'),
         ('Zonder scheldwoorden', 'Pisar haalt scheldwoorden weg, als je wilt.'),
@@ -59,7 +59,7 @@ HOME = {
         ('Spraakberichten en video als tekst', 'Een spraakbericht, video of podcast wordt tekst. Deel een bestand of link, het uitschrijven gebeurt op de achtergrond, zonder limiet.'),
         ('Tekst uit een afbeelding, zonder overtypen', 'Een bestelnummer op een screenshot, een adres op een foto: Pisar haalt de tekst eruit.'),
         ('Niets wat je kopieert raakt kwijt', 'Alles wat je kopieerde op één plek: zoeken, vastzetten, opnieuw plakken. Wachtwoorden en codes worden niet bewaard.'),
-        ('Praat Nederlands, schrijf in een andere taal', 'Zeg het in het Nederlands en het komt erin in het Engels of een van 22 talen. Zonder internet.'),
+        ('Praat Nederlands, schrijf in een andere taal', 'Zeg het in het Nederlands en het verschijnt in het Engels of in een van 22 talen. Zonder internet.'),
     ],
     'm_voice': '<b>Spraakbericht</b><small>vandaag, 0:42</small>',
     'm_voice_t': 'Hoi! Dus zaterdag zijn we om één uur bij oma, vergeet de taart niet op te halen, ik heb hem op jouw naam besteld.',
@@ -71,16 +71,16 @@ HOME = {
     'm_today': '<div class="mhead">Vandaag</div>',
     'm_clip1': 'Link naar de afspraak bij de huisarts', 'm_clip2': 'Boodschappen: melk, brood, appels',
     'm_pair': '>NL→EN<',
-    'm_said': '“Bedankt, alles ontvangen, ik antwoord morgen”',
-    'm_out': "Thanks, got everything, I'll reply tomorrow.",
-    'cta': 'Waar downloaden',
+    'm_said': '‘Bedankt, alles ontvangen, ik antwoord morgen’',
+    'm_out': "Thanks, got everything, I’ll reply tomorrow.",
+    'cta': 'Waar te downloaden',
     'hero_note': 'Dicteren is voor altijd gratis. Zonder advertenties en zonder account.',
     'price': {
         'h2': 'Gratis en Pro', 'sub': 'Dicteren is voor altijd gratis. Pro koop je één keer in de app, zonder abonnement.',
         'free': 'Gratis',
         'free_items': ['Onbeperkt dicteren, in elke app', 'Offline, 24 talen', 'Woordenboek, tekstregels, spraakopschoning', 'Items 1 dag bewaard'],
         'pro': 'Pro, eenmalige aankoop',
-        'pro_items': ['Alles wat gratis is', 'Spraakberichten en video naar tekst', 'Tekst uit screenshots en foto’s', 'Klembord en vertalen tijdens het dicteren', 'Items een week, een maand of altijd bewaard'],
+        'pro_items': ['Alles wat gratis is', 'Spraakberichten en video naar tekst', 'Tekst uit screenshots en foto’s', 'Klembord en vertalen tijdens het dicteren', 'Items een week, een maand of voor altijd bewaard'],
         'pr_sub': 'Eén aankoop, voor altijd, zonder abonnement',
         'big': '7 dagen gratis',
         'text': 'Daarna koop je Pro één keer in de app en houd je het. De prijs zie je in de app voordat je betaalt.',
@@ -96,9 +96,9 @@ FAQ = [
     ('Wat kost Pisar?', 'Dicteren is voor altijd gratis: zonder advertenties, zonder account, zonder limiet. Pisar Pro (spraakberichten en video naar tekst, tekst uit screenshots, Klembord, vertalen tijdens het dicteren) is een eenmalige aankoop in de app, zonder abonnement. De eerste 7 dagen Pro zijn gratis.'),
     ('Werkt Pisar zonder internet?', 'Ja. Spraak wordt op de telefoon zelf herkend, geluid en tekst worden nergens heen gestuurd. Internet heb je één keer nodig om een taal te downloaden, en daarna alleen om een bestand via een link uit te schrijven en Pro te betalen.'),
     ('Is het een toetsenbord?', 'Nee. Je eigen toetsenbord blijft, Pisar zet een P-knop naast het tekstveld.'),
-    ('Welke talen?', '24 Europese talen, waaronder Nederlands, Engels, Duits, Frans, Spaans, Italiaans, Portugees, Pools en Bulgaars. Pisar herkent de taal zelf, of je kiest hem.'),
-    ('Wat gebeurt er na de 7 dagen Pro?', 'Dicteren, het woordenboek en de tekstregels blijven gratis. Uitschrijven en Klembord stoppen, de teksten die je al hebt blijven van jou.'),
-    ('Waarom “Toegankelijkheid”?', 'Via deze Android-service ziet Pisar het tekstveld, toont het de knop en voegt het de tekst in. Wachtwoordvelden leest Pisar niet.'),
+    ('Welke talen worden ondersteund?', '24 Europese talen, waaronder Nederlands, Engels, Duits, Frans, Spaans, Italiaans, Portugees, Pools en Bulgaars. Pisar herkent de taal zelf, of je kiest hem.'),
+    ('Wat gebeurt er na de 7 dagen Pro?', 'Dicteren, het woordenboek en de tekstregels blijven gratis. Uitschrijven en Klembord werken dan niet meer, maar de teksten die je al hebt blijven van jou.'),
+    ('Waarom heeft Pisar Toegankelijkheid nodig?', 'Via deze Android-service ziet Pisar het tekstveld, toont het de knop en voegt het de tekst in. Wachtwoordvelden leest Pisar niet.'),
     ('Wat gaat er online?', 'Geluid, teksten, bestands- en appnamen verlaten de telefoon niet. Internet is alleen nodig om één keer een taal te downloaden, een bestand via een link uit te schrijven en Pro te betalen. De anonieme crashstatistiek kun je uitzetten in de instellingen.'),
     ('Wat zijn de beperkingen?', 'Soms gaat het mis: bij lawaai, snel praten en zeldzame woorden (het woordenboek helpt). Talen nemen ruimte in op de telefoon. Een opname van een uur uitschrijven duurt een paar minuten. Op oudere telefoons gaat het langzamer.'),
     ('Welke telefoon heb ik nodig?', 'Android 10 of nieuwer, met een 64-bit processor.'),
@@ -117,21 +117,21 @@ PRO = {
 <tr><td>Onbeperkt woordenboek</td><td>Tekst uit screenshots en afbeeldingen</td></tr>
 <tr><td>‘Muziek en video’, ‘Laatste plakken’</td><td>Klembord: alles wat je kopieert op één plek, met zoeken</td></tr>
 <tr><td>Items 1 dag bewaard</td><td>Vertalen tijdens het dicteren naar 22 talen</td></tr>
-<tr><td></td><td>Items een week, een maand of altijd bewaard</td></tr>
+<tr><td></td><td>Items een week, een maand of voor altijd bewaard</td></tr>
 <tr><td></td><td>Alles wat nieuw is in Pisar op de telefoon</td></tr>
 </table>
 <p>De eerste 7 dagen Pro zijn gratis: de proefperiode begint bij de eerste Pro-functie die je gebruikt, en geldt één keer. Pisar heeft geen advertenties.</p>
 <h2>Zo koop je Pro</h2>
 <ol>
 <li>Installeer Pisar en open Instellingen → Pisar Pro → Kopen.</li>
-<li>De app toont de prijs en hoe je betaalt voordat je betaalt.</li>
+<li>Voordat je betaalt, toont de app de prijs en de betaalmethode.</li>
 <li>Na de betaling zet Pisar Pro zelf aan, meestal binnen een paar seconden. Geen sleutels of wachtwoorden.</li>
 </ol>
 <p>Kan Pro in jouw land nog niet worden gekocht, dan kun je in Pisar je e-mailadres achterlaten en hoor je wanneer het zover is.</p>
 <h2>Nieuwe telefoon</h2>
-<p>Instellingen → Pisar Pro → ‘Aankoop herstellen’ → het e-mailadres waar de bon naartoe ging → de code uit de e-mail. Pro gaat aan op de nieuwe telefoon.</p>
+<p>Instellingen → Pisar Pro → ‘Aankoop herstellen’ → het e-mailadres waar het betaalbewijs naartoe is gestuurd → de code uit de e-mail. Pro gaat aan op de nieuwe telefoon.</p>
 <h2>Terugbetaling</h2>
-<p>Gaat Pro niet aan of werkt het niet zoals beschreven, mail dan binnen 14 dagen na betaling naar poal0208@gmail.com en we betalen je terug. Heb je via een appwinkel betaald, dan gelden de terugbetalingsregels van die winkel.</p>
+<p>Gaat Pro niet aan of werkt het niet zoals beschreven, mail dan binnen 14 dagen na betaling naar poal0208@gmail.com en we betalen je terug. Heb je via een appstore betaald, dan gelden de terugbetalingsregels van die winkel.</p>
 <h2>Contact</h2>
 <p>Pisar wordt gemaakt door Pozdnekov Labs. E-mail: poal0208@gmail.com</p>
 ''',
@@ -161,7 +161,7 @@ MAC_N = {  # «Сообщить о выходе»: подпись, поле, к�
     'btn': 'Laat het me weten',
     'empty': 'Vul je e-mailadres in.',
     'bad': 'Controleer het adres: er lijkt een fout in te zitten.',
-    'ok': 'Klaar, we mailen als hij uitkomt.',
+    'ok': 'Gelukt, we mailen je zodra hij uitkomt.',
     'many': 'Te veel pogingen. Probeer het over een uur opnieuw.',
     'err': 'Versturen lukte niet. Probeer het later opnieuw.',
     'wait': 'Versturen…',
