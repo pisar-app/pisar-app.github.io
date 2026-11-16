@@ -168,8 +168,7 @@ GET_MAIN = ('<main><nav><a href="/">Писарь</a> · Скачать</nav>\n' 
 <p>{STORE_BTN}</p>
 <p>Нужен Android 10 и новее, 64-битный процессор. <a href="/">Что умеет Писарь</a></p>""",
     [('RuStore', 'Установить', RUSTORE), ('Xiaomi GetApps', 'Скоро', None), ('Huawei AppGallery', 'Скоро', None),
-     ('Google Play', 'Скоро', None)],
-    '<p lang="en">Pisar: offline voice typing for Android. Get it on RuStore; Xiaomi GetApps, Huawei AppGallery and Google Play are coming soon.</p>') + '\n</main>')
+     ('Google Play', 'Скоро', None)]) + '\n</main>')
 g = rd('ru/pro/index.html')
 g = re.sub(r'<title>.*?</title>', '<title>Скачать Писарь · Писарь</title>', g, count=1)
 g = g.replace(f'href="{SITE}/ru/pro/"', f'href="{SITE}/get/"', 1)
