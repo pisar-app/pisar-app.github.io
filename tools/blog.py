@@ -4,6 +4,7 @@ import sys, os, json, re, html
 ROOT = sys.argv[1]
 SITE = 'https://pisar-app.ru'
 DATE = '2026-11-13'
+MOD = '2026-11-16'  # проверка блога 16.11: дата правки во всех статьях
 _home = open(os.path.join(ROOT, 'index.html')).read()
 BASE_CSS = re.search(r'<style>(.*?)</style>', _home, re.S).group(1)
 DEFS = re.search(r'(<svg width="0" height="0".*?</svg>)', _home, re.S).group(1)
@@ -207,7 +208,7 @@ for a in ARTS:
   </section>
 </main>'''
     ld = [{"@context": "https://schema.org", "@type": "Article", "headline": a["title"], "description": a["desc"],
-           "datePublished": date, "dateModified": date, "inLanguage": "ru", "mainEntityOfPage": canon,
+           "datePublished": date, "dateModified": a.get('mod', MOD), "inLanguage": "ru", "mainEntityOfPage": canon,
            "image": og,
            "author": {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Pozdnekov Labs", "url": f"{SITE}/"},
            "publisher": {"@type": "Organization", "@id": f"{SITE}/#org", "name": "Pozdnekov Labs", "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/icon.png"}},
@@ -216,6 +217,12 @@ for a in ARTS:
               {"@type": "ListItem", "position": 1, "name": "Писарь", "item": f"{SITE}/"},
               {"@type": "ListItem", "position": 2, "name": "Статьи", "item": f"{SITE}/ru/blog/"},
               {"@type": "ListItem", "position": 3, "name": a["title"], "item": canon}]}]
+    # HowTo из первого списка шагов статьи
+    _ol = re.search(r'<ol class="steps">(.*?)</ol>', a["body"], re.S)
+    if _ol:
+        _st = [html.unescape(re.sub('<[^>]+>', '', x)).strip() for x in re.findall(r'<li>(.*?)</li>', _ol.group(1), re.S)]
+        ld.append({"@context": "https://schema.org", "@type": "HowTo", "name": a.get('seo', a["title"]), "inLanguage": "ru",
+                   "step": [{"@type": "HowToStep", "position": i + 1, "text": s} for i, s in enumerate(_st)]})
     d = os.path.join(ROOT, 'ru', 'blog', a['slug']); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, 'index.html'), 'w').write(page(a.get('seo', a['title']) + ' | Писарь', a['desc'], canon, body, ld, og=og))
 
@@ -240,8 +247,8 @@ open(os.path.join(ROOT, 'ru', 'blog', 'index.html'), 'w').write(page('Стать
 # карточки для главной
 open(os.path.join(os.path.dirname(__file__), 'home_cards.html'), 'w').write(''.join(card(a) for a in ([a for a in ARTS if a.get('home')] or ARTS)[:3]))
 # sitemap
-LAST = max([DATE] + [a.get('date', DATE) for a in ARTS])
-urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('date', DATE)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/get/', '0.6', DATE), ('/mac/', '0.3', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE), ('/en/privacy/', '0.3', DATE), ('/en/terms/', '0.3', DATE)]
+LAST = max([DATE, MOD] + [a.get('date', DATE) for a in ARTS])
+urls = [('/', '1.0', LAST), ('/ru/blog/', '0.7', LAST)] + [(f'/ru/blog/{a["slug"]}/', '0.7', a.get('mod', MOD)) for a in ARTS] + [('/ru/pro/', '0.8', DATE), ('/get/', '0.6', DATE), ('/mac/', '0.3', DATE), ('/ru/privacy/', '0.3', DATE), ('/ru/terms/', '0.3', DATE), ('/en/privacy/', '0.3', DATE), ('/en/terms/', '0.3', DATE)]
 open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{m}</lastmod><priority>{p}</priority></url>\n' for u, p, m in urls) + '</urlset>\n')
 # проверка текстов
 for dp, _, fs in os.walk(os.path.join(ROOT, 'ru', 'blog')):
