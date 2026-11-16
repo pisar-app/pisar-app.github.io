@@ -485,6 +485,24 @@ h3>.badge.pro{margin:0 6px 0 0}
 .hero>.wrap>.note{grid-column:1;grid-row:5}
 .hero>.wrap>.stage{grid-column:2;grid-row:1/7;margin:0 auto}
 }
+/* 16.11, чат 38: блоки Pro на ПК: слева текст едет, справа закреплённый телефон, экран меняется под блок (скрипт внизу).
+   Без скрипта и уже 1024 px блоки как раньше, со своими картинками; телефон скрыт. */
+.sphone{display:none}
+@media (min-width:1024px){
+.scrolly.on{display:grid;grid-template-columns:minmax(0,1fr) 300px;column-gap:96px;margin-top:8px}
+.scrolly.on>.show{grid-column:1;display:flex;align-items:center;min-height:min(78vh,720px);margin:0}
+.scrolly.on>.show .show-v{display:none}
+.scrolly.on .show-t{max-width:500px;opacity:.32;transition:opacity .45s ease}
+.scrolly.on .show.cur .show-t{opacity:1}
+.scrolly.on .show-t h3{font-size:36px}
+.scrolly.on .show-t p{font-size:18px;line-height:1.55}
+.scrolly.on>.sphone{display:block;grid-column:2;grid-row:1/span 4;align-self:start;position:sticky;top:max(24px,calc(50vh - 310px));width:300px;height:620px;margin:max(0px,calc(min(78vh,720px)/2 - 310px)) 0}
+.sphone .phone{height:620px}
+.sphone .screen{position:relative;background:#0e0b2e}
+.sphone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .5s ease}
+.sphone img.on{opacity:1}
+}
+@media (min-width:1024px) and (prefers-reduced-motion:reduce){.sphone img,.scrolly.on .show-t{transition:none}}
 </style>
 <script>
 (function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(new URLSearchParams(location.search).get('b')==='2')document.documentElement.setAttribute('data-b','2');})();
@@ -623,6 +641,7 @@ h3>.badge.pro{margin:0 6px 0 0}
   <div class="wrap">
     <div class="center"><div class="prohead"><span class="prologo lg"><img src="/assets/icon.png" alt=""><b>PRO</b></span></div><h2>Pisar Pro: więcej niż dyktowanie</h2><p class="sub">Głosówki, wideo i zrzuty ekranu na tekst. Jednorazowy zakup, pierwsze 7 dni za darmo.</p></div>
 
+    <div class="scrolly">
     <div class="show">
       <div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Głosówki i wideo jako tekst</h3><p>Głosówka, wideo albo podcast zamieniają się w tekst. Udostępnij plik lub link, transkrypcja idzie w tle, bez limitów.</p></div>
       <div class="show-v">
@@ -674,6 +693,14 @@ h3>.badge.pro{margin:0 6px 0 0}
           <p class="mtext">Thanks, got everything, I'll reply tomorrow.</p>
         </div>
       </div>
+    </div>
+
+    <div class="sphone" aria-hidden="true"><div class="phone"><div class="screen">
+      <img class="on" data-src="/assets/shots/app/pl/voice.webp" width="552" height="1197" alt="">
+      <img data-src="/assets/shots/app/pl/ocr.webp" width="552" height="1197" alt="">
+      <img data-src="/assets/shots/app/pl/clip.webp" width="552" height="1197" alt="">
+      <img data-src="/assets/shots/app/pl/tr.webp" width="552" height="1197" alt="">
+    </div></div></div>
     </div>
   </div>
 </section>
@@ -842,6 +869,22 @@ h3>.badge.pro{margin:0 6px 0 0}
   if(q.get('manual'))return;
   var start=performance.now();
   (function loop(now){render(now-start);requestAnimationFrame(loop)})(start);
+})();
+</script>
+<script>
+/* Блоки Pro: блок у середины экрана выбирает экран на телефоне. Без IntersectionObserver всё остаётся как было. */
+(function(){
+  var b=document.querySelector('.scrolly');
+  if(!b||!('IntersectionObserver' in window))return;
+  var shows=[].slice.call(b.querySelectorAll('.show')),shots=[].slice.call(b.querySelectorAll('.sphone img'));
+  b.classList.add('on');
+  var mq=matchMedia('(min-width:1024px)');  /* экраны грузятся только там, где телефон виден */
+  function load(){if(mq.matches)shots.forEach(function(m){if(!m.getAttribute('src'))m.src=m.getAttribute('data-src')})}
+  load();if(mq.addEventListener)mq.addEventListener('change',load);else if(mq.addListener)mq.addListener(load);
+  function pick(i){shows.forEach(function(t,j){t.classList.toggle('cur',j===i)});shots.forEach(function(m,j){m.classList.toggle('on',j===i)})}
+  pick(0);
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)pick(shows.indexOf(e.target))})},{rootMargin:'-50% 0px -50% 0px'});
+  shows.forEach(function(t){io.observe(t)});
 })();
 </script>
 </body>
