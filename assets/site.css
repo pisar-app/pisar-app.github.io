@@ -23,7 +23,8 @@ header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
 .burger svg{width:20px;height:20px}
 .burger .i-x,.hd.open .burger .i-bars{display:none}
 .hd.open .burger .i-x{display:block}
-.getbtn{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:12px;font-weight:600;font-size:14.5px;background:var(--btn1-bg);color:var(--btn1-fg);white-space:nowrap;transition:opacity .15s}
+.getbtn{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:12px;font-weight:700;font-size:14.5px;background:linear-gradient(180deg,#FFB43A 0%,#FF9F1C 55%,#F28A00 100%);color:#16161A!important;white-space:nowrap;box-shadow:0 0 0 1px rgba(255,159,28,.35),0 6px 18px -6px rgba(255,159,28,.6);transition:transform .15s,box-shadow .15s}
+.getbtn:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(255,159,28,.5),0 8px 22px -6px rgba(255,159,28,.75)}
 .getbtn:hover{opacity:.88}
 .lbtn:focus-visible,.burger:focus-visible,.getbtn:focus-visible,.tbtn:focus-visible,.lmenu a:focus-visible,.hd-menu a:focus-visible,.lhint button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .lsw{position:relative}
