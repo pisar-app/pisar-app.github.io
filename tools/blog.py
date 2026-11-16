@@ -160,6 +160,7 @@ def _page(title, desc, canon, body, ld, extra_css='', og=None):
 </html>
 '''
 
+BOOSTY_BADGE = __import__('i18n').boosty_badge('ru')
 STORE = '<a class="store" href="https://www.rustore.ru/catalog/app/com.pisar.android" target="_blank" rel="noopener" aria-label="Скачать в RuStore"><img class="only-light" src="/assets/rustore-color-dark.svg" alt="Скачайте из RuStore"><img class="only-dark" src="/assets/rustore-color-light.svg" alt="Скачайте из RuStore"></a>'
 
 def card(a, h='h3'):
@@ -192,6 +193,7 @@ for a in ARTS:
       <div class="cta-t"><b>Писарь: диктовка без интернета</b><span>{cta_sub}</span></div>
       <div class="cta-b">{STORE}<small>Бесплатно, без рекламы</small></div>
     </div>
+    <p class="support">Писарь делает один человек. Если статья пригодилась, проект можно поддержать: {BOOSTY_BADGE}</p>
   </div>
   <section class="related">
     <div class="wrap narrow"><h2>Ещё статьи</h2><div class="grid3">{"".join(card(o) for o in others)}</div><p class="back"><a href="/ru/blog/">← Все статьи</a></p></div>

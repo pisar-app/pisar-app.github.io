@@ -3,7 +3,7 @@
 # Запуск: python3 tools/footer.py .   (всё сразу: python3 tools/build.py)
 import sys, os, re, html
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from i18n import HEAD, FOOT, EMAIL, t, link, pages
+from i18n import HEAD, FOOT, EMAIL, t, link, pages, boosty_badge
 from nav import menu_items, lang_items
 
 
@@ -19,7 +19,7 @@ def footer(root, lang, pid):
     <div class="fbrand"><a class="logo" href="{link(root, lang, '')}"><img src="/assets/icon.png" alt="" style="width:28px;height:28px;border-radius:8px">{h('brand')}</a><p>{f('tagline')}</p><p class="copy">© 2026 Pozdnekov Labs</p></div>
     <nav><h4>{f('col_app')}</h4>{app}</nav>
     <nav><h4>{f('col_docs')}</h4>{docs}</nav>
-    <nav><h4>{f('col_contact')}</h4><a href="mailto:{EMAIL}">{EMAIL}</a></nav>
+    <nav><h4>{f('col_contact')}</h4><a href="mailto:{EMAIL}">{EMAIL}</a>{boosty_badge(lang)}</nav>
   </div>
   <div class="wrap"><nav class="flangs" aria-label="{f('col_lang')}"><h4>{f('col_lang')}</h4>{re.sub(r'<small>.*?</small>', '', lang_items(root, lang, pid, tag=''))}</nav></div>
 </footer>'''
