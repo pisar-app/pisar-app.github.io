@@ -10,7 +10,7 @@
 python3 tools/build.py
 ```
 
-По порядку запускает `blog.py` (статьи, `assets/blog.css`, `sitemap.xml`, RSS), `geo.py` (разметка schema.org, `/get/`, `/mac/`, `llms.txt`), `intl.py` (страницы на 9 других языках), `footer.py` (подвал), `nav.py` (шапка, языки). Повторный запуск ничего не меняет. Обложки статей отдельно: `python3 ru/blog/_src/covers.py .`.
+По порядку запускает `blog.py` (статьи, `assets/blog.css`, `sitemap.xml`, RSS), `geo.py` (разметка schema.org, `/get/`, `/mac/`, `llms.txt`), `intl.py` (страницы на 9 других языках), `footer.py` (подвал), `nav.py` (шапка, языки), `toc.py` (оглавление сбоку у политики, соглашения и оферты). Повторный запуск ничего не меняет. Обложки статей отдельно: `python3 ru/blog/_src/covers.py .`.
 
 ## Где что
 
@@ -23,6 +23,7 @@ python3 tools/build.py
 | Список языков, меню ☰, подсказка о языке | `assets/site.js` |
 | База стилей статей и документов | `tools/base.css` (из неё и стилей статей в `blog.py` собирается `assets/blog.css`) |
 | Документы и Pro | `assets/legal.css` |
+| Разметка «Скачать» (магазины сеткой) и Mac (MacBook с окном `assets/shots/mac.webp`) | `tools/pages.py` |
 | Главная | свои стили внутри `index.html` |
 | Тексты других языков | `tools/lang/<код>.py` (главная, Pro, Скачать, Mac), `tools/lang/<код>.privacy.html` и `.terms.html`; собирает `tools/intl.py` |
 
