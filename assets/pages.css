@@ -2,6 +2,7 @@
    Основа (.hero, h1, .lead, .note, секции, .fgrid, .fcard, .ico) из assets/blog.css, она же стили главной;
    значки магазинов и шапка в assets/site.css. Здесь только своё. */
 html{scroll-padding-top:24px}
+.hero .note{background:none;border:0;border-radius:0;padding:0;font-size:14px;color:var(--muted);margin:18px 0 0}
 .hero .note a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 
 /* Скачать: первый экран по центру, как блок внизу главной */
@@ -10,9 +11,10 @@ html{scroll-padding-top:24px}
 .phero:before{top:52%}
 @media (min-width:1024px){
   .phero{padding:156px 0 132px;text-align:center}
-  .phero>.wrap{display:block}
-  .phero>.wrap>.sbadges,.phero>.wrap>.sbadges .sb-group{align-items:center}
-  .phero>.wrap>.sbadges .sb-row{justify-content:center}
+  .hero.phero>.wrap{display:block}
+  .hero.phero>.wrap>.lead{margin-left:auto}
+  .hero.phero>.wrap>.sbadges,.hero.phero>.wrap>.sbadges .sb-group{align-items:center}
+  .hero.phero>.wrap>.sbadges .sb-row{justify-content:center}
 }
 @media (max-width:700px){.phero{padding-bottom:64px}}
 

@@ -15,7 +15,7 @@ header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
 .hd-menu a:hover,.hd-menu a.on{color:var(--fg)}
 .hd-menu a.on{font-weight:600}
 .hd-bar .spacer{flex:1}
-.lbtn,.burger{all:unset;box-sizing:border-box;cursor:pointer;height:38px;border-radius:12px;color:var(--fg);border:1px solid var(--line);background:var(--chip)}
+.lbtn,.burger{all:unset;box-sizing:border-box;flex-shrink:0;cursor:pointer;height:38px;border-radius:12px;color:var(--fg);border:1px solid var(--line);background:var(--chip)}
 .lbtn{display:inline-flex;align-items:center;gap:3px;padding:0 8px 0 11px;font-size:14px;font-weight:600;letter-spacing:.02em}
 .lbtn svg{width:16px;height:16px;transition:transform .15s}
 .lbtn[aria-expanded="true"] svg{transform:rotate(180deg)}
@@ -97,3 +97,5 @@ header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
   .hero>.wrap>.sbadges .sb-group{align-items:flex-start}
   .hero>.wrap>.sbadges .sb-row{justify-content:flex-start}
 }
+
+.hd-bar .tbtn{flex-shrink:0}
