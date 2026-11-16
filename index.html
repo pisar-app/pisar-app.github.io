@@ -488,6 +488,18 @@ h3>.badge.pro{margin:0 6px 0 0}
 .plat a{padding:4px 11px;border-radius:7px;color:var(--muted);transition:color .15s}
 .plat a:hover{color:var(--fg)}
 .plat a.on{background:var(--line);color:var(--fg);font-weight:600}
+
+/* 16.11: на широком экране первый экран в две колонки: текст слева, телефон справа */
+@media (min-width:1024px){
+.hero{min-height:0;padding:128px 0 80px;text-align:left}
+.hero>.wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:1fr auto auto auto auto 1fr;column-gap:56px}
+.hero>.wrap>h1{grid-column:1;grid-row:2;margin-top:0}
+.hero>.wrap>.lead{grid-column:1;grid-row:3;margin-left:0}
+.hero>.wrap>.ctas{grid-column:1;grid-row:4;justify-content:flex-start}
+.hero>.wrap>.note{grid-column:1;grid-row:5}
+.hero>.wrap>.stage{grid-column:2;grid-row:1/7;margin:0 auto}
+}
+@media (max-width:700px){header .bar{column-gap:12px}}
 </style>
 <script>
 (function(){var p=new URLSearchParams(location.search).get('t');var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=p||s;if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(new URLSearchParams(location.search).get('b')==='2')document.documentElement.setAttribute('data-b','2');})();
@@ -516,7 +528,6 @@ h3>.badge.pro{margin:0 6px 0 0}
 
 <div class="hero">
   <div class="wrap" style="position:relative">
-    <span class="tagpill v1">Голос остаётся на телефоне<span class="pb"><svg class="plogo"><use href="#plogo"/></svg></span></span><span class="tagpill v2"><span class="tp-ok"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3.2 7.1l2.6 2.6 5-5" fill="none" style="stroke:var(--pl-check)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Голос остаётся на телефоне</span>
     <h1>Говорите.<br>Писарь печатает.</h1>
     <p class="lead">Наговорите сообщение, письмо или заметку, и текст сам встанет в любое поле.<br><span>Голос не уходит с телефона.</span></p>
     <div class="ctas">
@@ -556,9 +567,9 @@ h3>.badge.pro{margin:0 6px 0 0}
   <div class="wrap">
     <div class="center"><h2>Говорить быстрее, чем печатать</h2></div>
     <div class="grid3">
-      <div class="card"><div class="ico"><span class="mi">lock</span></div><h3>Голос остаётся у вас</h3><p>Речь распознаётся прямо на телефоне. Звук и текст никуда не отправляются.</p></div>
+      <div class="card"><div class="ico"><span class="mi">lock</span></div><h3>Работает без интернета</h3><p>В метро, в самолёте, на даче. Речь распознаётся прямо на телефоне.</p></div>
       <div class="card"><div class="ico"><span class="mi">text_fields</span></div><h3>В любом приложении</h3><p>Мессенджер, почта, заметки, поиск: текст встаёт туда, где курсор. Клавиатуру менять не нужно.</p></div>
-      <div class="card"><div class="ico"><span class="mi">money_off</span></div><h3>Бесплатно и без рекламы</h3><p>Диктовка бесплатна навсегда, без подписки. Pro покупается один раз за 399 ₽.</p></div>
+      <div class="card"><div class="ico"><span class="mi">money_off</span></div><h3>Бесплатно и без рекламы</h3><p>Диктовка без подписки и без лимитов. Pro покупается один раз за 399 ₽.</p></div>
     </div>
   </div>
 </section>
@@ -589,7 +600,7 @@ h3>.badge.pro{margin:0 6px 0 0}
 
 <section id="all" class="sec2">
   <div class="wrap">
-    <div class="center"><h2>Всё, что умеет Писарь</h2><p class="sub">Бесплатно навсегда. Без рекламы, без аккаунта, без лимитов на диктовку.</p></div>
+    <div class="center"><h2>Всё, что умеет Писарь</h2><p class="sub">Всё это входит в бесплатную диктовку. Без рекламы, без аккаунта, без лимитов на диктовку.</p></div>
     <div class="fgrid">
       <div class="fcard"><div class="ico"><span class="mi">translate</span></div><h3>Понимает 25 языков</h3><p>Русский особенно точно. Язык Писарь определит сам.</p></div>
       <div class="fcard"><div class="ico"><span class="mi">text_fields</span></div><h3>Грамотно сразу</h3><p>Знаки, заглавные, числа цифрами, вопросительный знак у вопроса.</p></div>
@@ -609,10 +620,10 @@ h3>.badge.pro{margin:0 6px 0 0}
 
 <section id="pro-features">
   <div class="wrap">
-    <div class="center"><div class="prohead"><span class="prologo lg"><img src="/assets/icon.png" alt=""><b>PRO</b></span></div><h2>Писарь Pro: больше, чем диктовка</h2><p class="sub">Когда нужно больше, чем диктовка. 399 ₽ один раз, первые 7 дней бесплатно.</p></div>
+    <div class="center"><div class="prohead"><span class="prologo lg"><img src="/assets/icon.png" alt=""><b>PRO</b></span></div><h2>Писарь Pro: больше, чем диктовка</h2><p class="sub">Голосовые, видео и скриншоты в текст. 399 ₽ один раз, первые 7 дней бесплатно.</p></div>
 
     <div class="show">
-      <div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Голосовые можно прочитать, а не слушать</h3><p>Голосовое, видео или подкаст станут текстом. Поделитесь файлом или ссылкой, расшифровка идёт в фоне, без лимитов.</p></div>
+      <div class="show-t"><h3><span class="badge pro"><span class="mi">lock</span>Pro</span> Голосовые и видео текстом</h3><p>Голосовое, видео или подкаст станут текстом. Поделитесь файлом или ссылкой, расшифровка идёт в фоне, без лимитов.</p></div>
       <div class="show-v">
         <div class="mock">
           <div class="mrow"><span class="mi">mic_none</span><div><b>Голосовое</b><small>сегодня, 0:42</small></div></div>
@@ -671,10 +682,10 @@ h3>.badge.pro{margin:0 6px 0 0}
     <div class="center"><h2>Сколько стоит</h2><p class="sub">Диктовка бесплатна навсегда. Pro покупается один раз, без подписки.</p></div>
     <div class="pro">
       <div class="card">
-        <span class="badge">Бесплатно навсегда</span>
+        <span class="badge">Бесплатно</span>
         <ul class="list">
           <li>Диктовка без ограничений, в любом приложении</li>
-          <li>Голос не уходит с телефона, 25 языков</li>
+          <li>Без интернета, 25 языков</li>
           <li>Словарь, правила текста, чистка речи</li>
           <li>Записи хранятся 1 день</li>
         </ul>
@@ -691,7 +702,7 @@ h3>.badge.pro{margin:0 6px 0 0}
       <div class="price">
         <div class="pr-row"><span class="prologo lg"><img src="/assets/icon.png" alt=""><b>PRO</b></span><div><b class="pr-name">Писарь Pro</b><span class="pr-sub">Один раз, без подписки</span></div></div>
         <div class="big">399 ₽</div>
-        <p class="was"><s>499 ₽</s> · цена на старте</p>
+        <p class="was">цена на старте, потом 499 ₽</p>
         <p style="margin:12px 0 0;color:var(--muted)">Разовый платёж, навсегда. Карта или СБП. Первые 7 дней Pro бесплатно.</p>
         <a class="btn btnpro" style="margin-top:22px" href="/ru/pro/">Подробнее о Pro</a>
       </div>
@@ -727,7 +738,7 @@ h3>.badge.pro{margin:0 6px 0 0}
 
 <div class="final">
   <div class="wrap" style="position:relative">
-    <h2>Скажите, а не печатайте</h2>
+    <h2>Попробуйте на своём телефоне</h2>
     <p class="sub" style="margin-left:auto;margin-right:auto">Писарь бесплатный. Pro можно попробовать 7 дней.</p>
     <div class="ctas"><a class="store" href="https://www.rustore.ru/catalog/app/com.pisar.android" target="_blank" rel="noopener" aria-label="Скачать в RuStore"><img class="only-light" src="/assets/rustore-color-dark.svg" alt="Скачайте из RuStore"><img class="only-dark" src="/assets/rustore-color-light.svg" alt="Скачайте из RuStore"></a></div><p class="note">Скоро в Xiaomi GetApps, Huawei AppGallery и Google Play</p>
   </div>
@@ -735,7 +746,7 @@ h3>.badge.pro{margin:0 6px 0 0}
 
 <footer>
   <div class="wrap fcols">
-    <div class="fbrand"><a class="logo" href="/"><img src="/assets/icon.png" alt="" style="width:28px;height:28px;border-radius:8px">Писарь</a><p>Диктовка в любом приложении на Android. Голос остаётся на телефоне.</p><p class="copy">© 2026 Pozdnekov Labs</p></div>
+    <div class="fbrand"><a class="logo" href="/"><img src="/assets/icon.png" alt="" style="width:28px;height:28px;border-radius:8px">Писарь</a><p>Диктовка в любом приложении на Android.</p><p class="copy">© 2026 Pozdnekov Labs</p></div>
     <nav><h4>Писарь</h4><a href="/#all">Возможности</a><a href="/ru/pro/">Писарь Pro</a><a href="/ru/blog/">Статьи</a><a href="/#faq">Вопросы</a></nav>
     <nav><h4>Документы</h4><a href="/ru/privacy/">Политика конфиденциальности</a><a href="/ru/terms/">Пользовательское соглашение</a><a href="/ru/pro/offer/">Оферта</a><a href="/en/privacy/">English</a></nav>
     <nav><h4>Связь</h4><a href="mailto:poal0208@gmail.com">poal0208@gmail.com</a></nav>
