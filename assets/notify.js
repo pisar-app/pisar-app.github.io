@@ -1,5 +1,6 @@
 // Форма «Сообщить о выходе» на /mac/ (чат 35): почта уходит в лист ожидания облака Pro (адрес в action формы,
 // CORS там открыт только для https://pisar-app.ru). Тексты ответов на языке страницы лежат в data-* формы.
+// lang — язык страницы (<html lang>, чат 40): письмо о выходе Mac напишем на нём; облако берёт только 10 кодов сайта.
 // Без ответа облака (ещё не обновлено, нет сети) форма пишет «не получилось», страница работает как была.
 (function () {
   var f = document.querySelector('form.notify');
@@ -33,7 +34,7 @@
     fetch(f.action, {
       method: 'POST', mode: 'cors', credentials: 'omit', signal: ctl ? ctl.signal : undefined,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: v, website: hp ? hp.value : '' })
+      body: JSON.stringify({ email: v, website: hp ? hp.value : '', lang: document.documentElement.lang || '' })
     }).then(function (r) {
       if (r.ok) { inp.value = ''; return say('ok', 'ok'); }
       return r.json().catch(function () { return {}; }).then(function (d) {
