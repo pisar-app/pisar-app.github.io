@@ -77,8 +77,8 @@ header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
 .support{margin:20px 0 0;text-align:center;color:var(--muted);font-size:15px;line-height:1.6}
 .support .boosty{margin:8px 0 0 6px;vertical-align:middle}
 
-/* Значки магазинов (tools/pages.py badges): официальные значки RuStore и Google Play одной высоты (Google Play не меньше
-   соседних значков, правило Google), Xiaomi GetApps и Huawei AppGallery названием фирменным цветом. Не перекрашивать. */
+/* Значки магазинов (tools/pages.py badges): официальные значки RuStore, Google Play, Xiaomi, Huawei одной высоты
+   (Google Play не меньше соседних, правило Google). Не перекрашивать и не растягивать. */
 .sbadges{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:30px}
 .sb-group{display:flex;flex-direction:column;align-items:center;gap:8px}
 .sb-cap{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -88,10 +88,7 @@ header.hd{position:absolute;top:0;left:0;right:0;z-index:20}
 .sb-rs{transition:transform .15s}
 .sb-rs:hover{transform:translateY(-1px)}
 .sb-rs:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.sb-name{display:inline-flex;align-items:center;height:52px;box-sizing:border-box;padding:0 18px;border-radius:9px;background:#fff;border:1px solid rgba(20,19,43,.14);font-weight:700;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
-.sb-xm{color:#FF6900}
-.sb-hw{color:#CE0E2D}
-@media (max-width:700px){.sb-rs img,.sb-gp img{height:46px}.sb-name{height:46px;padding:0 14px;font-size:15px}.sb-row{gap:8px}}
+@media (max-width:700px){.sb-rs img,.sb-gp img{height:44px}.sb-row{gap:8px}}
 @media (min-width:1024px){
   .hero>.wrap>.sbadges{grid-column:1;grid-row:4;align-items:flex-start}
   .hero>.wrap>.sbadges .sb-group{align-items:flex-start}
