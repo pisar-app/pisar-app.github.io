@@ -236,6 +236,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, 'ru', 'blog', '*', 'index.html'))):
     body = re.search(r'<main[\s\S]*?</main>', s).group(0)
     body = re.sub(r'<section class="related">[\s\S]*?</section>', '', body)
     body = re.sub(r'<div class="cta">[\s\S]*?</div>\s*</div>', '', body)
+    body = re.sub(r'<p class="support">[\s\S]*?</p>', '', body)
     arts.append((slug, h1, d, text(body)))
 # порядок как в разделах блога (бесплатные, Pro, сценарии)
 order = re.findall(r'href="/ru/blog/([a-z0-9-]+)/"', rd('ru/blog/index.html'))

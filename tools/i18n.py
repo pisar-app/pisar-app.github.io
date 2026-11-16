@@ -143,3 +143,14 @@ def pages(root):
             lang, pid = page_of('' if rel == '.' else rel)
             res.append((os.path.join(dp, 'index.html'), lang, pid))
     return res
+
+BOOSTY = 'https://boosty.to/pozdnekov'
+# Плашка Boosty в подвале: подпись на языке страницы
+SUPPORT = {'ru': 'Поддержать на Boosty', 'en': 'Support on Boosty', 'de': 'Auf Boosty unterstützen',
+           'fr': 'Soutenir sur Boosty', 'es': 'Apoyar en Boosty', 'it': 'Sostieni su Boosty', 'pt': 'Apoiar no Boosty',
+           'pl': 'Wesprzyj na Boosty', 'nl': 'Steun op Boosty', 'bg': 'Подкрепете в Boosty'}
+HEART = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.1 4.4 2.6h2.4C14 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>'
+def boosty_badge(lang):
+    import html as _h
+    txt = _h.escape(SUPPORT.get(lang, SUPPORT['en']))
+    return f'<a class="boosty" href="{BOOSTY}" target="_blank" rel="noopener">{HEART}<span>{txt}</span></a>'
