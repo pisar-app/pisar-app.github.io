@@ -7,28 +7,39 @@ RUSTORE = 'https://www.rustore.ru/catalog/app/com.pisar.android'
 GP_LANGS = {'ru', 'en', 'de', 'fr', 'es', 'it', 'pt', 'pl', 'nl', 'bg'}  # есть assets/badges/google-play-<код>.png
 
 
-def _rustore(alt):
-    """Официальный значок RuStore (assets/rustore-color-dark.svg) в обеих темах: все значки одинаковые чёрные плитки."""
-    return (f'<a class="sb-rs" href="{RUSTORE}" target="_blank" rel="noopener">'
-            f'<img src="/assets/badges/rustore-tile.svg" width="111" height="40" alt="{alt}"></a>')
+# Свои кнопки магазинов одного вида (решение владельца 16.11): чёрная плитка, логотип магазина слева, две строки одним шрифтом.
+# Логотипы вырезаны из официальных значков (assets/badges/icons/), источники значков в README.md.
+GET_ON = {'ru': 'Скачайте в', 'en': 'Get it on', 'de': 'Jetzt bei', 'fr': 'Disponible sur', 'es': 'Disponible en',
+          'it': 'Disponibile su', 'pt': 'Disponível no', 'pl': 'Pobierz z', 'nl': 'Download via', 'bg': 'Изтеглете от'}
+SOON_ON = {'ru': 'Скоро в', 'en': 'Soon on', 'de': 'Bald bei', 'fr': 'Bientôt sur', 'es': 'Pronto en',
+           'it': 'Presto su', 'pt': 'Em breve no', 'pl': 'Wkrótce w', 'nl': 'Binnenkort op', 'bg': 'Скоро в'}
+STORE_ICONS = {'RuStore': 'rustore.svg', 'Google Play': 'google-play.png', 'GetApps': 'xiaomi.svg', 'AppGallery': 'huawei.png'}
+
+
+def _btn(name, top, href=None, alt=''):
+    inner = (f'<img class="sbi" src="/assets/badges/icons/{STORE_ICONS[name]}" width="30" height="30" alt="">'
+             f'<span class="sbt"><small>{top}</small><b>{name}</b></span>')
+    if href:
+        return f'<a class="sbtn" href="{href}" target="_blank" rel="noopener" aria-label="{alt or top + " " + name}">{inner}</a>'
+    return f'<span class="sbtn soon">{inner}</span>'
+
+
+def _rustore(alt, lang='ru'):
+    return _btn('RuStore', GET_ON.get(lang, GET_ON['en']), RUSTORE, alt)
 
 
 def _soon(lang):
-    """Магазины, где Писаря ещё нет: официальные значки без ссылок, одной высоты, не перекрашены. Источники и условия в README.md.
-    Google Play на языке страницы; Xiaomi (архив значков с сайта GetApps) и Huawei (сайт Huawei Mobile Services) есть только на английском."""
-    gp = lang if lang in GP_LANGS else 'en'
-    return [f'<span class="sb-gp"><img src="/assets/badges/google-play-{gp}.png" width="646" height="192" alt="Google Play"></span>',
-            '<span class="sb-gp"><img src="/assets/badges/xiaomi-getapps.svg" width="255" height="80" alt="Xiaomi GetApps"></span>',
-            '<span class="sb-gp"><img src="/assets/badges/huawei-appgallery.png" width="570" height="170" alt="Huawei AppGallery"></span>']
+    top = SOON_ON.get(lang, SOON_ON['en'])
+    return [_btn(n, top) for n in ('Google Play', 'GetApps', 'AppGallery')]
 
 
 def badges(lang, soon, russia='', alt='RuStore'):
-    """Значки магазинов группами. Русский: RuStore со ссылкой, ниже «Скоро» и три магазина.
-    Другие языки: «Скоро» Google Play, Xiaomi, Huawei; ниже RuStore с подписью «Россия»."""
+    """Кнопки магазинов. Русский: RuStore со ссылкой, ниже три «Скоро в». Другие языки: три «Скоро», ниже RuStore с подписью «Россия».
+    Подпись «Скоро» над рядом не нужна: она есть на самих кнопках."""
     if lang == 'ru':
-        groups = [('', [_rustore(alt)]), (soon, _soon(lang))]
+        groups = [('', [_rustore(alt, lang)]), ('', _soon(lang))]
     else:
-        groups = [(soon, _soon(lang)), (russia, [_rustore(alt)])]
+        groups = [('', _soon(lang)), (russia, [_rustore(alt, lang)])]
     out = []
     for cap, items in groups:
         c = f'<span class="sb-cap">{cap}</span>' if cap else ''
