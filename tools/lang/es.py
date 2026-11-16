@@ -91,7 +91,7 @@ HOME = {
 }
 
 FAQ = [
-    ('¿Dónde descargo Pisar?', 'Pisar llegará pronto a Google Play, Xiaomi GetApps y Huawei AppGallery. En Rusia ya está en RuStore.'),
+    ('¿Dónde descargo Pisar?', 'Pisar llegará pronto a Google Play, Xiaomi GetApps y Huawei AppGallery.'),
     ('¿Cuánto cuesta Pisar?', 'El dictado es gratis para siempre: sin anuncios, sin cuenta, sin límites. Pisar Pro (notas de voz y vídeos a texto, texto de capturas, Copiados, traducción al dictar) es un solo pago en la app, sin suscripción. Los primeros 7 días de Pro son gratis.'),
     ('¿Pisar funciona sin internet?', 'Sí. La voz se reconoce en el propio teléfono, el audio y el texto no se envían a ninguna parte. Internet hace falta una vez para descargar un idioma y, después, solo para transcribir un archivo por enlace y pagar Pro.'),
     ('¿Es un teclado?', 'No. Tu teclado sigue igual, Pisar añade un botón P junto al campo de texto.'),

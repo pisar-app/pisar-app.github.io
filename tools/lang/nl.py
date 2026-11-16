@@ -91,7 +91,7 @@ HOME = {
 }
 
 FAQ = [
-    ('Waar download ik Pisar?', 'Pisar komt binnenkort naar Google Play, Xiaomi GetApps en Huawei AppGallery. In Rusland staat de app al in RuStore.'),
+    ('Waar download ik Pisar?', 'Pisar komt binnenkort naar Google Play, Xiaomi GetApps en Huawei AppGallery.'),
     ('Wat kost Pisar?', 'Dicteren is voor altijd gratis: zonder advertenties, zonder account, zonder limiet. Pisar Pro (spraakberichten en video naar tekst, tekst uit screenshots, Klembord, vertalen tijdens het dicteren) is een eenmalige aankoop in de app, zonder abonnement. De eerste 7 dagen Pro zijn gratis.'),
     ('Werkt Pisar zonder internet?', 'Ja. Spraak wordt op de telefoon zelf herkend, geluid en tekst worden nergens heen gestuurd. Internet heb je één keer nodig om een taal te downloaden, en daarna alleen om een bestand via een link uit te schrijven en Pro te betalen.'),
     ('Is het een toetsenbord?', 'Nee. Je eigen toetsenbord blijft, Pisar zet een P-knop naast het tekstveld.'),

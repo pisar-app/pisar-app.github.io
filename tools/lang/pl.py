@@ -91,7 +91,7 @@ HOME = {
 }
 
 FAQ = [
-    ('Gdzie pobrać Pisar?', 'Pisar wkrótce pojawi się w Google Play, Xiaomi GetApps i Huawei AppGallery. W Rosji jest już w RuStore.'),
+    ('Gdzie pobrać Pisar?', 'Pisar wkrótce pojawi się w Google Play, Xiaomi GetApps i Huawei AppGallery.'),
     ('Ile kosztuje Pisar?', 'Dyktowanie jest darmowe na zawsze: bez reklam, bez konta, bez limitów. Pisar Pro (głosówki i wideo na tekst, tekst ze zrzutów ekranu, Schowek, tłumaczenie podczas dyktowania) to jednorazowy zakup w aplikacji, bez subskrypcji. Pierwsze 7 dni Pro są za darmo.'),
     ('Czy Pisar działa bez internetu?', 'Tak. Mowa jest rozpoznawana na samym telefonie, dźwięk i tekst nigdzie nie są wysyłane. Internet jest potrzebny raz, żeby pobrać język, a potem tylko do transkrypcji pliku z linku i zapłaty za Pro.'),
     ('Czy to klawiatura?', 'Nie. Twoja klawiatura zostaje bez zmian, Pisar dodaje przycisk P obok pola tekstowego.'),
