@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>EN→ES<',
     'm_said': '“Thanks, got everything, I’ll reply tomorrow”',
     'm_out': 'Gracias, ya lo tengo todo, mañana te respondo.',
-    'cta': 'Where to download',
     'hero_note': 'Dictation is free forever. No ads, no account.',
     'price': {
         'h2': 'Free and Pro', 'sub': 'Dictation is free forever. Pro is bought once in the app, no subscription.',

@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>DE→EN<',
     'm_said': '„Danke, alles bekommen, ich antworte morgen“',
     'm_out': "Thanks, got everything, I’ll reply tomorrow.",
-    'cta': 'Zum Download',
     'hero_note': 'Diktieren ist dauerhaft kostenlos. Ohne Werbung, ohne Konto.',
     'price': {
         'h2': 'Kostenlos und Pro', 'sub': 'Diktieren ist dauerhaft kostenlos. Pro kaufen Sie einmal in der App, ohne Abo.',

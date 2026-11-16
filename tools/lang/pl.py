@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>PL→EN<',
     'm_said': '„Dzięki, wszystko doszło, odpiszę jutro”',
     'm_out': "Thanks, got everything, I’ll reply tomorrow.",
-    'cta': 'Gdzie pobrać',
     'hero_note': 'Dyktowanie jest darmowe na zawsze. Bez reklam i bez konta.',
     'price': {
         'h2': 'Za darmo i Pro', 'sub': 'Dyktowanie jest darmowe na zawsze. Pro kupujesz raz w aplikacji, bez subskrypcji.',

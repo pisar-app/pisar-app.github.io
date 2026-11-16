@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>NL→EN<',
     'm_said': '‘Bedankt, alles ontvangen, ik antwoord morgen’',
     'm_out': "Thanks, got everything, I’ll reply tomorrow.",
-    'cta': 'Waar te downloaden',
     'hero_note': 'Dicteren is voor altijd gratis. Zonder advertenties en zonder account.',
     'price': {
         'h2': 'Gratis en Pro', 'sub': 'Dicteren is voor altijd gratis. Pro koop je één keer in de app, zonder abonnement.',

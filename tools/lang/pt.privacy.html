@@ -5,8 +5,8 @@
 <ul>
 <li>A voz é reconhecida <strong>só no celular</strong>. O áudio não é enviado nem para nós, nem para o Google, nem para ninguém. O reconhecimento funciona também no modo avião.</li>
 <li>Ditados, transcrições, Copiados, dicionário e configurações ficam guardados <strong>só no celular</strong>. Não há contas nem anúncios.</li>
-<li>Só se você comprar o Pro: o e-mail do recibo e o número da fatura ficam guardados na função de nuvem do Pisar no Yandex Cloud (Rússia), para ativar e restaurar o Pro. Ali também fica o seu e-mail, se você mesmo o deixou na lista de espera do Pro.</li>
-<li>O Pisar acessa a internet para baixar modelos de reconhecimento e dicionários, para abrir links que você mesmo passou e, a menos que você desative, para enviar estatísticas e falhas anonimizadas ao Yandex AppMetrica (sem textos nem áudio).</li>
+<li>Só se você comprar o Pro: o e-mail do recibo e o número da fatura ficam guardados na função de nuvem do Pisar no Yandex Cloud (Rússia), para ativar e restaurar o Pro. Ali também fica o seu e-mail, se você o deixou na lista de espera do Pro.</li>
+<li>O Pisar acessa a internet para baixar modelos de reconhecimento e dicionários, para abrir links que você passou e, a menos que você desative, para enviar estatísticas e falhas anonimizadas ao Yandex AppMetrica (sem textos nem áudio).</li>
 <li>Novidades e ofertas só chegam com o seu consentimento.</li>
 <li>Para apagar tudo, desinstale o app.</li>
 </ul>
@@ -20,7 +20,7 @@
 <li>inserir o texto ditado nesse campo.</li>
 </ol>
 <p>Para isso, o serviço vê: qual campo está em foco e de que tipo ele é, o texto em volta do cursor (para inserir no lugar certo) e qual app está na tela (o nome dele é guardado junto com o ditado no Histórico e serve para as configurações “por app”). O serviço não lê campos de senha nem insere nada neles.</p>
-<p>Se você mesmo ativar “Configurações → Copiados → Guardar sozinho” (desativado por padrão), o serviço também percebe quando você toca em “Copiar” / “Recortar” e guarda o texto copiado na aba “Copiados”. Senhas, códigos, texto que um app marca como secreto e texto de gerenciadores de senhas nunca são guardados; dá para excluir qualquer app em “Não guardar destes apps”.</p>
+<p>Se você ativar “Configurações → Copiados → Guardar sozinho” (desativado por padrão), o serviço também percebe quando você toca em “Copiar” / “Recortar” e guarda o texto copiado na aba “Copiados”. Senhas, códigos, texto que um app marca como secreto e texto de gerenciadores de senhas nunca são guardados; dá para excluir qualquer app em “Não guardar destes apps”.</p>
 <p>Tudo o que o serviço vê fica no celular e não é enviado para lugar nenhum. Você pode desativar o serviço a qualquer momento nas configurações do Android; aí o botão de ditado some dos campos.</p>
 <h3>1.3. Permissões</h3>
 <table>
@@ -103,19 +103,20 @@
 </tbody>
 </table>
 <p>Você pode escolher “Não guardar”: aí o texto vai direto para a área de transferência e não entra no Histórico. “Limpar” nas abas “Histórico”, “Transcrição” e “Copiados” apaga os registros na hora (os fixados ficam e são apagados à parte). Os dados ficam na pasta privada do Pisar e não entram nos backups do Android. A conexão com o Mac é guardada criptografada com uma chave do Android Keystore.</p>
-<p>Os textos só saem do celular se você mesmo tocar em “Compartilhar” ou “Copiar”, ou exportar o Histórico para um arquivo.</p>
+<p>Os textos só saem do celular se você tocar em “Compartilhar” ou “Copiar”, ou exportar o Histórico para um arquivo.</p>
 <h2>2. Envio de dados</h2>
 <h3>2.1. Download de modelos</h3>
 <ul>
 <li>Os <strong>modelos de reconhecimento de voz</strong> são baixados do Hugging Face, da organização pública <code>pisar</code> (huggingface.co/pisar).</li>
+<li>Os <strong>modelos para fotos de documentos</strong> (PaddleOCR, Apache-2.0) são baixados do Hugging Face, da mesma organização pisar, na primeira foto ou em “Configurações → Texto de imagens”.</li>
 <li>Os <strong>dicionários para texto de imagens</strong> (Tesseract) são baixados do Hugging Face, da mesma organização pisar: russo e inglês junto com o modelo de reconhecimento, os outros idiomas na primeira imagem nesse idioma ou em “Configurações → Texto de imagens”.</li>
 <li>Os <strong>idiomas de tradução</strong> (se você ativou “Traduzir ao ditar”, desativado por padrão) são baixados do Hugging Face, da mesma organização pisar (modelos Firefox Translations, da Mozilla). A tradução é feita no celular e o texto não é enviado para lugar nenhum.</li>
 </ul>
 <p>No download, esses serviços veem, como qualquer site, o endereço IP do celular e os dados técnicos da solicitação. Nós não recebemos esses dados.</p>
 <h3>2.2. Links</h3>
-<p>Quando você cola um link de áudio ou vídeo (podcast, Google Drive, Dropbox, Yandex Disk), o Pisar baixa o arquivo desse site e transcreve no celular. O site vê uma solicitação comum vinda do endereço IP do celular. O Pisar não baixa de plataformas de vídeo.</p>
+<p>Quando você cola um link de áudio ou vídeo (podcast, Google Drive, Dropbox, Yandex Disk), o Pisar baixa o arquivo desse site e o transcreve no celular. O site vê uma solicitação comum vinda do endereço IP do celular. O Pisar não baixa de plataformas de vídeo.</p>
 <h3>2.3. Estatísticas e falhas</h3>
-<p>Para encontrar erros e entender quais recursos são usados, o Pisar envia informações anonimizadas ao serviço <strong>AppMetrica</strong> (Yandex LLC, Rússia). <strong>Ativado por padrão</strong>; desativa em “Configurações → Ajuda e contato → Sobre → Enviar estatísticas e falhas”: depois disso nada é enviado nem registrado.</p>
+<p>Para encontrar erros e entender quais recursos são usados, o Pisar envia informações anonimizadas ao serviço <strong>AppMetrica</strong> (Yandex LLC, Rússia). <strong>Ativado por padrão</strong>; pode ser desativado em “Configurações → Ajuda e contato → Sobre → Enviar estatísticas e falhas”: depois disso nada é enviado nem registrado.</p>
 <p>O que é enviado:</p>
 <ul>
 <li><strong>falhas</strong>: onde no código o erro aconteceu (classes, métodos, linhas de código), sem o texto das mensagens de erro;</li>
@@ -161,7 +162,7 @@ https://yandex.com/legal/confidential/</p>
 <h2>5. Crianças</h2>
 <p>O Pisar não é destinado a crianças com menos de 13 anos (na UE, menos de 16, se o seu país não definir outra idade) e não coleta dados delas conscientemente. Se você acha que uma criança nos enviou dados dela, escreva para nós: vamos apagá-los.</p>
 <h2>6. Rússia</h2>
-<p>Controlador: o desenvolvedor indicado na página do app Pisar na loja de apps de onde você o instalou (nome comercial Pozdnekov Labs). Os dados que podem ser considerados pessoais (identificador do aparelho e endereço IP no AppMetrica, token push da RuStore) são tratados para melhorar o app e enviar notificações, e ficam guardados na Yandex e na VK, na Rússia. Base legal: o seu consentimento; ao continuar usando o Pisar com as estatísticas ativadas, você consente; para retirar o consentimento, desative “Enviar estatísticas e falhas” e as notificações, ou escreva para nós. Você tem o direito de saber quais dados seus são tratados, pedir que sejam corrigidos ou apagados e reclamar à Roskomnadzor.</p>
+<p>Controlador dos dados: o desenvolvedor indicado na página do app Pisar na loja de apps de onde você o instalou (nome comercial Pozdnekov Labs). Os dados que podem ser considerados pessoais (identificador do aparelho e endereço IP no AppMetrica, token push da RuStore) são tratados para melhorar o app e enviar notificações, e ficam guardados na Yandex e na VK, na Rússia. Base legal: o seu consentimento; ao continuar usando o Pisar com as estatísticas ativadas, você consente; para retirar o consentimento, desative “Enviar estatísticas e falhas” e as notificações, ou escreva para nós. Você tem o direito de saber quais dados seus são tratados, pedir que sejam corrigidos ou apagados e reclamar à Roskomnadzor.</p>
 <h2>7. União Europeia e Reino Unido</h2>
 <p>Bases legais: para estatísticas e falhas, o interesse legítimo em que o app funcione sem erros (você pode se opor desativando-as em um passo); para novidades e ofertas, o consentimento. Os dados do AppMetrica e da RuStore são tratados na Rússia, que não tem decisão de adequação da UE; os dados são anonimizados e reduzidos ao mínimo. Seus direitos: acesso, retificação, eliminação, limitação, portabilidade, oposição, retirada do consentimento e reclamação à autoridade de controle do seu país.</p>
 <h2>8. Califórnia</h2>

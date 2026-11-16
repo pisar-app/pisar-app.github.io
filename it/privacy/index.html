@@ -71,7 +71,7 @@
 <li>La voce viene riconosciuta <strong>solo sul telefono</strong>. L’audio non viene inviato né a noi, né a Google, né a nessun altro. Il riconoscimento funziona anche in modalità aereo.</li>
 <li>Dettature, trascrizioni, Appunti, dizionario e impostazioni sono salvati <strong>solo sul telefono</strong>. Niente account e niente pubblicità.</li>
 <li>Solo se acquisti Pro: l’email della ricevuta e il numero della fattura sono conservati dalla funzione cloud di Pisar su Yandex Cloud (Russia), per attivare e ripristinare Pro. Lì è conservata anche la tua email se l’hai lasciata tu nella lista d’attesa di Pro.</li>
-<li>Pisar va su internet per scaricare i modelli di riconoscimento e i dizionari, per aprire i link che gli dai tu e, se non lo disattivi, per inviare statistiche e arresti anomali anonimizzati a Yandex AppMetrica (senza testi né audio).</li>
+<li>Pisar si connette a internet per scaricare i modelli di riconoscimento e i dizionari, per aprire i link che gli dai tu e, se non lo disattivi, per inviare statistiche e arresti anomali anonimizzati a Yandex AppMetrica (senza testi né audio).</li>
 <li>Novità e offerte arrivano solo con il tuo consenso.</li>
 <li>Per cancellare tutto, disinstalla l’app.</li>
 </ul>
@@ -86,7 +86,7 @@
 </ol>
 <p>Per farlo il servizio vede: quale campo ha il focus e di che tipo è, il testo intorno al cursore (per inserire al punto giusto) e quale app è sullo schermo (il suo nome viene salvato accanto alla dettatura nella Cronologia e serve per le impostazioni «per app»). Il servizio non legge i campi password e non vi inserisce nulla.</p>
 <p>Se attivi tu «Impostazioni → Appunti → Salva da solo» (disattivato per impostazione predefinita), il servizio nota anche quando tocchi «Copia» / «Taglia» e salva il testo copiato nella scheda «Appunti». Password, codici, testo che un’app segna come riservato e testo dei gestori di password non vengono mai salvati; puoi escludere qualsiasi app in «Non salvare dalle app».</p>
-<p>Tutto ciò che il servizio vede resta sul telefono e non viene trasmesso da nessuna parte. Puoi disattivare il servizio in qualsiasi momento nelle impostazioni di Android; il pulsante di dettatura sparirà allora dai campi.</p>
+<p>Tutto ciò che il servizio vede resta sul telefono e non viene trasmesso da nessuna parte. Puoi disattivare il servizio in qualsiasi momento nelle impostazioni di Android; a quel punto il pulsante di dettatura sparirà dai campi.</p>
 <h3>1.3. Autorizzazioni</h3>
 <table>
 <thead>
@@ -173,6 +173,7 @@
 <h3>2.1. Download dei modelli</h3>
 <ul>
 <li>I <strong>modelli di riconoscimento vocale</strong> vengono scaricati da Hugging Face, dall’organizzazione pubblica <code>pisar</code> (huggingface.co/pisar).</li>
+<li>I <strong>modelli per le foto di documenti</strong> (PaddleOCR, Apache-2.0) vengono scaricati da Hugging Face, dalla stessa organizzazione pisar, alla prima foto o in «Impostazioni → Testo dalle immagini».</li>
 <li>I <strong>dizionari per il testo dalle immagini</strong> (Tesseract) vengono scaricati da Hugging Face, dalla stessa organizzazione pisar: russo e inglese insieme al modello di riconoscimento, le altre lingue alla prima immagine in quella lingua o in «Impostazioni → Testo dalle immagini».</li>
 <li>Le <strong>lingue di traduzione</strong> (se hai attivato «Traduci durante la dettatura», disattivato per impostazione predefinita) vengono scaricate da Hugging Face, dalla stessa organizzazione pisar (modelli Firefox Translations, Mozilla). La traduzione avviene sul telefono e il testo non viene inviato da nessuna parte.</li>
 </ul>
@@ -226,7 +227,7 @@ https://yandex.com/legal/confidential/</p>
 <h2 id="s-6">5. Minori</h2>
 <p>Pisar non è destinato ai minori di 13 anni (nell’UE ai minori di 16, salvo che il tuo paese stabilisca un’altra età) e non raccoglie consapevolmente dati su di loro. Se pensi che un minore ci abbia inviato i suoi dati, scrivici: li elimineremo.</p>
 <h2 id="s-7">6. Russia</h2>
-<p>Titolare del trattamento: lo sviluppatore indicato nella scheda dell’app Pisar nello store da cui l’hai installata (nome commerciale Pozdnekov Labs). I dati che possono essere considerati personali (identificativo del dispositivo e indirizzo IP in AppMetrica, token push di RuStore) sono trattati per migliorare l’app e inviare le notifiche, e sono conservati presso Yandex e VK in Russia. Base giuridica: il tuo consenso; continuando a usare Pisar con le statistiche attive, acconsenti; per revocare il consenso, disattiva «Invia statistiche e arresti anomali» e le notifiche, oppure scrivici. Hai il diritto di sapere quali dati ti riguardano vengono trattati, di chiederne la rettifica o la cancellazione e di presentare reclamo a Roskomnadzor.</p>
+<p>Titolare del trattamento: lo sviluppatore indicato nella scheda dell’app Pisar nello store da cui l’hai installata (nome commerciale Pozdnekov Labs). I dati che possono essere considerati personali (identificativo del dispositivo e indirizzo IP in AppMetrica, token push di RuStore) sono trattati per migliorare l’app e inviare le notifiche, e sono conservati presso Yandex e VK in Russia. Base giuridica: il tuo consenso; continuando a usare Pisar con le statistiche attive, acconsenti; per revocare il consenso, disattiva «Invia statistiche e arresti anomali» e le notifiche, oppure scrivici. Hai il diritto di sapere quali dati che ti riguardano vengono trattati, di chiederne la rettifica o la cancellazione e di presentare reclamo a Roskomnadzor.</p>
 <h2 id="s-8">7. Unione europea e Regno Unito</h2>
 <p>Basi giuridiche: per statistiche e arresti anomali, il legittimo interesse a un’app che funzioni senza errori (puoi opporti disattivandoli con un solo passaggio); per novità e offerte, il consenso. I dati di AppMetrica e RuStore sono trattati in Russia, per la quale non esiste una decisione di adeguatezza dell’UE; i dati sono anonimizzati e ridotti al minimo. I tuoi diritti: accesso, rettifica, cancellazione, limitazione, portabilità, opposizione, revoca del consenso, reclamo all’autorità di controllo del tuo paese.</p>
 <h2 id="s-9">8. California</h2>

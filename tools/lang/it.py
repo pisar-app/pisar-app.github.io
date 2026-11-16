@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>IT→EN<',
     'm_said': '«Grazie, ho ricevuto tutto, rispondo domani»',
     'm_out': "Thanks, got everything, I’ll reply tomorrow.",
-    'cta': 'Dove scaricarlo',
     'hero_note': 'La dettatura è gratis per sempre. Senza pubblicità e senza account.',
     'price': {
         'h2': 'Gratis e Pro', 'sub': 'La dettatura è gratis per sempre. Pro si compra una volta nell’app, senza abbonamento.',

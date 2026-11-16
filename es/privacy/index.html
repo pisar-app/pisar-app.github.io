@@ -85,7 +85,7 @@
 <li>insertar el texto dictado en ese campo.</li>
 </ol>
 <p>Para ello el servicio ve: qué campo tiene el foco y de qué tipo es, el texto alrededor del cursor (para insertar en el sitio correcto) y qué app está en pantalla (su nombre se guarda junto al dictado en el Historial y se usa para los ajustes «por app»). El servicio no lee los campos de contraseña ni escribe nada en ellos.</p>
-<p>Si activas tú mismo «Ajustes → Copiados → Guardar automáticamente» (desactivado por defecto), el servicio también detecta cuándo tocas «Copiar» / «Cortar» y guarda el texto copiado en la pestaña «Copiados». Nunca se guardan contraseñas, códigos, texto que una app marca como secreto ni texto de gestores de contraseñas; puedes excluir cualquier app en «No guardar desde apps».</p>
+<p>Si activas «Ajustes → Copiados → Guardar automáticamente» (desactivado por defecto), el servicio también detecta cuándo tocas «Copiar» / «Cortar» y guarda el texto copiado en la pestaña «Copiados». Nunca se guardan contraseñas, códigos, texto que una app marca como secreto ni texto de gestores de contraseñas; puedes excluir cualquier app en «No guardar desde apps».</p>
 <p>Todo lo que ve el servicio se queda en el teléfono y no se transmite a ninguna parte. Puedes desactivar el servicio en cualquier momento en los ajustes de Android; entonces el botón de dictado desaparece de los campos.</p>
 <h3>1.3. Permisos</h3>
 <table>
@@ -173,6 +173,7 @@
 <h3>2.1. Descarga de modelos</h3>
 <ul>
 <li>Los <strong>modelos de reconocimiento de voz</strong> se descargan de Hugging Face, de la organización pública <code>pisar</code> (huggingface.co/pisar).</li>
+<li>Los <strong>modelos para fotos de documentos</strong> (PaddleOCR, Apache-2.0) se descargan de Hugging Face, de la misma organización pisar, con la primera foto o en «Ajustes → Texto de imágenes».</li>
 <li>Los <strong>diccionarios para el texto de imágenes</strong> (Tesseract) se descargan de Hugging Face, de la misma organización pisar: ruso e inglés junto con el modelo de reconocimiento, los demás idiomas con la primera imagen en ese idioma o en «Ajustes → Texto de imágenes».</li>
 <li>Los <strong>idiomas de traducción</strong> (si activaste «Traducir al dictar», desactivado por defecto) se descargan de Hugging Face, de la misma organización pisar (modelos de Firefox Translations, de Mozilla). La traducción se hace en el teléfono y el texto no se envía a ninguna parte.</li>
 </ul>

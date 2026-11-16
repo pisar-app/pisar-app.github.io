@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>FR→EN<',
     'm_said': '« Merci, j’ai tout reçu, je réponds demain »',
     'm_out': "Thanks, got everything, I’ll reply tomorrow.",
-    'cta': 'Où télécharger',
     'hero_note': 'La dictée est gratuite pour toujours. Sans publicité, sans compte.',
     'price': {
         'h2': 'Gratuit et Pro', 'sub': 'La dictée est gratuite pour toujours. Pro s’achète une fois dans l’appli, sans abonnement.',

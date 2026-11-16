@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>PT→EN<',
     'm_said': '“Obrigado, recebi tudo, respondo amanhã”',
     'm_out': "Thanks, got everything, I’ll reply tomorrow.",
-    'cta': 'Onde baixar',
     'hero_note': 'O ditado é grátis para sempre. Sem anúncios e sem conta.',
     'price': {
         'h2': 'Grátis e Pro', 'sub': 'O ditado é grátis para sempre. O Pro é comprado uma vez no app, sem assinatura.',

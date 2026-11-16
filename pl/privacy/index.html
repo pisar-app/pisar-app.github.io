@@ -70,8 +70,8 @@
 <ul>
 <li>Mowa jest rozpoznawana <strong>tylko na telefonie</strong>. Dźwięk nie trafia ani do nas, ani do Google, ani do nikogo innego. Rozpoznawanie działa też w trybie samolotowym.</li>
 <li>Dyktowane teksty, transkrypcje, Schowek, słownik i ustawienia są przechowywane <strong>tylko na telefonie</strong>. Nie ma kont ani reklam.</li>
-<li>Tylko przy zakupie Pro: e-mail z paragonu i numer faktury są przechowywane w funkcji chmurowej Pisar w Yandex Cloud (Rosja), żeby włączyć i przywrócić Pro. Tam jest też twój e-mail, jeśli sam zostawiłeś go na liście oczekujących na Pro.</li>
-<li>Pisar łączy się z internetem, żeby pobrać modele rozpoznawania i słowniki, otworzyć linki, które sam podałeś, oraz, jeśli tego nie wyłączysz, wysłać zanonimizowane statystyki i awarie do Yandex AppMetrica (bez tekstów i dźwięku).</li>
+<li>Tylko przy zakupie Pro: e-mail z paragonu i numer faktury są przechowywane w funkcji chmurowej Pisar w Yandex Cloud (Rosja), żeby włączyć i przywrócić Pro. Tam jest też twój e-mail, jeśli został zapisany na liście oczekujących na Pro.</li>
+<li>Pisar łączy się z internetem, żeby pobrać modele rozpoznawania i słowniki, otworzyć podane przez ciebie linki oraz, jeśli tego nie wyłączysz, wysłać zanonimizowane statystyki i awarie do Yandex AppMetrica (bez tekstów i dźwięku).</li>
 <li>Nowości i oferty przychodzą tylko za twoją zgodą.</li>
 <li>Żeby usunąć wszystko, odinstaluj aplikację.</li>
 </ul>
@@ -85,7 +85,7 @@
 <li>wstawić podyktowany tekst do tego pola.</li>
 </ol>
 <p>W tym celu usługa widzi: które pole jest aktywne i jakiego jest typu, tekst wokół kursora (żeby wstawić w dobrym miejscu) oraz jaka aplikacja jest na ekranie (jej nazwa jest zapisywana przy dyktowaniu w Historii i potrzebna do ustawień „dla aplikacji”). Usługa nie czyta pól haseł i nic do nich nie wstawia.</p>
-<p>Jeśli sam włączysz „Ustawienia → Schowek → Zapamiętuj sam” (domyślnie wyłączone), usługa zauważa też dotknięcie „Kopiuj” / „Wytnij” i zapisuje skopiowany tekst w karcie „Schowek”. Hasła, kody, tekst oznaczony przez aplikację jako poufny i tekst z menedżerów haseł nie są nigdy zapisywane; dowolne aplikacje możesz wykluczyć w „Nie zapamiętuj z aplikacji”.</p>
+<p>Jeśli włączysz „Ustawienia → Schowek → Zapamiętuj sam” (domyślnie wyłączone), usługa zauważa też dotknięcie „Kopiuj” / „Wytnij” i zapisuje skopiowany tekst w karcie „Schowek”. Hasła, kody, tekst oznaczony przez aplikację jako poufny i tekst z menedżerów haseł nie są nigdy zapisywane; dowolne aplikacje możesz wykluczyć w „Nie zapamiętuj z aplikacji”.</p>
 <p>Wszystko, co widzi usługa, zostaje na telefonie i nigdzie nie jest przekazywane. Usługę możesz w każdej chwili wyłączyć w ustawieniach Androida; wtedy przycisk dyktowania przy polach zniknie.</p>
 <h3>1.3. Uprawnienia</h3>
 <table>
@@ -104,7 +104,7 @@
 </tr>
 <tr>
 <td>Powiadomienia</td>
-<td>postęp transkrypcji plików, wskazówki, nowości (jeśli się zgodziłeś)</td>
+<td>postęp transkrypcji plików, wskazówki, nowości (po wyrażeniu zgody)</td>
 <td>gdy powiadomienie jest potrzebne pierwszy raz</td>
 </tr>
 <tr>
@@ -167,14 +167,15 @@
 </tr>
 </tbody>
 </table>
-<p>Możesz wybrać „Nie przechowuj”: wtedy tekst trafia od razu do schowka systemowego i nie trafia do Historii. „Wyczyść” w kartach „Historia”, „Transkrypcja” i „Schowek” usuwa wpisy od razu (przypięte zostają, usuwa się je osobno). Dane leżą w prywatnym folderze Pisar i nie trafiają do kopii zapasowych Androida. Połączenie z Makiem jest przechowywane w postaci zaszyfrowanej kluczem z Android Keystore.</p>
-<p>Teksty opuszczają telefon tylko wtedy, gdy sam dotkniesz „Udostępnij” lub „Kopiuj” albo wyeksportujesz Historię do pliku.</p>
+<p>Możesz wybrać „Nie przechowuj”: wtedy tekst trafia od razu do schowka systemowego i nie trafia do Historii. „Wyczyść” w kartach „Historia”, „Transkrypcja” i „Schowek” usuwa wpisy od razu (przypięte zostają, usuwa się je osobno). Dane są przechowywane w prywatnym folderze Pisar i nie trafiają do kopii zapasowych Androida. Połączenie z Makiem jest przechowywane w postaci zaszyfrowanej kluczem z Android Keystore.</p>
+<p>Teksty opuszczają telefon tylko wtedy, gdy dotkniesz „Udostępnij” lub „Kopiuj” albo wyeksportujesz Historię do pliku.</p>
 <h2 id="s-3">2. Przekazywanie danych</h2>
 <h3>2.1. Pobieranie modeli</h3>
 <ul>
 <li><strong>Modele rozpoznawania mowy</strong> są pobierane z Hugging Face, z publicznej organizacji <code>pisar</code> (huggingface.co/pisar).</li>
+<li><strong>Modele do zdjęć dokumentów</strong> (PaddleOCR, Apache-2.0) są pobierane z Hugging Face, z tej samej organizacji pisar, przy pierwszym zdjęciu albo w „Ustawienia → Tekst z obrazów”.</li>
 <li><strong>Słowniki do tekstu z obrazów</strong> (Tesseract) są pobierane z Hugging Face, z tej samej organizacji pisar: rosyjski i angielski razem z modelem rozpoznawania, inne języki przy pierwszym obrazie w danym języku albo w „Ustawienia → Tekst z obrazów”.</li>
-<li><strong>Języki tłumaczenia</strong> (jeśli włączyłeś „Tłumacz podczas dyktowania”, domyślnie wyłączone) są pobierane z Hugging Face, z tej samej organizacji pisar (modele Firefox Translations, Mozilla). Tłumaczenie odbywa się na telefonie, tekst nigdzie nie jest wysyłany.</li>
+<li><strong>Języki tłumaczenia</strong> (jeśli włączona jest opcja „Tłumacz podczas dyktowania”, domyślnie wyłączona) są pobierane z Hugging Face, z tej samej organizacji pisar (modele Firefox Translations, Mozilla). Tłumaczenie odbywa się na telefonie, tekst nigdzie nie jest wysyłany.</li>
 </ul>
 <p>Przy pobieraniu te usługi, jak każda strona internetowa, widzą adres IP telefonu i dane techniczne zapytania. My tych danych nie dostajemy.</p>
 <h3>2.2. Linki</h3>
@@ -192,20 +193,20 @@
 <p>Jak Yandex przetwarza te dane, opisuje jego polityka prywatności:
 https://yandex.com/legal/confidential/</p>
 <h3>2.4. Raporty o błędach</h3>
-<p>Jeśli Pisar zamknął się z błędem, przy następnym uruchomieniu zaproponuje raport: model telefonu, wersje Androida i Pisar, czas i miejsce błędu, bez tekstów i dźwięku. Raport idzie <strong>tylko wtedy, gdy dotkniesz „Wyślij”</strong>, i tylko tam, gdzie wybierzesz w „Udostępnij”. „Nie wysyłaj”: raport jest usuwany. Wyłączenie propozycji: „Ustawienia → Pomoc i kontakt → O aplikacji → Proponuj raport po awarii”.</p>
-<p>„Zgłoś problem” zbiera dziennik z ostatnich minut (teksty dyktowań są w nim ukryte) i też jest wysyłany tylko przez „Udostępnij”, tam, gdzie wybierzesz. „Ustawienia → Pomoc i kontakt → Napisz do nas” i „Zaproponuj pomysł” otwierają twoją pocztę z naszym adresem, wersją Pisar i modelem telefonu; wiadomość wysyłasz sam. To, co nam przyślesz, wykorzystujemy tylko do rozwiązania problemu i usuwamy po jego rozwiązaniu.</p>
+<p>Jeśli Pisar zamknął się z błędem, przy następnym uruchomieniu zaproponuje raport: model telefonu, wersje Androida i Pisar, czas i miejsce błędu, bez tekstów i dźwięku. Raport jest wysyłany <strong>tylko wtedy, gdy dotkniesz „Wyślij”</strong>, i tylko tam, gdzie wybierzesz w „Udostępnij”. „Nie wysyłaj”: raport jest usuwany. Wyłączenie propozycji: „Ustawienia → Pomoc i kontakt → O aplikacji → Proponuj raport po awarii”.</p>
+<p>„Zgłoś problem” zbiera dziennik z ostatnich minut (teksty dyktowań są w nim ukryte) i też jest wysyłany tylko przez „Udostępnij”, tam, gdzie wybierzesz. „Ustawienia → Pomoc i kontakt → Napisz do nas” i „Zaproponuj pomysł” otwierają twoją pocztę z naszym adresem, wersją Pisar i modelem telefonu; wiadomość wysyłasz samodzielnie. To, co nam przyślesz, wykorzystujemy tylko do rozwiązania problemu i usuwamy po jego rozwiązaniu.</p>
 <h3>2.5. Powiadomienia</h3>
 <p>„Nowe funkcje” oraz „Zniżki i oferty Pro” przychodzą <strong>tylko za twoją zgodą</strong>: Pisar pyta raz, domyślnie oba są wyłączone. Dostarcza je RuStore (VK LLC, Rosja): w tym celu RuStore otrzymuje techniczny identyfikator aplikacji na telefonie (token push) i temat subskrypcji. Teksty i dźwięk nie są przekazywane; subskrypcja jest przechowywana w RuStore, dopóki się nie wypiszesz. Wyłączenie: „Ustawienia → Powiadomienia”. Gdy oba tematy są wyłączone, Pisar się wypisuje i nie uruchamia usługi push. „Wskazówki” w tej samej sekcji to powiadomienia samego telefonu, bez internetu.</p>
 <p>Po kilku dyktowaniach Pisar może raz pokazać okno oceny sklepu, z którego został zainstalowany (RuStore, Google Play, Huawei AppGallery albo Xiaomi GetApps). Ocenę i opinię, jeśli je zostawisz, otrzymuje ten sklep na swoich zasadach; Pisar ich nie widzi.</p>
 <h3>2.6. Połączenie z komputerem</h3>
-<p>Jeśli połączyłeś telefon z Pisar na swoim Macu („Ustawienia → Komputer”, przez kod QR), telefon i Mac komunikują się bezpośrednio przez twoją sieć domową, bez internetu i bez naszych serwerów, szyfrowanym połączeniem (HTTPS, akceptowany jest tylko certyfikat twojego Maca z kodu QR). Przesyłane są nowe zrzuty ekranu (jeśli „Zrzuty ekranu” są włączone) i sprawdzenia połączenia. „Odłącz komputer” usuwa połączenie.</p>
+<p>Jeśli telefon jest połączony z Pisar na twoim Macu („Ustawienia → Komputer”, przez kod QR), telefon i Mac komunikują się bezpośrednio przez twoją sieć domową, bez internetu i bez naszych serwerów, szyfrowanym połączeniem (HTTPS, akceptowany jest tylko certyfikat twojego Maca z kodu QR). Przesyłane są nowe zrzuty ekranu (jeśli „Zrzuty ekranu” są włączone) i sprawdzenia połączenia. „Odłącz komputer” usuwa połączenie.</p>
 <h3>2.7. Zakup Pisar Pro</h3>
 <p>Gdy dotykasz „Kup”, Pisar prosi funkcję chmurową Pisar (Yandex Cloud, Rosja) o numer faktury i otwiera stronę płatności Robokassa. Dane karty wpisujesz na stronie Robokassa, do nas one nie trafiają. Po zapłacie Robokassa przekazuje funkcji chmurowej numer faktury i e-mail podany do paragonu; funkcja wydaje Pisar podpisaną licencję (numer faktury, hash e-maila, data), która jest przechowywana na telefonie i sprawdzana bez internetu.</p>
 <p>E-mail wpisujesz w Pisar przed zapłatą: trafia do funkcji chmurowej i do Robokassa (do paragonu). W licencji nie ma e-maila, jest tylko jego hash.</p>
 <p>„Przywróć zakup”: wpisany e-mail jest wysyłany do funkcji chmurowej; jeśli jest z nim powiązany zakup, przychodzi na niego wiadomość z kodem (Yandex Cloud Postbox). Odpowiedź jest taka sama, niezależnie od tego, czy zakup istnieje. Kod jest przechowywany jako hash przez 10 minut.</p>
 <p>Identyfikator telefonu do zakupu to hash SHA-256 systemowego identyfikatora Androida (ANDROID_ID), sam identyfikator nie jest przesyłany. Funkcja chmurowa przechowuje go przy zamówieniu (żeby nie wystawić drugiej faktury temu samemu telefonowi) oraz datę jego pierwszego zapytania (żeby 7 dni próbnych nie zaczynało się od nowa po ponownej instalacji); data pierwszego zapytania jest usuwana po roku.</p>
 <p>Raz na dobę, gdy Pisar jest otwarty i ma internet, wysyła licencję (numer faktury, hash e-maila, data) do funkcji chmurowej, żeby sprawdzić, czy zakup nie został cofnięty (zwrot pieniędzy). Bez internetu Pro działa przez 30 dni.</p>
-<p>Lista oczekujących na Pro: jeśli Pisar został zainstalowany z Google Play w kraju, w którym Pro nie można jeszcze kupić, możesz zostawić e-mail, żeby dowiedzieć się, kiedy Pro się pojawi. Do funkcji chmurowej trafiają e-mail, kraj (według ustawień telefonu), sklep, z którego zainstalowano Pisar, i wersja Pisar. Dzieje się to tylko po twoim dotknięciu przycisku. Poza tą wiadomością nie wysyłamy e-maili; żeby usunąć e-mail z listy, napisz na adres z sekcji 10. E-mail możesz zostawić też na stronie Pisar na Maca w serwisie pisar-app.ru, żeby dowiedzieć się, kiedy wyjdzie wersja na Maca: wysyłany jest tylko e-mail, po naciśnięciu przycisku.</p>
+<p>Lista oczekujących na Pro: jeśli Pisar został zainstalowany z Google Play w kraju, w którym Pro nie można jeszcze kupić, możesz zostawić e-mail, żeby dowiedzieć się, kiedy Pro się pojawi. Do funkcji chmurowej trafiają e-mail, kraj (według ustawień telefonu), sklep, z którego zainstalowano Pisar, i wersja Pisar. Dzieje się to tylko po dotknięciu przycisku. Poza tą wiadomością nie wysyłamy e-maili; żeby usunąć e-mail z listy, napisz na adres z sekcji 10. E-mail możesz zostawić też na stronie Pisar na Maca w serwisie pisar-app.ru, żeby dowiedzieć się, kiedy wyjdzie wersja na Maca: wysyłany jest tylko e-mail, po naciśnięciu przycisku.</p>
 <p>E-mail i numer faktury są przechowywane, dopóki zakup jest ważny, i służą tylko do włączenia i przywrócenia Pro oraz odpowiedzi na twoje zgłoszenia. Żeby je usunąć, napisz na adres z sekcji 10.</p>
 <h3>2.8. Lista artykułów bloga</h3>
 <p>Gdy otwierasz „Pomoc i kontakt → O aplikacji”, Pisar nie częściej niż raz na dobę pobiera z pisar-app.ru listę artykułów bloga, żeby pokazać najnowszy. Strona widzi zwykłe zapytanie z adresu IP telefonu; nic o tobie ani o twoich tekstach nie jest przekazywane.</p>
@@ -226,7 +227,7 @@ https://yandex.com/legal/confidential/</p>
 <h2 id="s-6">5. Dzieci</h2>
 <p>Pisar nie jest przeznaczony dla dzieci poniżej 13 lat (w UE poniżej 16, jeśli twój kraj nie określa innego wieku) i świadomie nie zbiera o nich danych. Jeśli uważasz, że dziecko przesłało nam swoje dane, napisz do nas: usuniemy je.</p>
 <h2 id="s-7">6. Rosja</h2>
-<p>Administrator: twórca wskazany na stronie aplikacji Pisar w sklepie z aplikacjami, z którego ją zainstalowałeś (nazwa handlowa Pozdnekov Labs). Dane, które mogą być uznane za osobowe (identyfikator urządzenia i adres IP w AppMetrica, token push RuStore), są przetwarzane w celu ulepszania aplikacji i dostarczania powiadomień i przechowywane przez Yandex i VK w Rosji. Podstawa: twoja zgoda; korzystając dalej z Pisar z włączonymi statystykami, wyrażasz zgodę; aby ją wycofać, wyłącz „Wysyłaj statystyki i awarie” i powiadomienia albo napisz do nas. Masz prawo wiedzieć, jakie dane o tobie są przetwarzane, żądać ich sprostowania lub usunięcia oraz złożyć skargę do Roskomnadzoru.</p>
+<p>Administrator: twórca wskazany na stronie aplikacji Pisar w sklepie z aplikacjami, z którego została zainstalowana (nazwa handlowa Pozdnekov Labs). Dane, które mogą być uznane za osobowe (identyfikator urządzenia i adres IP w AppMetrica, token push RuStore), są przetwarzane w celu ulepszania aplikacji i dostarczania powiadomień i przechowywane przez Yandex i VK w Rosji. Podstawa prawna: twoja zgoda; korzystając dalej z Pisar z włączonymi statystykami, wyrażasz zgodę; aby ją wycofać, wyłącz „Wysyłaj statystyki i awarie” i powiadomienia albo napisz do nas. Masz prawo wiedzieć, jakie dane o tobie są przetwarzane, żądać ich sprostowania lub usunięcia oraz złożyć skargę do Roskomnadzoru.</p>
 <h2 id="s-8">7. Unia Europejska i Wielka Brytania</h2>
 <p>Podstawy prawne: dla statystyk i awarii prawnie uzasadniony interes, żeby aplikacja działała bez błędów (możesz się sprzeciwić, wyłączając je jednym ruchem); dla nowości i ofert zgoda. Dane AppMetrica i RuStore są przetwarzane w Rosji, wobec której nie ma decyzji UE stwierdzającej odpowiedni stopień ochrony; dane są zanonimizowane i ograniczone do minimum. Twoje prawa: dostęp, sprostowanie, usunięcie, ograniczenie, przenoszenie, sprzeciw, wycofanie zgody, skarga do organu nadzorczego w twoim kraju.</p>
 <h2 id="s-9">8. Kalifornia</h2>

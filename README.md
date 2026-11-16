@@ -143,3 +143,28 @@ python3 tools/build.py
 | bg | Всичко безплатно / Текст от екранни снимки и снимки | Всичко от безплатната версия / …и фотографии | двусмысленно, повтор |
 | bg | касовата бележка | разписката | «касова бележка» это бумажный чек |
 | bg | 11.4: Ако Потребителят е потребител | Ако Потребителят има качеството на потребител | тавтология |
+
+### Вторая часть (чат 39b)
+
+Целиком вычитаны политика конфиденциальности на 9 языках и соглашение на en fr es it pt pl nl (de и bg прочитаны в первой части). Смысл не менялся, кроме одного места: в политике на 8 языках не было пункта о моделях PaddleOCR, теперь он есть, как в русской. Неиспользуемый ключ `cta` («Где скачать») удалён из `tools/lang/*.py`: в сборке он нигде не подставлялся.
+
+| язык | было | стало | почему |
+| --- | --- | --- | --- |
+| en | 11.2: a claim must be sent… | A pre-trial claim procedure is mandatory… | потеряно «обязателен претензионный порядок» |
+| en | Settings → Text from images | “Settings → Text from pictures” | в приложении пункт называется Text from pictures |
+| fr | Store d’applications | Boutique d’applications | англицизм в юридическом тексте |
+| fr | store | boutique d’applications | англицизм |
+| fr | Cela ne se fait que sur votre appui. | Cela n’a lieu que lorsque vous appuyez sur le bouton. | калька |
+| es | no está de acuerdo con el Acuerdo | no acepta el Acuerdo | тавтология |
+| es | Si activas tú mismo | Si activas | мужской род в обращении |
+| it | far cessare l’Accordo | recedere dall’Accordo | юридический оборот |
+| it | quali dati ti riguardano vengono trattati | quali dati che ti riguardano… | грамматическая ошибка |
+| pt | Antes de ir à justiça | Antes de recorrer à Justiça | разговорно для юридического текста |
+| pt | se você mesmo… | se você… | мужской род в обращении (4 места) |
+| pl | rozwiązać licencję | wypowiedzieć licencję | юридический термин |
+| pl | sam zostawiłeś, podałeś, włączyłeś, połączyłeś… | безличные формы | мужской род в обращении (9 мест) |
+| nl | beperkingen … beperken niet | doen geen afbreuk aan | тавтология |
+| nl | de bon | het betaalbewijs | «bon» это кассовый чек в магазине |
+| de fr es it pt pl nl bg | в политике нет пункта о моделях PaddleOCR для фото документов | пункт добавлен (раздел 2.1), как в русской и английской | пропуск при переводе, политика расходилась с русской |
+| en | App's, Don't (прямой апостроф) | App’s, Don’t | типографика, как в 11.4 |
+| nl | кнопка RuStore «Download via» | «Ontdek het op» | как на значке Google Play и в паре с «Binnenkort op» |

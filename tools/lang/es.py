@@ -73,7 +73,6 @@ HOME = {
     'm_pair': '>ES→EN<',
     'm_said': '«Gracias, ya me ha llegado todo, mañana te contesto»',
     'm_out': "Thanks, got everything, I’ll reply tomorrow.",
-    'cta': 'Dónde descargar',
     'hero_note': 'El dictado es gratis para siempre. Sin anuncios y sin cuenta.',
     'price': {
         'h2': 'Gratis y Pro', 'sub': 'El dictado es gratis para siempre. Pro se compra una vez en la app, sin suscripción.',

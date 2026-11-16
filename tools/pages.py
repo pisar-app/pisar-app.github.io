@@ -10,7 +10,7 @@ GP_LANGS = {'ru', 'en', 'de', 'fr', 'es', 'it', 'pt', 'pl', 'nl', 'bg'}  # ес�
 # Свои кнопки магазинов одного вида (решение владельца 16.11): чёрная плитка, логотип магазина слева, две строки одним шрифтом.
 # Логотипы вырезаны из официальных значков (assets/badges/icons/), источники значков в README.md.
 GET_ON = {'ru': 'Скачайте в', 'en': 'Get it on', 'de': 'Jetzt bei', 'fr': 'Disponible sur', 'es': 'Disponible en',
-          'it': 'Disponibile su', 'pt': 'Disponível no', 'pl': 'Pobierz z', 'nl': 'Download via', 'bg': 'Изтеглете от'}
+          'it': 'Disponibile su', 'pt': 'Disponível no', 'pl': 'Pobierz z', 'nl': 'Ontdek het op', 'bg': 'Изтеглете от'}
 SOON_ON = {'ru': 'Скоро в', 'en': 'Soon on', 'de': 'Bald bei', 'fr': 'Bientôt sur', 'es': 'Pronto en',
            'it': 'Presto su', 'pt': 'Em breve no', 'pl': 'Wkrótce w', 'nl': 'Binnenkort op', 'bg': 'Скоро в'}
 STORE_ICONS = {'RuStore': 'rustore.svg', 'Google Play': 'google-play.png', 'GetApps': 'xiaomi.svg', 'AppGallery': 'huawei.png'}
