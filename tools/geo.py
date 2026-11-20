@@ -146,14 +146,13 @@ p = 'ru/pro/index.html'
 s = rd(p)
 title = re.search(r'<title>(.*?)</title>', s).group(1)
 pro = {"@context": "https://schema.org", "@graph": [
-    {"@type": "Product", "@id": f"{SITE}/ru/pro/#product", "name": "Писарь Pro", "description": PRO_DESC,
-     "image": f"{SITE}/assets/icon.png", "brand": {"@type": "Brand", "name": "Писарь"},
-     "isRelatedTo": {"@id": APP_ID},
-     "offers": {"@type": "Offer", "price": "399", "priceCurrency": "RUB", "url": f"{SITE}/ru/pro/",
-                "availability": "https://schema.org/InStock", "seller": {"@id": ORG_ID},
-                "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "RU",
-                                            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                                            "merchantReturnDays": 14}}},
+    # Pro: покупка внутри приложения, не товар. Product тянул отчёты Google «Товары» и «Продавцы»
+    # (доставка, возврат почтой, отзывы), которые цифровой покупке не подходят (20.11).
+    {"@type": "WebPage", "@id": f"{SITE}/ru/pro/#page", "url": f"{SITE}/ru/pro/", "name": "Писарь Pro",
+     "description": PRO_DESC, "inLanguage": "ru", "about": {"@id": APP_ID},
+     "mainEntity": {"@type": "Offer", "name": "Писарь Pro", "price": "399", "priceCurrency": "RUB",
+                    "url": f"{SITE}/ru/pro/", "availability": "https://schema.org/InStock",
+                    "seller": {"@id": ORG_ID}, "itemOffered": {"@id": APP_ID}}},
     {**ORG},
     crumbs([('Писарь', f'{SITE}/'), ('Писарь Pro', f'{SITE}/ru/pro/')])]}
 wr(p, head_add(s, meta(PRO_DESC, title, f'{SITE}/ru/pro/', 'ru') + ld_tag(pro)))
